@@ -1,0 +1,6 @@
+@Estigo_HostAddress = http://localhost:5070
+
+GET {{Estigo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
