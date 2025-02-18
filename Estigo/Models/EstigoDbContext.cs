@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Estigo.Migrations;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Estigo.Models
@@ -20,6 +21,24 @@ namespace Estigo.Models
                 .HasValue<Admin>("Admin")
                 .HasValue<Teacher>("Teacher")
                 .HasValue<Parent>("Parent");
+
+            modelBuilder.Entity<Course>()
+                .Property(c => c.CreatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<Course>()
+                .Property(c => c.UpdatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<Chapter>()
+                .Property(c => c.CreatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<Chapter>()
+                .Property(c => c.UpdatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+
         }
 
         public DbSet<Student> Students { get; set; }
@@ -27,5 +46,7 @@ namespace Estigo.Models
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Parent> Parents { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Chapter> Chapters { get; set; }
     }
 }

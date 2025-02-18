@@ -26,6 +26,7 @@ namespace Estigo.Models
         // Navigation property
         public Category Category { get; set; }
         public ICollection<Student> students { get; set; }
+        public ICollection<Chapter> Chapters { get; set; }
 
 
     }

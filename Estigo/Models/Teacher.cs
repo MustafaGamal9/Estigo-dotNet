@@ -4,5 +4,7 @@ namespace Estigo.Models
 {
     public class Teacher:ApplicationUser
     {
+        public string Subject { get; set; }
+        public string Notes { get; set; }
     }
 }
