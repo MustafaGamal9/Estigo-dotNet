@@ -38,6 +38,33 @@ namespace Estigo.Models
                 .Property(c => c.UpdatedAt)
                 .HasDefaultValueSql("GETDATE()");
 
+            modelBuilder.Entity<lesson>()
+                .Property(l => l.lessonTitle)
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<lesson>()
+                .Property(l => l.lessonContent)
+                .HasMaxLength(250);
+
+            modelBuilder.Entity<lesson>()
+                .Property(l => l.lessonVideo)
+                .HasMaxLength(250);
+
+            modelBuilder.Entity<lesson>()
+                .Property(l => l.lessonDescription)
+                .HasMaxLength(250);
+
+            modelBuilder.Entity<lesson>()
+                .Property(l => l.CreatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<lesson>()
+                .Property(l => l.UpdatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+
+
+
 
         }
 
@@ -48,5 +75,7 @@ namespace Estigo.Models
         public DbSet<Course> Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Chapter> Chapters { get; set; }
+        public DbSet<lesson> lessons { get; set; }
+
     }
 }

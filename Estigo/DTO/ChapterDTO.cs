@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Estigo.Models
+namespace Estigo.DTO
 {
-    public class Chapter
+    public class ChapterDTO
     {
         [Key]
         public int ChapterId { get; set; }
@@ -16,13 +16,6 @@ namespace Estigo.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? UpdatedAt { get; set; }
 
-
-        // navigation property
-
-        [ForeignKey("Course")]
         public int CourseId { get; set; }
-        public Course Course { get; set; }
-
-        public ICollection<lesson> lessons { get; set; }
     }
 }
