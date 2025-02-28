@@ -62,7 +62,17 @@ namespace Estigo.Models
                 .Property(l => l.UpdatedAt)
                 .HasDefaultValueSql("GETDATE()");
 
+            modelBuilder.Entity<Exam>()
+                .Property(l => l.CreatedAt)
+                .HasDefaultValueSql("GETDATE()");
 
+            modelBuilder.Entity<Exam>()
+                .Property(l => l.UpdatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<StudentExamResult>()
+                .Property(l => l.ExamDate)
+                .HasDefaultValueSql("GETDATE()");
 
 
 
@@ -76,6 +86,9 @@ namespace Estigo.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<lesson> lessons { get; set; }
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<StudentExamResult> StudentExamResults { get; set; }
+        public DbSet<BankOfQuestion> BankOfQuestions { get; set; }
 
     }
 }
