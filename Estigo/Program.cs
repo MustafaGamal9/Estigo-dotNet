@@ -17,6 +17,8 @@ namespace Estigo
             // ✅ 1️⃣ إضافة الخدمات إلى الـ Container
             builder.Services.AddControllers();
 
+
+
             // ✅ 2️⃣ تسجيل قاعدة البيانات
             builder.Services.AddDbContext<EstigoDbContext>(options =>
             {
@@ -65,7 +67,7 @@ namespace Estigo
                 app.UseSwaggerUI();
             }
 
-            // ... other code ...
+            
 
 
             app.UseHttpsRedirection();
