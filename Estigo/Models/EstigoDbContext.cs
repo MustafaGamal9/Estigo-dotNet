@@ -77,5 +77,7 @@ namespace Estigo.Models
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<lesson> lessons { get; set; }
 
+        public DbSet<Payment> Payments { get; set; }
+
     }
 }
