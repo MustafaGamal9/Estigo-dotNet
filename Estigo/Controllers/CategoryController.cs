@@ -1,7 +1,7 @@
 ﻿using Estigo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using Estigo.DTO;
 
 namespace Estigo.Controllers
 {
@@ -39,12 +39,17 @@ namespace Estigo.Controllers
 
         // POST - Categories
         [HttpPost]
-        public async Task<ActionResult<Category>> CreateCategory(Category category)
+        public async Task<ActionResult<Category>> CreateCategory(CategoryDTO categoryDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            var category = new Category 
+            {
+                Name = categoryDto.Name
+            };
 
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
@@ -54,9 +59,9 @@ namespace Estigo.Controllers
 
         // PUT - Categories/id
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory(int id, Category category)
+        public async Task<IActionResult> UpdateCategory(int id, CategoryDTO categoryDto) 
         {
-            if (id != category.Id)
+            if (id != categoryDto.Id) 
             {
                 return BadRequest();
             }
@@ -66,7 +71,14 @@ namespace Estigo.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Entry(category).State = EntityState.Modified;
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            category.Name = categoryDto.Name;
+            _context.Entry(category).State = EntityState.Modified; 
 
             try
             {

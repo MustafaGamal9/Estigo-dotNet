@@ -34,7 +34,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("studentsId");
 
-                    b.ToTable("CourseStudent");
+                    b.ToTable("CourseStudent", (string)null);
                 });
 
             modelBuilder.Entity("Estigo.Models.ApplicationUser", b =>
@@ -145,7 +145,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Estigo.Models.Chapter", b =>
@@ -181,7 +181,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Chapters");
+                    b.ToTable("Chapters", (string)null);
                 });
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
@@ -225,7 +225,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("Estigo.Models.Payment", b =>
@@ -256,7 +256,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>
@@ -304,7 +304,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("chapterId");
 
-                    b.ToTable("lessons");
+                    b.ToTable("lessons", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
