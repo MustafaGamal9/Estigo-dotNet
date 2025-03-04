@@ -28,6 +28,8 @@ namespace Estigo.Models
         public ICollection<Student> students { get; set; }
         public ICollection<Chapter> Chapters { get; set; }
 
+        public ICollection<Payment> Payments { get; set; }
+
 
     }
 }

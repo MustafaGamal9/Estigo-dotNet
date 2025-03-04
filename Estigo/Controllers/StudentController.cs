@@ -35,5 +35,7 @@ namespace Estigo.Controllers
             _mapper = mapper;
             _jwtService = jwtService;
         }
+
+
     }   
 }
