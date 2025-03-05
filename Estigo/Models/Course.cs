@@ -6,7 +6,7 @@ namespace Estigo.Models
     public class Course
     {
         [Key]
-        public int CourseId{ get; set; }
+        public int CourseId { get; set; }
         public string CourseTitle { get; set; }
         public string? Description { get; set; }
         public string? Logo { get; set; }
@@ -28,8 +28,6 @@ namespace Estigo.Models
         public ICollection<Student> students { get; set; }
         public ICollection<Chapter> Chapters { get; set; }
 
-        public ICollection<Payment> Payments { get; set; }
-
-
+        public ICollection<Payment> Payments { get; set; } 
     }
 }

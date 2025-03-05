@@ -9,7 +9,7 @@ namespace Estigo.Models
         public int Id { get; set; }
         public string ExamTitle { get; set; }
         public string ExamDescription { get; set; }
-        public int Grade { get; set; }
+        public string Grade { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; }

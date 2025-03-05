@@ -18,6 +18,19 @@ namespace Estigo
             builder.Services.AddControllers();
 
 
+            
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    
+                    policy.AllowAnyOrigin() 
+                           .AllowAnyHeader() 
+                           .AllowAnyMethod(); 
+                });
+            });
+
+
 
             // ✅ 2️⃣ تسجيل قاعدة البيانات
             builder.Services.AddDbContext<EstigoDbContext>(options =>
@@ -73,6 +86,8 @@ namespace Estigo
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthentication(); // ✅ تشغيل المصادقة أولًا
             app.UseAuthorization();  // ✅ ثم التصاريح
