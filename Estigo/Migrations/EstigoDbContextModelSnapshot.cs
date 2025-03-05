@@ -22,19 +22,19 @@ namespace Estigo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CourseStudent", b =>
+            modelBuilder.Entity("BankOfQuestionExam", b =>
                 {
-                    b.Property<int>("CoursesCourseId")
+                    b.Property<int>("ExamsId")
                         .HasColumnType("int");
 
-                    b.Property<string>("studentsId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("QuestionsId")
+                        .HasColumnType("int");
 
-                    b.HasKey("CoursesCourseId", "studentsId");
+                    b.HasKey("ExamsId", "QuestionsId");
 
-                    b.HasIndex("studentsId");
+                    b.HasIndex("QuestionsId");
 
-                    b.ToTable("CourseStudent");
+                    b.ToTable("BankOfQuestionExam");
                 });
 
             modelBuilder.Entity("Estigo.Models.ApplicationUser", b =>
@@ -178,7 +178,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Estigo.Models.Chapter", b =>
@@ -214,7 +214,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Chapters", (string)null);
+                    b.ToTable("Chapters");
                 });
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
@@ -258,38 +258,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Courses", (string)null);
-                });
-
-            modelBuilder.Entity("Estigo.Models.Payment", b =>
-                {
-                    b.Property<int>("PaymentId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PaymentMethod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("PurchaseDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StudentId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("PaymentId");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("Payments", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Estigo.Models.Exam", b =>
@@ -332,9 +301,41 @@ namespace Estigo.Migrations
 
                     b.HasIndex("courseId");
 
-                    b.HasIndex("lessonId");
+                    b.HasIndex("lessonId")
+                        .IsUnique();
 
                     b.ToTable("Exams");
+                });
+
+            modelBuilder.Entity("Estigo.Models.Payment", b =>
+                {
+                    b.Property<int>("PaymentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PurchaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StudentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("PaymentId");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
@@ -390,6 +391,9 @@ namespace Estigo.Migrations
                     b.Property<int>("chapterId")
                         .HasColumnType("int");
 
+                    b.Property<int>("examId")
+                        .HasColumnType("int");
+
                     b.Property<string>("lessonContent")
                         .IsRequired()
                         .HasMaxLength(250)
@@ -414,7 +418,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("chapterId");
 
-                    b.ToTable("lessons", (string)null);
+                    b.ToTable("lessons");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -626,22 +630,23 @@ namespace Estigo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("image")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.HasDiscriminator().HasValue("Teacher");
                 });
 
-            modelBuilder.Entity("CourseStudent", b =>
+            modelBuilder.Entity("BankOfQuestionExam", b =>
                 {
-                    b.HasOne("Estigo.Models.Course", null)
+                    b.HasOne("Estigo.Models.Exam", null)
                         .WithMany()
-                        .HasForeignKey("CoursesCourseId")
+                        .HasForeignKey("ExamsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Estigo.Models.Student", null)
+                    b.HasOne("Estigo.Models.BankOfQuestion", null)
                         .WithMany()
-                        .HasForeignKey("studentsId")
+                        .HasForeignKey("QuestionsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -666,6 +671,63 @@ namespace Estigo.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Estigo.Models.Exam", b =>
+                {
+                    b.HasOne("Estigo.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("courseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Estigo.Models.lesson", "Lesson")
+                        .WithOne("Exam")
+                        .HasForeignKey("Estigo.Models.Exam", "lessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Lesson");
+                });
+
+            modelBuilder.Entity("Estigo.Models.Payment", b =>
+                {
+                    b.HasOne("Estigo.Models.Course", "Course")
+                        .WithMany("Payments")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Estigo.Models.Student", "Student")
+                        .WithMany("Payments")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
+                {
+                    b.HasOne("Estigo.Models.Exam", "Exam")
+                        .WithMany()
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Estigo.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Exam");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>
@@ -735,13 +797,13 @@ namespace Estigo.Migrations
                     b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Estigo.Models.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -764,6 +826,12 @@ namespace Estigo.Migrations
                     b.Navigation("Chapters");
 
                     b.Navigation("Payments");
+                });
+
+            modelBuilder.Entity("Estigo.Models.lesson", b =>
+                {
+                    b.Navigation("Exam")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Estigo.Models.Student", b =>

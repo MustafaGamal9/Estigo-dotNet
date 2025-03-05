@@ -22,6 +22,8 @@ namespace Estigo.Models
         // Navigation Properties
         public int chapterId { get; set; }
         public Chapter Chapter { get; set; }
+        public int examId { get; set; }
+        public Exam Exam { get; set; }
 
 
     }
