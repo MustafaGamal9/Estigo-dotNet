@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Estigo.Models
 {
@@ -8,7 +9,7 @@ namespace Estigo.Models
 
 
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning)); }
+       // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning)); }
         public EstigoDbContext(DbContextOptions<EstigoDbContext> options) : base(options)
         {
         }
@@ -25,9 +26,9 @@ namespace Estigo.Models
                 .HasValue<Teacher>("Teacher")
                 .HasValue<Parent>("Parent");
 
-            //modelBuilder.Entity<ApplicationUser>()
-            //    .Property(u => u.CreatedAt)
-            //    .HasDefaultValueSql("GETDATE()");
+           // modelBuilder.Entity<ApplicationUser>()
+           //     .Property(u => u.CreatedAt)
+           //     .HasDefaultValueSql("GETDATE()");
 
             modelBuilder.Entity<Course>()
                         .HasMany(c => c.Payments)
@@ -111,6 +112,15 @@ namespace Estigo.Models
             modelBuilder.Entity<StudentExamResult>()
                 .Property(l => l.ExamDate)
                 .HasDefaultValueSql("GETDATE()");
+
+
+
+            modelBuilder.Entity<Course>()
+                .HasOne(c => c.Teacher)      
+                .WithOne(t => t.Course)  
+                .HasForeignKey<Teacher>(t => t.CourseId) 
+                .OnDelete(DeleteBehavior.Restrict);
+
 
 
 

@@ -23,11 +23,20 @@ namespace Estigo.Models
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
+        [ForeignKey("Teacher")] 
+        public string? TeacherId { get; set; }
+
         // Navigation property
         public Category Category { get; set; }
         public ICollection<Student> students { get; set; }
         public ICollection<Chapter> Chapters { get; set; }
 
-        public ICollection<Payment> Payments { get; set; } 
+        public ICollection<Payment> Payments { get; set; }
+
+
+        public Teacher? Teacher { get; set; }
+
+
+
     }
 }

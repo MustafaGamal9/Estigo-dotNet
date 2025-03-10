@@ -2,6 +2,7 @@
 using Estigo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Estigo.Controllers
 {
@@ -134,5 +135,32 @@ namespace Estigo.Controllers
             context.SaveChanges();
             return Ok();
         }
+
+        [HttpGet("HomepageCourses")]
+        public async Task<IActionResult> GetPopularCourses()
+        {
+            
+            var courses = await context.Courses
+                .Include(c => c.Teacher) 
+                .Where(c => c.Available)
+                .Take(5) 
+                .ToListAsync();
+
+            if (courses == null || courses.Count == 0)
+            {
+                return Ok(new List<CourseHomeDTO>()); // Return empty list if no courses found
+            }
+
+            var popularCoursesDTOs = courses.Select(course => new CourseHomeDTO
+            {
+                CourseTitle = course.CourseTitle,
+                Logo = course.Logo, // Assuming Logo is already base64 or path, adjust if needed
+                TeacherName = course.Teacher?.Name // Get Teacher's name, using null conditional operator
+            }).ToList();
+
+            return Ok(popularCoursesDTOs);
+        }
     }
+
+
 }

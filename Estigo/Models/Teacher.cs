@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
 namespace Estigo.Models
 {
@@ -7,6 +8,13 @@ namespace Estigo.Models
         public string Subject { get; set; }
         public string? Notes { get; set; }
 
-        public byte[] image { get; set; }
+        public byte[]? image { get; set; }
+
+        // Foreign Key 
+        public int? CourseId { get; set; } 
+
+        // Navigation property 
+        public Course? Course { get; set; }
+
     }
 }
