@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    [Migration("20250305212622_init")]
-    partial class init
+    [Migration("20250311143939_update3")]
+    partial class update3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,7 +54,8 @@ namespace Estigo.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -88,15 +89,15 @@ namespace Estigo.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -106,7 +107,8 @@ namespace Estigo.Migrations
 
                     b.Property<DateTime?>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
@@ -587,10 +589,6 @@ namespace Estigo.Migrations
             modelBuilder.Entity("Estigo.Models.Admin", b =>
                 {
                     b.HasBaseType("Estigo.Models.ApplicationUser");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Admin");
                 });

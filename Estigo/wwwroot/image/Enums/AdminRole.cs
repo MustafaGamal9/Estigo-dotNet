@@ -1,4 +1,4 @@
-﻿namespace Estigo.Models.Enums
+﻿namespace Estigo.wwwroot.image.Enums
 {
     public enum AdminRole
     {

@@ -10,9 +10,9 @@ namespace Estigo.Models
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
-        [Phone]
-        public string Phone { get; set; }
+
         public string Gender { get; set; }
+        public string Role { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; }
 

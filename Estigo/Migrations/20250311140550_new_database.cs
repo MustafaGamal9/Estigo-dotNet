@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Estigo.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class new_database : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,10 +33,10 @@ namespace Estigo.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UserType = table.Column<string>(type: "nvarchar(21)", maxLength: 21, nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BirthDate = table.Column<DateOnly>(type: "date", nullable: true),
                     Track = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Level = table.Column<int>(type: "int", nullable: true),
@@ -268,13 +268,13 @@ namespace Estigo.Migrations
                         column: x => x.StudentId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_MyCourses_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseId",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -302,7 +302,7 @@ namespace Estigo.Migrations
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseId",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

@@ -4,6 +4,7 @@ using Estigo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    partial class EstigoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250311144449_update4")]
+    partial class update4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -250,9 +253,6 @@ namespace Estigo.Migrations
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
-
-                    b.Property<string>("TeacherId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
@@ -623,9 +623,6 @@ namespace Estigo.Migrations
                 {
                     b.HasBaseType("Estigo.Models.ApplicationUser");
 
-                    b.Property<int?>("CourseId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
@@ -634,11 +631,8 @@ namespace Estigo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("image")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
-
-                    b.HasIndex("CourseId")
-                        .IsUnique()
-                        .HasFilter("[CourseId] IS NOT NULL");
 
                     b.HasDiscriminator().HasValue("Teacher");
                 });
@@ -818,16 +812,6 @@ namespace Estigo.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("Estigo.Models.Teacher", b =>
-                {
-                    b.HasOne("Estigo.Models.Course", "Course")
-                        .WithOne("Teacher")
-                        .HasForeignKey("Estigo.Models.Teacher", "CourseId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Course");
-                });
-
             modelBuilder.Entity("Estigo.Models.Category", b =>
                 {
                     b.Navigation("Courses");
@@ -843,8 +827,6 @@ namespace Estigo.Migrations
                     b.Navigation("Chapters");
 
                     b.Navigation("Payments");
-
-                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>
