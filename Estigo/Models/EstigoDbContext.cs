@@ -118,7 +118,6 @@ namespace Estigo.Models
                 .HasDefaultValueSql("GETDATE()");
 
 
-<<<<<<< Updated upstream
             modelBuilder.Entity<Course>()
                 .HasOne(c => c.Teacher)      
                 .WithOne(t => t.Course)  
@@ -127,11 +126,7 @@ namespace Estigo.Models
 
 
 
-=======
-            modelBuilder.Entity<ApplicationUser>()
-                .Property(l => l.UpdatedAt)
-                .HasDefaultValueSql("GETDATE()");
->>>>>>> Stashed changes
+
 
             ////// 7. Teachers 
             //var biologyImageBytes = File.ReadAllBytes("wwwroot/image/Biology/biology-a2.jpg"); // Load image as byte array

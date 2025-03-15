@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -10,6 +11,22 @@ namespace Estigo.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "TeacherId",
+                table: "Courses",
+                type: "nvarchar(max)",
+                nullable: true);
+
+            migrationBuilder.AlterColumn<DateTime>(
+                name: "UpdatedAt",
+                table: "AspNetUsers",
+                type: "datetime2",
+                nullable: true,
+                oldClrType: typeof(DateTime),
+                oldType: "datetime2",
+                oldNullable: true,
+                oldDefaultValueSql: "GETDATE()");
+
             migrationBuilder.AddColumn<int>(
                 name: "CourseId",
                 table: "AspNetUsers",
@@ -44,8 +61,22 @@ namespace Estigo.Migrations
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
+                name: "TeacherId",
+                table: "Courses");
+
+            migrationBuilder.DropColumn(
                 name: "CourseId",
                 table: "AspNetUsers");
+
+            migrationBuilder.AlterColumn<DateTime>(
+                name: "UpdatedAt",
+                table: "AspNetUsers",
+                type: "datetime2",
+                nullable: true,
+                defaultValueSql: "GETDATE()",
+                oldClrType: typeof(DateTime),
+                oldType: "datetime2",
+                oldNullable: true);
         }
     }
 }
