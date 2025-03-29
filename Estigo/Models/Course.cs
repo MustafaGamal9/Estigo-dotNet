@@ -7,9 +7,10 @@ namespace Estigo.Models
     {
         [Key]
         public int CourseId { get; set; }
+        [Required]
         public string CourseTitle { get; set; }
         public string? Description { get; set; }
-        public string? Logo { get; set; }
+        public byte[]? Logo { get; set; }
         public int Price { get; set; }
         public bool Available { get; set; } = true;
 
@@ -28,10 +29,10 @@ namespace Estigo.Models
 
         // Navigation property
         public Category Category { get; set; }
-        public ICollection<Student> students { get; set; }
+        public virtual ICollection<Student> students { get; set; }
         public ICollection<Chapter> Chapters { get; set; }
 
-        public ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<Payment> Payments { get; set; }
 
 
         public Teacher? Teacher { get; set; }

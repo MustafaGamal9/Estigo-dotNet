@@ -4,6 +4,7 @@ using Estigo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    partial class EstigoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250329124607_teacheerID")]
+    partial class teacheerID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +37,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("QuestionsId");
 
-                    b.ToTable("BankOfQuestionExam", (string)null);
+                    b.ToTable("BankOfQuestionExam");
                 });
 
             modelBuilder.Entity("Estigo.Models.ApplicationUser", b =>
@@ -162,7 +165,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BankOfQuestions", (string)null);
+                    b.ToTable("BankOfQuestions");
                 });
 
             modelBuilder.Entity("Estigo.Models.Category", b =>
@@ -179,7 +182,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Estigo.Models.Chapter", b =>
@@ -215,7 +218,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Chapters", (string)null);
+                    b.ToTable("Chapters");
                 });
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
@@ -244,8 +247,8 @@ namespace Estigo.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("Logo")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Logo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
@@ -264,7 +267,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Estigo.Models.Exam", b =>
@@ -310,7 +313,7 @@ namespace Estigo.Migrations
                     b.HasIndex("lessonId")
                         .IsUnique();
 
-                    b.ToTable("Exams", (string)null);
+                    b.ToTable("Exams");
                 });
 
             modelBuilder.Entity("Estigo.Models.Payment", b =>
@@ -341,7 +344,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("Payments", (string)null);
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
@@ -373,7 +376,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("StudentExamResults", (string)null);
+                    b.ToTable("StudentExamResults");
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>
@@ -424,7 +427,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("chapterId");
 
-                    b.ToTable("lessons", (string)null);
+                    b.ToTable("lessons");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

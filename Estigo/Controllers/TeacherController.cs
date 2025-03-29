@@ -17,7 +17,7 @@ namespace Estigo.Controllers
         }
 
 
-        // our best instructors section
+        // Meet our instructors section
         [HttpGet("HomepageTeachers")]
         public async Task<IActionResult> GetHomepageTeachers()
         {
@@ -28,6 +28,7 @@ namespace Estigo.Controllers
                     Image = teacher.image != null ? Convert.ToBase64String(teacher.image) : null,
                     Subject = teacher.Subject
                 })
+                .Take(4)
                 .ToListAsync();
 
             if (teachers == null || teachers.Count == 0)

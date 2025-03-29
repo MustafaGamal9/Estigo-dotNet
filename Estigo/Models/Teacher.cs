@@ -11,10 +11,10 @@ namespace Estigo.Models
         public byte[]? image { get; set; }
 
         // Foreign Key 
-        public int? CourseId { get; set; } 
+        public int? CourseId { get; set; }
 
         // Navigation property 
-        public Course? Course { get; set; }
+        public virtual ICollection<Course> CoursesTaught { get; set; }
 
     }
 }

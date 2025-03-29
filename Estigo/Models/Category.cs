@@ -1,8 +1,12 @@
-﻿namespace Estigo.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Estigo.Models
 {
     public class Category
     {
+        [Key]
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
 
 

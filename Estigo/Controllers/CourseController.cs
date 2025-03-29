@@ -30,7 +30,8 @@ namespace Estigo.Controllers
                     Available = c.Available,
                     CreatedAt = c.CreatedAt,
                     UpdatedAt = c.UpdatedAt,
-                    catogryid = c.CategoryId
+                    catogryid = c.CategoryId,
+                    TeacherId = c.TeacherId
                 }).ToList();
 
             return Ok(courses);
@@ -39,7 +40,7 @@ namespace Estigo.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetCourseById(int id)
         {
-            var course = context.Courses.Select(c=> new courseDTO
+            var course = context.Courses.Select(c => new courseDTO
             {
                 CourseId = c.CourseId,
                 CourseTitle = c.CourseTitle,
@@ -49,7 +50,8 @@ namespace Estigo.Controllers
                 Available = c.Available,
                 CreatedAt = c.CreatedAt,
                 UpdatedAt = c.UpdatedAt,
-                catogryid = c.CategoryId
+                catogryid = c.CategoryId,
+                TeacherId = c.TeacherId
             }).FirstOrDefault(c => c.CourseId == id);
 
             if (course == null)
@@ -74,7 +76,8 @@ namespace Estigo.Controllers
                 Available = c.Available,
                 CreatedAt = c.CreatedAt,
                 UpdatedAt = c.UpdatedAt,
-                catogryid = c.CategoryId
+                catogryid = c.CategoryId,
+                TeacherId = c.TeacherId
             }).FirstOrDefault(c => c.CourseTitle == name);
 
             if (course == null)
@@ -97,7 +100,8 @@ namespace Estigo.Controllers
                 Logo = courseDto.Logo,
                 Price = courseDto.Price,
                 Available = courseDto.Available,
-                CategoryId = courseDto.catogryid
+                CategoryId = courseDto.catogryid,
+                TeacherId = courseDto.TeacherId
             };
 
             context.Courses.Add(course);
@@ -139,11 +143,10 @@ namespace Estigo.Controllers
         [HttpGet("HomepageCourses")]
         public async Task<IActionResult> GetPopularCourses()
         {
-            
             var courses = await context.Courses
-                .Include(c => c.Teacher) 
+                .Include(c => c.Teacher)
                 .Where(c => c.Available)
-                .Take(5) 
+                .Take(4)
                 .ToListAsync();
 
             if (courses == null || courses.Count == 0)
@@ -153,9 +156,10 @@ namespace Estigo.Controllers
 
             var popularCoursesDTOs = courses.Select(course => new CourseHomeDTO
             {
+                CourseId = course.CourseId,
                 CourseTitle = course.CourseTitle,
-                Logo = course.Logo, // Assuming Logo is already base64 or path, adjust if needed
-                TeacherName = course.Teacher?.Name // Get Teacher's name, using null conditional operator
+                ImageBase64 = course.Logo != null ? Convert.ToBase64String(course.Logo) : null,
+                TeacherName = course.Teacher?.Name
             }).ToList();
 
             return Ok(popularCoursesDTOs);

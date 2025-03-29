@@ -1,15 +1,18 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using System.IO;
 
 namespace Estigo.Models
 {
     public class EstigoDbContext : IdentityDbContext<ApplicationUser>
     {
+        //// uncomment to test the seed data
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+        //}
 
-
-
-       // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning)); }
         public EstigoDbContext(DbContextOptions<EstigoDbContext> options) : base(options)
         {
         }
@@ -119,30 +122,54 @@ namespace Estigo.Models
 
 
             modelBuilder.Entity<Course>()
-                .HasOne(c => c.Teacher)      
-                .WithOne(t => t.Course)  
-                .HasForeignKey<Teacher>(t => t.CourseId) 
+                .HasOne(c => c.Teacher)
+                .WithMany(t => t.CoursesTaught)
+                .HasForeignKey(c => c.TeacherId)  
                 .OnDelete(DeleteBehavior.Restrict);
 
+            /* Home Page Data ( most popular courses | meet our instructors ) 
+
+            // Seed Categories
+            modelBuilder.Entity<Category>().HasData(
+                new Category { Id = 1, Name = "Mathematics" },
+                new Category { Id = 2, Name = "Physics" },
+                new Category { Id = 3, Name = "Biology" },
+                new Category { Id = 4, Name = "Chemistry" },
+                new Category { Id = 5, Name = "English" },
+                new Category { Id = 6, Name = "History" },
+                new Category { Id = 7, Name = "Geography" },
+                new Category { Id = 8, Name = "Computer Science" },
+                new Category { Id = 9, Name = "Art" },
+                new Category { Id = 10, Name = "Music" }
+            );
+
+            // Seed Teachers
+            var biologyImageBytes = File.ReadAllBytes("wwwroot/image/Biology/biology-a2.jpg"); // Load image as byte array
+
+            modelBuilder.Entity<Teacher>().HasData(
+                new Teacher { Id = "teacher1-guid", Name = "Mustafa", Email = "teacher1@estigo.com", NormalizedEmail = "TEACHER1@ESTIGO.COM", UserName = "teacher1@estigo.com", NormalizedUserName = "TEACHER1@ESTIGO.COM", Gender = "Male", Subject = "Mathematics", Notes = "Expert in Algebra", Role = "Teacher", image = biologyImageBytes },
+                new Teacher { Id = "teacher2-guid", Name = "Mahmoud", Email = "teacher2@estigo.com", NormalizedEmail = "TEACHER2@ESTIGO.COM", UserName = "teacher2@estigo.com", NormalizedUserName = "TEACHER2@ESTIGO.COM", Gender = "Female", Subject = "Physics", Notes = "Specialist in Mechanics", Role = "Teacher", image = biologyImageBytes },
+                new Teacher { Id = "teacher3-guid", Name = "Ahmed", Email = "teacher3@estigo.com", NormalizedEmail = "TEACHER3@ESTIGO.COM", UserName = "teacher3@estigo.com", NormalizedUserName = "TEACHER3@ESTIGO.COM", Gender = "Male", Subject = "Biology", Notes = "Experienced in Cell Biology", Role = "Teacher", image = biologyImageBytes },
+                new Teacher { Id = "teacher4-guid", Name = "Mohamed", Email = "teacher4@estigo.com", NormalizedEmail = "TEACHER4@ESTIGO.COM", UserName = "teacher4@estigo.com", NormalizedUserName = "TEACHER4@ESTIGO.COM", Gender = "Female", Subject = "Chemistry", Notes = "Passionate about Organic Chemistry", Role = "Teacher", image = biologyImageBytes },
+                new Teacher { Id = "teacher5-guid", Name = "Kareem", Email = "teacher5@estigo.com", NormalizedEmail = "TEACHER5@ESTIGO.COM", UserName = "teacher5@estigo.com", NormalizedUserName = "TEACHER5@ESTIGO.COM", Gender = "Male", Subject = "English", Notes = "Loves English Literature", Role = "Teacher", image = biologyImageBytes }
+            );
+
+            var seedDate = new DateTime(2024, 3, 29); // Fixed date for seeding
 
 
 
+            // Seed Courses
+            modelBuilder.Entity<Course>().HasData(
+                new Course { CourseId = 1, CourseTitle = "Advanced Mathematics", Description = "Comprehensive course covering advanced mathematical concepts", Price = 199, Available = true, CategoryId = 1, TeacherId = "teacher1-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+                new Course { CourseId = 2, CourseTitle = "Physics Fundamentals", Description = "Learn the basics of physics and mechanics", Price = 149, Available = true, CategoryId = 2, TeacherId = "teacher2-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+                new Course { CourseId = 3, CourseTitle = "Biology Essentials", Description = "Understanding life sciences and cellular biology", Price = 179, Available = true, CategoryId = 3, TeacherId = "teacher3-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+                new Course { CourseId = 4, CourseTitle = "Chemistry Basics", Description = "Introduction to chemical principles and reactions", Price = 159, Available = true, CategoryId = 4, TeacherId = "teacher4-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+                new Course { CourseId = 5, CourseTitle = "English Literature", Description = "Explore classic and modern English literature", Price = 129, Available = true, CategoryId = 5, TeacherId = "teacher5-guid", CreatedAt = seedDate, Logo = biologyImageBytes }
+            );
 
-            ////// 7. Teachers 
-            //var biologyImageBytes = File.ReadAllBytes("wwwroot/image/Biology/biology-a2.jpg"); // Load image as byte array
+            */
 
-            //modelBuilder.Entity<Teacher>().HasData(
-            //    new Teacher { Id = "teacher1-guid", Name = "Mustafa", Email = "teacher1@estigo.com", NormalizedEmail = "TEACHER1@ESTIGO.COM", UserName = "teacher1@estigo.com", NormalizedUserName = "TEACHER1@ESTIGO.COM", Phone = "123-111-1212", Gender = "Male", Subject = "Mathematics", Notes = "Expert in Algebra", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher2-guid", Name = "Mahmoud", Email = "teacher2@estigo.com", NormalizedEmail = "TEACHER2@ESTIGO.COM", UserName = "teacher2@estigo.com", NormalizedUserName = "TEACHER2@ESTIGO.COM", Phone = "123-222-2323", Gender = "Female", Subject = "Physics", Notes = "Specialist in Mechanics", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher3-guid", Name = "Ahmed", Email = "teacher3@estigo.com", NormalizedEmail = "TEACHER3@ESTIGO.COM", UserName = "teacher3@estigo.com", NormalizedUserName = "TEACHER3@ESTIGO.COM", Phone = "123-333-3434", Gender = "Male", Subject = "Biology", Notes = "Experienced in Cell Biology", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher4-guid", Name = "Mohamed", Email = "teacher4@estigo.com", NormalizedEmail = "TEACHER4@ESTIGO.COM", UserName = "teacher4@estigo.com", NormalizedUserName = "TEACHER4@ESTIGO.COM", Phone = "123-444-4545", Gender = "Female", Subject = "Chemistry", Notes = "Passionate about Organic Chemistry", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher5-guid", Name = "kareem", Email = "teacher5@estigo.com", NormalizedEmail = "TEACHER5@ESTIGO.COM", UserName = "teacher5@estigo.com", NormalizedUserName = "TEACHER5@ESTIGO.COM", Phone = "123-555-5656", Gender = "Male", Subject = "English", Notes = "Loves English Literature", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher6-guid", Name = "Teacher Six", Email = "teacher6@estigo.com", NormalizedEmail = "TEACHER6@ESTIGO.COM", UserName = "teacher6@estigo.com", NormalizedUserName = "TEACHER6@ESTIGO.COM", Phone = "123-666-6767", Gender = "Female", Subject = "History", Notes = "History Enthusiast", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher7-guid", Name = "Teacher Seven", Email = "teacher7@estigo.com", NormalizedEmail = "TEACHER7@ESTIGO.COM", UserName = "teacher7@estigo.com", NormalizedUserName = "TEACHER7@ESTIGO.COM", Phone = "123-777-7878", Gender = "Male", Subject = "Geography", Notes = "Geography Expert", image = biologyImageBytes },
-            //     new Teacher { Id = "teacher8-guid", Name = "Teacher Eight", Email = "teacher8@estigo.com", NormalizedEmail = "TEACHER8@ESTIGO.COM", UserName = "teacher8@estigo.com", NormalizedUserName = "TEACHER8@ESTIGO.COM", Phone = "123-888-8989", Gender = "Female", Subject = "Computer Science", Notes = "Coding Guru", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher9-guid", Name = "Teacher Nine", Email = "teacher9@estigo.com", NormalizedEmail = "TEACHER9@ESTIGO.COM", UserName = "teacher9@estigo.com", NormalizedUserName = "TEACHER9@ESTIGO.COM", Phone = "123-999-9090", Gender = "Male", Subject = "Art", Notes = "Artistic Soul", image = biologyImageBytes },
-            //    new Teacher { Id = "teacher10-guid", Name = "Teacher Ten", Email = "teacher10@estigo.com", NormalizedEmail = "TEACHER10@ESTIGO.COM", UserName = "teacher10@estigo.com", NormalizedUserName = "TEACHER10@ESTIGO.COM", Phone = "123-000-0101", Gender = "Female", Subject = "Music", Notes = "Music Lover", image = biologyImageBytes }
-            //);
+
 
         }
 
@@ -161,3 +188,4 @@ namespace Estigo.Models
 
     }
 }
+

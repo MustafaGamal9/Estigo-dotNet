@@ -9,7 +9,7 @@ namespace Estigo.DTO
         public int CourseId { get; set; }
         public string CourseTitle { get; set; }
         public string? Description { get; set; }
-        public string? Logo { get; set; }
+        public byte[]? Logo { get; set; }
         public int Price { get; set; }
         public bool Available { get; set; } = true;
 
@@ -19,5 +19,6 @@ namespace Estigo.DTO
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? UpdatedAt { get; set; }
         public int catogryid { get; set; }
+        public string? TeacherId { get; set; }
     }
 }
