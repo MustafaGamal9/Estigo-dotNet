@@ -164,6 +164,66 @@ namespace Estigo.Controllers
 
             return Ok(popularCoursesDTOs);
         }
+
+        [HttpPut("{id:int}/logo")]
+        public async Task<IActionResult> UpdateCourseLogo(int id, IFormFile logo)
+        {
+            try
+            {
+                Console.WriteLine($"Received request to update logo for course {id}");
+                Console.WriteLine($"File name: {logo?.FileName}");
+                Console.WriteLine($"File size: {logo?.Length} bytes");
+
+                if (logo == null || logo.Length == 0)
+                {
+                    Console.WriteLine("No file was uploaded");
+                    return BadRequest(new { message = "No file uploaded" });
+                }
+
+                // Validate file type
+                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+                var fileExtension = Path.GetExtension(logo.FileName).ToLowerInvariant();
+                Console.WriteLine($"File extension: {fileExtension}");
+                
+                if (!allowedExtensions.Contains(fileExtension))
+                {
+                    Console.WriteLine($"Invalid file type: {fileExtension}");
+                    return BadRequest(new { message = "Invalid file type. Only JPG, JPEG, PNG and GIF files are allowed." });
+                }
+
+                // Validate file size (max 5MB)
+                if (logo.Length > 5 * 1024 * 1024)
+                {
+                    Console.WriteLine($"File too large: {logo.Length} bytes");
+                    return BadRequest(new { message = "File size too large. Maximum size is 5MB." });
+                }
+
+                var course = await context.Courses.FindAsync(id);
+                if (course == null)
+                {
+                    Console.WriteLine($"Course not found: {id}");
+                    return NotFound(new { message = "Course not found" });
+                }
+
+                Console.WriteLine("Processing file upload...");
+                using (var memoryStream = new MemoryStream())
+                {
+                    await logo.CopyToAsync(memoryStream);
+                    course.Logo = memoryStream.ToArray();
+                    Console.WriteLine($"File processed successfully. Size: {course.Logo.Length} bytes");
+                }
+
+                await context.SaveChangesAsync();
+                Console.WriteLine("Changes saved to database");
+                return Ok(new { message = "Course logo updated successfully" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                Console.WriteLine($"Stack trace: {ex.StackTrace}");
+                return StatusCode(500, new { message = "An error occurred while updating the course logo", error = ex.Message });
+            }
+        }
     }
 
 
