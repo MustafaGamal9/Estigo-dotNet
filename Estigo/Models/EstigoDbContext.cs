@@ -157,6 +157,14 @@ namespace Estigo.Models
             var seedDate = new DateTime(2024, 3, 29); // Fixed date for seeding
 
 
+<<<<<<< Updated upstream
+=======
+
+            modelBuilder.Entity<ApplicationUser>()
+                .Property(l => l.UpdatedAt)
+                .HasDefaultValueSql("GETDATE()");
+
+>>>>>>> Stashed changes
 
             // Seed Courses
             modelBuilder.Entity<Course>().HasData(
