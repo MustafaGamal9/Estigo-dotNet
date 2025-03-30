@@ -7,11 +7,11 @@ namespace Estigo.Models
 {
     public class EstigoDbContext : IdentityDbContext<ApplicationUser>
     {
-        //// uncomment to test the seed data
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
-        //}
+       /// uncomment to test the seed data
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+        }
 
         public EstigoDbContext(DbContextOptions<EstigoDbContext> options) : base(options)
         {
@@ -127,7 +127,7 @@ namespace Estigo.Models
                 .HasForeignKey(c => c.TeacherId)  
                 .OnDelete(DeleteBehavior.Restrict);
 
-            /* Home Page Data ( most popular courses | meet our instructors ) 
+          //   Home Page Data ( most popular courses | meet our instructors ) 
 
             // Seed Categories
             modelBuilder.Entity<Category>().HasData(
@@ -154,28 +154,23 @@ namespace Estigo.Models
                 new Teacher { Id = "teacher5-guid", Name = "Kareem", Email = "teacher5@estigo.com", NormalizedEmail = "TEACHER5@ESTIGO.COM", UserName = "teacher5@estigo.com", NormalizedUserName = "TEACHER5@ESTIGO.COM", Gender = "Male", Subject = "English", Notes = "Loves English Literature", Role = "Teacher", image = biologyImageBytes }
             );
 
-            var seedDate = new DateTime(2024, 3, 29); // Fixed date for seeding
+            //var seedDate = new DateTime(2024, 3, 29); // Fixed date for seeding
 
 
-<<<<<<< Updated upstream
-=======
+            //modelBuilder.Entity<ApplicationUser>()
+            //    .Property(l => l.UpdatedAt)
+            //    .HasDefaultValueSql("GETDATE()");
 
-            modelBuilder.Entity<ApplicationUser>()
-                .Property(l => l.UpdatedAt)
-                .HasDefaultValueSql("GETDATE()");
+            //// Seed Courses
+            //modelBuilder.Entity<Course>().HasData(
+            //    new Course { CourseId = 1, CourseTitle = "Advanced Mathematics", Description = "Comprehensive course covering advanced mathematical concepts", Price = 199, Available = true, CategoryId = 1, TeacherId = "teacher1-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+            //    new Course { CourseId = 2, CourseTitle = "Physics Fundamentals", Description = "Learn the basics of physics and mechanics", Price = 149, Available = true, CategoryId = 2, TeacherId = "teacher2-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+            //    new Course { CourseId = 3, CourseTitle = "Biology Essentials", Description = "Understanding life sciences and cellular biology", Price = 179, Available = true, CategoryId = 3, TeacherId = "teacher3-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+            //    new Course { CourseId = 4, CourseTitle = "Chemistry Basics", Description = "Introduction to chemical principles and reactions", Price = 159, Available = true, CategoryId = 4, TeacherId = "teacher4-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
+            //    new Course { CourseId = 5, CourseTitle = "English Literature", Description = "Explore classic and modern English literature", Price = 129, Available = true, CategoryId = 5, TeacherId = "teacher5-guid", CreatedAt = seedDate, Logo = biologyImageBytes }
+            //);
 
->>>>>>> Stashed changes
-
-            // Seed Courses
-            modelBuilder.Entity<Course>().HasData(
-                new Course { CourseId = 1, CourseTitle = "Advanced Mathematics", Description = "Comprehensive course covering advanced mathematical concepts", Price = 199, Available = true, CategoryId = 1, TeacherId = "teacher1-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
-                new Course { CourseId = 2, CourseTitle = "Physics Fundamentals", Description = "Learn the basics of physics and mechanics", Price = 149, Available = true, CategoryId = 2, TeacherId = "teacher2-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
-                new Course { CourseId = 3, CourseTitle = "Biology Essentials", Description = "Understanding life sciences and cellular biology", Price = 179, Available = true, CategoryId = 3, TeacherId = "teacher3-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
-                new Course { CourseId = 4, CourseTitle = "Chemistry Basics", Description = "Introduction to chemical principles and reactions", Price = 159, Available = true, CategoryId = 4, TeacherId = "teacher4-guid", CreatedAt = seedDate, Logo = biologyImageBytes },
-                new Course { CourseId = 5, CourseTitle = "English Literature", Description = "Explore classic and modern English literature", Price = 129, Available = true, CategoryId = 5, TeacherId = "teacher5-guid", CreatedAt = seedDate, Logo = biologyImageBytes }
-            );
-
-            */
+            
 
 
 

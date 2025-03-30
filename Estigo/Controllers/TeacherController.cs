@@ -38,5 +38,22 @@ namespace Estigo.Controllers
 
             return Ok(teachers);
         }
+
+        [HttpGet]
+        public IActionResult GetAllCourses()
+        {
+            var teachers = _context.Teachers
+                .Select(t => new
+                {
+                    t.Id,
+                    t.Name,
+                    t.Subject,
+                    ImageUrl = Url.Action("GetTeacherImage", "Teacher", new { id = t.Id }, Request.Scheme)
+                })
+                .ToList();
+
+            return Ok(teachers);
+        }
+
     }
 }

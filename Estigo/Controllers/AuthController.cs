@@ -82,28 +82,6 @@ namespace Estigo.Controllers
         [HttpPost("register/teacher")]
         public async Task<IActionResult> RegisterTeacher([FromForm] TeacherRegisterDTO model)
         {
-            if (model.image == null || model.image.Length == 0)
-            {
-                return BadRequest(new { message = "Image is required" });
-            }
-
-            // Save the image in wwwroot/image/
-            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "image");
-            var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.image.FileName); // Get the file extension
-            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await model.image.CopyToAsync(stream); // Copy the file stream
-            }
-
-            byte[] imageBytes;
-            using (var memoryStream = new MemoryStream())
-            {
-                await model.image.CopyToAsync(memoryStream);
-                imageBytes = memoryStream.ToArray();
-            }
-
             var user = new Teacher
             {
                 Name = model.Name,
@@ -112,8 +90,7 @@ namespace Estigo.Controllers
                 Email = model.Email,
                 Role = Roles.Teacher,
                 Subject = model.Subject,
-                Notes = model.Notes,
-                image = imageBytes // Save the image as byte array
+                Notes = model.Notes
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -126,6 +103,7 @@ namespace Estigo.Controllers
 
             return BadRequest(result.Errors);
         }
+
 
 
         [HttpPost("register/parent")]
