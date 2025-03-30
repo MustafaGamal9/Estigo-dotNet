@@ -139,7 +139,7 @@ namespace Estigo.Controllers
             context.SaveChanges();
             return Ok();
         }
-
+        // Our popular courses section
         [HttpGet("HomepageCourses")]
         public async Task<IActionResult> GetPopularCourses()
         {
@@ -184,7 +184,7 @@ namespace Estigo.Controllers
                 var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
                 var fileExtension = Path.GetExtension(logo.FileName).ToLowerInvariant();
                 Console.WriteLine($"File extension: {fileExtension}");
-                
+
                 if (!allowedExtensions.Contains(fileExtension))
                 {
                     Console.WriteLine($"Invalid file type: {fileExtension}");
@@ -224,7 +224,72 @@ namespace Estigo.Controllers
                 return StatusCode(500, new { message = "An error occurred while updating the course logo", error = ex.Message });
             }
         }
+
+    [HttpGet("category/{categoryId}")]
+    public async Task<ActionResult<IEnumerable<Course>>> GetCoursesByCategoryVm(int categoryId)
+    {
+        try
+        {
+            var courses = await context.Courses
+                .Where(c => c.CategoryId == categoryId)
+                .ToListAsync();
+            var courseVms = courses.Select(c => new CoursePageDTO
+            {
+                CourseId = c.CourseId,
+                CourseTitle = c.CourseTitle,
+                ImageBase64 = c.Logo != null ? Convert.ToBase64String(c.Logo) : null,
+                price = c.Price,
+            }).ToList();
+
+            if (courses == null || !courses.Any())
+            {
+                return NotFound(new { message = "No courses found for this category" });
+            }
+
+            return Ok(courseVms);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error occurred: {ex.Message}");
+            Console.WriteLine($"Stack trace: {ex.StackTrace}");
+            return StatusCode(500, new { message = "An error occurred while retrieving courses", error = ex.Message });
+        }
     }
 
+    [HttpGet("category/limited/{categoryId}")]
+    public async Task<ActionResult<IEnumerable<CoursePageDTO>>> GetCoursesByCategory(int categoryId)
+    {
+        try
+        {
+            var courses = await context.Courses
+                .Where(c => c.CategoryId == categoryId)
+                .Take(4)
+                .ToListAsync();
+
+            if (courses == null || !courses.Any())
+            {
+                return NotFound(new { message = "No courses found for this category" });
+            }
+
+            var courseVms = courses.Select(c => new CoursePageDTO
+            {
+                CourseId = c.CourseId,
+                CourseTitle = c.CourseTitle,
+                ImageBase64 = c.Logo != null ? Convert.ToBase64String(c.Logo) : null,
+                price = c.Price,
+            }).ToList();
+
+            return Ok(courseVms);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error occurred: {ex.Message}");
+            Console.WriteLine($"Stack trace: {ex.StackTrace}");
+            return StatusCode(500, new { message = "An error occurred while retrieving courses", error = ex.Message });
+        }
+    }
+
+
+    }
 
 }
