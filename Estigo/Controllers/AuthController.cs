@@ -147,11 +147,9 @@ namespace Estigo.Controllers
             var userData = new
             {
                 user.Id,
-                user.UserName,
                 user.Email,
-                user.PhoneNumber,
-                user.Gender,
-                user.Name
+                user.Name,
+                user.Role
                 // أضف أي بيانات إضافية تحتاجها
             };
 
