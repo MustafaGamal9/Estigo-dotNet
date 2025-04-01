@@ -17,19 +17,6 @@ namespace Estigo.Controllers
             _context = context;
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetAllTeachers()
-        //{
-        //    var teachers = await _context.Teachers
-        //        .Select(t => new { 
-        //            Id = t.Id,
-        //            Name = t.Name,
-        //            Subject = t.Subject
-        //        })
-        //        .ToListAsync();
-
-        //    return Ok(teachers);
-        //}
 
         // Meet our instructors section
         [HttpGet("HomepageTeachers")]
