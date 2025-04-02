@@ -152,7 +152,7 @@ namespace Estigo.Controllers
             {
                 user.Id,
                 user.Email,
-                user.UserName,
+                user.Name,
                 user.Role,  // تأكد أن `Role` متاحة في `ApplicationUser`
                 Token = token // إرجاع التوكن مع البيانات
             };
