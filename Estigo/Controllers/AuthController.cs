@@ -129,6 +129,7 @@ namespace Estigo.Controllers
             return BadRequest(result.Errors);
         }
 
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDTO model)
         {
@@ -143,28 +144,30 @@ namespace Estigo.Controllers
             if (!result.Succeeded)
                 return Unauthorized(new { message = "Invalid email or password" });
 
-            // ✅ جلب بيانات المستخدم من قاعدة البيانات
+            // ✅ توليد التوكن
+            var token = await GenerateJwtToken(user);
+
+            // ✅ جلب بيانات المستخدم وإرجاع التوكن
             var userData = new
             {
                 user.Id,
                 user.Email,
-                user.Name,
-                user.Role
-                // أضف أي بيانات إضافية تحتاجها
+                user.UserName,
+                user.Role,  // تأكد أن `Role` متاحة في `ApplicationUser`
+                Token = token // إرجاع التوكن مع البيانات
             };
 
             return Ok(userData);
         }
 
-
         private async Task<string> GenerateJwtToken(ApplicationUser user)
         {
             var claims = new List<Claim>
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(ClaimTypes.Name, user.UserName)
-            };
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+        new Claim(ClaimTypes.Name, user.UserName)
+    };
 
             var roles = await _userManager.GetRolesAsync(user);
             claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
@@ -182,5 +185,6 @@ namespace Estigo.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
     }
 }
