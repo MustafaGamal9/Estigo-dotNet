@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -78,18 +79,28 @@ namespace Estigo
 
             builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 
-            // ✅ 6️⃣ إضافة Swagger
+            // ✅ 6️⃣ إضافة خدمات Swagger 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Estigo API",
+                    Version = "v1",
+                    Description = "API documentation for Estigo"
+                });
+            });
 
             var app = builder.Build();
 
-            // ✅ 7️⃣ ضبط الـ Middleware
-            if (app.Environment.IsDevelopment())
+        
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Estigo API V1");
+
+            });
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

@@ -19,10 +19,6 @@ namespace Estigo.Models
 
         // navigation property
 
-        [ForeignKey("Course")]
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
-
-        public ICollection<lesson> lessons { get; set; }
+ 
     }
 }

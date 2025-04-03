@@ -20,6 +20,6 @@ namespace Estigo.DTO
 
 
         // Navigation Properties
-        public int chapterId { get; set; }
+        public int courseId { get; set; }
     }
 }

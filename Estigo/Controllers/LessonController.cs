@@ -19,22 +19,15 @@ namespace Estigo.Controllers
         }
 
         // ... other code ...
-
-        [HttpGet("GetChaptersByLessonName/{LessonName}")]
-        public async Task<IActionResult> GetChaptersByCourseName(string lessonName)
+        [HttpGet("GetCourseByLessonName/{lessonName}")]
+        public async Task<IActionResult> GetCourseByLessonName(string lessonName)
         {
             var course = await context.lessons
                 .Where(c => c.lessonTitle == lessonName)
+                .Include(c => c.Course)  
                 .Select(c => new
                 {
-                    c.lessonId,
-                    c.lessonTitle,
-                    Chapters = c.Chapter.lessons.Select(ch => new
-                    {
-                        ch.lessonId,
-                        ch.lessonTitle,
-                        ch.lessonDescription
-                    }).ToList()
+                    CourseName = c.Course.CourseTitle
                 })
                 .FirstOrDefaultAsync();
 
@@ -43,8 +36,9 @@ namespace Estigo.Controllers
                 return NotFound(new { message = "Course not found" });
             }
 
-            return Ok(course.Chapters);
+            return Ok(course.CourseName);
         }
+
 
         // GET: api/Lesson/{id}
         [HttpGet("{id}")]
@@ -70,7 +64,7 @@ namespace Estigo.Controllers
                 lessonDescription = lessonDto.lessonDescription,
                 lessonContent = lessonDto.lessonContent,
                 lessonVideo = lessonDto.lessonVideo,
-                chapterId = lessonDto.chapterId,
+                courseId = lessonDto.courseId,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -94,7 +88,7 @@ namespace Estigo.Controllers
             existingLesson.lessonDescription = lessonDTO.lessonDescription;
             existingLesson.lessonContent = lessonDTO.lessonContent;
             existingLesson.lessonVideo = lessonDTO.lessonVideo;
-            existingLesson.chapterId = lessonDTO.chapterId;
+            existingLesson.courseId = lessonDTO.courseId;
             existingLesson.UpdatedAt = DateTime.UtcNow;
 
             context.lessons.Update(existingLesson);
@@ -114,6 +108,24 @@ namespace Estigo.Controllers
             context.lessons.Remove(lesson);
             await context.SaveChangesAsync();
             return NoContent();
+        }
+
+        [HttpGet("GetCourseLessons")]
+        public async Task<ActionResult<IEnumerable<LessonDTO>>> GetCourseLessons(int courseId)
+        {
+            var lessons = await context.lessons
+                .Where(c => c.courseId == courseId)
+                .Select(c => new LessonDTO
+                {
+                    lessonId = c.lessonId,
+                    lessonTitle = c.lessonTitle,
+                    lessonDescription = c.lessonDescription,
+                    lessonContent = c.lessonContent,
+                    CreatedAt = c.CreatedAt,
+                    UpdatedAt = c.UpdatedAt,
+                    courseId = c.courseId
+                }).ToListAsync();
+            return Ok(lessons);
         }
     }
 }

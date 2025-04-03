@@ -20,8 +20,9 @@ namespace Estigo.Models
 
 
         // Navigation Properties
-        public int chapterId { get; set; }
-        public Chapter Chapter { get; set; }
+        [ForeignKey("Course")]
+        public int courseId { get; set; }
+        public Course Course { get; set; }
         public int examId { get; set; }
         public Exam Exam { get; set; }
 

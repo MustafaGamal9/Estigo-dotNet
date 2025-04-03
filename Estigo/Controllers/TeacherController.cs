@@ -18,11 +18,13 @@ namespace Estigo.Controllers
         }
 
 
-        // Meet our instructors section
         [HttpGet("HomepageTeachers")]
         public async Task<IActionResult> GetHomepageTeachers()
         {
+            var allowedNames = new List<string> { "Mahmoud", "Fahad", "Amira", "Mousa" };
+
             var teachers = await _context.Teachers
+                .Where(teacher => allowedNames.Contains(teacher.Name))
                 .Select(teacher => new TeacherHomepageDTO
                 {
                     Name = teacher.Name,
@@ -32,13 +34,9 @@ namespace Estigo.Controllers
                 .Take(4)
                 .ToListAsync();
 
-            if (teachers == null || teachers.Count == 0)
-            {
-                return Ok(new List<TeacherHomepageDTO>());
-            }
-
             return Ok(teachers);
         }
+
 
         [HttpGet]
         public IActionResult GetAllCourses()

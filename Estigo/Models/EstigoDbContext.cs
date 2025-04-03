@@ -192,7 +192,7 @@ namespace Estigo.Models
                 // Biology Courses (CategoryId = 3) rotating between teachers "t6" and "t7"
                 new Course { CourseId = 15, CourseTitle = "Cell Biology | Unit 1", Description = "Study of cell structure and function", Price = 179, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = null },
                 new Course { CourseId = 16, CourseTitle = "Genetics | Unit 2", Description = "Introduction to heredity and DNA", Price = 179, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = null },
-                new Course { CourseId = 17, CourseTitle = "Evolution | Unit 3", Description = "Principles of biological evolution", Price = 189, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = null },
+                new Course { CourseId = 17, CourseTitle = "Movement | Unit 3", Description = "Principles of Movement", Price = 189, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = null },
                 new Course { CourseId = 18, CourseTitle = "Ecology | Unit 4", Description = "Basics of ecosystems and environment", Price = 189, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = null },
                 new Course { CourseId = 19, CourseTitle = "Botany | Unit 5", Description = "Study of plant biology and physiology", Price = 179, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = null },
                 new Course { CourseId = 20, CourseTitle = "Zoology | Unit 6", Description = "Introduction to animal biology", Price = 179, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = null },
@@ -226,7 +226,7 @@ namespace Estigo.Models
         public DbSet<Parent> Parents { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Chapter> Chapters { get; set; }
+       // public DbSet<Chapter> Chapters { get; set; }
         public DbSet<lesson> lessons { get; set; }
         public DbSet<Exam> Exams { get; set; }
         public DbSet<StudentExamResult> StudentExamResults { get; set; }

@@ -28,9 +28,8 @@ namespace Estigo.Models
         public string? TeacherId { get; set; }
 
         // Navigation property
-        public Category Category { get; set; }
         public virtual ICollection<Student> students { get; set; }
-        public ICollection<Chapter> Chapters { get; set; }
+        public ICollection<lesson> lessons { get; set; }
 
         public virtual ICollection<Payment> Payments { get; set; }
 
