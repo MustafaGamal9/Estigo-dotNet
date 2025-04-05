@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 
 namespace Estigo
@@ -17,7 +15,7 @@ namespace Estigo
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Configure file upload limits
+            // ✅ 1. Configure file upload limits
             builder.Services.Configure<IISServerOptions>(options =>
             {
                 options.MaxRequestBodySize = int.MaxValue;
@@ -28,25 +26,26 @@ namespace Estigo
                 options.Limits.MaxRequestBodySize = int.MaxValue;
             });
 
-            // ✅ 1️⃣ إضافة الخدمات إلى الـ Container
+            // ✅ 2. Register services
             builder.Services.AddControllers();
+
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(policy =>
                 {
                     policy.AllowAnyOrigin()
-                           .AllowAnyHeader()
-                           .AllowAnyMethod();
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
                 });
             });
 
-            // ✅ 2️⃣ تسجيل قاعدة البيانات
+            // ✅ 3. Configure database connection
             builder.Services.AddDbContext<EstigoDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("cs"));
             });
 
-            // ✅ 3️⃣ تسجيل هوية المستخدم Identity مع ApplicationUser
+            // ✅ 4. Configure Identity
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<EstigoDbContext>()
                 .AddDefaultTokenProviders();
@@ -54,24 +53,24 @@ namespace Estigo
             builder.Services.AddScoped<UserManager<ApplicationUser>>();
             builder.Services.AddScoped<SignInManager<ApplicationUser>>();
 
-            // ✅ 4️⃣ تسجيل JWT Authentication
+            // ✅ 5. Configure JWT Authentication
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                var config = builder.Configuration.GetSection("Jwt");
-                options.TokenValidationParameters = new TokenValidationParameters
+                .AddJwtBearer(options =>
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = config["Issuer"],
-                    ValidAudience = config["Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Secret"]))
-                };
-            });
+                    var config = builder.Configuration.GetSection("Jwt");
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = config["Issuer"],
+                        ValidAudience = config["Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Secret"]))
+                    };
+                });
 
-            // ✅ 5️⃣ تفعيل Authorization مع سياسة "Admin"
+            // ✅ 6. Configure Authorization with "Admin" policy
             builder.Services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
@@ -79,28 +78,56 @@ namespace Estigo
 
             builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 
-            // ✅ 6️⃣ إضافة خدمات Swagger 
+            // ✅ 7. Add Swagger with JWT support
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(options =>
+            builder.Services.AddSwaggerGen(c =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Estigo API",
                     Version = "v1",
                     Description = "API documentation for Estigo"
                 });
+
+                // Add JWT authentication to Swagger
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter 'Bearer' followed by your JWT token.\nExample: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
             });
 
+            // ✅ 8. Build the app
             var app = builder.Build();
 
-        
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
+            // ✅ 9. Configure middleware
+            if (app.Environment.IsDevelopment())
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Estigo API V1");
-
-            });
-
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Estigo API V1");
+                });
+            }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -108,13 +135,13 @@ namespace Estigo
             app.UseRouting();
             
 
-            app.UseAuthentication(); // ✅ تشغيل المصادقة أولًا
-            app.UseAuthorization();  // ✅ ثم التصاريح
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllers();
             app.MapIdentityApi<ApplicationUser>();
 
-            // ✅ استدعاء CreateRoles بدون إنشاء كائن من `Program`
+            // ✅ 10. Create roles on startup
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
@@ -124,7 +151,7 @@ namespace Estigo
             app.Run();
         }
 
-        // ✅ دالة إنشاء الأدوار
+        // ✅ Method to create default roles
         private static async Task CreateRoles(IServiceProvider serviceProvider)
         {
             var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();

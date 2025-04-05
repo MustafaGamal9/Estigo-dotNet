@@ -16,7 +16,7 @@ namespace Estigo.Controllers
             context = _context;
         }
 
-        [HttpGet]
+        [HttpGet("AllStudent")]
         public IActionResult GetAllStudent()
         {
 
