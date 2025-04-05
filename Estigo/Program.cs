@@ -104,8 +104,9 @@ namespace Estigo
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseRouting();
             app.UseCors();
+            app.UseRouting();
+            
 
             app.UseAuthentication(); // ✅ تشغيل المصادقة أولًا
             app.UseAuthorization();  // ✅ ثم التصاريح

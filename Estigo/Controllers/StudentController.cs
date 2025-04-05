@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization; 
 using System.Linq; 
 using System; 
-using System.Collections.Generic; 
+using System.Collections.Generic;
 
 
 namespace Estigo.Controllers
@@ -18,24 +18,24 @@ namespace Estigo.Controllers
         private readonly EstigoDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        
+
         public StudentController(
             EstigoDbContext context,
             UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _userManager = userManager;
-          
+
         }
 
 
         [HttpPost("{studentId}/enroll/{courseId}")]
-        
+
         public async Task<IActionResult> EnrollCourse(string studentId, int courseId)
         {
-           
+
             var student = await _userManager.FindByIdAsync(studentId);
-    
+
             if (student == null || student.Role != Roles.Student)
             {
                 return NotFound(new { message = "Student not found or user is not a student." });
@@ -52,7 +52,7 @@ namespace Estigo.Controllers
                 return BadRequest(new { message = "This course is currently not available for enrollment." });
             }
 
-      
+
             bool alreadyEnrolled = await _context.MyCourses
                 .AnyAsync(mc => mc.StudentId == studentId && mc.CourseId == courseId);
 
@@ -76,14 +76,14 @@ namespace Estigo.Controllers
                 EnrollmentDate = DateTime.UtcNow
             };
 
-   
+
             try
             {
                 _context.Payments.Add(payment);
                 _context.MyCourses.Add(enrollment);
                 await _context.SaveChangesAsync();
 
- 
+
                 return Ok(new
                 {
                     message = "Enrollment successful",
@@ -95,15 +95,15 @@ namespace Estigo.Controllers
             }
             catch (DbUpdateException ex)
             {
-        
+
                 Console.WriteLine($"Error saving enrollment for Student ID {studentId} / Course ID {courseId}: {ex.ToString()}");
-               
+
                 return StatusCode(500, new { message = "An internal error occurred while processing the enrollment. Please try again later." });
             }
         }
 
         [HttpGet("{studentId}/mycourses")]
-    
+
         public async Task<IActionResult> GetMyCourses(string studentId)
         {
             var student = await _userManager.FindByIdAsync(studentId);
@@ -114,10 +114,10 @@ namespace Estigo.Controllers
 
             var enrolledCourses = await _context.MyCourses
                 .Where(mc => mc.StudentId == studentId)
-                .Include(mc => mc.Course) 
+                .Include(mc => mc.Course)
                 .ThenInclude(c => c.Teacher)
-                .OrderByDescending(mc => mc.EnrollmentDate) 
-                .Select(mc => new 
+                .OrderByDescending(mc => mc.EnrollmentDate)
+                .Select(mc => new
                 {
                     mc.Course.CourseId,
                     mc.Course.CourseTitle,
@@ -125,14 +125,36 @@ namespace Estigo.Controllers
                     ImageBase64 = mc.Course.Logo != null ? Convert.ToBase64String(mc.Course.Logo) : null,
                     TeacherName = mc.Course.Teacher != null ? mc.Course.Teacher.Name : "N/A",
                     mc.EnrollmentDate,
-                    mc.Course.Price 
-   
+                    mc.Course.Price
+
                 })
                 .ToListAsync();
 
             return Ok(enrolledCourses);
         }
 
-
+        [HttpGet("{studentId}/mypayment")]
+        public async Task<IActionResult> GetMyPayment(string studentId)
+        {
+            var student = await _userManager.FindByIdAsync(studentId);
+            if (student == null || student.Role != Roles.Student)
+            {
+                return NotFound(new { message = "Student not found or user is not a student." });
+            }
+            var payments = await _context.Payments
+                .Where(p => p.StudentId == studentId)
+                .Include(p => p.Course)
+                .OrderByDescending(p => p.PurchaseDate)
+                .Select(p => new
+                {
+                    p.PaymentId,
+                    p.PurchaseDate,
+                    p.PaymentMethod,
+                    CourseTitle = p.Course.CourseTitle,
+                    CoursePrice = p.Course.Price
+                })
+                .ToListAsync();
+            return Ok(payments);
+        }
     }
 }

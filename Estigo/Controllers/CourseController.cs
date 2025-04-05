@@ -63,6 +63,31 @@ namespace Estigo.Controllers
 
         }
 
+        [HttpGet("{id:int}/details")]
+        public IActionResult GetCourseDetailsById(int id)
+        {
+            var course = context.Courses.Select(c => new CourseDetailsDTO
+            {
+                CourseId = c.CourseId,
+                CourseTitle = c.CourseTitle,
+                Description = c.Description,
+                Logo = c.Logo,
+                Price = c.Price,
+                TeacherName = c.Teacher != null ? c.Teacher.Name : null,
+                lessons = c.lessons.Select(l => l.lessonTitle).ToList()
+
+
+            }).FirstOrDefault(c => c.CourseId == id);
+
+            if (course == null)
+            {
+                return NotFound(new { message = "Course not found" });
+            }
+
+            return Ok(course);
+
+        }
+
         [HttpGet("{name}")]
         public IActionResult GetCourseByName(string name)
         {
@@ -231,6 +256,7 @@ namespace Estigo.Controllers
         try
         {
             var courses = await context.Courses
+                .Include(c => c.Teacher)
                 .Where(c => c.CategoryId == categoryId)
                 .ToListAsync();
             var courseVms = courses.Select(c => new CoursePageDTO
@@ -239,6 +265,7 @@ namespace Estigo.Controllers
                 CourseTitle = c.CourseTitle,
                 ImageBase64 = c.Logo != null ? Convert.ToBase64String(c.Logo) : null,
                 price = c.Price,
+                TeacherName = c.Teacher != null ? c.Teacher.Name : null
             }).ToList();
 
             if (courses == null || !courses.Any())
@@ -262,6 +289,7 @@ namespace Estigo.Controllers
         try
         {
             var courses = await context.Courses
+                .Include(c => c.Teacher)
                 .Where(c => c.CategoryId == categoryId)
                 .Take(4)
                 .ToListAsync();
@@ -277,6 +305,7 @@ namespace Estigo.Controllers
                 CourseTitle = c.CourseTitle,
                 ImageBase64 = c.Logo != null ? Convert.ToBase64String(c.Logo) : null,
                 price = c.Price,
+                TeacherName = c.Teacher != null ? c.Teacher.Name : null
             }).ToList();
 
             return Ok(courseVms);

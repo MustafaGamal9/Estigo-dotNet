@@ -9,5 +9,7 @@ namespace Estigo.DTO
         public string CourseTitle { get; set; }
         public string? ImageBase64 { get; set; }
         public int price { get; set; }
+
+        public string? TeacherName { get; set; }
     }
 }
