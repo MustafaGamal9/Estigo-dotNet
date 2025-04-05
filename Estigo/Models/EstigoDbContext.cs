@@ -235,7 +235,25 @@ namespace Estigo.Models
                 new lesson { lessonId = 20, lessonTitle = "C# Classes and Objects", lessonDescription = "Learn about classes and objects in C#.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson5_video.mp4", courseId = 2, }
 
             );
-        
+
+            modelBuilder.Entity<Exam>().HasData(
+                // Exams for Course 1 (Lessons 11–15)
+                new Exam { Id = 11, ExamTitle = "Exam: Introduction to C#", ExamDescription = "Test your knowledge of C# basics.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 1, lessonId = 11 },
+                new Exam { Id = 12, ExamTitle = "Exam: Variables and Data Types", ExamDescription = "Variables and types quiz.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 1, lessonId = 12 },
+                new Exam { Id = 13, ExamTitle = "Exam: Control Structures", ExamDescription = "Control flow evaluation.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 1, lessonId = 13 },
+                new Exam { Id = 14, ExamTitle = "Exam: Functions", ExamDescription = "Function usage test.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 1, lessonId = 14 },
+                new Exam { Id = 15, ExamTitle = "Exam: Classes and Objects", ExamDescription = "OOP concepts in C#.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 1, lessonId = 15 },
+
+                // Exams for Course 2 (Lessons 16–20)
+                new Exam { Id = 16, ExamTitle = "Exam: Introduction to C#", ExamDescription = "Test your knowledge of C# basics.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 2, lessonId = 16 },
+                new Exam { Id = 17, ExamTitle = "Exam: Variables and Data Types", ExamDescription = "Variables and types quiz.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 2, lessonId = 17 },
+                new Exam { Id = 18, ExamTitle = "Exam: Control Structures", ExamDescription = "Control flow evaluation.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 2, lessonId = 18 },
+                new Exam { Id = 19, ExamTitle = "Exam: Functions", ExamDescription = "Function usage test.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 2, lessonId = 19 },
+                new Exam { Id = 20, ExamTitle = "Exam: Classes and Objects", ExamDescription = "OOP concepts in C#.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 2, lessonId = 20 }
+            );
+
+
+
         }
 
         public DbSet<Student> Students { get; set; }

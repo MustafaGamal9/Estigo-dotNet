@@ -30,11 +30,7 @@ namespace Estigo.Controllers
                 exam.Id,
                 exam.ExamTitle,
                 exam.ExamDescription,
-                exam.Grade,
-                CourseName = exam.Course?.CourseTitle,
-                LessonName = exam.Lesson?.lessonTitle,
-                exam.CreatedAt,
-                exam.UpdatedAt
+              
             };
             return Ok(response);
         }

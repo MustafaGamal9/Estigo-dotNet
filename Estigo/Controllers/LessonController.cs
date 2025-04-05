@@ -67,7 +67,9 @@ namespace Estigo.Controllers
                 .Where(l => l.courseId == courseId)
                 .Select(l => new
                 {
-                    l.lessonTitle
+                    l.lessonTitle,
+                    l.lessonVideo,
+                    l.Exam.ExamTitle
                 })
                 .ToList();
 
@@ -90,6 +92,7 @@ namespace Estigo.Controllers
                 .Select(c => new
                 {
                     CourseName = c.Course.CourseTitle
+
                 })
                 .FirstOrDefaultAsync();
 
@@ -101,6 +104,28 @@ namespace Estigo.Controllers
             return Ok(course.CourseName);
         }
 
+        [HttpGet("GetByLessonName/{lessonName}")]
+        public async Task<IActionResult> GetByLessonName(string lessonName)
+        {
+            var lesson = await context.lessons
+                .Include(c=> c.Exam)
+                .Where(c => c.lessonTitle == lessonName)
+                .Select(c => new
+                {
+                    LessonName = c.lessonTitle,
+                    LessonVideo = c.lessonVideo,
+                    lessonExam = c.Exam.ExamTitle
+
+                })
+                .FirstOrDefaultAsync();
+
+            if (lesson == null)
+            {
+                return NotFound(new { message = "Course not found" });
+            }
+
+            return Ok(lesson);
+        }
 
         //// POST: api/lesson
         //[HttpPost]
