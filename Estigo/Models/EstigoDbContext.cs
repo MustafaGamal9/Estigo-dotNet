@@ -217,7 +217,25 @@ namespace Estigo.Models
                 new Course { CourseId = 35, CourseTitle = "Non-fiction Writing | Unit 7", Description = "Crafting engaging non-fiction narratives", Price = 119, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = null }
             );
 
+            // Seed data for Lessons (5 lessons for each course)
+            modelBuilder.Entity<lesson>().HasData(
+                // 5 Lessons for Course 1
+                new lesson{ lessonId = 11, lessonTitle = "Introduction to C#", lessonDescription = "This lesson covers the basics of C# programming.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson1_video.mp4", courseId = 1, },
+                new lesson{ lessonId = 12,lessonTitle = "C# Variables and Data Types",lessonDescription = "Learn about variables and data types in C#.",lessonContent = "This is the content of the lesson.",lessonVideo = "http://path/to/lesson2_video.mp4",courseId = 1,},
+                new lesson{lessonId = 13,lessonTitle = "C# Control Structures",lessonDescription = "Learn about control structures in C#.",lessonContent = "This is the content of the lesson.",lessonVideo = "http://path/to/lesson3_video.mp4",courseId = 1,},
+                new lesson{ lessonId = 14,lessonTitle = "C# Functions",lessonDescription = "Learn how to define and call functions in C#.",lessonContent = "This is the content of the lesson.",lessonVideo = "http://path/to/lesson4_video.mp4",courseId = 1,},
+                new lesson{ lessonId = 15, lessonTitle = "C# Classes and Objects", lessonDescription = "Learn about classes and objects in C#.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson5_video.mp4", courseId = 1, },
 
+                 // 5 Lessons for Course 2
+
+                new lesson { lessonId = 16, lessonTitle = "Introduction to C#", lessonDescription = "This lesson covers the basics of C# programming.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson1_video.mp4", courseId = 2, },
+                new lesson { lessonId = 17, lessonTitle = "C# Variables and Data Types", lessonDescription = "Learn about variables and data types in C#.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson2_video.mp4", courseId = 2, },
+                new lesson { lessonId = 18, lessonTitle = "C# Control Structures", lessonDescription = "Learn about control structures in C#.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson3_video.mp4", courseId = 2, },
+                new lesson { lessonId = 19, lessonTitle = "C# Functions", lessonDescription = "Learn how to define and call functions in C#.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson4_video.mp4", courseId = 2, },
+                new lesson { lessonId = 20, lessonTitle = "C# Classes and Objects", lessonDescription = "Learn about classes and objects in C#.", lessonContent = "This is the content of the lesson.", lessonVideo = "http://path/to/lesson5_video.mp4", courseId = 2, }
+
+            );
+        
         }
 
         public DbSet<Student> Students { get; set; }
