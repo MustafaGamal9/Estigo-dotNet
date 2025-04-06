@@ -11,7 +11,8 @@
         public string CorrectAnswer { get; set; }
 
         // Navigation Properties
-        public ICollection<Exam> Exams { get; set; }
+        public int ExamId { get; set; }
+        public Exam Exam { get; set; }
 
 
     }

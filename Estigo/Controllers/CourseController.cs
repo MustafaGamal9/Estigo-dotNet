@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Estigo.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class CourseController : ControllerBase
@@ -16,6 +17,8 @@ namespace Estigo.Controllers
         {
             context = _context;
         }
+
+        
         [HttpGet]
         public IActionResult GetCourses()
         {
@@ -152,6 +155,8 @@ namespace Estigo.Controllers
             return Ok();
         }
 
+
+        
         [HttpDelete("{id:int}")]
         public IActionResult DeleteCourse(int id)
         {
@@ -317,6 +322,38 @@ namespace Estigo.Controllers
             return StatusCode(500, new { message = "An error occurred while retrieving courses", error = ex.Message });
         }
     }
+
+        [HttpGet("search")]
+        public IActionResult SearchCourses([FromQuery] string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return BadRequest(new { message = "Search keyword is required." });
+            }
+
+            var courses = context.Courses
+                .Include(c => c.Teacher)
+                .Where(c => c.CourseTitle.ToLower().StartsWith(keyword.ToLower()) ||
+                            c.Teacher.Name.ToLower().StartsWith(keyword.ToLower()))
+                .Select(c => new CoursePageDTO
+                {
+                    CourseId = c.CourseId,
+                    CourseTitle = c.CourseTitle,
+                    ImageBase64 = c.Logo != null ? Convert.ToBase64String(c.Logo) : null,
+                    price = c.Price,
+                    TeacherName = c.Teacher != null ? c.Teacher.Name : null
+                })
+                .ToList();
+
+            if (!courses.Any())
+            {
+                return NotFound(new { message = "No courses found matching your search." });
+            }
+
+            return Ok(courses);
+        }
+
+
 
 
     }

@@ -126,6 +126,16 @@ namespace Estigo.Models
                 .HasForeignKey(c => c.TeacherId)  
                 .OnDelete(DeleteBehavior.Restrict);
 
+            //// Home Page Data ( most popular courses | meet our instructors ) 
+
+            //// Seed Categories
+            //modelBuilder.Entity<Category>().HasData(
+            //    new Category { Id = 1, Name = "Mathematics" },
+            //    new Category { Id = 2, Name = "Physics" },
+            //    new Category { Id = 3, Name = "Biology" },
+            //    new Category { Id = 4, Name = "Chemistry" },
+            //    new Category { Id = 5, Name = "English" }
+
 
             modelBuilder.Entity<ApplicationUser>()
                 .Property(l => l.UpdatedAt)
@@ -142,6 +152,18 @@ namespace Estigo.Models
                 new Category { Id = 5, Name = "English" });
 
             var seedDate = new DateTime(2024, 3, 29);
+            //modelBuilder.Entity<Teacher>().HasData(
+            //    new Teacher { Id = "teacher1-guid", Name = "Mustafa", Email = "teacher1@estigo.com", NormalizedEmail = "TEACHER1@ESTIGO.COM", UserName = "teacher1@estigo.com", NormalizedUserName = "TEACHER1@ESTIGO.COM", Phone = "123-111-1212", Gender = "Male", Subject = "Mathematics", Notes = "Expert in Algebra", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher2-guid", Name = "Mahmoud", Email = "teacher2@estigo.com", NormalizedEmail = "TEACHER2@ESTIGO.COM", UserName = "teacher2@estigo.com", NormalizedUserName = "TEACHER2@ESTIGO.COM", Phone = "123-222-2323", Gender = "Female", Subject = "Physics", Notes = "Specialist in Mechanics", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher3-guid", Name = "Ahmed", Email = "teacher3@estigo.com", NormalizedEmail = "TEACHER3@ESTIGO.COM", UserName = "teacher3@estigo.com", NormalizedUserName = "TEACHER3@ESTIGO.COM", Phone = "123-333-3434", Gender = "Male", Subject = "Biology", Notes = "Experienced in Cell Biology", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher4-guid", Name = "Mohamed", Email = "teacher4@estigo.com", NormalizedEmail = "TEACHER4@ESTIGO.COM", UserName = "teacher4@estigo.com", NormalizedUserName = "TEACHER4@ESTIGO.COM", Phone = "123-444-4545", Gender = "Female", Subject = "Chemistry", Notes = "Passionate about Organic Chemistry", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher5-guid", Name = "kareem", Email = "teacher5@estigo.com", NormalizedEmail = "TEACHER5@ESTIGO.COM", UserName = "teacher5@estigo.com", NormalizedUserName = "TEACHER5@ESTIGO.COM", Phone = "123-555-5656", Gender = "Male", Subject = "English", Notes = "Loves English Literature", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher6-guid", Name = "Teacher Six", Email = "teacher6@estigo.com", NormalizedEmail = "TEACHER6@ESTIGO.COM", UserName = "teacher6@estigo.com", NormalizedUserName = "TEACHER6@ESTIGO.COM", Phone = "123-666-6767", Gender = "Female", Subject = "History", Notes = "History Enthusiast", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher7-guid", Name = "Teacher Seven", Email = "teacher7@estigo.com", NormalizedEmail = "TEACHER7@ESTIGO.COM", UserName = "teacher7@estigo.com", NormalizedUserName = "TEACHER7@ESTIGO.COM", Phone = "123-777-7878", Gender = "Male", Subject = "Geography", Notes = "Geography Expert", image = biologyImageBytes },
+            //     new Teacher { Id = "teacher8-guid", Name = "Teacher Eight", Email = "teacher8@estigo.com", NormalizedEmail = "TEACHER8@ESTIGO.COM", UserName = "teacher8@estigo.com", NormalizedUserName = "TEACHER8@ESTIGO.COM", Phone = "123-888-8989", Gender = "Female", Subject = "Computer Science", Notes = "Coding Guru", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher9-guid", Name = "Teacher Nine", Email = "teacher9@estigo.com", NormalizedEmail = "TEACHER9@ESTIGO.COM", UserName = "teacher9@estigo.com", NormalizedUserName = "TEACHER9@ESTIGO.COM", Phone = "123-999-9090", Gender = "Male", Subject = "Art", Notes = "Artistic Soul", image = biologyImageBytes },
+            //    new Teacher { Id = "teacher10-guid", Name = "Teacher Ten", Email = "teacher10@estigo.com", NormalizedEmail = "TEACHER10@ESTIGO.COM", UserName = "teacher10@estigo.com", NormalizedUserName = "TEACHER10@ESTIGO.COM", Phone = "123-000-0101", Gender = "Female", Subject = "Music", Notes = "Music Lover", image = biologyImageBytes }
+            //);
 
             // Seed Teachers
             modelBuilder.Entity<Teacher>().HasData(
@@ -251,7 +273,21 @@ namespace Estigo.Models
                 new Exam { Id = 19, ExamTitle = "Exam: Functions", ExamDescription = "Function usage test.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 2, lessonId = 19 },
                 new Exam { Id = 20, ExamTitle = "Exam: Classes and Objects", ExamDescription = "OOP concepts in C#.", Grade = "Not Graded", CreatedAt = DateTime.UtcNow, courseId = 2, lessonId = 20 }
             );
+            modelBuilder.Entity<BankOfQuestion>().HasData(
+                 // Exam 11 Questions
+                new BankOfQuestion{Id = 1,QuestionText = "What is the capital of France?",OptionA = "Paris",OptionB = "London",OptionC = "Rome",OptionD = "Berlin",CorrectAnswer = "A",ExamId = 11},
+                new BankOfQuestion {Id = 2,QuestionText = "Which planet is known as the Red Planet?",OptionA = "Earth",OptionB = "Mars",OptionC = "Jupiter",OptionD = "Saturn",CorrectAnswer = "B",ExamId = 11},
+                new BankOfQuestion{Id = 3,QuestionText = "What is 5 + 7?",OptionA = "10",OptionB = "11",OptionC = "12",OptionD = "13",CorrectAnswer = "C",ExamId = 11},
+                new BankOfQuestion{Id = 4,QuestionText = "Which language is primarily used for Android development?",OptionA = "Java",OptionB = "Swift",OptionC = "Kotlin",OptionD = "C#",CorrectAnswer = "C",ExamId = 11},
+                new BankOfQuestion{Id = 5,QuestionText = "What is the chemical symbol for water?",OptionA = "H2O",OptionB = "O2",OptionC = "CO2",OptionD = "NaCl",CorrectAnswer = "A",ExamId = 11},
 
+             // Exam 12 Questions
+                new BankOfQuestion{Id = 6,QuestionText = "What is the square root of 81?",OptionA = "8",OptionB = "9",OptionC = "10",OptionD = "7",CorrectAnswer = "B",ExamId = 12},
+                new BankOfQuestion{Id = 7,QuestionText = "Who painted the Mona Lisa?",OptionA = "Vincent van Gogh",OptionB = "Leonardo da Vinci",OptionC = "Pablo Picasso",OptionD = "Michelangelo",CorrectAnswer = "B",ExamId = 12},
+                new BankOfQuestion{Id = 8,QuestionText = "Which organ pumps blood through the body?",OptionA = "Brain",OptionB = "Lungs",OptionC = "Liver",OptionD = "Heart",CorrectAnswer = "D",ExamId = 12},
+                new BankOfQuestion{Id = 9,QuestionText = "What is the largest planet in our solar system?",OptionA = "Earth",OptionB = "Mars",OptionC = "Jupiter",OptionD = "Saturn",CorrectAnswer = "C",ExamId = 12},
+                new BankOfQuestion{Id = 10,QuestionText = "Which element has the atomic number 1?",OptionA = "Oxygen",OptionB = "Hydrogen",OptionC = "Helium",OptionD = "Carbon",CorrectAnswer = "B",ExamId = 12}
+            );
 
 
         }
