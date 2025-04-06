@@ -36,67 +36,67 @@ namespace Estigo.Controllers
         }
 
 
-        [HttpGet("withanswer/{name}")]
-        public async Task<IActionResult> GetExamByName(string name)
-        {
-            var exam = await context.Exams
-                .Include(e => e.Course)       
-                .Include(e => e.Lesson)       
-                .Include(e => e.Questions)    
-                .FirstOrDefaultAsync(e => e.ExamTitle == name);
+        //[HttpGet("withanswer/{name}")]
+        //public async Task<IActionResult> GetExamByName(string name)
+        //{
+        //    var exam = await context.Exams
+        //        .Include(e => e.Course)       
+        //        .Include(e => e.Lesson)       
+        //        .Include(e => e.Questions)    
+        //        .FirstOrDefaultAsync(e => e.ExamTitle == name);
 
-            if (exam == null)
-                return NotFound();
+        //    if (exam == null)
+        //        return NotFound();
 
-            var response = new
-            {
-                exam.Id,
-                exam.ExamTitle,
-                exam.ExamDescription,
-                exam.Grade,
-                CourseName = exam.Course?.CourseTitle,
-                LessonName = exam.Lesson?.lessonTitle,
-                Questions = exam.Questions.Select(q => new
-                {
-                    q.QuestionText
-                }).ToList()
-            };
+        //    var response = new
+        //    {
+        //        exam.Id,
+        //        exam.ExamTitle,
+        //        exam.ExamDescription,
+        //        exam.Grade,
+        //        CourseName = exam.Course?.CourseTitle,
+        //        LessonName = exam.Lesson?.lessonTitle,
+        //        Questions = exam.Questions.Select(q => new
+        //        {
+        //            q.QuestionText
+        //        }).ToList()
+        //    };
 
-            return Ok(response);
-        }
+        //    return Ok(response);
+        //}
 
-        [HttpGet("withOutAnswer/{name}")]
-        public async Task<IActionResult> GetExamByName_(string name)
-        {
-            var exam = await context.Exams
-                .Include(e => e.Course)       
-                .Include(e => e.Lesson)      
-                .Include(e => e.Questions)    
-                .FirstOrDefaultAsync(e => e.ExamTitle == name); 
+        //[HttpGet("withOutAnswer/{name}")]
+        //public async Task<IActionResult> GetExamByName_(string name)
+        //{
+        //    var exam = await context.Exams
+        //        .Include(e => e.Course)       
+        //        .Include(e => e.Lesson)      
+        //        .Include(e => e.Questions)    
+        //        .FirstOrDefaultAsync(e => e.ExamTitle == name); 
 
-            if (exam == null)
-                return NotFound();
+        //    if (exam == null)
+        //        return NotFound();
 
             
-            var response = new
-            {
-                exam.Id,
-                exam.ExamTitle,
-                exam.ExamDescription,
-                exam.Grade,
-                CourseName = exam.Course?.CourseTitle,
-                LessonName = exam.Lesson?.lessonTitle,
-                exam.CreatedAt,
-                exam.UpdatedAt,
-                Questions = exam.Questions.Select(q => new
-                {
-                    q.QuestionText,
-                    q.CorrectAnswer
-                }).ToList()
-            };
+        //    var response = new
+        //    {
+        //        exam.Id,
+        //        exam.ExamTitle,
+        //        exam.ExamDescription,
+        //        exam.Grade,
+        //        CourseName = exam.Course?.CourseTitle,
+        //        LessonName = exam.Lesson?.lessonTitle,
+        //        exam.CreatedAt,
+        //        exam.UpdatedAt,
+        //        Questions = exam.Questions.Select(q => new
+        //        {
+        //            q.QuestionText,
+        //            q.CorrectAnswer
+        //        }).ToList()
+        //    };
 
-            return Ok(response);
-        }
+        //    return Ok(response);
+        //}
 
         [HttpDelete]
         public async Task<IActionResult> DeleteExam(int id)
@@ -187,7 +187,72 @@ namespace Estigo.Controllers
             return Ok();
         }
 
-        
+        [HttpGet("GetQuestionsByExam/{examId}")]
+        public IActionResult GetQuestionsByExam(int examId)
+        {
+            var questions = context.BankOfQuestions
+                .Where(q => q.ExamId == examId)
+                .Select(q => new 
+                {
+                    QuestionText = q.QuestionText,
+                    OptionA = q.OptionA,
+                    OptionB = q.OptionB,
+                    OptionC = q.OptionC,
+                    OptionD = q.OptionD,
+                    CorrectAnswer = q.CorrectAnswer
+                })
+                .ToList();
+
+            if (questions == null || !questions.Any())
+            {
+                return NotFound("No questions found for this exam.");
+            }
+
+            return Ok(questions);
+        }
+
+        [HttpGet("QuestionsWithoutAnswer/{examId}")]
+        public IActionResult GetQuestionsWithoutAnswer(int examId)
+        {
+            var questions = context.BankOfQuestions
+                .Where(q => q.ExamId == examId)
+                .Select(q => new
+                {
+                    QuestionText = q.QuestionText,
+                    OptionA = q.OptionA,
+                    OptionB = q.OptionB,
+                    OptionC = q.OptionC,
+                    OptionD = q.OptionD,
+                })
+                .ToList();
+
+            if (questions == null || !questions.Any())
+            {
+                return NotFound("No questions found for this exam.");
+            }
+
+            return Ok(questions);
+        }
+
+
+        [HttpGet("AnswerOnly/{examId}")]
+        public IActionResult AnswerOnly(int examId)
+        {
+            var questions = context.BankOfQuestions
+                .Where(q => q.ExamId == examId)
+                .Select(q => new
+                {
+                    CorrectAnswer = q.CorrectAnswer
+                })
+                .ToList();
+
+            if (questions == null || !questions.Any())
+            {
+                return NotFound("No questions found for this exam.");
+            }
+
+            return Ok(questions);
+        }
 
 
     }

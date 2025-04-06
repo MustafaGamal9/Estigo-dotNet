@@ -26,7 +26,6 @@ namespace Estigo.Controllers
             return Ok(students);
         }
 
-
         [HttpPost]
         public IActionResult AddStudent(Student student)
         {
