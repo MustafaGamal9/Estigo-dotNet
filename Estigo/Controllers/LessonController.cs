@@ -59,26 +59,28 @@ namespace Estigo.Controllers
         }
 
 
-        // return lessonDetails by courseId
+        // Returns lesson details by courseId
         [HttpGet("GetCourseDetails/{courseId}")]
         public IActionResult GetCourseDetails(int courseId)
         {
-            var lessonTitles = context.lessons
+            var lessons = context.lessons
+                .Include(l => l.Exam)
                 .Where(l => l.courseId == courseId)
                 .Select(l => new
                 {
                     l.lessonTitle,
                     l.lessonVideo,
-                    l.Exam.ExamTitle
+                    ExamTitle = l.Exam != null ? l.Exam.ExamTitle : null,
+                    ExamId = l.Exam != null ? l.Exam.Id : (int?)null
                 })
                 .ToList();
 
-            if (!lessonTitles.Any())
+            if (lessons == null || !lessons.Any())
             {
-                return NotFound("No lessons found for this course.");
+                return NotFound($"No lessons found for course ID {courseId}.");
             }
 
-            return Ok(lessonTitles);
+            return Ok(lessons);
         }
 
 
