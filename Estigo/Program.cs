@@ -120,14 +120,12 @@ namespace Estigo
             var app = builder.Build();
 
             // ✅ 9. Configure middleware
-            if (app.Environment.IsDevelopment())
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Estigo API V1");
-                });
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Estigo API V1");
+            });
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

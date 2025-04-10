@@ -122,7 +122,7 @@ namespace Estigo.Controllers
                     mc.Course.CourseId,
                     mc.Course.CourseTitle,
                     mc.Course.Description,
-                    ImageBase64 = mc.Course.Logo != null ? Convert.ToBase64String(mc.Course.Logo) : null,
+                    ImageBase64 = mc.Course.Logo,
                     TeacherName = mc.Course.Teacher != null ? mc.Course.Teacher.Name : "N/A",
                     mc.EnrollmentDate,
                     mc.Course.Price

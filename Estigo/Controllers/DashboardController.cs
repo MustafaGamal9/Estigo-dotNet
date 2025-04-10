@@ -44,7 +44,7 @@ public class DashboardController : ControllerBase
             .Select(c => new EnrolledCourseDTO
             {
                 CourseName = c.CourseTitle,
-                CourseImageUrl = c.Logo != null ? Convert.ToBase64String(c.Logo) : null
+                CourseImageUrl = c.Logo
             })
             .ToListAsync();
 
@@ -58,7 +58,7 @@ public class DashboardController : ControllerBase
             .Take(3) 
             .Select(t => new InstructorImageDTO
             {
-                InstructorImageUrl = t.image != null ? Convert.ToBase64String(t.image) : null
+                InstructorImageUrl = t.image
             })
             .ToListAsync();
 

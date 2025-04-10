@@ -369,8 +369,8 @@ namespace Estigo.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("Logo")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Logo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
@@ -400,6 +400,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Algebra | Unit 1",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to algebraic concepts",
+                            Logo = "http://est.runasp.net/algebra.jpg",
                             Price = 199,
                             TeacherId = "t1"
                         },
@@ -411,6 +412,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Calculus | Unit 2",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fundamentals of differential calculus",
+                            Logo = "http://est.runasp.net/calculas.jpeg",
                             Price = 199,
                             TeacherId = "t2"
                         },
@@ -422,6 +424,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Geometry | Unit 3",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Basics of geometric shapes and theorems",
+                            Logo = "http://est.runasp.net/geo.jpeg",
                             Price = 189,
                             TeacherId = "t1"
                         },
@@ -433,6 +436,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Trigonometry | Unit 4",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Understanding angles and trigonometric functions",
+                            Logo = "http://est.runasp.net/trig.jpeg",
                             Price = 189,
                             TeacherId = "t2"
                         },
@@ -444,6 +448,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Statistics | Unit 5",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to data analysis and probability",
+                            Logo = "http://est.runasp.net/stat.jpeg",
                             Price = 179,
                             TeacherId = "t1"
                         },
@@ -455,6 +460,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Probability | Unit 6",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exploring probability theories and applications",
+                            Logo = "http://est.runasp.net/jpeg",
                             Price = 179,
                             TeacherId = "t2"
                         },
@@ -466,6 +472,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Discrete Math | Unit 7",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fundamentals of logic, set theory, and combinatorics",
+                            Logo = "http://est.runasp.net/disc.jpeg",
                             Price = 189,
                             TeacherId = "t1"
                         },
@@ -477,6 +484,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Mechanics | Unit 1",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to Newtonian mechanics",
+                            Logo = "http://est.runasp.net/mecha.jpg",
                             Price = 149,
                             TeacherId = "t3"
                         },
@@ -488,6 +496,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Electricity | Unit 2",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Basics of electric circuits and fields",
+                            Logo = "http://est.runasp.net/elec.jpg",
                             Price = 149,
                             TeacherId = "t4"
                         },
@@ -499,6 +508,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Magnetism | Unit 3",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Principles of magnetic forces and fields",
+                            Logo = "http://est.runasp.net/iron.jpg",
                             Price = 159,
                             TeacherId = "t5"
                         },
@@ -510,6 +520,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Optics | Unit 4",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Study of light behavior and properties",
+                            Logo = "http://est.runasp.net/optics.jpeg",
                             Price = 159,
                             TeacherId = "t3"
                         },
@@ -521,6 +532,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Thermodynamics | Unit 5",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fundamentals of heat and energy",
+                            Logo = "http://est.runasp.net/thermo.jpeg",
                             Price = 169,
                             TeacherId = "t4"
                         },
@@ -532,6 +544,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Quantum Physics | Unit 6",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to quantum theory",
+                            Logo = "http://est.runasp.net/quant.jpeg",
                             Price = 169,
                             TeacherId = "t5"
                         },
@@ -543,6 +556,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Relativity | Unit 7",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Concepts of special and general relativity",
+                            Logo = "http://est.runasp.net/rela.jpg",
                             Price = 169,
                             TeacherId = "t3"
                         },
@@ -554,6 +568,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Cell Biology | Unit 1",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Study of cell structure and function",
+                            Logo = "http://est.runasp.net/cell.jpg",
                             Price = 179,
                             TeacherId = "t6"
                         },
@@ -565,6 +580,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Genetics | Unit 2",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to heredity and DNA",
+                            Logo = "http://est.runasp.net/gena.jpeg",
                             Price = 179,
                             TeacherId = "t7"
                         },
@@ -576,6 +592,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Movement | Unit 3",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Principles of Movement",
+                            Logo = "http://est.runasp.net/move.jpeg",
                             Price = 189,
                             TeacherId = "t6"
                         },
@@ -587,6 +604,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Ecology | Unit 4",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Basics of ecosystems and environment",
+                            Logo = "http://est.runasp.net/eco.jpg",
                             Price = 189,
                             TeacherId = "t7"
                         },
@@ -598,6 +616,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Botany | Unit 5",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Study of plant biology and physiology",
+                            Logo = "http://est.runasp.net/elec.jpg",
                             Price = 179,
                             TeacherId = "t6"
                         },
@@ -609,6 +628,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Zoology | Unit 6",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to animal biology",
+                            Logo = "http://est.runasp.net/zoo.jpg",
                             Price = 179,
                             TeacherId = "t7"
                         },
@@ -620,6 +640,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Microbiology | Unit 7",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Basics of microorganisms and their roles",
+                            Logo = "http://est.runasp.net/micro.jpg",
                             Price = 189,
                             TeacherId = "t6"
                         },
@@ -631,6 +652,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Organic Chemistry | Unit 1",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to organic compounds",
+                            Logo = "http://est.runasp.net/organic.jpeg",
                             Price = 159,
                             TeacherId = "t8"
                         },
@@ -642,6 +664,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Inorganic Chemistry | Unit 2",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fundamentals of inorganic substances",
+                            Logo = "http://est.runasp.net/inorganic.jpeg",
                             Price = 159,
                             TeacherId = "t9"
                         },
@@ -653,6 +676,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Physical Chemistry | Unit 3",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Study of chemical thermodynamics and kinetics",
+                            Logo = "http://est.runasp.net/physChem.jpg",
                             Price = 169,
                             TeacherId = "t10"
                         },
@@ -664,6 +688,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Analytical Chemistry | Unit 4",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Techniques for chemical analysis",
+                            Logo = "http://est.runasp.net/analyt.png",
                             Price = 169,
                             TeacherId = "t11"
                         },
@@ -675,6 +700,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Biochemistry | Unit 5",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chemical processes within living organisms",
+                            Logo = "http://est.runasp.net/biochem.jpeg",
                             Price = 179,
                             TeacherId = "t8"
                         },
@@ -686,6 +712,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Environmental Chemistry | Unit 6",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Chemistry in environmental processes",
+                            Logo = "http://est.runasp.net/env.jpg",
                             Price = 179,
                             TeacherId = "t9"
                         },
@@ -697,6 +724,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Theoretical Chemistry | Unit 7",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Conceptual frameworks of chemical behavior",
+                            Logo = "http://est.runasp.net/theo.jpeg",
                             Price = 169,
                             TeacherId = "t10"
                         },
@@ -708,6 +736,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Literature | Unit 1",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exploring classic and modern literature",
+                            Logo = "http://est.runasp.net/lit.jpg",
                             Price = 129,
                             TeacherId = "t12"
                         },
@@ -719,6 +748,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Creative Writing | Unit 2",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Develop storytelling and narrative skills",
+                            Logo = "http://est.runasp.net/write.jpg",
                             Price = 129,
                             TeacherId = "t13"
                         },
@@ -730,6 +760,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Grammar & Composition | Unit 3",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Mastering the rules of English grammar",
+                            Logo = "http://est.runasp.net/gram.jpg",
                             Price = 119,
                             TeacherId = "t12"
                         },
@@ -741,6 +772,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Poetry Analysis | Unit 4",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Study and analysis of poetry",
+                            Logo = "http://est.runasp.net/poe.png",
                             Price = 119,
                             TeacherId = "t13"
                         },
@@ -752,6 +784,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Drama & Theater | Unit 5",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introduction to dramatic literature and performance",
+                            Logo = "http://est.runasp.net/drama.jpg",
                             Price = 129,
                             TeacherId = "t12"
                         },
@@ -763,6 +796,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Fiction Writing | Unit 6",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Techniques for writing compelling fiction",
+                            Logo = "http://est.runasp.net/fiction.jpeg",
                             Price = 129,
                             TeacherId = "t13"
                         },
@@ -774,6 +808,7 @@ namespace Estigo.Migrations
                             CourseTitle = "Non-fiction Writing | Unit 7",
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Crafting engaging non-fiction narratives",
+                            Logo = "http://est.runasp.net/nonfic.jpg",
                             Price = 119,
                             TeacherId = "t12"
                         });
@@ -828,7 +863,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4036),
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6076),
                             ExamDescription = "Test your knowledge of C# basics.",
                             ExamTitle = "Exam: Introduction to C#",
                             Grade = "Not Graded",
@@ -838,9 +873,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 12,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4596),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6712),
                             ExamDescription = "Variables and types quiz.",
                             ExamTitle = "Exam: Variables and Data Types",
                             Grade = "Not Graded",
@@ -850,9 +883,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 13,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4598),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6715),
                             ExamDescription = "Control flow evaluation.",
                             ExamTitle = "Exam: Control Structures",
                             Grade = "Not Graded",
@@ -862,9 +893,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 14,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4600),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6717),
                             ExamDescription = "Function usage test.",
                             ExamTitle = "Exam: Functions",
                             Grade = "Not Graded",
@@ -874,9 +903,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 15,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4602),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6719),
                             ExamDescription = "OOP concepts in C#.",
                             ExamTitle = "Exam: Classes and Objects",
                             Grade = "Not Graded",
@@ -886,8 +913,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 16,
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4604),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6721),
                             ExamDescription = "Test your knowledge of C# basics.",
                             ExamTitle = "Exam: Introduction to C#",
                             Grade = "Not Graded",
@@ -897,9 +923,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 17,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4606),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6723),
                             ExamDescription = "Variables and types quiz.",
                             ExamTitle = "Exam: Variables and Data Types",
                             Grade = "Not Graded",
@@ -909,9 +933,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 18,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4608),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6725),
                             ExamDescription = "Control flow evaluation.",
                             ExamTitle = "Exam: Control Structures",
                             Grade = "Not Graded",
@@ -921,9 +943,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 19,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4610),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6729),
                             ExamDescription = "Function usage test.",
                             ExamTitle = "Exam: Functions",
                             Grade = "Not Graded",
@@ -933,9 +953,7 @@ namespace Estigo.Migrations
                         new
                         {
                             Id = 20,
-
-                            CreatedAt = new DateTime(2025, 4, 5, 21, 22, 58, 969, DateTimeKind.Utc).AddTicks(4612),
-
+                            CreatedAt = new DateTime(2025, 4, 10, 18, 18, 22, 759, DateTimeKind.Utc).AddTicks(6731),
                             ExamDescription = "OOP concepts in C#.",
                             ExamTitle = "Exam: Classes and Objects",
                             Grade = "Not Graded",
@@ -1066,7 +1084,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "This lesson covers the basics of C# programming.",
                             lessonTitle = "Introduction to C#",
-                            lessonVideo = "http://localhost:5070/vv.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1076,7 +1094,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn about variables and data types in C#.",
                             lessonTitle = "C# Variables and Data Types",
-                            lessonVideo = "http://localhost:5070/cat.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1086,7 +1104,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn about control structures in C#.",
                             lessonTitle = "C# Control Structures",
-                            lessonVideo = "vv.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1096,7 +1114,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn how to define and call functions in C#.",
                             lessonTitle = "C# Functions",
-                            lessonVideo = "vv.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1106,7 +1124,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn about classes and objects in C#.",
                             lessonTitle = "C# Classes and Objects",
-                            lessonVideo = "http://path/to/lesson5_video.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1116,7 +1134,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "This lesson covers the basics of C# programming.",
                             lessonTitle = "Introduction to C#",
-                            lessonVideo = "http://path/to/lesson1_video.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1126,7 +1144,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn about variables and data types in C#.",
                             lessonTitle = "C# Variables and Data Types",
-                            lessonVideo = "http://path/to/lesson2_video.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1136,7 +1154,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn about control structures in C#.",
                             lessonTitle = "C# Control Structures",
-                            lessonVideo = "http://path/to/lesson3_video.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1146,7 +1164,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn how to define and call functions in C#.",
                             lessonTitle = "C# Functions",
-                            lessonVideo = "http://path/to/lesson4_video.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         },
                         new
                         {
@@ -1156,7 +1174,7 @@ namespace Estigo.Migrations
                             lessonContent = "This is the content of the lesson.",
                             lessonDescription = "Learn about classes and objects in C#.",
                             lessonTitle = "C# Classes and Objects",
-                            lessonVideo = "http://path/to/lesson5_video.mp4"
+                            lessonVideo = "http://est.runasp.net/vv.mp4"
                         });
                 });
 
@@ -1367,8 +1385,8 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("image")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Teacher");
 
@@ -1377,7 +1395,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "348944c1-9ca0-4f2d-865f-fcc79ec6dc4d",
+                            ConcurrencyStamp = "db05f9cf-d26c-4a5f-8f8d-a50526612dce",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math1@estigo.com",
                             EmailConfirmed = false,
@@ -1388,19 +1406,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "8a17331c-7e47-44d1-babd-bef847887574",
-
+                            SecurityStamp = "3097e660-0a4e-4132-85a7-f322819862ae",
                             TwoFactorEnabled = false,
                             UserName = "math1@estigo.com",
                             Notes = "Expert in Algebra",
-                            Subject = "Mathematics"
+                            Subject = "Mathematics",
+                            image = "http://est.runasp.net/mahmoud.jpg"
                         },
                         new
                         {
                             Id = "t2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "25b5011d-1cd0-42f1-b941-c61c87473d26",
+                            ConcurrencyStamp = "e303201a-efe3-4fdc-a1b5-7b107a19a211",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math2@estigo.com",
                             EmailConfirmed = false,
@@ -1411,17 +1428,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "8a0e9f2e-39d4-4ded-bbe0-9fe184fd6390",
+                            SecurityStamp = "0213ee65-1874-4650-b73f-4c9608965e03",
                             TwoFactorEnabled = false,
                             UserName = "math2@estigo.com",
                             Notes = "Specialist in Calculus",
-                            Subject = "Mathematics"
+                            Subject = "Mathematics",
+                            image = "http://est.runasp.net/b.jpeg"
                         },
                         new
                         {
                             Id = "t3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ad67385c-fa39-412c-b104-72a31495fc15",
+                            ConcurrencyStamp = "27e2ad54-f343-4a1d-84aa-1bc5ea2e8b94",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys1@estigo.com",
                             EmailConfirmed = false,
@@ -1432,17 +1450,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "ff1146c1-8bf4-49bf-a15c-8c3e25bc5ce4",
+                            SecurityStamp = "671b8bc3-b094-4d3a-9e3f-0a4e379a0ee9",
                             TwoFactorEnabled = false,
                             UserName = "phys1@estigo.com",
                             Notes = "Specialist in Mechanics",
-                            Subject = "Physics"
+                            Subject = "Physics",
+                            image = "http://est.runasp.net/g.jpeg"
                         },
                         new
                         {
                             Id = "t4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b7500a86-3063-4f94-80bb-1942acc3e560",
+                            ConcurrencyStamp = "36aa0aab-33ed-49b0-87f1-1a4dd4d1348d",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys2@estigo.com",
                             EmailConfirmed = false,
@@ -1453,19 +1472,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "1601f772-915c-4228-ac63-2f52c516f1f1",
+                            SecurityStamp = "8ed074d7-3d72-4683-a300-815975f103c1",
                             TwoFactorEnabled = false,
                             UserName = "phys2@estigo.com",
                             Notes = "Expert in Electromagnetism",
-                            Subject = "Physics"
+                            Subject = "Physics",
+                            image = "http://est.runasp.net/q.jpg"
                         },
                         new
                         {
                             Id = "t5",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "04d6083b-2450-4938-af86-bfe541d944c6",
-
+                            ConcurrencyStamp = "cf11befe-ea43-4f6c-bc61-fff1c5ad2851",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys3@estigo.com",
                             EmailConfirmed = false,
@@ -1476,19 +1494,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "0e21acb0-579e-4268-94ad-8a6e97727896",
+                            SecurityStamp = "3829d755-bbe2-4be0-9b65-7e68b346f107",
                             TwoFactorEnabled = false,
                             UserName = "phys3@estigo.com",
                             Notes = "Enthusiast in Quantum Physics",
-                            Subject = "Physics"
+                            Subject = "Physics",
+                            image = "http://est.runasp.net/b.jpeg"
                         },
                         new
                         {
                             Id = "t6",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "ae1455b8-2161-4568-8947-51133d6b5d3b",
-
+                            ConcurrencyStamp = "80c7785a-3777-4821-987a-1176bf7a278a",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio1@estigo.com",
                             EmailConfirmed = false,
@@ -1499,21 +1516,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "a2f20e57-2e32-4b8b-b55d-dee00bcdac18",
-
+                            SecurityStamp = "4909a56b-8348-48c3-9473-eb826364c513",
                             TwoFactorEnabled = false,
                             UserName = "bio1@estigo.com",
                             Notes = "Expert in Cell Biology",
-                            Subject = "Biology"
+                            Subject = "Biology",
+                            image = "http://est.runasp.net/c.jpeg"
                         },
                         new
                         {
                             Id = "t7",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "e6ec68dc-8682-48ca-ad23-f23fed76bfec",
-
+                            ConcurrencyStamp = "12e150b0-72cc-4aac-8564-e85fe1179f5a",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio2@estigo.com",
                             EmailConfirmed = false,
@@ -1524,19 +1538,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "3bb01d33-4d8b-42b7-92e4-4e0c9b46ef42",
+                            SecurityStamp = "d472ec0f-bfe0-4cd2-919a-503a2265ad1d",
                             TwoFactorEnabled = false,
                             UserName = "bio2@estigo.com",
                             Notes = "Specialist in Genetics",
-                            Subject = "Biology"
+                            Subject = "Biology",
+                            image = "http://est.runasp.net/d.jpeg"
                         },
                         new
                         {
                             Id = "t8",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "dfcff67c-fb83-4610-9359-0bb382fad142",
-
+                            ConcurrencyStamp = "f941f802-f99d-4335-ae98-632c894ab281",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem1@estigo.com",
                             EmailConfirmed = false,
@@ -1547,21 +1560,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "6248a4b9-bd70-46fc-a85e-fa0967c0f689",
-
+                            SecurityStamp = "df01d2ae-fc0b-4605-acf9-d35f28636a77",
                             TwoFactorEnabled = false,
                             UserName = "chem1@estigo.com",
                             Notes = "Passionate about Organic Chemistry",
-                            Subject = "Chemistry"
+                            Subject = "Chemistry",
+                            image = "http://est.runasp.net/f.jpg"
                         },
                         new
                         {
                             Id = "t9",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "8bcf3bfc-a06d-4770-b634-79ff37bafdd1",
-
+                            ConcurrencyStamp = "d9eddc4e-c7f8-4b98-bda2-5d670d0c7fd8",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem2@estigo.com",
                             EmailConfirmed = false,
@@ -1572,19 +1582,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "d386ca40-a373-4558-b3e6-8e58d97b45fb",
-
+                            SecurityStamp = "daf143ae-ad98-4ecb-99e3-18ab0d0c58cc",
                             TwoFactorEnabled = false,
                             UserName = "chem2@estigo.com",
                             Notes = "Expert in Inorganic Chemistry",
-                            Subject = "Chemistry"
+                            Subject = "Chemistry",
+                            image = "http://est.runasp.net/m.jpg"
                         },
                         new
                         {
                             Id = "t10",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b16fa281-a224-4f5a-8397-d28667a785f8",
+                            ConcurrencyStamp = "0a39e060-4508-4d45-a4c2-eadab4068ad2",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem3@estigo.com",
                             EmailConfirmed = false,
@@ -1595,21 +1604,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "564116b2-cc98-47a3-af72-3b48c1c921c0",
-
+                            SecurityStamp = "03befeca-6629-4fee-9e27-ef71bbaeede9",
                             TwoFactorEnabled = false,
                             UserName = "chem3@estigo.com",
                             Notes = "Skilled in Analytical Chemistry",
-                            Subject = "Chemistry"
+                            Subject = "Chemistry",
+                            image = "http://est.runasp.net/f.jpg"
                         },
                         new
                         {
                             Id = "t11",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "a7b428f9-4bd4-4c57-a8de-39a2f9abd53e",
-
+                            ConcurrencyStamp = "d88bcd4d-af67-43ec-9db6-d5057240dfa0",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem4@estigo.com",
                             EmailConfirmed = false,
@@ -1620,21 +1626,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM4@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "0ea70487-1a38-4d4e-842e-470516f09a8b",
-
+                            SecurityStamp = "2c7c47d3-68b0-4ab5-ba30-71db895e1136",
                             TwoFactorEnabled = false,
                             UserName = "chem4@estigo.com",
                             Notes = "Focused on Physical Chemistry",
-                            Subject = "Chemistry"
+                            Subject = "Chemistry",
+                            image = "http://est.runasp.net/sarah.jpg"
                         },
                         new
                         {
                             Id = "t12",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "432b3b35-64f3-4c7c-94ab-a9d515d10159",
-
+                            ConcurrencyStamp = "8171160f-8a46-458e-b453-626a9de628c7",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng1@estigo.com",
                             EmailConfirmed = false,
@@ -1645,21 +1648,18 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "9dcd0e38-711f-45db-af42-1f23b29bad45",
-
+                            SecurityStamp = "b89ad5f5-c6ff-4f1c-92aa-5ffa51870f9e",
                             TwoFactorEnabled = false,
                             UserName = "eng1@estigo.com",
                             Notes = "Literature Specialist",
-                            Subject = "English"
+                            Subject = "English",
+                            image = "http://est.runasp.net/amira.jpg"
                         },
                         new
                         {
                             Id = "t13",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "62f15097-7b3f-4003-80ac-b3d03a27466d",
-
+                            ConcurrencyStamp = "6aeeb85e-022d-4e3b-86c3-2084e01229c9",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng2@estigo.com",
                             EmailConfirmed = false,
@@ -1670,13 +1670,12 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "0698632a-4d7e-4261-8600-9d3df1bbf889",
-
+                            SecurityStamp = "62d82726-06eb-444d-89f9-e6199b151096",
                             TwoFactorEnabled = false,
                             UserName = "eng2@estigo.com",
                             Notes = "Expert in Creative Writing",
-                            Subject = "English"
+                            Subject = "English",
+                            image = "http://est.runasp.net/f.jpg"
                         });
                 });
 

@@ -8,7 +8,7 @@ namespace Estigo.Models
         public string Subject { get; set; }
         public string? Notes { get; set; }
 
-        public byte[]? image { get; set; }
+        public string? image { get; set; }
 
         // Foreign Key 
         public int? CourseId { get; set; }
