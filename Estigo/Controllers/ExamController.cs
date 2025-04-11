@@ -33,70 +33,7 @@ namespace Estigo.Controllers
               
             };
             return Ok(response);
-        }
-
-
-        //[HttpGet("withanswer/{name}")]
-        //public async Task<IActionResult> GetExamByName(string name)
-        //{
-        //    var exam = await context.Exams
-        //        .Include(e => e.Course)       
-        //        .Include(e => e.Lesson)       
-        //        .Include(e => e.Questions)    
-        //        .FirstOrDefaultAsync(e => e.ExamTitle == name);
-
-        //    if (exam == null)
-        //        return NotFound();
-
-        //    var response = new
-        //    {
-        //        exam.Id,
-        //        exam.ExamTitle,
-        //        exam.ExamDescription,
-        //        exam.Grade,
-        //        CourseName = exam.Course?.CourseTitle,
-        //        LessonName = exam.Lesson?.lessonTitle,
-        //        Questions = exam.Questions.Select(q => new
-        //        {
-        //            q.QuestionText
-        //        }).ToList()
-        //    };
-
-        //    return Ok(response);
-        //}
-
-        //[HttpGet("withOutAnswer/{name}")]
-        //public async Task<IActionResult> GetExamByName_(string name)
-        //{
-        //    var exam = await context.Exams
-        //        .Include(e => e.Course)       
-        //        .Include(e => e.Lesson)      
-        //        .Include(e => e.Questions)    
-        //        .FirstOrDefaultAsync(e => e.ExamTitle == name); 
-
-        //    if (exam == null)
-        //        return NotFound();
-
-            
-        //    var response = new
-        //    {
-        //        exam.Id,
-        //        exam.ExamTitle,
-        //        exam.ExamDescription,
-        //        exam.Grade,
-        //        CourseName = exam.Course?.CourseTitle,
-        //        LessonName = exam.Lesson?.lessonTitle,
-        //        exam.CreatedAt,
-        //        exam.UpdatedAt,
-        //        Questions = exam.Questions.Select(q => new
-        //        {
-        //            q.QuestionText,
-        //            q.CorrectAnswer
-        //        }).ToList()
-        //    };
-
-        //    return Ok(response);
-        //}
+        }  
 
         [HttpDelete]
         public async Task<IActionResult> DeleteExam(int id)
@@ -253,6 +190,80 @@ namespace Estigo.Controllers
 
             return Ok(questions);
         }
+
+        [HttpPost("SubmitAndCheckQuiz")]
+        public async Task<ActionResult<object>> SubmitAndCheckQuiz([FromBody] SubmitQuizAnswerDTO dto)
+        {
+            var exam = await context.Exams
+                .Include(e => e.Questions)
+                .FirstOrDefaultAsync(e => e.Id == dto.ExamId);
+
+            if (exam == null)
+                return NotFound("Exam not found.");
+
+            int totalQuestions = exam.Questions.Count;
+            int correctAnswers = 0;
+
+            foreach (var answer in dto.Answers)
+            {
+                var question = exam.Questions.FirstOrDefault(q => q.Id == answer.QuestionId);
+                if (question != null && question.CorrectAnswer == answer.SelectedOption)
+                {
+                    correctAnswers++;
+                }
+            }
+
+            double score = (double)correctAnswers / totalQuestions * 100;
+
+            // Save the result
+            var result = new StudentExamResult
+            {
+                StudentId = dto.StudentId,
+                ExamId = dto.ExamId,
+                Score = score,
+                ExamDate = DateTime.Now
+            };
+
+            context.StudentExamResults.Add(result);
+            await context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                Message = "Quiz submitted and graded successfully.",
+                Score = score,
+                CorrectAnswers = correctAnswers,
+                TotalQuestions = totalQuestions
+            });
+        }
+
+        // POST: api/StudentExamResults/SubmitResult
+        [HttpPost("SubmitResult")]
+        public async Task<ActionResult<StudentExamResult>> PostStudentExamResult([FromBody] SubmitExamResultDto dto)
+        {
+            // تأكد من وجود الطالب والامتحان
+            var student = await context.Students.FindAsync(dto.StudentId);
+            var exam = await context.Exams.FindAsync(dto.ExamId);
+
+            if (student == null || exam == null)
+            {
+                return BadRequest("Student or Exam not found.");
+            }
+
+            // أنشئ النتيجة
+            var result = new StudentExamResult
+            {
+                StudentId = dto.StudentId,
+                ExamId = dto.ExamId,
+                Score = dto.Score,
+                ExamDate = DateTime.Now // أو لو عندك وقت مخصص ممكن تستلمه كمان من الـ DTO
+            };
+
+            context.StudentExamResults.Add(result);
+            await context.SaveChangesAsync();
+
+            return Ok("Grade stored successfully");
+        }
+
 
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace Estigo.DTO
 {
-    public class SubmitExamResultDTO
+    public class SubmitExamResultDto
     {
         public string StudentId { get; set; }
         public int ExamId { get; set; }
