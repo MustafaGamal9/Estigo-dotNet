@@ -43,6 +43,7 @@ public class DashboardController : ControllerBase
             .Take(3)
             .Select(c => new EnrolledCourseDTO
             {
+                CourseId = c.CourseId,
                 CourseName = c.CourseTitle,
                 CourseImageUrl = c.Logo
             })
@@ -86,9 +87,10 @@ public class DashboardController : ControllerBase
             .Take(2) // Take latest 2
             .Select(p => new PaymentInfoDTO 
             {
-               
-                PaymentDescription = p.PaymentMethod
-               
+
+                PurchaseDate = p.PurchaseDate,
+                CourseTitle = p.Course.CourseTitle
+
             })
             .ToListAsync();
 

@@ -2,7 +2,7 @@
 {
     public class PaymentInfoDTO
     {
-        public string PaymentDescription { get; set; }
-        public string PaymentDetail { get; set; }
+        public DateTime PurchaseDate { get; set; }
+        public string CourseTitle { get; set; }
     }
 }

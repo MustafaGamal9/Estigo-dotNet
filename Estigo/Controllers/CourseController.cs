@@ -178,6 +178,7 @@ namespace Estigo.Controllers
             var courses = await context.Courses
                 .Include(c => c.Teacher)
                 .Where(c => c.Available)
+                .OrderBy(c => Guid.NewGuid())
                 .Take(4)
                 .ToListAsync();
 
@@ -205,12 +206,14 @@ namespace Estigo.Controllers
         {
             var courses = await context.Courses
                 .Include(c => c.Teacher)
+                .Include(c => c.Category)
                 .Where(c => c.CategoryId == categoryId)
                 .ToListAsync();
             var courseVms = courses.Select(c => new CoursePageDTO
             {
                 CourseId = c.CourseId,
                 CourseTitle = c.CourseTitle,
+                CatName = c.Category.Name,
                 ImageBase64 = c.Logo,
                 price = c.Price,
                 TeacherName = c.Teacher != null ? c.Teacher.Name : null

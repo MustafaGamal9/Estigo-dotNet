@@ -145,6 +145,7 @@ namespace Estigo.Controllers
                 .Where(p => p.StudentId == studentId)
                 .Include(p => p.Course)
                 .OrderByDescending(p => p.PurchaseDate)
+                .Take(4)
                 .Select(p => new
                 {
                     p.PaymentId,

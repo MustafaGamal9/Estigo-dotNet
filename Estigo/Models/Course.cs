@@ -23,9 +23,11 @@ namespace Estigo.Models
         // Foreign key
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
+        public Category Category { get; set; }
 
         [ForeignKey("Teacher")] 
         public string? TeacherId { get; set; }
+        public Teacher? Teacher { get; set; }
 
         // Navigation property
         public virtual ICollection<Student> students { get; set; }
@@ -34,7 +36,7 @@ namespace Estigo.Models
         public virtual ICollection<Payment> Payments { get; set; }
 
 
-        public Teacher? Teacher { get; set; }
+        
 
 
 
