@@ -122,7 +122,7 @@ namespace Estigo.Controllers
                     mc.Course.CourseId,
                     mc.Course.CourseTitle,
                     mc.Course.Description,
-                    ImageBase64 = mc.Course.Logo != null ? Convert.ToBase64String(mc.Course.Logo) : null,
+                    ImageBase64 = mc.Course.Logo,
                     TeacherName = mc.Course.Teacher != null ? mc.Course.Teacher.Name : "N/A",
                     mc.EnrollmentDate,
                     mc.Course.Price
@@ -145,6 +145,7 @@ namespace Estigo.Controllers
                 .Where(p => p.StudentId == studentId)
                 .Include(p => p.Course)
                 .OrderByDescending(p => p.PurchaseDate)
+                .Take(4)
                 .Select(p => new
                 {
                     p.PaymentId,

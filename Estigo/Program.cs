@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.FileProviders;
 using System.Text;
 
 namespace Estigo
@@ -29,23 +30,28 @@ namespace Estigo
             // ✅ 2. Register services
             builder.Services.AddControllers();
 
+            // ✅ 3. Configure CORS for Angular & Vercel frontend
             builder.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy(policy =>
+                options.AddPolicy("AllowFrontend", policy =>
                 {
-                    policy.AllowAnyOrigin()
-                          .AllowAnyHeader()
-                          .AllowAnyMethod();
+                    policy.WithOrigins(
+                            "http://localhost:4200",
+                            "https://estigo-project.vercel.app" // replace with your actual domain
+                        )
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
                 });
             });
 
-            // ✅ 3. Configure database connection
+            // ✅ 4. Configure database connection
             builder.Services.AddDbContext<EstigoDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("cs"));
             });
 
-            // ✅ 4. Configure Identity
+            // ✅ 5. Configure Identity
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<EstigoDbContext>()
                 .AddDefaultTokenProviders();
@@ -53,7 +59,7 @@ namespace Estigo
             builder.Services.AddScoped<UserManager<ApplicationUser>>();
             builder.Services.AddScoped<SignInManager<ApplicationUser>>();
 
-            // ✅ 5. Configure JWT Authentication
+            // ✅ 6. Configure JWT Authentication
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -70,7 +76,7 @@ namespace Estigo
                     };
                 });
 
-            // ✅ 6. Configure Authorization with "Admin" policy
+            // ✅ 7. Configure Authorization with "Admin" policy
             builder.Services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
@@ -78,7 +84,7 @@ namespace Estigo
 
             builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 
-            // ✅ 7. Add Swagger with JWT support
+            // ✅ 8. Add Swagger with JWT support
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -89,7 +95,6 @@ namespace Estigo
                     Description = "API documentation for Estigo"
                 });
 
-                // Add JWT authentication to Swagger
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -116,24 +121,33 @@ namespace Estigo
                 });
             });
 
-            // ✅ 8. Build the app
+            // ✅ 9. Build the app
             var app = builder.Build();
 
-            // ✅ 9. Configure middleware
-            if (app.Environment.IsDevelopment())
+            // ✅ 10. Configure middleware
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Estigo API V1");
-                });
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Estigo API V1");
+            });
 
             app.UseHttpsRedirection();
+
+            // ✅ Serve static files from wwwroot (e.g., wwwroot/images/photo.jpg)
             app.UseStaticFiles();
-            app.UseCors();
+
+            // (Optional) Serve from custom folder:
+            /*
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
+                RequestPath = "/images"
+            });
+            */
+
+            app.UseCors("AllowFrontend");
             app.UseRouting();
-            
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -141,7 +155,7 @@ namespace Estigo
             app.MapControllers();
             app.MapIdentityApi<ApplicationUser>();
 
-            // ✅ 10. Create roles on startup
+            // ✅ 11. Create roles on startup
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;

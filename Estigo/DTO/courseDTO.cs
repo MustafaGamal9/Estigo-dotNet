@@ -9,7 +9,7 @@ namespace Estigo.DTO
         public int CourseId { get; set; }
         public string CourseTitle { get; set; }
         public string? Description { get; set; }
-        public byte[]? Logo { get; set; }
+        public string? Logo { get; set; }
         public int Price { get; set; }
         public bool Available { get; set; } = true;
 

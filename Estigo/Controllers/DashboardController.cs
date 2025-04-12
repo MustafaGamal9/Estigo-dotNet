@@ -43,8 +43,9 @@ public class DashboardController : ControllerBase
             .Take(3)
             .Select(c => new EnrolledCourseDTO
             {
+                CourseId = c.CourseId,
                 CourseName = c.CourseTitle,
-                CourseImageUrl = c.Logo != null ? Convert.ToBase64String(c.Logo) : null
+                CourseImageUrl = c.Logo
             })
             .ToListAsync();
 
@@ -58,7 +59,7 @@ public class DashboardController : ControllerBase
             .Take(3) 
             .Select(t => new InstructorImageDTO
             {
-                InstructorImageUrl = t.image != null ? Convert.ToBase64String(t.image) : null
+                InstructorImageUrl = t.image
             })
             .ToListAsync();
 
@@ -86,9 +87,10 @@ public class DashboardController : ControllerBase
             .Take(2) // Take latest 2
             .Select(p => new PaymentInfoDTO 
             {
-               
-                PaymentDescription = p.PaymentMethod
-               
+
+                PurchaseDate = p.PurchaseDate,
+                CourseTitle = p.Course.CourseTitle
+
             })
             .ToListAsync();
 
