@@ -37,7 +37,7 @@ namespace Estigo
                 {
                     policy.WithOrigins(
                             "http://localhost:4200",
-                            "https://estigo-project.vercel.app" // replace with your actual domain
+                            "https://estigo.vercel.app" // replace with your actual domain
                         )
                         .AllowAnyHeader()
                         .AllowAnyMethod()
