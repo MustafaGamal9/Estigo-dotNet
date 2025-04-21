@@ -341,8 +341,10 @@ namespace Estigo.Models
                 new lesson { lessonId = 172, lessonTitle = "Research Techniques", lessonDescription = "Gathering information for non-fiction.", lessonContent = "Interviews, archival research, evaluating sources.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
                 new lesson { lessonId = 173, lessonTitle = "Structuring Non-fiction", lessonDescription = "Organizing factual material effectively.", lessonContent = "Chronological, thematic, and narrative structures.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
                 new lesson { lessonId = 174, lessonTitle = "Writing with Clarity and Style", lessonDescription = "Engaging readers with factual content.", lessonContent = "Using vivid language, maintaining accuracy.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
-                new lesson { lessonId = 175, lessonTitle = "Ethics in Non-fiction", lessonDescription = "Responsibilities when writing about real people and events.", lessonContent = "Fact-checking, privacy concerns, representation.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 }
-            );
+                new lesson { lessonId = 175, lessonTitle = "Ethics in Non-fiction", lessonDescription = "Responsibilities when writing about real people and events.", lessonContent = "Fact-checking, privacy concerns, representation.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
+                new lesson { lessonId = 176, lessonTitle = "Ethics in Non-fiction", lessonDescription = "Responsibilities when writing about real people and events.", lessonContent = "Fact-checking, privacy concerns, representation.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 }
+
+                );
 
             // Ensure the seedDate variable is accessible here
             // var seedDate = new DateTime(2023, 1, 1); // Or your actual seed date variable
@@ -364,6 +366,7 @@ namespace Estigo.Models
                 // Exam for Lesson 13 (Course 3)
                 new Exam { Id = 7, ExamTitle = "Parallel Lines and Transversals Exam", ExamDescription = "Test your knowledge of angles formed by parallel lines.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 13 },
                 // Exam for Lesson 15 (Course 3)
+
                 new Exam { Id = 8, ExamTitle = "Introduction to Polygons Exam", ExamDescription = "Test your knowledge of polygon properties.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 15 },
                 // Exam for Lesson 17 (Course 4)
                 new Exam { Id = 9, ExamTitle = "The Unit Circle Exam", ExamDescription = "Test your understanding of the unit circle in trigonometry.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 17 },
@@ -488,7 +491,9 @@ namespace Estigo.Models
                 // Exam for Lesson 137 (Course 28)
                 new Exam { Id = 69, ExamTitle = "Approximation Methods Exam", ExamDescription = "Test your knowledge of variation principle and perturbation theory.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 137 },
                 // Exam for Lesson 139 (Course 28)
+
                 new Exam { Id = 70, ExamTitle = "Computational Chemistry Methods Exam", ExamDescription = "Test your basic understanding of Hartree-Fock and DFT.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 139 },
+
                 // Exam for Lesson 141 (Course 29)
                 new Exam { Id = 71, ExamTitle = "Literary Analysis Basics Exam", ExamDescription = "Test your ability to use tools for interpreting literature.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 141 },
                 // Exam for Lesson 143 (Course 29)
@@ -510,7 +515,9 @@ namespace Estigo.Models
                 // Exam for Lesson 159 (Course 32)
                 new Exam { Id = 80, ExamTitle = "Poetic Forms Exam", ExamDescription = "Test your ability to recognize and analyze different poetic structures.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 159 },
                 // Exam for Lesson 161 (Course 33)
+
                 new Exam { Id = 81, ExamTitle = "History of Theater Exam", ExamDescription = "Test your knowledge of key periods and playwrights.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 161 },
+
                 // Exam for Lesson 163 (Course 33)
                 new Exam { Id = 82, ExamTitle = "Reading a Play Exam", ExamDescription = "Test your ability to understand stage directions and subtext.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 163 },
                 // Exam for Lesson 165 (Course 33)

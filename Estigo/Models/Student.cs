@@ -7,6 +7,8 @@ namespace Estigo.Models
 {
     public class Student : ApplicationUser // Corrected the class name to 'UserIdentity'
     {
+       
+        public int StudentCode{ get; set; }
         public DateOnly? BirthDate { get; set; }
         public string? Track { get; set; }
         public int? Level { get; set; }

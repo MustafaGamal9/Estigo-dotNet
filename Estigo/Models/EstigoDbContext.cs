@@ -133,6 +133,10 @@ namespace Estigo.Models
                 .HasForeignKey<Exam>(e => e.lessonId)  
                 .OnDelete(DeleteBehavior.Cascade);  // delete the exam if the lesson is deleted
 
+            modelBuilder.Entity<Student>()
+                        .HasIndex(s => s.StudentCode)
+                        .IsUnique();
+
             modelBuilder.Seed();
         }
 

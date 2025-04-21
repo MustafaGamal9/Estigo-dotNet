@@ -3,6 +3,7 @@ using Estigo.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Org.BouncyCastle.Asn1.X500;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -56,6 +57,7 @@ namespace Estigo.Controllers
         [HttpPost("register/student")]
         public async Task<IActionResult> RegisterStudent(StudentRegisterDTO model)
         {
+            var rnd = new Random();
             var user = new Student
             {
                 UserName = model.Email,
@@ -66,6 +68,7 @@ namespace Estigo.Controllers
                 Track = model.Track,
                 Level = model.Level,
                 ParentPhone = model.ParentPhone,
+                StudentCode = rnd.Next(100000, 999999) 
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);

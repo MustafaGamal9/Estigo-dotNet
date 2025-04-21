@@ -45,56 +45,7 @@ namespace Estigo.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateExam([FromBody] ExamDTO exam)
-        {
-            if (exam == null || string.IsNullOrEmpty(exam.ExamTitle) || exam.Questions == null || exam.Questions.Count == 0)
-            {
-                return BadRequest("Please provide valid exam data.");
-            }
-
-            var newExam = new Exam
-            {
-                ExamTitle = exam.ExamTitle,
-                ExamDescription = exam.ExamDescription,
-                Grade = exam.Grade,
-                lessonId = exam.lessonId,
-                Questions = exam.Questions.Select(q => new BankOfQuestion
-                {
-                    QuestionText = q.QuestionText,
-                    OptionA = q.OptionA,
-                    OptionB = q.OptionB,
-                    OptionC = q.OptionC,
-                    OptionD = q.OptionD,
-                    CorrectAnswer = q.CorrectAnswer
-                }).ToList()
-            };
-
-            context.Exams.Add(newExam);
-            await context.SaveChangesAsync();
-
-            var resultDto = new ExamDTO
-            {
-                Id = newExam.Id,
-                ExamTitle = newExam.ExamTitle,
-                ExamDescription = newExam.ExamDescription,
-                Grade = newExam.Grade,
-                lessonId = newExam.lessonId,
-                Questions = newExam.Questions.Select(q => new QuestionDTO
-                {
-                    Id = q.Id,
-                    QuestionText = q.QuestionText,
-                    OptionA = q.OptionA,
-                    OptionB = q.OptionB,
-                    OptionC = q.OptionC,
-                    OptionD = q.OptionD,
-                    CorrectAnswer = q.CorrectAnswer
-                }).ToList()
-            };
-
-            return Created($"api/Exam/{exam.Id}", exam);
-
-        }
+       
 
         [HttpPut]
         public async Task<IActionResult> UpdateExam([FromBody] Exam exam)
