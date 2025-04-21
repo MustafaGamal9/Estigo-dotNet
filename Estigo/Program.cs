@@ -7,6 +7,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.FileProviders;
 using System.Text;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+
 
 namespace Estigo
 {
@@ -28,7 +31,12 @@ namespace Estigo
             });
 
             // ✅ 2. Register services
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                }); 
+
 
             // ✅ 3. Configure CORS for Angular & Vercel frontend
             builder.Services.AddCors(options =>
@@ -119,6 +127,7 @@ namespace Estigo
                         new string[] {}
                     }
                 });
+                c.MapType<JsonPatchDocument>(() => new OpenApiSchema { Type = "object" });
             });
 
             // ✅ 9. Build the app

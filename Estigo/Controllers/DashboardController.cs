@@ -20,7 +20,7 @@ public class DashboardController : ControllerBase
 
    
     [HttpGet("student/{studentId}")]
-    public async Task<ActionResult<DashboardDTO>> GetStudentDashboard(string studentId) // Receive string studentId
+    public async Task<ActionResult<DashboardDTO>> GetStudentDashboard(string studentId) 
     {
         // --- Fetch Student Details ---
         var student = await _context.Students

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using static Estigo.Enums.CourseStatus;
 
 namespace Estigo.DTO
 {
@@ -12,6 +13,7 @@ namespace Estigo.DTO
         public string? Logo { get; set; }
         public int Price { get; set; }
         public bool Available { get; set; } = true;
+        public CourseStatusEnum Status { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; }

@@ -12,8 +12,7 @@ namespace Estigo.DTO
         public string ExamTitle { get; set; }
         public string ExamDescription { get; set; }
         public string Grade { get; set; }
-        [ForeignKey("Course")]
-        public int courseId { get; set; }
+
         [ForeignKey("Lesson")]
         public int lessonId { get; set; }
         public ICollection<QuestionDTO> Questions { get; set; }

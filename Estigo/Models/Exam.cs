@@ -17,10 +17,7 @@ namespace Estigo.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? UpdatedAt { get; set; }
 
-        // Navigation Properties
-        [ForeignKey("Course")]
-        public int courseId { get; set; }
-        public Course Course { get; set; }
+
 
         [ForeignKey("Lesson")]
         public int lessonId { get; set; }

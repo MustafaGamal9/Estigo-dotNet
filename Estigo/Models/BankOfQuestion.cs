@@ -1,4 +1,6 @@
-﻿namespace Estigo.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Estigo.Models
 {
     public class BankOfQuestion
     {
@@ -11,6 +13,7 @@
         public string CorrectAnswer { get; set; }
 
         // Navigation Properties
+        [ForeignKey("Exam")]
         public int ExamId { get; set; }
         public Exam Exam { get; set; }
 

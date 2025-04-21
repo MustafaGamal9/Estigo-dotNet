@@ -1,6 +1,7 @@
 ﻿using Estigo.DTO;
 using Estigo.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using lesson = Estigo.Models.lesson;
@@ -84,7 +85,7 @@ namespace Estigo.Controllers
         }
 
 
-        // ... other code ...
+        
         [HttpGet("GetCourseByLessonName/{lessonName}")]
         public async Task<IActionResult> GetCourseByLessonName(string lessonName)
         {
@@ -129,81 +130,142 @@ namespace Estigo.Controllers
             return Ok(lesson);
         }
 
-        //// POST: api/lesson
-        //[HttpPost]
-        //public async Task<IActionResult> CreateLesson([FromBody] LessonDTO lessonDto)
-        //{
-        //    if (lessonDto == null)
-        //        return BadRequest("Invalid chapter data.");
+        // POST: api/lesson
+        [HttpPost]
+        public async Task<IActionResult> CreateLesson([FromBody] LessonDTO lessonDto)
+        {
+            if (lessonDto == null)
+                return BadRequest("Invalid chapter data.");
 
-        //    var lesson = new lesson
-        //    {
-        //        lessonTitle = lessonDto.lessonTitle,
-        //        lessonDescription = lessonDto.lessonDescription,
-        //        lessonContent = lessonDto.lessonContent,
-        //        lessonVideo = lessonDto.lessonVideo,
-        //        courseId = lessonDto.courseId,
-        //        CreatedAt = DateTime.UtcNow
-        //    };
+            var lesson = new lesson
+            {
+                lessonTitle = lessonDto.lessonTitle,
+                lessonDescription = lessonDto.lessonDescription,
+                lessonContent = lessonDto.lessonContent,
+                lessonVideo = lessonDto.lessonVideo,
+                courseId = lessonDto.courseId,
+                CreatedAt = DateTime.UtcNow
+            };
 
-        //    context.lessons.Add(lesson);
-        //    await context.SaveChangesAsync();
-        //    return CreatedAtAction(nameof(GetLessonById), new { id = lesson.lessonId }, lesson);
-        //}
+            context.lessons.Add(lesson);
+            await context.SaveChangesAsync();
+            return Ok(lesson);
+        }
 
-        //// PUT: api/lesson/{id}
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateLesson(int id, [FromBody] LessonDTO lessonDTO)
-        //{
-        //    if (id != lessonDTO.lessonId)
-        //        return BadRequest("Lesson ID mismatch.");
+   
 
-        //    var existingLesson = await context.lessons.FindAsync(id);
-        //    if (existingLesson == null)
-        //        return NotFound("Lesson not found.");
+        // PATCH: api/lesson/{id}
+        [HttpPatch("{id}")]
+        [Consumes("application/json-patch+json")]
 
-        //    existingLesson.lessonTitle = lessonDTO.lessonTitle;
-        //    existingLesson.lessonDescription = lessonDTO.lessonDescription;
-        //    existingLesson.lessonContent = lessonDTO.lessonContent;
-        //    existingLesson.lessonVideo = lessonDTO.lessonVideo;
-        //    existingLesson.courseId = lessonDTO.courseId;
-        //    existingLesson.UpdatedAt = DateTime.UtcNow;
+        public async Task<IActionResult> PatchLesson(int id, [FromBody] JsonPatchDocument<LessonDTO> patchDoc)
+        {
+            if (patchDoc == null)
+                return BadRequest("Invalid patch data.");
 
-        //    context.lessons.Update(existingLesson);
-        //    await context.SaveChangesAsync();
+            var lessonEntity = await context.lessons.FindAsync(id); // Use your DbSet name
+            if (lessonEntity == null)
+                return NotFound();
 
-        //    return Ok(existingLesson);
-        //}
+            // Create a DTO to apply the patch to
+            var lessonDto = new LessonDTO
+            {
+                lessonTitle = lessonEntity.lessonTitle,
+                lessonDescription = lessonEntity.lessonDescription,
+                lessonContent = lessonEntity.lessonContent,
+                lessonVideo = lessonEntity.lessonVideo,
+                courseId = lessonEntity.courseId
+            };
 
-        //// DELETE: api/lesson/{id}
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteLesson(int id)
-        //{
-        //    var lesson = await context.lessons.FindAsync(id);
-        //    if (lesson == null)
-        //        return NotFound("Lesson not found.");
+            // Apply patch and validate
+            patchDoc.ApplyTo(lessonDto);
 
-        //    context.lessons.Remove(lesson);
-        //    await context.SaveChangesAsync();
-        //    return NoContent();
-        //}
+            TryValidateModel(lessonDto); // Validate the DTO *after* patching
 
-        //[HttpGet("GetCourseLessons")]
-        //public async Task<ActionResult<IEnumerable<LessonDTO>>> GetCourseLessons(int courseId)
-        //{
-        //    var lessons = await context.lessons
-        //        .Where(c => c.courseId == courseId)
-        //        .Select(c => new LessonDTO
-        //        {
-        //            lessonId = c.lessonId,
-        //            lessonTitle = c.lessonTitle,
-        //            lessonDescription = c.lessonDescription,
-        //            lessonContent = c.lessonContent,
-        //            CreatedAt = c.CreatedAt,
-        //            UpdatedAt = c.UpdatedAt,
-        //            courseId = c.courseId
-        //        }).ToListAsync();
-        //    return Ok(lessons);
-        //}
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            // Map changes from DTO back to entity
+            lessonEntity.lessonTitle = lessonDto.lessonTitle;
+            lessonEntity.lessonDescription = lessonDto.lessonDescription;
+            lessonEntity.lessonContent = lessonDto.lessonContent;
+            lessonEntity.lessonVideo = lessonDto.lessonVideo;
+            lessonEntity.courseId = lessonDto.courseId;
+            // lessonEntity.UpdatedAt = DateTime.UtcNow; // Optional
+
+            await context.SaveChangesAsync();
+
+            return NoContent(); // Success, no content to return
+        }
+
+        // DELETE: api/lesson/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteLesson(int id)
+        {
+            var lessonToDelete = await context.lessons.FindAsync(id); // Use your DbSet name
+            if (lessonToDelete == null)
+                return NotFound();
+
+            context.lessons.Remove(lessonToDelete);
+            await context.SaveChangesAsync();
+
+            return NoContent(); // Success, no content to return
+        }
     }
+
+    //// PUT: api/lesson/{id}
+    //[HttpPut("{id}")]
+    //public async Task<IActionResult> UpdateLesson(int id, [FromBody] LessonDTO lessonDTO)
+    //{
+    //    if (id != lessonDTO.lessonId)
+    //        return BadRequest("Lesson ID mismatch.");
+
+    //    var existingLesson = await context.lessons.FindAsync(id);
+    //    if (existingLesson == null)
+    //        return NotFound("Lesson not found.");
+
+    //    existingLesson.lessonTitle = lessonDTO.lessonTitle;
+    //    existingLesson.lessonDescription = lessonDTO.lessonDescription;
+    //    existingLesson.lessonContent = lessonDTO.lessonContent;
+    //    existingLesson.lessonVideo = lessonDTO.lessonVideo;
+    //    existingLesson.courseId = lessonDTO.courseId;
+    //    existingLesson.UpdatedAt = DateTime.UtcNow;
+
+    //    context.lessons.Update(existingLesson);
+    //    await context.SaveChangesAsync();
+
+    //    return Ok(existingLesson);
+    //}
+
+    //// DELETE: api/lesson/{id}
+    //[HttpDelete("{id}")]
+    //public async Task<IActionResult> DeleteLesson(int id)
+    //{
+    //    var lesson = await context.lessons.FindAsync(id);
+    //    if (lesson == null)
+    //        return NotFound("Lesson not found.");
+
+    //    context.lessons.Remove(lesson);
+    //    await context.SaveChangesAsync();
+    //    return NoContent();
+    //}
+
+    //[HttpGet("GetCourseLessons")]
+    //public async Task<ActionResult<IEnumerable<LessonDTO>>> GetCourseLessons(int courseId)
+    //{
+    //    var lessons = await context.lessons
+    //        .Where(c => c.courseId == courseId)
+    //        .Select(c => new LessonDTO
+    //        {
+    //            lessonId = c.lessonId,
+    //            lessonTitle = c.lessonTitle,
+    //            lessonDescription = c.lessonDescription,
+    //            lessonContent = c.lessonContent,
+    //            CreatedAt = c.CreatedAt,
+    //            UpdatedAt = c.UpdatedAt,
+    //            courseId = c.courseId
+    //        }).ToListAsync();
+    //    return Ok(lessons);
+    //}
 }
+

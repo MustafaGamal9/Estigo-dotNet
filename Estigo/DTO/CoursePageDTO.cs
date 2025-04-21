@@ -1,5 +1,6 @@
 ﻿using Estigo.Models;
 using System.ComponentModel.DataAnnotations;
+using static Estigo.Enums.CourseStatus;
 
 namespace Estigo.DTO
 {
@@ -13,5 +14,6 @@ namespace Estigo.DTO
         public int price { get; set; }
 
         public string? TeacherName { get; set; }
+        public CourseStatusEnum Status { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Estigo.Enums;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 
 namespace Estigo.Models
@@ -7,7 +8,9 @@ namespace Estigo.Models
     {
         public static void Seed (this ModelBuilder modelBuilder)
         {
- 
+
+            var approvedStatus = CourseStatus.CourseStatusEnum.Approved;
+
 
             // Seed Categories
             modelBuilder.Entity<Category>().HasData(
@@ -45,53 +48,52 @@ namespace Estigo.Models
                 new Teacher { Id = "t13", Name = "John", Email = "eng2@estigo.com", NormalizedEmail = "ENG2@ESTIGO.COM", UserName = "eng2@estigo.com", NormalizedUserName = "ENG2@ESTIGO.COM", Gender = "Male", Subject = "English", Notes = "Expert in Creative Writing", Role = "Teacher", image = "https://estigo.tryasp.net/f.jpg" }
             );
 
-            // Seed Courses - Distribute 7 courses per category among the available teachers
             modelBuilder.Entity<Course>().HasData(
-                // Mathematics Courses (CategoryId = 1) rotating between teachers "t1" and "t2"
-                new Course { CourseId = 1, CourseTitle = "Algebra | Unit 1", Description = "Introduction to algebraic concepts", Price = 199, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/algebra.jpg" },
-                new Course { CourseId = 2, CourseTitle = "Calculus | Unit 2", Description = "Fundamentals of differential calculus", Price = 199, Available = true, CategoryId = 1, TeacherId = "t2", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/calculas.jpeg" },
-                new Course { CourseId = 3, CourseTitle = "Geometry | Unit 3", Description = "Basics of geometric shapes and theorems", Price = 189, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/geo.jpeg" },
-                new Course { CourseId = 4, CourseTitle = "Trigonometry | Unit 4", Description = "Understanding angles and trigonometric functions", Price = 189, Available = true, CategoryId = 1, TeacherId = "t2", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/trig.jpeg" },
-                new Course { CourseId = 5, CourseTitle = "Statistics | Unit 5", Description = "Introduction to data analysis and probability", Price = 179, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/stat.jpeg" },
-                new Course { CourseId = 6, CourseTitle = "Probability | Unit 6", Description = "Exploring probability theories and applications", Price = 179, Available = true, CategoryId = 1, TeacherId = "t2", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/prob.jpeg" },
-                new Course { CourseId = 7, CourseTitle = "Discrete Math | Unit 7", Description = "Fundamentals of logic, set theory, and combinatorics", Price = 189, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/disc.jpeg" },
+    // Mathematics Courses (CategoryId = 1)
+    new Course { CourseId = 1, CourseTitle = "Algebra | Unit 1", Description = "Introduction to algebraic concepts", Price = 199, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/algebra.jpg", Status = approvedStatus },
+    new Course { CourseId = 2, CourseTitle = "Calculus | Unit 2", Description = "Fundamentals of differential calculus", Price = 199, Available = true, CategoryId = 1, TeacherId = "t2", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/calculas.jpeg", Status = approvedStatus },
+    new Course { CourseId = 3, CourseTitle = "Geometry | Unit 3", Description = "Basics of geometric shapes and theorems", Price = 189, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/geo.jpeg", Status = approvedStatus },
+    new Course { CourseId = 4, CourseTitle = "Trigonometry | Unit 4", Description = "Understanding angles and trigonometric functions", Price = 189, Available = true, CategoryId = 1, TeacherId = "t2", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/trig.jpeg", Status = approvedStatus },
+    new Course { CourseId = 5, CourseTitle = "Statistics | Unit 5", Description = "Introduction to data analysis and probability", Price = 179, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/stat.jpeg", Status = approvedStatus },
+    new Course { CourseId = 6, CourseTitle = "Probability | Unit 6", Description = "Exploring probability theories and applications", Price = 179, Available = true, CategoryId = 1, TeacherId = "t2", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/prob.jpeg", Status = approvedStatus },
+    new Course { CourseId = 7, CourseTitle = "Discrete Math | Unit 7", Description = "Fundamentals of logic, set theory, and combinatorics", Price = 189, Available = true, CategoryId = 1, TeacherId = "t1", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/disc.jpeg", Status = approvedStatus },
 
-                // Physics Courses (CategoryId = 2) rotating among teachers "t3", "t4", and "t5"
-                new Course { CourseId = 8, CourseTitle = "Mechanics | Unit 1", Description = "Introduction to Newtonian mechanics", Price = 149, Available = true, CategoryId = 2, TeacherId = "t3", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/mecha.jpg" },
-                new Course { CourseId = 9, CourseTitle = "Electricity | Unit 2", Description = "Basics of electric circuits and fields", Price = 149, Available = true, CategoryId = 2, TeacherId = "t4", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/elec.jpg" },
-                new Course { CourseId = 10, CourseTitle = "Magnetism | Unit 3", Description = "Principles of magnetic forces and fields", Price = 159, Available = true, CategoryId = 2, TeacherId = "t5", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/iron.jpg" },
-                new Course { CourseId = 11, CourseTitle = "Optics | Unit 4", Description = "Study of light behavior and properties", Price = 159, Available = true, CategoryId = 2, TeacherId = "t3", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/optics.jpeg" },
-                new Course { CourseId = 12, CourseTitle = "Thermodynamics | Unit 5", Description = "Fundamentals of heat and energy", Price = 169, Available = true, CategoryId = 2, TeacherId = "t4", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/thermo.jpeg" },
-                new Course { CourseId = 13, CourseTitle = "Quantum Physics | Unit 6", Description = "Introduction to quantum theory", Price = 169, Available = true, CategoryId = 2, TeacherId = "t5", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/quant.jpeg" },
-                new Course { CourseId = 14, CourseTitle = "Relativity | Unit 7", Description = "Concepts of special and general relativity", Price = 169, Available = true, CategoryId = 2, TeacherId = "t3", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/rela.jpg" },
+    // Physics Courses (CategoryId = 2)
+    new Course { CourseId = 8, CourseTitle = "Mechanics | Unit 1", Description = "Introduction to Newtonian mechanics", Price = 149, Available = true, CategoryId = 2, TeacherId = "t3", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/mecha.jpg", Status = approvedStatus },
+    new Course { CourseId = 9, CourseTitle = "Electricity | Unit 2", Description = "Basics of electric circuits and fields", Price = 149, Available = true, CategoryId = 2, TeacherId = "t4", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/elec.jpg", Status = approvedStatus },
+    new Course { CourseId = 10, CourseTitle = "Magnetism | Unit 3", Description = "Principles of magnetic forces and fields", Price = 159, Available = true, CategoryId = 2, TeacherId = "t5", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/iron.jpg", Status = approvedStatus },
+    new Course { CourseId = 11, CourseTitle = "Optics | Unit 4", Description = "Study of light behavior and properties", Price = 159, Available = true, CategoryId = 2, TeacherId = "t3", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/optics.jpeg", Status = approvedStatus },
+    new Course { CourseId = 12, CourseTitle = "Thermodynamics | Unit 5", Description = "Fundamentals of heat and energy", Price = 169, Available = true, CategoryId = 2, TeacherId = "t4", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/thermo.jpeg", Status = approvedStatus },
+    new Course { CourseId = 13, CourseTitle = "Quantum Physics | Unit 6", Description = "Introduction to quantum theory", Price = 169, Available = true, CategoryId = 2, TeacherId = "t5", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/quant.jpeg", Status = approvedStatus },
+    new Course { CourseId = 14, CourseTitle = "Relativity | Unit 7", Description = "Concepts of special and general relativity", Price = 169, Available = true, CategoryId = 2, TeacherId = "t3", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/rela.jpg", Status = approvedStatus },
 
-                // Biology Courses (CategoryId = 3) rotating between teachers "t6" and "t7"
-                new Course { CourseId = 15, CourseTitle = "Cell Biology | Unit 1", Description = "Study of cell structure and function", Price = 179, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/cell.jpg" },
-                new Course { CourseId = 16, CourseTitle = "Genetics | Unit 2", Description = "Introduction to heredity and DNA", Price = 179, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/gena.jpeg" },
-                new Course { CourseId = 17, CourseTitle = "Movement | Unit 3", Description = "Principles of Movement", Price = 189, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/move.jpeg" },
-                new Course { CourseId = 18, CourseTitle = "Ecology | Unit 4", Description = "Basics of ecosystems and environment", Price = 189, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/eco.jpg" },
-                new Course { CourseId = 19, CourseTitle = "Botany | Unit 5", Description = "Study of plant biology and physiology", Price = 179, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/elec.jpg" },
-                new Course { CourseId = 20, CourseTitle = "Zoology | Unit 6", Description = "Introduction to animal biology", Price = 179, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/zoo.jpg" },
-                new Course { CourseId = 21, CourseTitle = "Microbiology | Unit 7", Description = "Basics of microorganisms and their roles", Price = 189, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/micro.jpg" },
+    // Biology Courses (CategoryId = 3)
+    new Course { CourseId = 15, CourseTitle = "Cell Biology | Unit 1", Description = "Study of cell structure and function", Price = 179, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/cell.jpg", Status = approvedStatus },
+    new Course { CourseId = 16, CourseTitle = "Genetics | Unit 2", Description = "Introduction to heredity and DNA", Price = 179, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/gena.jpeg", Status = approvedStatus },
+    new Course { CourseId = 17, CourseTitle = "Movement | Unit 3", Description = "Principles of Movement", Price = 189, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/move.jpeg", Status = approvedStatus },
+    new Course { CourseId = 18, CourseTitle = "Ecology | Unit 4", Description = "Basics of ecosystems and environment", Price = 189, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/eco.jpg", Status = approvedStatus },
+    new Course { CourseId = 19, CourseTitle = "Botany | Unit 5", Description = "Study of plant biology and physiology", Price = 179, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/elec.jpg", Status = approvedStatus }, // Note: Logo same as Electricity? Might be a typo in original.
+    new Course { CourseId = 20, CourseTitle = "Zoology | Unit 6", Description = "Introduction to animal biology", Price = 179, Available = true, CategoryId = 3, TeacherId = "t7", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/zoo.jpg", Status = approvedStatus },
+    new Course { CourseId = 21, CourseTitle = "Microbiology | Unit 7", Description = "Basics of microorganisms and their roles", Price = 189, Available = true, CategoryId = 3, TeacherId = "t6", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/micro.jpg", Status = approvedStatus },
 
-                // Chemistry Courses (CategoryId = 4) rotating among teachers "t8", "t9", "t10", and "t11"
-                new Course { CourseId = 22, CourseTitle = "Organic Chemistry | Unit 1", Description = "Introduction to organic compounds", Price = 159, Available = true, CategoryId = 4, TeacherId = "t8", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/organic.jpeg" },
-                new Course { CourseId = 23, CourseTitle = "Inorganic Chemistry | Unit 2", Description = "Fundamentals of inorganic substances", Price = 159, Available = true, CategoryId = 4, TeacherId = "t9", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/inorganic.jpeg" },
-                new Course { CourseId = 24, CourseTitle = "Physical Chemistry | Unit 3", Description = "Study of chemical thermodynamics and kinetics", Price = 169, Available = true, CategoryId = 4, TeacherId = "t10", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/physChem.jpg" },
-                new Course { CourseId = 25, CourseTitle = "Analytical Chemistry | Unit 4", Description = "Techniques for chemical analysis", Price = 169, Available = true, CategoryId = 4, TeacherId = "t11", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/analyt.png" },
-                new Course { CourseId = 26, CourseTitle = "Biochemistry | Unit 5", Description = "Chemical processes within living organisms", Price = 179, Available = true, CategoryId = 4, TeacherId = "t8", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/biochem.jpeg" },
-                new Course { CourseId = 27, CourseTitle = "Environmental Chemistry | Unit 6", Description = "Chemistry in environmental processes", Price = 179, Available = true, CategoryId = 4, TeacherId = "t9", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/env.jpg" },
-                new Course { CourseId = 28, CourseTitle = "Theoretical Chemistry | Unit 7", Description = "Conceptual frameworks of chemical behavior", Price = 169, Available = true, CategoryId = 4, TeacherId = "t10", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/theo.jpeg" },
+    // Chemistry Courses (CategoryId = 4)
+    new Course { CourseId = 22, CourseTitle = "Organic Chemistry | Unit 1", Description = "Introduction to organic compounds", Price = 159, Available = true, CategoryId = 4, TeacherId = "t8", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/organic.jpeg", Status = approvedStatus },
+    new Course { CourseId = 23, CourseTitle = "Inorganic Chemistry | Unit 2", Description = "Fundamentals of inorganic substances", Price = 159, Available = true, CategoryId = 4, TeacherId = "t9", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/inorganic.jpeg", Status = approvedStatus },
+    new Course { CourseId = 24, CourseTitle = "Physical Chemistry | Unit 3", Description = "Study of chemical thermodynamics and kinetics", Price = 169, Available = true, CategoryId = 4, TeacherId = "t10", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/physChem.jpg", Status = approvedStatus },
+    new Course { CourseId = 25, CourseTitle = "Analytical Chemistry | Unit 4", Description = "Techniques for chemical analysis", Price = 169, Available = true, CategoryId = 4, TeacherId = "t11", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/analyt.png", Status = approvedStatus },
+    new Course { CourseId = 26, CourseTitle = "Biochemistry | Unit 5", Description = "Chemical processes within living organisms", Price = 179, Available = true, CategoryId = 4, TeacherId = "t8", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/biochem.jpeg", Status = approvedStatus },
+    new Course { CourseId = 27, CourseTitle = "Environmental Chemistry | Unit 6", Description = "Chemistry in environmental processes", Price = 179, Available = true, CategoryId = 4, TeacherId = "t9", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/env.jpg", Status = approvedStatus },
+    new Course { CourseId = 28, CourseTitle = "Theoretical Chemistry | Unit 7", Description = "Conceptual frameworks of chemical behavior", Price = 169, Available = true, CategoryId = 4, TeacherId = "t10", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/theo.jpeg", Status = approvedStatus },
 
-                // English Courses (CategoryId = 5) rotating between teachers "t12" and "t13"
-                new Course { CourseId = 29, CourseTitle = "Literature | Unit 1", Description = "Exploring classic and modern literature", Price = 129, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/lit.jpg" },
-                new Course { CourseId = 30, CourseTitle = "Creative Writing | Unit 2", Description = "Develop storytelling and narrative skills", Price = 129, Available = true, CategoryId = 5, TeacherId = "t13", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/write.jpg" },
-                new Course { CourseId = 31, CourseTitle = "Grammar & Composition | Unit 3", Description = "Mastering the rules of English grammar", Price = 119, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/gram.jpg" },
-                new Course { CourseId = 32, CourseTitle = "Poetry Analysis | Unit 4", Description = "Study and analysis of poetry", Price = 119, Available = true, CategoryId = 5, TeacherId = "t13", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/poe.png" },
-                new Course { CourseId = 33, CourseTitle = "Drama & Theater | Unit 5", Description = "Introduction to dramatic literature and performance", Price = 129, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/drama.jpg" },
-                new Course { CourseId = 34, CourseTitle = "Fiction Writing | Unit 6", Description = "Techniques for writing compelling fiction", Price = 129, Available = true, CategoryId = 5, TeacherId = "t13", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/fiction.jpeg" },
-                new Course { CourseId = 35, CourseTitle = "Non-fiction Writing | Unit 7", Description = "Crafting engaging non-fiction narratives", Price = 119, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/nonfic.jpg" }
-            );
+    // English Courses (CategoryId = 5)
+    new Course { CourseId = 29, CourseTitle = "Literature | Unit 1", Description = "Exploring classic and modern literature", Price = 129, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/lit.jpg", Status = approvedStatus },
+    new Course { CourseId = 30, CourseTitle = "Creative Writing | Unit 2", Description = "Develop storytelling and narrative skills", Price = 129, Available = true, CategoryId = 5, TeacherId = "t13", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/write.jpg", Status = approvedStatus },
+    new Course { CourseId = 31, CourseTitle = "Grammar & Composition | Unit 3", Description = "Mastering the rules of English grammar", Price = 119, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/gram.jpg", Status = approvedStatus },
+    new Course { CourseId = 32, CourseTitle = "Poetry Analysis | Unit 4", Description = "Study and analysis of poetry", Price = 119, Available = true, CategoryId = 5, TeacherId = "t13", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/poe.png", Status = approvedStatus },
+    new Course { CourseId = 33, CourseTitle = "Drama & Theater | Unit 5", Description = "Introduction to dramatic literature and performance", Price = 129, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/drama.jpg", Status = approvedStatus },
+    new Course { CourseId = 34, CourseTitle = "Fiction Writing | Unit 6", Description = "Techniques for writing compelling fiction", Price = 129, Available = true, CategoryId = 5, TeacherId = "t13", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/fiction.jpeg", Status = approvedStatus },
+    new Course { CourseId = 35, CourseTitle = "Non-fiction Writing | Unit 7", Description = "Crafting engaging non-fiction narratives", Price = 119, Available = true, CategoryId = 5, TeacherId = "t12", CreatedAt = seedDate, Logo = "https://estigo.tryasp.net/nonfic.jpg", Status = approvedStatus }
+);
 
 
             // Seed Lessons - 5 lessons per course with camelCase properties
@@ -348,181 +350,181 @@ namespace Estigo.Models
             // Seed Exams - For every other lesson (approx. half)
             modelBuilder.Entity<Exam>().HasData(
                 // Exam for Lesson 1 (Course 1)
-                new Exam { Id = 1, ExamTitle = "Algebra Basics Exam", ExamDescription = "Test your knowledge of variables and expressions.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 1, lessonId = 1 },
+                new Exam { Id = 1, ExamTitle = "Algebra Basics Exam", ExamDescription = "Test your knowledge of variables and expressions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 1 },
                 // Exam for Lesson 3 (Course 1)
-                new Exam { Id = 2, ExamTitle = "Inequalities Exam", ExamDescription = "Test your understanding and solving of linear inequalities.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 1, lessonId = 3 },
+                new Exam { Id = 2, ExamTitle = "Inequalities Exam", ExamDescription = "Test your understanding and solving of linear inequalities.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 3 },
                 // Exam for Lesson 5 (Course 1)
-                new Exam { Id = 3, ExamTitle = "Polynomial Basics Exam", ExamDescription = "Test your knowledge of polynomial expressions and operations.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 1, lessonId = 5 },
+                new Exam { Id = 3, ExamTitle = "Polynomial Basics Exam", ExamDescription = "Test your knowledge of polynomial expressions and operations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 5 },
                 // Exam for Lesson 7 (Course 2)
-                new Exam { Id = 4, ExamTitle = "Introduction to Derivatives Exam", ExamDescription = "Test your knowledge of defining the derivative and basic rules.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 2, lessonId = 7 },
+                new Exam { Id = 4, ExamTitle = "Introduction to Derivatives Exam", ExamDescription = "Test your knowledge of defining the derivative and basic rules.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 7 },
                 // Exam for Lesson 9 (Course 2)
-                new Exam { Id = 5, ExamTitle = "Applications of Derivatives Exam", ExamDescription = "Test your ability to use derivatives for rates of change and optimization.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 2, lessonId = 9 },
+                new Exam { Id = 5, ExamTitle = "Applications of Derivatives Exam", ExamDescription = "Test your ability to use derivatives for rates of change and optimization.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 9 },
                 // Exam for Lesson 11 (Course 3)
-                new Exam { Id = 6, ExamTitle = "Points, Lines, and Planes Exam", ExamDescription = "Test your knowledge of fundamental geometric concepts.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 3, lessonId = 11 },
+                new Exam { Id = 6, ExamTitle = "Points, Lines, and Planes Exam", ExamDescription = "Test your knowledge of fundamental geometric concepts.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 11 },
                 // Exam for Lesson 13 (Course 3)
-                new Exam { Id = 7, ExamTitle = "Parallel Lines and Transversals Exam", ExamDescription = "Test your knowledge of angles formed by parallel lines.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 3, lessonId = 13 },
+                new Exam { Id = 7, ExamTitle = "Parallel Lines and Transversals Exam", ExamDescription = "Test your knowledge of angles formed by parallel lines.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 13 },
                 // Exam for Lesson 15 (Course 3)
-                new Exam { Id = 8, ExamTitle = "Introduction to Polygons Exam", ExamDescription = "Test your knowledge of polygon properties.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 3, lessonId = 15 },
+                new Exam { Id = 8, ExamTitle = "Introduction to Polygons Exam", ExamDescription = "Test your knowledge of polygon properties.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 15 },
                 // Exam for Lesson 17 (Course 4)
-                new Exam { Id = 9, ExamTitle = "The Unit Circle Exam", ExamDescription = "Test your understanding of the unit circle in trigonometry.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 4, lessonId = 17 },
+                new Exam { Id = 9, ExamTitle = "The Unit Circle Exam", ExamDescription = "Test your understanding of the unit circle in trigonometry.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 17 },
                 // Exam for Lesson 19 (Course 4)
-                new Exam { Id = 10, ExamTitle = "Trigonometric Identities Exam", ExamDescription = "Test your knowledge of fundamental trigonometric identities.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 4, lessonId = 19 },
+                new Exam { Id = 10, ExamTitle = "Trigonometric Identities Exam", ExamDescription = "Test your knowledge of fundamental trigonometric identities.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 19 },
                 // Exam for Lesson 21 (Course 5)
-                new Exam { Id = 11, ExamTitle = "Introduction to Statistics Exam", ExamDescription = "Test your knowledge of basic statistical concepts and data types.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 5, lessonId = 21 },
+                new Exam { Id = 11, ExamTitle = "Introduction to Statistics Exam", ExamDescription = "Test your knowledge of basic statistical concepts and data types.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 21 },
                 // Exam for Lesson 23 (Course 5)
-                new Exam { Id = 12, ExamTitle = "Data Visualization Exam", ExamDescription = "Test your understanding of graphical data representation.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 5, lessonId = 23 },
+                new Exam { Id = 12, ExamTitle = "Data Visualization Exam", ExamDescription = "Test your understanding of graphical data representation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 23 },
                 // Exam for Lesson 25 (Course 5)
-                new Exam { Id = 13, ExamTitle = "Introduction to Distributions Exam", ExamDescription = "Test your understanding of basic probability distributions.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 5, lessonId = 25 },
+                new Exam { Id = 13, ExamTitle = "Introduction to Distributions Exam", ExamDescription = "Test your understanding of basic probability distributions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 25 },
                 // Exam for Lesson 27 (Course 6)
-                new Exam { Id = 14, ExamTitle = "Conditional Probability Exam", ExamDescription = "Test your understanding of conditional probability and independence.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 6, lessonId = 27 },
+                new Exam { Id = 14, ExamTitle = "Conditional Probability Exam", ExamDescription = "Test your understanding of conditional probability and independence.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 27 },
                 // Exam for Lesson 29 (Course 6)
-                new Exam { Id = 15, ExamTitle = "Expected Value and Variance Exam", ExamDescription = "Test your ability to calculate measures for random variables.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 6, lessonId = 29 },
+                new Exam { Id = 15, ExamTitle = "Expected Value and Variance Exam", ExamDescription = "Test your ability to calculate measures for random variables.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 29 },
                 // Exam for Lesson 31 (Course 7)
-                new Exam { Id = 16, ExamTitle = "Logic and Proofs Exam", ExamDescription = "Test your knowledge of propositional logic and proof methods.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 7, lessonId = 31 },
+                new Exam { Id = 16, ExamTitle = "Logic and Proofs Exam", ExamDescription = "Test your knowledge of propositional logic and proof methods.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 31 },
                 // Exam for Lesson 33 (Course 7)
-                new Exam { Id = 17, ExamTitle = "Counting Principles Exam", ExamDescription = "Test your knowledge of permutations and combinations.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 7, lessonId = 33 },
+                new Exam { Id = 17, ExamTitle = "Counting Principles Exam", ExamDescription = "Test your knowledge of permutations and combinations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 33 },
                 // Exam for Lesson 35 (Course 7)
-                new Exam { Id = 18, ExamTitle = "Introduction to Graph Theory Exam", ExamDescription = "Test your knowledge of basic graph concepts.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 7, lessonId = 35 },
+                new Exam { Id = 18, ExamTitle = "Introduction to Graph Theory Exam", ExamDescription = "Test your knowledge of basic graph concepts.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 35 },
                 // Exam for Lesson 37 (Course 8)
-                new Exam { Id = 19, ExamTitle = "Vectors and 2D Kinematics Exam", ExamDescription = "Test your knowledge of projectile motion and vector operations.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 8, lessonId = 37 },
+                new Exam { Id = 19, ExamTitle = "Vectors and 2D Kinematics Exam", ExamDescription = "Test your knowledge of projectile motion and vector operations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 37 },
                 // Exam for Lesson 39 (Course 8)
-                new Exam { Id = 20, ExamTitle = "Work, Energy, and Power Exam", ExamDescription = "Test your understanding of work, energy concepts, and conservation.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 8, lessonId = 39 },
+                new Exam { Id = 20, ExamTitle = "Work, Energy, and Power Exam", ExamDescription = "Test your understanding of work, energy concepts, and conservation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 39 },
                 // Exam for Lesson 41 (Course 9)
-                new Exam { Id = 21, ExamTitle = "Electric Charge and Coulomb's Law Exam", ExamDescription = "Test your knowledge of electric charge properties and Coulomb's Law.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 9, lessonId = 41 },
+                new Exam { Id = 21, ExamTitle = "Electric Charge and Coulomb's Law Exam", ExamDescription = "Test your knowledge of electric charge properties and Coulomb's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 41 },
                 // Exam for Lesson 43 (Course 9)
-                new Exam { Id = 22, ExamTitle = "Electric Potential Exam", ExamDescription = "Test your understanding of potential difference and electric potential energy.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 9, lessonId = 43 },
+                new Exam { Id = 22, ExamTitle = "Electric Potential Exam", ExamDescription = "Test your understanding of potential difference and electric potential energy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 43 },
                 // Exam for Lesson 45 (Course 9)
-                new Exam { Id = 23, ExamTitle = "Current, Resistance, and Ohm's Law Exam", ExamDescription = "Test your knowledge of basic electric current, resistance, and Ohm's Law.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 9, lessonId = 45 },
+                new Exam { Id = 23, ExamTitle = "Current, Resistance, and Ohm's Law Exam", ExamDescription = "Test your knowledge of basic electric current, resistance, and Ohm's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 45 },
                 // Exam for Lesson 47 (Course 10)
-                new Exam { Id = 24, ExamTitle = "Sources of Magnetic Fields Exam", ExamDescription = "Test your knowledge of magnetic fields produced by currents.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 10, lessonId = 47 },
+                new Exam { Id = 24, ExamTitle = "Sources of Magnetic Fields Exam", ExamDescription = "Test your knowledge of magnetic fields produced by currents.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 47 },
                 // Exam for Lesson 49 (Course 10)
-                new Exam { Id = 25, ExamTitle = "Electromagnetic Induction Exam", ExamDescription = "Test your understanding of Faraday's Law and Lenz's Law.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 10, lessonId = 49 },
+                new Exam { Id = 25, ExamTitle = "Electromagnetic Induction Exam", ExamDescription = "Test your understanding of Faraday's Law and Lenz's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 49 },
                 // Exam for Lesson 51 (Course 11)
-                new Exam { Id = 26, ExamTitle = "Nature of Light Exam", ExamDescription = "Test your knowledge of the wave-particle duality and properties of light.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 11, lessonId = 51 },
+                new Exam { Id = 26, ExamTitle = "Nature of Light Exam", ExamDescription = "Test your knowledge of the wave-particle duality and properties of light.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 51 },
                 // Exam for Lesson 53 (Course 11)
-                new Exam { Id = 27, ExamTitle = "Lenses and Image Formation Exam", ExamDescription = "Test your understanding of lenses and image formation.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 11, lessonId = 53 },
+                new Exam { Id = 27, ExamTitle = "Lenses and Image Formation Exam", ExamDescription = "Test your understanding of lenses and image formation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 53 },
                 // Exam for Lesson 55 (Course 11)
-                new Exam { Id = 28, ExamTitle = "Wave Optics: Diffraction Exam", ExamDescription = "Test your knowledge of light diffraction.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 11, lessonId = 55 },
+                new Exam { Id = 28, ExamTitle = "Wave Optics: Diffraction Exam", ExamDescription = "Test your knowledge of light diffraction.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 55 },
                 // Exam for Lesson 57 (Course 12)
-                new Exam { Id = 29, ExamTitle = "First Law of Thermodynamics Exam", ExamDescription = "Test your understanding of internal energy, work, and heat.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 12, lessonId = 57 },
+                new Exam { Id = 29, ExamTitle = "First Law of Thermodynamics Exam", ExamDescription = "Test your understanding of internal energy, work, and heat.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 57 },
                 // Exam for Lesson 59 (Course 12)
-                new Exam { Id = 30, ExamTitle = "Second Law of Thermodynamics Exam", ExamDescription = "Test your knowledge of entropy and the direction of processes.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 12, lessonId = 59 },
+                new Exam { Id = 30, ExamTitle = "Second Law of Thermodynamics Exam", ExamDescription = "Test your knowledge of entropy and the direction of processes.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 59 },
                 // Exam for Lesson 61 (Course 13)
-                new Exam { Id = 31, ExamTitle = "Blackbody Radiation Exam", ExamDescription = "Test your knowledge of blackbody radiation and Planck's hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 13, lessonId = 61 },
+                new Exam { Id = 31, ExamTitle = "Blackbody Radiation Exam", ExamDescription = "Test your knowledge of blackbody radiation and Planck's hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 61 },
                 // Exam for Lesson 63 (Course 13)
-                new Exam { Id = 32, ExamTitle = "Wave Nature of Matter Exam", ExamDescription = "Test your understanding of the De Broglie hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 13, lessonId = 63 },
+                new Exam { Id = 32, ExamTitle = "Wave Nature of Matter Exam", ExamDescription = "Test your understanding of the De Broglie hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 63 },
                 // Exam for Lesson 65 (Course 13)
-                new Exam { Id = 33, ExamTitle = "Introduction to Quantum Mechanics Exam", ExamDescription = "Test your basic understanding of the Schrödinger equation and wave functions.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 13, lessonId = 65 },
+                new Exam { Id = 33, ExamTitle = "Introduction to Quantum Mechanics Exam", ExamDescription = "Test your basic understanding of the Schrödinger equation and wave functions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 65 },
                 // Exam for Lesson 67 (Course 14)
-                new Exam { Id = 34, ExamTitle = "Time Dilation and Length Contraction Exam", ExamDescription = "Test your knowledge of relativistic effects on time and space.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 14, lessonId = 67 },
+                new Exam { Id = 34, ExamTitle = "Time Dilation and Length Contraction Exam", ExamDescription = "Test your knowledge of relativistic effects on time and space.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 67 },
                 // Exam for Lesson 69 (Course 14)
-                new Exam { Id = 35, ExamTitle = "Introduction to General Relativity Exam", ExamDescription = "Test your conceptual understanding of general relativity.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 14, lessonId = 69 },
+                new Exam { Id = 35, ExamTitle = "Introduction to General Relativity Exam", ExamDescription = "Test your conceptual understanding of general relativity.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 69 },
                 // Exam for Lesson 71 (Course 15)
-                new Exam { Id = 36, ExamTitle = "Introduction to Cells Exam", ExamDescription = "Test your knowledge of Prokaryotic vs. Eukaryotic cells.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 15, lessonId = 71 },
+                new Exam { Id = 36, ExamTitle = "Introduction to Cells Exam", ExamDescription = "Test your knowledge of Prokaryotic vs. Eukaryotic cells.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 71 },
                 // Exam for Lesson 73 (Course 15)
-                new Exam { Id = 37, ExamTitle = "Eukaryotic Organelles Exam", ExamDescription = "Test your knowledge of major organelle structures and functions.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 15, lessonId = 73 },
+                new Exam { Id = 37, ExamTitle = "Eukaryotic Organelles Exam", ExamDescription = "Test your knowledge of major organelle structures and functions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 73 },
                 // Exam for Lesson 75 (Course 15)
-                new Exam { Id = 38, ExamTitle = "The Cell Cycle and Mitosis Exam", ExamDescription = "Test your understanding of the cell cycle phases and mitosis.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 15, lessonId = 75 },
+                new Exam { Id = 38, ExamTitle = "The Cell Cycle and Mitosis Exam", ExamDescription = "Test your understanding of the cell cycle phases and mitosis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 75 },
                 // Exam for Lesson 77 (Course 16)
-                new Exam { Id = 39, ExamTitle = "DNA Structure and Replication Exam", ExamDescription = "Test your knowledge of the double helix and DNA synthesis.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 16, lessonId = 77 },
+                new Exam { Id = 39, ExamTitle = "DNA Structure and Replication Exam", ExamDescription = "Test your knowledge of the double helix and DNA synthesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 77 },
                 // Exam for Lesson 79 (Course 16)
-                new Exam { Id = 40, ExamTitle = "Gene Expression: Translation Exam", ExamDescription = "Test your understanding of protein synthesis from RNA.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 16, lessonId = 79 },
+                new Exam { Id = 40, ExamTitle = "Gene Expression: Translation Exam", ExamDescription = "Test your understanding of protein synthesis from RNA.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 79 },
                 // Exam for Lesson 81 (Course 17)
-                new Exam { Id = 41, ExamTitle = "Skeletal Systems Exam", ExamDescription = "Test your knowledge of skeleton types and bone structure.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 17, lessonId = 81 },
+                new Exam { Id = 41, ExamTitle = "Skeletal Systems Exam", ExamDescription = "Test your knowledge of skeleton types and bone structure.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 81 },
                 // Exam for Lesson 83 (Course 17)
-                new Exam { Id = 42, ExamTitle = "Biomechanics Basics Exam", ExamDescription = "Test your understanding of forces and levers in biological systems.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 17, lessonId = 83 },
+                new Exam { Id = 42, ExamTitle = "Biomechanics Basics Exam", ExamDescription = "Test your understanding of forces and levers in biological systems.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 83 },
                 // Exam for Lesson 85 (Course 17)
-                new Exam { Id = 43, ExamTitle = "Nervous System Control of Movement Exam", ExamDescription = "Test your knowledge of how the nervous system controls muscles.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 17, lessonId = 85 },
+                new Exam { Id = 43, ExamTitle = "Nervous System Control of Movement Exam", ExamDescription = "Test your knowledge of how the nervous system controls muscles.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 85 },
                 // Exam for Lesson 87 (Course 18)
-                new Exam { Id = 44, ExamTitle = "Population Ecology Exam", ExamDescription = "Test your understanding of population growth models.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 18, lessonId = 87 },
+                new Exam { Id = 44, ExamTitle = "Population Ecology Exam", ExamDescription = "Test your understanding of population growth models.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 87 },
                 // Exam for Lesson 89 (Course 18)
-                new Exam { Id = 45, ExamTitle = "Ecosystem Dynamics Exam", ExamDescription = "Test your knowledge of energy flow and nutrient cycling.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 18, lessonId = 89 },
+                new Exam { Id = 45, ExamTitle = "Ecosystem Dynamics Exam", ExamDescription = "Test your knowledge of energy flow and nutrient cycling.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 89 },
                 // Exam for Lesson 91 (Course 19)
-                new Exam { Id = 46, ExamTitle = "Plant Structure and Growth Exam", ExamDescription = "Test your knowledge of basic plant anatomy.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 19, lessonId = 91 },
+                new Exam { Id = 46, ExamTitle = "Plant Structure and Growth Exam", ExamDescription = "Test your knowledge of basic plant anatomy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 91 },
                 // Exam for Lesson 93 (Course 19)
-                new Exam { Id = 47, ExamTitle = "Photosynthesis Exam", ExamDescription = "Test your understanding of the photosynthesis process.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 19, lessonId = 93 },
+                new Exam { Id = 47, ExamTitle = "Photosynthesis Exam", ExamDescription = "Test your understanding of the photosynthesis process.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 93 },
                 // Exam for Lesson 95 (Course 19)
-                new Exam { Id = 48, ExamTitle = "Plant Hormones and Responses Exam", ExamDescription = "Test your knowledge of chemical signaling in plants.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 19, lessonId = 95 },
+                new Exam { Id = 48, ExamTitle = "Plant Hormones and Responses Exam", ExamDescription = "Test your knowledge of chemical signaling in plants.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 95 },
                 // Exam for Lesson 97 (Course 20)
-                new Exam { Id = 49, ExamTitle = "Invertebrate Zoology I Exam", ExamDescription = "Test your knowledge of simpler invertebrates.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 20, lessonId = 97 },
+                new Exam { Id = 49, ExamTitle = "Invertebrate Zoology I Exam", ExamDescription = "Test your knowledge of simpler invertebrates.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 97 },
                 // Exam for Lesson 99 (Course 20)
-                new Exam { Id = 50, ExamTitle = "Vertebrate Zoology I Exam", ExamDescription = "Test your knowledge of Chordates and Fish.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 20, lessonId = 99 },
+                new Exam { Id = 50, ExamTitle = "Vertebrate Zoology I Exam", ExamDescription = "Test your knowledge of Chordates and Fish.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 99 },
                 // Exam for Lesson 101 (Course 21)
-                new Exam { Id = 51, ExamTitle = "Introduction to Microbes Exam", ExamDescription = "Test your knowledge of microbial diversity.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 21, lessonId = 101 },
+                new Exam { Id = 51, ExamTitle = "Introduction to Microbes Exam", ExamDescription = "Test your knowledge of microbial diversity.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 101 },
                 // Exam for Lesson 103 (Course 21)
-                new Exam { Id = 52, ExamTitle = "Microbial Growth and Metabolism Exam", ExamDescription = "Test your understanding of microbial growth requirements and pathways.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 21, lessonId = 103 },
+                new Exam { Id = 52, ExamTitle = "Microbial Growth and Metabolism Exam", ExamDescription = "Test your understanding of microbial growth requirements and pathways.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 103 },
                 // Exam for Lesson 105 (Course 21)
-                new Exam { Id = 53, ExamTitle = "Microbial Roles Exam", ExamDescription = "Test your knowledge of microbes in ecosystems, disease, and industry.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 21, lessonId = 105 },
+                new Exam { Id = 53, ExamTitle = "Microbial Roles Exam", ExamDescription = "Test your knowledge of microbes in ecosystems, disease, and industry.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 105 },
                 // Exam for Lesson 107 (Course 22)
-                new Exam { Id = 54, ExamTitle = "Alkanes and Cycloalkanes Exam", ExamDescription = "Test your knowledge of alkane nomenclature and conformations.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 22, lessonId = 107 },
+                new Exam { Id = 54, ExamTitle = "Alkanes and Cycloalkanes Exam", ExamDescription = "Test your knowledge of alkane nomenclature and conformations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 107 },
                 // Exam for Lesson 109 (Course 22)
-                new Exam { Id = 55, ExamTitle = "Introduction to Organic Reactions Exam", ExamDescription = "Test your understanding of reaction types and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 22, lessonId = 109 },
+                new Exam { Id = 55, ExamTitle = "Introduction to Organic Reactions Exam", ExamDescription = "Test your understanding of reaction types and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 109 },
                 // Exam for Lesson 111 (Course 23)
-                new Exam { Id = 56, ExamTitle = "Atomic Structure and Periodicity Exam", ExamDescription = "Test your knowledge of atomic models and periodic trends.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 23, lessonId = 111 },
+                new Exam { Id = 56, ExamTitle = "Atomic Structure and Periodicity Exam", ExamDescription = "Test your knowledge of atomic models and periodic trends.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 111 },
                 // Exam for Lesson 113 (Course 23)
-                new Exam { Id = 57, ExamTitle = "Bonding Theories Exam", ExamDescription = "Test your understanding of VB and MO theories.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 23, lessonId = 113 },
+                new Exam { Id = 57, ExamTitle = "Bonding Theories Exam", ExamDescription = "Test your understanding of VB and MO theories.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 113 },
                 // Exam for Lesson 115 (Course 23)
-                new Exam { Id = 58, ExamTitle = "Coordination Chemistry Basics Exam", ExamDescription = "Test your knowledge of transition metals, ligands, and complex ions.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 23, lessonId = 115 },
+                new Exam { Id = 58, ExamTitle = "Coordination Chemistry Basics Exam", ExamDescription = "Test your knowledge of transition metals, ligands, and complex ions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 115 },
                 // Exam for Lesson 117 (Course 24)
-                new Exam { Id = 59, ExamTitle = "Thermodynamics: First Law Exam", ExamDescription = "Test your knowledge of energy, work, heat, and enthalpy.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 24, lessonId = 117 },
+                new Exam { Id = 59, ExamTitle = "Thermodynamics: First Law Exam", ExamDescription = "Test your knowledge of energy, work, heat, and enthalpy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 117 },
                 // Exam for Lesson 119 (Course 24)
-                new Exam { Id = 60, ExamTitle = "Chemical Kinetics Exam", ExamDescription = "Test your understanding of reaction rates and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 24, lessonId = 119 },
+                new Exam { Id = 60, ExamTitle = "Chemical Kinetics Exam", ExamDescription = "Test your understanding of reaction rates and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 119 },
                 // Exam for Lesson 121 (Course 25)
-                new Exam { Id = 61, ExamTitle = "Analytical Intro & Stats Exam", ExamDescription = "Test your knowledge of analytical errors and data analysis.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 25, lessonId = 121 },
+                new Exam { Id = 61, ExamTitle = "Analytical Intro & Stats Exam", ExamDescription = "Test your knowledge of analytical errors and data analysis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 121 },
                 // Exam for Lesson 123 (Course 25)
-                new Exam { Id = 62, ExamTitle = "Spectroscopic Methods Exam", ExamDescription = "Test your understanding of light-matter interaction and UV-Vis.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 25, lessonId = 123 },
+                new Exam { Id = 62, ExamTitle = "Spectroscopic Methods Exam", ExamDescription = "Test your understanding of light-matter interaction and UV-Vis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 123 },
                 // Exam for Lesson 125 (Course 25)
-                new Exam { Id = 63, ExamTitle = "Electroanalytical Methods Exam", ExamDescription = "Test your knowledge of potentiometry and voltammetry basics.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 25, lessonId = 125 },
+                new Exam { Id = 63, ExamTitle = "Electroanalytical Methods Exam", ExamDescription = "Test your knowledge of potentiometry and voltammetry basics.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 125 },
                 // Exam for Lesson 127 (Course 26)
-                new Exam { Id = 64, ExamTitle = "Enzymes and Kinetics Exam", ExamDescription = "Test your knowledge of biological catalysts and reaction rates.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 26, lessonId = 127 },
+                new Exam { Id = 64, ExamTitle = "Enzymes and Kinetics Exam", ExamDescription = "Test your knowledge of biological catalysts and reaction rates.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 127 },
                 // Exam for Lesson 129 (Course 26)
-                new Exam { Id = 65, ExamTitle = "Lipids and Membranes Exam", ExamDescription = "Test your understanding of lipid types and membrane structure.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 26, lessonId = 129 },
+                new Exam { Id = 65, ExamTitle = "Lipids and Membranes Exam", ExamDescription = "Test your understanding of lipid types and membrane structure.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 129 },
                 // Exam for Lesson 131 (Course 27)
-                new Exam { Id = 66, ExamTitle = "Atmospheric Chemistry Exam", ExamDescription = "Test your knowledge of atmospheric composition and reactions.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 27, lessonId = 131 },
+                new Exam { Id = 66, ExamTitle = "Atmospheric Chemistry Exam", ExamDescription = "Test your knowledge of atmospheric composition and reactions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 131 },
                 // Exam for Lesson 133 (Course 27)
-                new Exam { Id = 67, ExamTitle = "Soil Chemistry Exam", ExamDescription = "Test your understanding of soil composition and chemical reactions.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 27, lessonId = 133 },
+                new Exam { Id = 67, ExamTitle = "Soil Chemistry Exam", ExamDescription = "Test your understanding of soil composition and chemical reactions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 133 },
                 // Exam for Lesson 135 (Course 27)
-                new Exam { Id = 68, ExamTitle = "Green Chemistry Exam", ExamDescription = "Test your knowledge of principles for safer chemical processes.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 27, lessonId = 135 },
+                new Exam { Id = 68, ExamTitle = "Green Chemistry Exam", ExamDescription = "Test your knowledge of principles for safer chemical processes.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 135 },
                 // Exam for Lesson 137 (Course 28)
-                new Exam { Id = 69, ExamTitle = "Approximation Methods Exam", ExamDescription = "Test your knowledge of variation principle and perturbation theory.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 28, lessonId = 137 },
+                new Exam { Id = 69, ExamTitle = "Approximation Methods Exam", ExamDescription = "Test your knowledge of variation principle and perturbation theory.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 137 },
                 // Exam for Lesson 139 (Course 28)
-                new Exam { Id = 70, ExamTitle = "Computational Chemistry Methods Exam", ExamDescription = "Test your basic understanding of Hartree-Fock and DFT.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 28, lessonId = 139 },
+                new Exam { Id = 70, ExamTitle = "Computational Chemistry Methods Exam", ExamDescription = "Test your basic understanding of Hartree-Fock and DFT.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 139 },
                 // Exam for Lesson 141 (Course 29)
-                new Exam { Id = 71, ExamTitle = "Literary Analysis Basics Exam", ExamDescription = "Test your ability to use tools for interpreting literature.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 29, lessonId = 141 },
+                new Exam { Id = 71, ExamTitle = "Literary Analysis Basics Exam", ExamDescription = "Test your ability to use tools for interpreting literature.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 141 },
                 // Exam for Lesson 143 (Course 29)
-                new Exam { Id = 72, ExamTitle = "Poetry Fundamentals Exam", ExamDescription = "Test your understanding of poetic devices and forms.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 29, lessonId = 143 },
+                new Exam { Id = 72, ExamTitle = "Poetry Fundamentals Exam", ExamDescription = "Test your understanding of poetic devices and forms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 143 },
                 // Exam for Lesson 145 (Course 29)
-                new Exam { Id = 73, ExamTitle = "Introduction to Drama Exam", ExamDescription = "Test your knowledge of the elements of dramatic literature.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 29, lessonId = 145 },
+                new Exam { Id = 73, ExamTitle = "Introduction to Drama Exam", ExamDescription = "Test your knowledge of the elements of dramatic literature.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 145 },
                 // Exam for Lesson 147 (Course 30)
-                new Exam { Id = 74, ExamTitle = "Character Development Quiz", ExamDescription = "Test your ability to create believable characters.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 30, lessonId = 147 },
+                new Exam { Id = 74, ExamTitle = "Character Development Quiz", ExamDescription = "Test your ability to create believable characters.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 147 },
                 // Exam for Lesson 149 (Course 30)
-                new Exam { Id = 75, ExamTitle = "Setting and Description Quiz", ExamDescription = "Test your skills in building immersive worlds.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 30, lessonId = 149 },
+                new Exam { Id = 75, ExamTitle = "Setting and Description Quiz", ExamDescription = "Test your skills in building immersive worlds.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 149 },
                 // Exam for Lesson 151 (Course 31)
-                new Exam { Id = 76, ExamTitle = "Parts of Speech Exam", ExamDescription = "Test your understanding of nouns, verbs, adjectives, etc.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 31, lessonId = 151 },
+                new Exam { Id = 76, ExamTitle = "Parts of Speech Exam", ExamDescription = "Test your understanding of nouns, verbs, adjectives, etc.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 151 },
                 // Exam for Lesson 153 (Course 31)
-                new Exam { Id = 77, ExamTitle = "Punctuation Rules Exam", ExamDescription = "Test your knowledge of correct punctuation usage.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 31, lessonId = 153 },
+                new Exam { Id = 77, ExamTitle = "Punctuation Rules Exam", ExamDescription = "Test your knowledge of correct punctuation usage.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 153 },
                 // Exam for Lesson 155 (Course 31)
-                new Exam { Id = 78, ExamTitle = "Paragraph and Essay Structure Exam", ExamDescription = "Test your ability to organize ideas effectively.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 31, lessonId = 155 },
+                new Exam { Id = 78, ExamTitle = "Paragraph and Essay Structure Exam", ExamDescription = "Test your ability to organize ideas effectively.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 155 },
                 // Exam for Lesson 157 (Course 32)
-                new Exam { Id = 79, ExamTitle = "Figurative Language Exam", ExamDescription = "Test your ability to identify and interpret figurative language.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 32, lessonId = 157 },
+                new Exam { Id = 79, ExamTitle = "Figurative Language Exam", ExamDescription = "Test your ability to identify and interpret figurative language.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 157 },
                 // Exam for Lesson 159 (Course 32)
-                new Exam { Id = 80, ExamTitle = "Poetic Forms Exam", ExamDescription = "Test your ability to recognize and analyze different poetic structures.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 32, lessonId = 159 },
+                new Exam { Id = 80, ExamTitle = "Poetic Forms Exam", ExamDescription = "Test your ability to recognize and analyze different poetic structures.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 159 },
                 // Exam for Lesson 161 (Course 33)
-                new Exam { Id = 81, ExamTitle = "History of Theater Exam", ExamDescription = "Test your knowledge of key periods and playwrights.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 33, lessonId = 161 },
+                new Exam { Id = 81, ExamTitle = "History of Theater Exam", ExamDescription = "Test your knowledge of key periods and playwrights.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 161 },
                 // Exam for Lesson 163 (Course 33)
-                new Exam { Id = 82, ExamTitle = "Reading a Play Exam", ExamDescription = "Test your ability to understand stage directions and subtext.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 33, lessonId = 163 },
+                new Exam { Id = 82, ExamTitle = "Reading a Play Exam", ExamDescription = "Test your ability to understand stage directions and subtext.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 163 },
                 // Exam for Lesson 165 (Course 33)
-                new Exam { Id = 83, ExamTitle = "Theater Production Basics Exam", ExamDescription = "Test your knowledge of roles and processes in theater production.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 33, lessonId = 165 },
+                new Exam { Id = 83, ExamTitle = "Theater Production Basics Exam", ExamDescription = "Test your knowledge of roles and processes in theater production.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 165 },
                 // Exam for Lesson 167 (Course 34)
-                new Exam { Id = 84, ExamTitle = "Point of View Quiz", ExamDescription = "Test your understanding of narrative perspectives.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 34, lessonId = 167 },
+                new Exam { Id = 84, ExamTitle = "Point of View Quiz", ExamDescription = "Test your understanding of narrative perspectives.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 167 },
                 // Exam for Lesson 169 (Course 34)
-                new Exam { Id = 85, ExamTitle = "Crafting Scenes Quiz", ExamDescription = "Test your knowledge of scene structure and pacing.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 34, lessonId = 169 },
+                new Exam { Id = 85, ExamTitle = "Crafting Scenes Quiz", ExamDescription = "Test your knowledge of scene structure and pacing.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 169 },
                 // Exam for Lesson 171 (Course 35)
-                new Exam { Id = 86, ExamTitle = "Types of Non-fiction Exam", ExamDescription = "Test your knowledge of different non-fiction forms.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 35, lessonId = 171 },
+                new Exam { Id = 86, ExamTitle = "Types of Non-fiction Exam", ExamDescription = "Test your knowledge of different non-fiction forms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 171 },
                 // Exam for Lesson 173 (Course 35)
-                new Exam { Id = 87, ExamTitle = "Structuring Non-fiction Exam", ExamDescription = "Test your ability to organize factual material effectively.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 35, lessonId = 173 },
+                new Exam { Id = 87, ExamTitle = "Structuring Non-fiction Exam", ExamDescription = "Test your ability to organize factual material effectively.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 173 },
                 // Exam for Lesson 175 (Course 35)
-                new Exam { Id = 88, ExamTitle = "Ethics in Non-fiction Exam", ExamDescription = "Test your understanding of responsibilities in non-fiction writing.", Grade = "Not Graded", CreatedAt = seedDate, courseId = 35, lessonId = 175 }
+                new Exam { Id = 88, ExamTitle = "Ethics in Non-fiction Exam", ExamDescription = "Test your understanding of responsibilities in non-fiction writing.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 175 }
             );
             modelBuilder.Entity<BankOfQuestion>().HasData(
                 // --- Questions for Exam 1 (lessonId = 1, Algebra Basics) ---

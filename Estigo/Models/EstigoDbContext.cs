@@ -127,6 +127,11 @@ namespace Estigo.Models
             modelBuilder.Entity<ApplicationUser>()
                         .Property(l => l.UpdatedAt)
                         .HasDefaultValueSql("GETDATE()");
+            modelBuilder.Entity<Exam>()
+                .HasOne(e => e.Lesson)
+                .WithOne(l => l.Exam)  
+                .HasForeignKey<Exam>(e => e.lessonId)  
+                .OnDelete(DeleteBehavior.Cascade);  // delete the exam if the lesson is deleted
 
             modelBuilder.Seed();
         }

@@ -1,4 +1,5 @@
 ﻿using Estigo.DTO;
+using Estigo.Enums;
 using Estigo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +24,7 @@ namespace Estigo.Controllers
         public IActionResult GetCourses()
         {
             List<courseDTO> courses = context.Courses
+                .Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .Select(c => new courseDTO
                 {
                     CourseId = c.CourseId,
@@ -43,7 +45,9 @@ namespace Estigo.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetCourseById(int id)
         {
-            var course = context.Courses.Select(c => new courseDTO
+            var course = context.Courses
+                .Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
+                .Select(c => new courseDTO
             {
                 CourseId = c.CourseId,
                 CourseTitle = c.CourseTitle,
@@ -69,7 +73,8 @@ namespace Estigo.Controllers
         [HttpGet("{id:int}/details")]
         public IActionResult GetCourseDetailsById(int id)
         {
-            var course = context.Courses.Select(c => new CourseDetailsDTO
+            var course = context.Courses.Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
+                .Select(c => new CourseDetailsDTO
             {
                 CourseId = c.CourseId,
                 CourseTitle = c.CourseTitle,
@@ -96,7 +101,9 @@ namespace Estigo.Controllers
         [HttpGet("{name}")]
         public IActionResult GetCourseByName(string name)
         {
-            var course = context.Courses.Select(c => new courseDTO
+            var course = context.Courses
+                .Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
+                .Select(c => new courseDTO
             {
                 CourseId = c.CourseId,
                 CourseTitle = c.CourseTitle,
@@ -207,7 +214,7 @@ namespace Estigo.Controllers
             var courses = await context.Courses
                 .Include(c => c.Teacher)
                 .Include(c => c.Category)
-                .Where(c => c.CategoryId == categoryId)
+                .Where(c => c.CategoryId == categoryId && c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .ToListAsync();
             var courseVms = courses.Select(c => new CoursePageDTO
             {
@@ -241,7 +248,7 @@ namespace Estigo.Controllers
         {
             var courses = await context.Courses
                 .Include(c => c.Teacher)
-                .Where(c => c.CategoryId == categoryId)
+                .Where(c => c.CategoryId == categoryId && c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .Take(4)
                 .ToListAsync();
 
@@ -279,13 +286,16 @@ namespace Estigo.Controllers
 
             var courses = context.Courses
                 .Include(c => c.Teacher)
-                .Where(c => c.CourseTitle.ToLower().StartsWith(keyword.ToLower()) ||
-                            c.Teacher.Name.ToLower().StartsWith(keyword.ToLower()))
+                 .Where(c =>
+                          (c.CourseTitle.ToLower().StartsWith(keyword.ToLower()) ||
+                          c.Teacher.Name.ToLower().StartsWith(keyword.ToLower())) &&
+                          c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .Select(c => new CoursePageDTO
                 {
                     CourseId = c.CourseId,
                     CourseTitle = c.CourseTitle,
                     ImageBase64 = c.Logo,
+                    Status = c.Status,
                     price = c.Price,
                     TeacherName = c.Teacher != null ? c.Teacher.Name : null
                 })
@@ -298,9 +308,6 @@ namespace Estigo.Controllers
 
             return Ok(courses);
         }
-
-
-
 
     }
 

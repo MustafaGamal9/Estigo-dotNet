@@ -20,7 +20,6 @@ namespace Estigo.Controllers
         public async Task<IActionResult> GetExamInfo(string name)
         {
             var exam = await context.Exams
-                .Include(e => e.Course)
                 .Include(e => e.Lesson)
                 .FirstOrDefaultAsync(e => e.ExamTitle == name);
             if (exam == null)
@@ -59,7 +58,6 @@ namespace Estigo.Controllers
                 ExamTitle = exam.ExamTitle,
                 ExamDescription = exam.ExamDescription,
                 Grade = exam.Grade,
-                courseId = exam.courseId,
                 lessonId = exam.lessonId,
                 Questions = exam.Questions.Select(q => new BankOfQuestion
                 {
@@ -81,7 +79,6 @@ namespace Estigo.Controllers
                 ExamTitle = newExam.ExamTitle,
                 ExamDescription = newExam.ExamDescription,
                 Grade = newExam.Grade,
-                courseId = newExam.courseId,
                 lessonId = newExam.lessonId,
                 Questions = newExam.Questions.Select(q => new QuestionDTO
                 {
@@ -116,7 +113,6 @@ namespace Estigo.Controllers
             existingExam.ExamTitle = exam.ExamTitle;
             existingExam.ExamDescription = exam.ExamDescription;
             existingExam.Grade = exam.Grade;
-            existingExam.courseId = exam.courseId;
             existingExam.lessonId = exam.lessonId;
 
             context.Entry(existingExam).State = EntityState.Modified;
