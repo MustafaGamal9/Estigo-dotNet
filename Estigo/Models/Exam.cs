@@ -17,8 +17,6 @@ namespace Estigo.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? UpdatedAt { get; set; }
 
-
-
         [ForeignKey("Lesson")]
         public int lessonId { get; set; }
         public lesson Lesson { get; set; }

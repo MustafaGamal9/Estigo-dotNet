@@ -43,9 +43,9 @@ namespace Estigo
             {
                 options.AddPolicy("AllowFrontend", policy =>
                 {
-                    policy.WithOrigins(
+                    policy.WithOrigins( // front end domains
                             "http://localhost:4200",
-                            "https://estigo.vercel.app" // replace with your actual domain
+                            "https://estigo.vercel.app" 
                         )
                         .AllowAnyHeader()
                         .AllowAnyMethod()
@@ -144,16 +144,6 @@ namespace Estigo
 
             // ✅ Serve static files from wwwroot (e.g., wwwroot/images/photo.jpg)
             app.UseStaticFiles();
-
-            // (Optional) Serve from custom folder:
-            /*
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
-                RequestPath = "/images"
-            });
-            */
 
             app.UseCors("AllowFrontend");
             app.UseRouting();
