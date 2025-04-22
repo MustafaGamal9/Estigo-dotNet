@@ -137,38 +137,22 @@ namespace Estigo.Controllers
 
             return Ok(questions);
         }
-
-        [HttpPost("SubmitAndCheckQuiz")]
-        public async Task<ActionResult<object>> SubmitAndCheckQuiz([FromBody] SubmitQuizAnswerDTO dto)
+        [HttpPost("SubmitQuizScore")]
+        public async Task<ActionResult<object>> SubmitQuizScore([FromBody] SubmitQuizAnswerDTO dto)
         {
-            var exam = await context.Exams
-                .Include(e => e.Questions)
-                .FirstOrDefaultAsync(e => e.Id == dto.ExamId);
-
+            var exam = await context.Exams.FindAsync(dto.ExamId);
             if (exam == null)
                 return NotFound("Exam not found.");
 
-            int totalQuestions = exam.Questions.Count;
-            int correctAnswers = 0;
+            var student = await context.Students.FindAsync(dto.StudentId);
+            if (student == null)
+                return NotFound("Student not found.");
 
-            foreach (var answer in dto.Answers)
-            {
-                var question = exam.Questions.FirstOrDefault(q => q.Id == answer.QuestionId);
-                if (question != null && question.CorrectAnswer == answer.SelectedOption)
-                {
-                    correctAnswers++;
-                }
-            }
-
-            double score = (double)correctAnswers / totalQuestions * 100;
-
-            // Save the result
             var result = new StudentExamResult
             {
                 StudentId = dto.StudentId,
                 ExamId = dto.ExamId,
-                Score = score,
-                ExamDate = DateTime.Now
+                Score = dto.Score,
             };
 
             context.StudentExamResults.Add(result);
@@ -176,39 +160,69 @@ namespace Estigo.Controllers
 
             return Ok(new
             {
-                Message = "Quiz submitted and graded successfully.",
-                Score = score,
-                CorrectAnswers = correctAnswers,
-                TotalQuestions = totalQuestions
+                Message = "Quiz score submitted successfully.",
+                Score = dto.Score
             });
         }
 
-        // POST: api/StudentExamResults/SubmitResult
-        [HttpPost("SubmitResult")]
-        public async Task<ActionResult<StudentExamResult>> PostStudentExamResult([FromBody] SubmitExamResultDto dto)
-        {
-            // تأكد من وجود الطالب والامتحان
-            var student = await context.Students.FindAsync(dto.StudentId);
-            var exam = await context.Exams.FindAsync(dto.ExamId);
+        //// POST: api/StudentExamResults/SubmitResult
+        //[HttpPost("SubmitResult")]
+        //public async Task<ActionResult<StudentExamResult>> PostStudentExamResult([FromBody] SubmitExamResultDto dto)
+        //{
+        //    // تأكد من وجود الطالب والامتحان
+        //    var student = await context.Students.FindAsync(dto.StudentId);
+        //    var exam = await context.Exams.FindAsync(dto.ExamId);
 
-            if (student == null || exam == null)
+        //    if (student == null || exam == null)
+        //    {
+        //        return BadRequest("Student or Exam not found.");
+        //    }
+
+        //    // أنشئ النتيجة
+        //    var result = new StudentExamResult
+        //    {
+        //        StudentId = dto.StudentId,
+        //        ExamId = dto.ExamId,
+        //        Score = dto.Score,
+        //        ExamDate = DateTime.Now // أو لو عندك وقت مخصص ممكن تستلمه كمان من الـ DTO
+        //    };
+
+        //    context.StudentExamResults.Add(result);
+        //    await context.SaveChangesAsync();
+
+        //    return Ok("Grade stored successfully");
+        //}
+        [HttpGet("GetExamsByStudentId/{studentId}")]
+        public async Task<ActionResult<IEnumerable<StudentExamHistoryDto>>> GetExamsByStudentId(string studentId)
+        {
+            var studentExists = await context.Students.AnyAsync(s => s.Id == studentId);
+            if (!studentExists)
             {
-                return BadRequest("Student or Exam not found.");
+                return NotFound($"Student with ID {studentId} not found.");
             }
 
-            // أنشئ النتيجة
-            var result = new StudentExamResult
-            {
-                StudentId = dto.StudentId,
-                ExamId = dto.ExamId,
-                Score = dto.Score,
-                ExamDate = DateTime.Now // أو لو عندك وقت مخصص ممكن تستلمه كمان من الـ DTO
-            };
+            var results = await context.StudentExamResults
+                .Where(r => r.StudentId == studentId)
+                .Include(r => r.Exam)
+                    .ThenInclude(e => e.Lesson)
+                .Select(r => new StudentExamHistoryDto
+                {
+                    ExamId = r.ExamId,
+                    ExamTitle = r.Exam.ExamTitle,
+                    Score = r.Score,
+                    ExamDate = r.ExamDate,
+                    LessonName = r.Exam.Lesson != null ? r.Exam.Lesson.lessonTitle : "N/A"
+                })
+                .ToListAsync();
 
-            context.StudentExamResults.Add(result);
-            await context.SaveChangesAsync();
+            // Remove duplicates if any (e.g., duplicate ExamId)
+            var distinctResults = results
+                .GroupBy(r => new { r.ExamId }) // or use ExamId only, depending on your logic
+                .Select(g => g.First())
+                .OrderByDescending(dto => dto.ExamDate)
+                .ToList();
 
-            return Ok("Grade stored successfully");
+            return Ok(distinctResults);
         }
 
 
