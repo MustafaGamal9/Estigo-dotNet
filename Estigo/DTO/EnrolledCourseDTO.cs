@@ -2,7 +2,7 @@
 {
     public class EnrolledCourseDTO
     {
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
         public string CourseName { get; set; }
         public string CourseImageUrl { get; set; }
     }

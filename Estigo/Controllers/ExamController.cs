@@ -225,6 +225,33 @@ namespace Estigo.Controllers
             return Ok(distinctResults);
         }
 
+        [HttpGet("GetStudentAverageByCategory/{studentId}/{categoryId}")]
+        public async Task<ActionResult<double>> GetStudentAverageByCategory(string studentId, int categoryId)
+        {
+            var studentExists = await context.Students.AnyAsync(s => s.Id == studentId);
+            if (!studentExists)
+            {
+                return NotFound($"Student with ID {studentId} not found.");
+            }
+
+            var examScores = await context.StudentExamResults
+                .Where(r => r.StudentId == studentId)
+                .Where(r => r.Exam.Lesson.Course.CategoryId == categoryId)
+                .GroupBy(r => r.ExamId) // Group by ExamId to ensure distinct exams  
+                .Select(g => g.First().Score) // Take the first score for each distinct exam  
+                .ToListAsync();
+
+            if (!examScores.Any())
+            {
+                return NotFound($"No exams found for student {studentId} in category {categoryId}.");
+            }
+
+            // Calculate the average  
+            double averageScore = examScores.Average();
+
+            return Ok("Exams Avg score: " + averageScore);
+        }
+
 
 
     }

@@ -70,7 +70,7 @@ namespace Estigo.Controllers
             {
                 var courses = await _context.Courses
                     .Where(c => c.TeacherId == teacherId)
-                    .Select(c => new { c.CourseId, c.CourseTitle })
+                    .Select(c => new { c.courseId, c.CourseTitle })
                     .ToListAsync();
 
                 return Ok(courses);

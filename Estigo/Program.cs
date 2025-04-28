@@ -35,7 +35,9 @@ namespace Estigo
                 .AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                }); 
+                });
+
+            builder.Services.AddHttpClient();
 
 
             // ✅ 3. Configure CORS for Angular & Vercel frontend

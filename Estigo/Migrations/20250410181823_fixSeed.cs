@@ -104,7 +104,7 @@ namespace Estigo.Migrations
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 15,
                 column: "Logo",
                 value: "http://est.runasp.net/cell.jpg");
@@ -276,7 +276,7 @@ namespace Estigo.Migrations
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 15,
                 column: "Logo",
                 value: "http://est.runasp.net/cell/jpg");

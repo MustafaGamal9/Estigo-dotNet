@@ -25,7 +25,7 @@
 //                .Where(c => c.CourseTitle == courseName)
 //                .Select(c => new
 //                {
-//                    c.CourseId,
+//                    c.courseId,
 //                    c.CourseTitle,
 //                    Chapters = c.Chapters.Select(ch => new
 //                    {
@@ -66,7 +66,7 @@
 //            {
 //                ChapterTitle = chapterDto.ChapterTitle,
 //                Description = chapterDto.Description,
-//                CourseId = chapterDto.CourseId,
+//                courseId = chapterDto.courseId,
 //                CreatedAt = DateTime.UtcNow
 //            };
 
@@ -88,7 +88,7 @@
 
 //            existingChapter.ChapterTitle = chapter.ChapterTitle;
 //            existingChapter.Description = chapter.Description;
-//            existingChapter.CourseId = chapter.CourseId; // Ensure course association is maintained
+//            existingChapter.courseId = chapter.courseId; // Ensure course association is maintained
 
 //            context.Chapters.Update(existingChapter);
 //            await context.SaveChangesAsync();

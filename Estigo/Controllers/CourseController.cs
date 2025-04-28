@@ -27,7 +27,7 @@ namespace Estigo.Controllers
                 .Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .Select(c => new courseDTO
                 {
-                    CourseId = c.CourseId,
+                    courseId = c.courseId,
                     CourseTitle = c.CourseTitle,
                     Description = c.Description,
                     Logo = c.Logo,
@@ -42,6 +42,22 @@ namespace Estigo.Controllers
             return Ok(courses);
         }
 
+        [HttpGet("AdminCourses")]
+        public IActionResult GetCoursesAdmin()
+        {
+            var courses = context.Courses
+                .Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
+                .Select(c => new courseDTO
+                {
+                    courseId = c.courseId,
+                    CourseTitle = c.CourseTitle
+                })
+                .ToList();
+
+            return Ok(courses);
+        }
+
+
         [HttpGet("{id:int}")]
         public IActionResult GetCourseById(int id)
         {
@@ -49,7 +65,7 @@ namespace Estigo.Controllers
                 .Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .Select(c => new courseDTO
             {
-                CourseId = c.CourseId,
+                courseId = c.courseId,
                 CourseTitle = c.CourseTitle,
                 Description = c.Description,
                 Logo = c.Logo,
@@ -59,7 +75,7 @@ namespace Estigo.Controllers
                 UpdatedAt = c.UpdatedAt,
                 catogryid = c.CategoryId,
                 TeacherId = c.TeacherId
-            }).FirstOrDefault(c => c.CourseId == id);
+            }).FirstOrDefault(c => c.courseId == id);
 
             if (course == null)
             {
@@ -73,10 +89,10 @@ namespace Estigo.Controllers
         [HttpGet("{id:int}/details")]
         public IActionResult GetCourseDetailsById(int id)
         {
-            var course = context.Courses.Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
+            var course = context.Courses
                 .Select(c => new CourseDetailsDTO
             {
-                CourseId = c.CourseId,
+                courseId = c.courseId,
                 CourseTitle = c.CourseTitle,
                 Description = c.Description,
                 Logo = c.Logo,
@@ -85,7 +101,7 @@ namespace Estigo.Controllers
                 lessons = c.lessons.Select(l => l.lessonTitle).ToList()
 
 
-            }).FirstOrDefault(c => c.CourseId == id);
+            }).FirstOrDefault(c => c.courseId == id);
 
             if (course == null)
             {
@@ -95,6 +111,31 @@ namespace Estigo.Controllers
             return Ok(course);
 
         }
+        [HttpGet("{id:int}/lessons")]
+        public IActionResult GetCourseLessonsById(int id)
+        {
+            var course = context.Courses
+        .Where(c => c.courseId == id)
+        .Select(c => new
+        {
+            c.courseId,
+            c.CourseTitle,
+            lessons = c.lessons.Select(l => new
+            {
+                l.lessonId,
+                l.lessonTitle
+            }).ToList()
+        })
+        .FirstOrDefault();
+
+            if (course == null)
+            {
+                return NotFound(new { message = "Course not found" });
+            }
+
+            return Ok(course);
+        }
+
 
 
 
@@ -105,7 +146,7 @@ namespace Estigo.Controllers
                 .Where(c => c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .Select(c => new courseDTO
             {
-                CourseId = c.CourseId,
+                courseId = c.courseId,
                 CourseTitle = c.CourseTitle,
                 Description = c.Description,
                 Logo = c.Logo,
@@ -131,9 +172,10 @@ namespace Estigo.Controllers
         {
             var course = new Course
             {
-                CourseId = courseDto.CourseId,
+                courseId = courseDto.courseId,
                 CourseTitle = courseDto.CourseTitle,
                 Description = courseDto.Description,
+                Status = CourseStatus.CourseStatusEnum.Approved,
                 Logo = courseDto.Logo,
                 Price = courseDto.Price,
                 Available = courseDto.Available,
@@ -150,7 +192,7 @@ namespace Estigo.Controllers
         [HttpPut("{id:int}")]
         public IActionResult EditCourse(int id, courseDTO courseDto)
         {
-            var course = context.Courses.FirstOrDefault(c => c.CourseId == id);
+            var course = context.Courses.FirstOrDefault(c => c.courseId == id);
             if (course == null)
             {
                 return NotFound(new { message = "Course not found" });
@@ -165,19 +207,64 @@ namespace Estigo.Controllers
         }
 
 
-        
+
         [HttpDelete("{id:int}")]
         public IActionResult DeleteCourse(int id)
         {
-            var course = context.Courses.FirstOrDefault(c => c.CourseId == id);
-            if (course == null)
+            try
             {
-                return NotFound(new { message = "Course not found" });
+                var course = context.Courses
+                    .Include(c => c.lessons)
+                    .Include(c => c.Payments)
+                    .Include(c => c.students)
+                    .FirstOrDefault(c => c.courseId == id);
+
+                if (course == null)
+                {
+                    return NotFound(new { message = "Course not found" });
+                }
+
+                // Delete related Exams first (to avoid FK constraint issue)
+                var lessonIds = course.lessons.Select(l => l.lessonId).ToList();
+                var exams = context.Exams.Where(e => lessonIds.Contains(e.lessonId)).ToList();
+                if (exams.Any())
+                {
+                    context.Exams.RemoveRange(exams);
+                }
+
+                // Remove MyCourse entries
+                var myCourses = context.MyCourses.Where(mc => mc.courseId == id).ToList();
+                if (myCourses.Any())
+                {
+                    context.MyCourses.RemoveRange(myCourses);
+                }
+
+                // Clear many-to-many relationship with students
+                if (course.students != null && course.students.Any())
+                {
+                    course.students.Clear();
+                }
+
+                // Remove the course (EF should cascade delete lessons & payments if configured)
+                context.Courses.Remove(course);
+                context.SaveChanges();
+
+                return Ok(new { message = "Course deleted successfully" });
             }
-            context.Courses.Remove(course);
-            context.SaveChanges();
-            return Ok();
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "An error occurred while deleting the course",
+                    error = ex.Message,
+                    inner = ex.InnerException?.Message,
+                    stack = ex.StackTrace
+                });
+            }
         }
+
+
+        
         // Our popular courses section
         [HttpGet("HomepageCourses")]
         public async Task<IActionResult> GetPopularCourses()
@@ -196,7 +283,7 @@ namespace Estigo.Controllers
 
             var popularCoursesDTOs = courses.Select(course => new CourseHomeDTO
             {
-                CourseId = course.CourseId,
+                courseId = course.courseId,
                 CourseTitle = course.CourseTitle,
                 ImageBase64 = course.Logo,
                 TeacherName = course.Teacher?.Name
@@ -218,7 +305,7 @@ namespace Estigo.Controllers
                 .ToListAsync();
             var courseVms = courses.Select(c => new CoursePageDTO
             {
-                CourseId = c.CourseId,
+                courseId = c.courseId,
                 CourseTitle = c.CourseTitle,
                 CatName = c.Category.Name,
                 ImageBase64 = c.Logo,
@@ -259,7 +346,7 @@ namespace Estigo.Controllers
 
             var courseVms = courses.Select(c => new CoursePageDTO
             {
-                CourseId = c.CourseId,
+                courseId = c.courseId,
                 CourseTitle = c.CourseTitle,
                 ImageBase64 = c.Logo,
                 price = c.Price,
@@ -292,7 +379,7 @@ namespace Estigo.Controllers
                           c.Status == CourseStatus.CourseStatusEnum.Approved)
                 .Select(c => new CoursePageDTO
                 {
-                    CourseId = c.CourseId,
+                    courseId = c.courseId,
                     CourseTitle = c.CourseTitle,
                     ImageBase64 = c.Logo,
                     Status = c.Status,

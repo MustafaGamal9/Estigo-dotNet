@@ -49,7 +49,7 @@ namespace Estigo.Controllers
             var payment = new Payment
             {
                 StudentId = paymentDto.StudentId,
-                CourseId = paymentDto.CourseId,
+                courseId = paymentDto.courseId,
                 PurchaseDate = paymentDto.PurchaseDate,
                 PaymentMethod = paymentDto.PaymentMethod
             };

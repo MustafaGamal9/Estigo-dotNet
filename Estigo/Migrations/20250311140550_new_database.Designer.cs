@@ -200,7 +200,7 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -219,18 +219,18 @@ namespace Estigo.Migrations
 
                     b.HasKey("ChapterId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("courseId");
 
                     b.ToTable("Chapters");
                 });
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
                 {
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("courseId"));
 
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
@@ -261,7 +261,7 @@ namespace Estigo.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.HasKey("CourseId");
+                    b.HasKey("courseId");
 
                     b.HasIndex("CategoryId");
 
@@ -322,7 +322,7 @@ namespace Estigo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .HasColumnType("int");
 
                     b.Property<string>("PaymentMethod")
@@ -338,7 +338,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("PaymentId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("courseId");
 
                     b.HasIndex("StudentId");
 
@@ -563,13 +563,13 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("MyCourse", b =>
                 {
-                    b.Property<int>("MyCourseId")
+                    b.Property<int>("MycourseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MyCourseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MycourseId"));
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("EnrollmentDate")
@@ -579,9 +579,9 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("MyCourseId");
+                    b.HasKey("MycourseId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("courseId");
 
                     b.HasIndex("StudentId");
 
@@ -658,7 +658,7 @@ namespace Estigo.Migrations
                 {
                     b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany("Chapters")
-                        .HasForeignKey("CourseId")
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -699,7 +699,7 @@ namespace Estigo.Migrations
                 {
                     b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany("Payments")
-                        .HasForeignKey("CourseId")
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -799,7 +799,7 @@ namespace Estigo.Migrations
                 {
                     b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany()
-                        .HasForeignKey("CourseId")
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

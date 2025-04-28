@@ -110,245 +110,245 @@ namespace Estigo.Migrations
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 1,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 2,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 3,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 4,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 5,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 6,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 7,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 8,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 9,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 10,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 11,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 12,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 13,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 14,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 15,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 16,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 17,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 18,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 19,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 20,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 21,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 22,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 23,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 24,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 25,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 26,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 27,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 28,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 29,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 30,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 31,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 32,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 33,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 34,
                 column: "Status",
                 value: 0);
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 35,
                 column: "Status",
                 value: 0);

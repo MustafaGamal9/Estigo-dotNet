@@ -7,12 +7,14 @@ namespace Estigo.DTO
     public class courseDTO
     {
         [Key]
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
         public string CourseTitle { get; set; }
         public string? Description { get; set; }
         public string? Logo { get; set; }
         public int Price { get; set; }
         public bool Available { get; set; } = true;
+
+        public int attendance { get; set; }
         public CourseStatusEnum Status { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

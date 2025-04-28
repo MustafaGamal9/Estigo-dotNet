@@ -153,7 +153,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("ExamId");
 
-                    b.ToTable("BankOfQuestions", (string)null);
+                    b.ToTable("BankOfQuestions");
 
                     b.HasData(
                         new
@@ -5012,7 +5012,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -5070,16 +5070,16 @@ namespace Estigo.Migrations
 
                     b.HasKey("ChapterId");
 
-                    b.ToTable("Chapter", (string)null);
+                    b.ToTable("Chapter");
                 });
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
                 {
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("courseId"));
 
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
@@ -5116,18 +5116,18 @@ namespace Estigo.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.HasKey("CourseId");
+                    b.HasKey("courseId");
 
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
 
                     b.HasData(
                         new
                         {
-                            CourseId = 1,
+                            courseId = 1,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Algebra | Unit 1",
@@ -5140,7 +5140,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 2,
+                            courseId = 2,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Calculus | Unit 2",
@@ -5153,7 +5153,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 3,
+                            courseId = 3,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Geometry | Unit 3",
@@ -5166,7 +5166,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 4,
+                            courseId = 4,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Trigonometry | Unit 4",
@@ -5179,7 +5179,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 5,
+                            courseId = 5,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Statistics | Unit 5",
@@ -5192,7 +5192,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 6,
+                            courseId = 6,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Probability | Unit 6",
@@ -5205,7 +5205,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 7,
+                            courseId = 7,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Discrete Math | Unit 7",
@@ -5218,7 +5218,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 8,
+                            courseId = 8,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Mechanics | Unit 1",
@@ -5231,7 +5231,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 9,
+                            courseId = 9,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Electricity | Unit 2",
@@ -5244,7 +5244,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 10,
+                            courseId = 10,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Magnetism | Unit 3",
@@ -5257,7 +5257,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 11,
+                            courseId = 11,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Optics | Unit 4",
@@ -5270,7 +5270,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 12,
+                            courseId = 12,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Thermodynamics | Unit 5",
@@ -5283,7 +5283,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 13,
+                            courseId = 13,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Quantum Physics | Unit 6",
@@ -5296,7 +5296,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 14,
+                            courseId = 14,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Relativity | Unit 7",
@@ -5309,7 +5309,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 15,
+                            courseId = 15,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Cell Biology | Unit 1",
@@ -5322,7 +5322,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 16,
+                            courseId = 16,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Genetics | Unit 2",
@@ -5335,7 +5335,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 17,
+                            courseId = 17,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Movement | Unit 3",
@@ -5348,7 +5348,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 18,
+                            courseId = 18,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Ecology | Unit 4",
@@ -5361,7 +5361,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 19,
+                            courseId = 19,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Botany | Unit 5",
@@ -5374,7 +5374,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 20,
+                            courseId = 20,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Zoology | Unit 6",
@@ -5387,7 +5387,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 21,
+                            courseId = 21,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Microbiology | Unit 7",
@@ -5400,7 +5400,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 22,
+                            courseId = 22,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Organic Chemistry | Unit 1",
@@ -5413,7 +5413,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 23,
+                            courseId = 23,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Inorganic Chemistry | Unit 2",
@@ -5426,7 +5426,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 24,
+                            courseId = 24,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Physical Chemistry | Unit 3",
@@ -5439,7 +5439,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 25,
+                            courseId = 25,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Analytical Chemistry | Unit 4",
@@ -5452,7 +5452,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 26,
+                            courseId = 26,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Biochemistry | Unit 5",
@@ -5465,7 +5465,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 27,
+                            courseId = 27,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Environmental Chemistry | Unit 6",
@@ -5478,7 +5478,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 28,
+                            courseId = 28,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Theoretical Chemistry | Unit 7",
@@ -5491,7 +5491,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 29,
+                            courseId = 29,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Literature | Unit 1",
@@ -5504,7 +5504,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 30,
+                            courseId = 30,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Creative Writing | Unit 2",
@@ -5517,7 +5517,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 31,
+                            courseId = 31,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Grammar & Composition | Unit 3",
@@ -5530,7 +5530,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 32,
+                            courseId = 32,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Poetry Analysis | Unit 4",
@@ -5543,7 +5543,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 33,
+                            courseId = 33,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Drama & Theater | Unit 5",
@@ -5556,7 +5556,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 34,
+                            courseId = 34,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Fiction Writing | Unit 6",
@@ -5569,7 +5569,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 35,
+                            courseId = 35,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Non-fiction Writing | Unit 7",
@@ -5612,6 +5612,12 @@ namespace Estigo.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<int>("attempts")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("final")
+                        .HasColumnType("bit");
+
                     b.Property<int>("lessonId")
                         .HasColumnType("int");
 
@@ -5620,7 +5626,7 @@ namespace Estigo.Migrations
                     b.HasIndex("lessonId")
                         .IsUnique();
 
-                    b.ToTable("Exams", (string)null);
+                    b.ToTable("Exams");
 
                     b.HasData(
                         new
@@ -5630,6 +5636,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of variables and expressions.",
                             ExamTitle = "Algebra Basics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 1
                         },
                         new
@@ -5639,6 +5647,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding and solving of linear inequalities.",
                             ExamTitle = "Inequalities Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 3
                         },
                         new
@@ -5648,6 +5658,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of polynomial expressions and operations.",
                             ExamTitle = "Polynomial Basics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 5
                         },
                         new
@@ -5657,6 +5669,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of defining the derivative and basic rules.",
                             ExamTitle = "Introduction to Derivatives Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 7
                         },
                         new
@@ -5666,6 +5680,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to use derivatives for rates of change and optimization.",
                             ExamTitle = "Applications of Derivatives Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 9
                         },
                         new
@@ -5675,6 +5691,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of fundamental geometric concepts.",
                             ExamTitle = "Points, Lines, and Planes Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 11
                         },
                         new
@@ -5684,6 +5702,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of angles formed by parallel lines.",
                             ExamTitle = "Parallel Lines and Transversals Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 13
                         },
                         new
@@ -5693,6 +5713,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of polygon properties.",
                             ExamTitle = "Introduction to Polygons Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 15
                         },
                         new
@@ -5702,6 +5724,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the unit circle in trigonometry.",
                             ExamTitle = "The Unit Circle Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 17
                         },
                         new
@@ -5711,6 +5735,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of fundamental trigonometric identities.",
                             ExamTitle = "Trigonometric Identities Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 19
                         },
                         new
@@ -5720,6 +5746,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic statistical concepts and data types.",
                             ExamTitle = "Introduction to Statistics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 21
                         },
                         new
@@ -5729,6 +5757,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of graphical data representation.",
                             ExamTitle = "Data Visualization Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 23
                         },
                         new
@@ -5738,6 +5768,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of basic probability distributions.",
                             ExamTitle = "Introduction to Distributions Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 25
                         },
                         new
@@ -5747,6 +5779,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of conditional probability and independence.",
                             ExamTitle = "Conditional Probability Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 27
                         },
                         new
@@ -5756,6 +5790,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to calculate measures for random variables.",
                             ExamTitle = "Expected Value and Variance Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 29
                         },
                         new
@@ -5765,6 +5801,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of propositional logic and proof methods.",
                             ExamTitle = "Logic and Proofs Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 31
                         },
                         new
@@ -5774,6 +5812,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of permutations and combinations.",
                             ExamTitle = "Counting Principles Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 33
                         },
                         new
@@ -5783,6 +5823,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic graph concepts.",
                             ExamTitle = "Introduction to Graph Theory Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 35
                         },
                         new
@@ -5792,6 +5834,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of projectile motion and vector operations.",
                             ExamTitle = "Vectors and 2D Kinematics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 37
                         },
                         new
@@ -5801,6 +5845,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of work, energy concepts, and conservation.",
                             ExamTitle = "Work, Energy, and Power Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 39
                         },
                         new
@@ -5810,6 +5856,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of electric charge properties and Coulomb's Law.",
                             ExamTitle = "Electric Charge and Coulomb's Law Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 41
                         },
                         new
@@ -5819,6 +5867,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of potential difference and electric potential energy.",
                             ExamTitle = "Electric Potential Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 43
                         },
                         new
@@ -5828,6 +5878,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic electric current, resistance, and Ohm's Law.",
                             ExamTitle = "Current, Resistance, and Ohm's Law Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 45
                         },
                         new
@@ -5837,6 +5889,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of magnetic fields produced by currents.",
                             ExamTitle = "Sources of Magnetic Fields Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 47
                         },
                         new
@@ -5846,6 +5900,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of Faraday's Law and Lenz's Law.",
                             ExamTitle = "Electromagnetic Induction Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 49
                         },
                         new
@@ -5855,6 +5911,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of the wave-particle duality and properties of light.",
                             ExamTitle = "Nature of Light Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 51
                         },
                         new
@@ -5864,6 +5922,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of lenses and image formation.",
                             ExamTitle = "Lenses and Image Formation Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 53
                         },
                         new
@@ -5873,6 +5933,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of light diffraction.",
                             ExamTitle = "Wave Optics: Diffraction Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 55
                         },
                         new
@@ -5882,6 +5944,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of internal energy, work, and heat.",
                             ExamTitle = "First Law of Thermodynamics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 57
                         },
                         new
@@ -5891,6 +5955,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of entropy and the direction of processes.",
                             ExamTitle = "Second Law of Thermodynamics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 59
                         },
                         new
@@ -5900,6 +5966,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of blackbody radiation and Planck's hypothesis.",
                             ExamTitle = "Blackbody Radiation Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 61
                         },
                         new
@@ -5909,6 +5977,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the De Broglie hypothesis.",
                             ExamTitle = "Wave Nature of Matter Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 63
                         },
                         new
@@ -5918,6 +5988,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your basic understanding of the Schrödinger equation and wave functions.",
                             ExamTitle = "Introduction to Quantum Mechanics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 65
                         },
                         new
@@ -5927,6 +5999,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of relativistic effects on time and space.",
                             ExamTitle = "Time Dilation and Length Contraction Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 67
                         },
                         new
@@ -5936,6 +6010,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your conceptual understanding of general relativity.",
                             ExamTitle = "Introduction to General Relativity Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 69
                         },
                         new
@@ -5945,6 +6021,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of Prokaryotic vs. Eukaryotic cells.",
                             ExamTitle = "Introduction to Cells Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 71
                         },
                         new
@@ -5954,6 +6032,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of major organelle structures and functions.",
                             ExamTitle = "Eukaryotic Organelles Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 73
                         },
                         new
@@ -5963,6 +6043,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the cell cycle phases and mitosis.",
                             ExamTitle = "The Cell Cycle and Mitosis Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 75
                         },
                         new
@@ -5972,6 +6054,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of the double helix and DNA synthesis.",
                             ExamTitle = "DNA Structure and Replication Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 77
                         },
                         new
@@ -5981,6 +6065,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of protein synthesis from RNA.",
                             ExamTitle = "Gene Expression: Translation Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 79
                         },
                         new
@@ -5990,6 +6076,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of skeleton types and bone structure.",
                             ExamTitle = "Skeletal Systems Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 81
                         },
                         new
@@ -5999,6 +6087,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of forces and levers in biological systems.",
                             ExamTitle = "Biomechanics Basics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 83
                         },
                         new
@@ -6008,6 +6098,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of how the nervous system controls muscles.",
                             ExamTitle = "Nervous System Control of Movement Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 85
                         },
                         new
@@ -6017,6 +6109,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of population growth models.",
                             ExamTitle = "Population Ecology Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 87
                         },
                         new
@@ -6026,6 +6120,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of energy flow and nutrient cycling.",
                             ExamTitle = "Ecosystem Dynamics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 89
                         },
                         new
@@ -6035,6 +6131,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic plant anatomy.",
                             ExamTitle = "Plant Structure and Growth Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 91
                         },
                         new
@@ -6044,6 +6142,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the photosynthesis process.",
                             ExamTitle = "Photosynthesis Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 93
                         },
                         new
@@ -6053,6 +6153,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of chemical signaling in plants.",
                             ExamTitle = "Plant Hormones and Responses Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 95
                         },
                         new
@@ -6062,6 +6164,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of simpler invertebrates.",
                             ExamTitle = "Invertebrate Zoology I Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 97
                         },
                         new
@@ -6071,6 +6175,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of Chordates and Fish.",
                             ExamTitle = "Vertebrate Zoology I Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 99
                         },
                         new
@@ -6080,6 +6186,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of microbial diversity.",
                             ExamTitle = "Introduction to Microbes Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 101
                         },
                         new
@@ -6089,6 +6197,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of microbial growth requirements and pathways.",
                             ExamTitle = "Microbial Growth and Metabolism Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 103
                         },
                         new
@@ -6098,6 +6208,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of microbes in ecosystems, disease, and industry.",
                             ExamTitle = "Microbial Roles Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 105
                         },
                         new
@@ -6107,6 +6219,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of alkane nomenclature and conformations.",
                             ExamTitle = "Alkanes and Cycloalkanes Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 107
                         },
                         new
@@ -6116,6 +6230,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of reaction types and mechanisms.",
                             ExamTitle = "Introduction to Organic Reactions Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 109
                         },
                         new
@@ -6125,6 +6241,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of atomic models and periodic trends.",
                             ExamTitle = "Atomic Structure and Periodicity Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 111
                         },
                         new
@@ -6134,6 +6252,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of VB and MO theories.",
                             ExamTitle = "Bonding Theories Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 113
                         },
                         new
@@ -6143,6 +6263,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of transition metals, ligands, and complex ions.",
                             ExamTitle = "Coordination Chemistry Basics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 115
                         },
                         new
@@ -6152,6 +6274,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of energy, work, heat, and enthalpy.",
                             ExamTitle = "Thermodynamics: First Law Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 117
                         },
                         new
@@ -6161,6 +6285,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of reaction rates and mechanisms.",
                             ExamTitle = "Chemical Kinetics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 119
                         },
                         new
@@ -6170,6 +6296,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of analytical errors and data analysis.",
                             ExamTitle = "Analytical Intro & Stats Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 121
                         },
                         new
@@ -6179,6 +6307,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of light-matter interaction and UV-Vis.",
                             ExamTitle = "Spectroscopic Methods Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 123
                         },
                         new
@@ -6188,6 +6318,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of potentiometry and voltammetry basics.",
                             ExamTitle = "Electroanalytical Methods Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 125
                         },
                         new
@@ -6197,6 +6329,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of biological catalysts and reaction rates.",
                             ExamTitle = "Enzymes and Kinetics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 127
                         },
                         new
@@ -6206,6 +6340,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of lipid types and membrane structure.",
                             ExamTitle = "Lipids and Membranes Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 129
                         },
                         new
@@ -6215,6 +6351,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of atmospheric composition and reactions.",
                             ExamTitle = "Atmospheric Chemistry Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 131
                         },
                         new
@@ -6224,6 +6362,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of soil composition and chemical reactions.",
                             ExamTitle = "Soil Chemistry Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 133
                         },
                         new
@@ -6233,6 +6373,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of principles for safer chemical processes.",
                             ExamTitle = "Green Chemistry Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 135
                         },
                         new
@@ -6242,6 +6384,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of variation principle and perturbation theory.",
                             ExamTitle = "Approximation Methods Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 137
                         },
                         new
@@ -6251,6 +6395,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your basic understanding of Hartree-Fock and DFT.",
                             ExamTitle = "Computational Chemistry Methods Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 139
                         },
                         new
@@ -6260,6 +6406,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to use tools for interpreting literature.",
                             ExamTitle = "Literary Analysis Basics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 141
                         },
                         new
@@ -6269,6 +6417,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of poetic devices and forms.",
                             ExamTitle = "Poetry Fundamentals Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 143
                         },
                         new
@@ -6278,6 +6428,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of the elements of dramatic literature.",
                             ExamTitle = "Introduction to Drama Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 145
                         },
                         new
@@ -6287,6 +6439,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to create believable characters.",
                             ExamTitle = "Character Development Quiz",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 147
                         },
                         new
@@ -6296,6 +6450,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your skills in building immersive worlds.",
                             ExamTitle = "Setting and Description Quiz",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 149
                         },
                         new
@@ -6305,6 +6461,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of nouns, verbs, adjectives, etc.",
                             ExamTitle = "Parts of Speech Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 151
                         },
                         new
@@ -6314,6 +6472,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of correct punctuation usage.",
                             ExamTitle = "Punctuation Rules Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 153
                         },
                         new
@@ -6323,6 +6483,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to organize ideas effectively.",
                             ExamTitle = "Paragraph and Essay Structure Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 155
                         },
                         new
@@ -6332,6 +6494,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to identify and interpret figurative language.",
                             ExamTitle = "Figurative Language Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 157
                         },
                         new
@@ -6341,6 +6505,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to recognize and analyze different poetic structures.",
                             ExamTitle = "Poetic Forms Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 159
                         },
                         new
@@ -6350,6 +6516,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of key periods and playwrights.",
                             ExamTitle = "History of Theater Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 161
                         },
                         new
@@ -6359,6 +6527,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to understand stage directions and subtext.",
                             ExamTitle = "Reading a Play Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 163
                         },
                         new
@@ -6368,6 +6538,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of roles and processes in theater production.",
                             ExamTitle = "Theater Production Basics Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 165
                         },
                         new
@@ -6377,6 +6549,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of narrative perspectives.",
                             ExamTitle = "Point of View Quiz",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 167
                         },
                         new
@@ -6386,6 +6560,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of scene structure and pacing.",
                             ExamTitle = "Crafting Scenes Quiz",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 169
                         },
                         new
@@ -6395,6 +6571,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of different non-fiction forms.",
                             ExamTitle = "Types of Non-fiction Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 171
                         },
                         new
@@ -6404,6 +6582,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to organize factual material effectively.",
                             ExamTitle = "Structuring Non-fiction Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 173
                         },
                         new
@@ -6413,6 +6593,8 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of responsibilities in non-fiction writing.",
                             ExamTitle = "Ethics in Non-fiction Exam",
                             Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
                             lessonId = 175
                         });
                 });
@@ -6425,9 +6607,6 @@ namespace Estigo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
 
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PaymentMethod")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -6439,13 +6618,16 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("PaymentId");
+                    b.Property<int>("courseId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("CourseId");
+                    b.HasKey("PaymentId");
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("Payments", (string)null);
+                    b.HasIndex("courseId");
+
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
@@ -6477,7 +6659,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("StudentExamResults", (string)null);
+                    b.ToTable("StudentExamResults");
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>
@@ -6525,7 +6707,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("courseId");
 
-                    b.ToTable("lessons", (string)null);
+                    b.ToTable("lessons");
 
                     b.HasData(
                         new
@@ -8277,6 +8459,16 @@ namespace Estigo.Migrations
                             lessonDescription = "Responsibilities when writing about real people and events.",
                             lessonTitle = "Ethics in Non-fiction",
                             lessonVideo = "https://estigo.tryasp.net/vv.mp4"
+                        },
+                        new
+                        {
+                            lessonId = 176,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            courseId = 35,
+                            lessonContent = "Fact-checking, privacy concerns, representation.",
+                            lessonDescription = "Responsibilities when writing about real people and events.",
+                            lessonTitle = "Ethics in Non-fiction",
+                            lessonVideo = "https://estigo.tryasp.net/vv.mp4"
                         });
                 });
 
@@ -8415,14 +8607,11 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("MyCourse", b =>
                 {
-                    b.Property<int>("MyCourseId")
+                    b.Property<int>("MycourseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MyCourseId"));
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MycourseId"));
 
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("datetime2");
@@ -8431,11 +8620,17 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("MyCourseId");
+                    b.Property<int>("attendance")
+                        .HasColumnType("int");
 
-                    b.HasIndex("CourseId");
+                    b.Property<int>("courseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MycourseId");
 
                     b.HasIndex("StudentId");
+
+                    b.HasIndex("courseId");
 
                     b.ToTable("MyCourses", (string)null);
                 });
@@ -8484,15 +8679,15 @@ namespace Estigo.Migrations
                 {
                     b.HasBaseType("Estigo.Models.ApplicationUser");
 
-                    b.Property<int?>("CourseId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subject")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("courseId")
+                        .HasColumnType("int");
 
                     b.Property<string>("image")
                         .HasColumnType("nvarchar(max)");
@@ -8504,7 +8699,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a0a5a016-ea2a-43a1-9786-33dae726c5b8",
+                            ConcurrencyStamp = "c8d764cb-aaa3-47ae-b8e7-b829f81487f9",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math1@estigo.com",
                             EmailConfirmed = false,
@@ -8515,7 +8710,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "a3cddf00-fe83-4596-9c79-3597641ccf6f",
+                            SecurityStamp = "df124ab1-f82c-4964-a6cf-89a04c5ce3ca",
                             TwoFactorEnabled = false,
                             UserName = "math1@estigo.com",
                             Notes = "Expert in Algebra",
@@ -8526,8 +8721,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7100828c-9c0a-4932-9d22-2c6ad4bb14dd",
-
+                            ConcurrencyStamp = "6845d5ea-4383-4ac8-aca6-3ca455354c06",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math2@estigo.com",
                             EmailConfirmed = false,
@@ -8538,8 +8732,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-
-                            SecurityStamp = "8daf6243-4ae4-4596-89c8-997195747050",
+                            SecurityStamp = "e1ff1b04-09de-44ee-adc1-36b6c9ec1ed0",
                             TwoFactorEnabled = false,
                             UserName = "math2@estigo.com",
                             Notes = "Specialist in Calculus",
@@ -8550,7 +8743,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a22b3e2e-af37-4e01-8bab-65e1746f57dc",
+                            ConcurrencyStamp = "10758ca6-5ec1-4820-aa62-4d3dc10576a6",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys1@estigo.com",
                             EmailConfirmed = false,
@@ -8561,7 +8754,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "bb367cc7-f1fe-4667-82b0-b64bba933680",
+                            SecurityStamp = "91a4bc6d-cef5-46dc-b6fd-419df674964d",
                             TwoFactorEnabled = false,
                             UserName = "phys1@estigo.com",
                             Notes = "Specialist in Mechanics",
@@ -8572,7 +8765,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d794efae-de8a-4a19-87f7-87dbcf6eb917",
+                            ConcurrencyStamp = "88c03e1c-1c3d-46e1-82ae-b35f104d9409",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys2@estigo.com",
                             EmailConfirmed = false,
@@ -8583,7 +8776,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "a13a0428-08c9-44df-9f66-5baae890bbac",
+                            SecurityStamp = "d57b5259-5120-4198-9265-48283e51edf7",
                             TwoFactorEnabled = false,
                             UserName = "phys2@estigo.com",
                             Notes = "Expert in Electromagnetism",
@@ -8594,7 +8787,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e21ebb2-4728-439f-bbf2-4730867bdcc4",
+                            ConcurrencyStamp = "3096cd73-9e55-44bd-9238-5700642ce594",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys3@estigo.com",
                             EmailConfirmed = false,
@@ -8605,7 +8798,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "03331f36-6bac-44d2-ac3b-39d3a15de961",
+                            SecurityStamp = "c88e9ac9-618d-41a8-8b96-ca6e790c563e",
                             TwoFactorEnabled = false,
                             UserName = "phys3@estigo.com",
                             Notes = "Enthusiast in Quantum Physics",
@@ -8616,7 +8809,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "35ecfb1f-0784-4bd4-85a5-515f81759080",
+                            ConcurrencyStamp = "03c70d72-6428-4b63-9f69-64447d8c60cb",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio1@estigo.com",
                             EmailConfirmed = false,
@@ -8627,7 +8820,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "62a38312-bf98-41a0-ab9f-2edd66eab66a",
+                            SecurityStamp = "2ee9e16e-516f-4340-8923-54bfdae1bc09",
                             TwoFactorEnabled = false,
                             UserName = "bio1@estigo.com",
                             Notes = "Expert in Cell Biology",
@@ -8638,7 +8831,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5b9e515f-6abc-4074-82f7-8568a37d2d6f",
+                            ConcurrencyStamp = "83c48b45-4acf-40f5-926c-b5c893b0c96d",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio2@estigo.com",
                             EmailConfirmed = false,
@@ -8649,7 +8842,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "b5497a09-6f0f-49ff-b6ce-bd78f213322a",
+                            SecurityStamp = "94f45869-5851-4119-a162-95d789ef6ea4",
                             TwoFactorEnabled = false,
                             UserName = "bio2@estigo.com",
                             Notes = "Specialist in Genetics",
@@ -8660,7 +8853,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "60bf5fa9-384e-4819-b074-203026f72aed",
+                            ConcurrencyStamp = "86076b2f-5122-44f4-8851-070dee224d47",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem1@estigo.com",
                             EmailConfirmed = false,
@@ -8671,7 +8864,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "eedb7fa6-9817-423a-a6a1-9cc0d648556f",
+                            SecurityStamp = "cf652c96-47c3-4c50-aef0-c384c2bf38b5",
                             TwoFactorEnabled = false,
                             UserName = "chem1@estigo.com",
                             Notes = "Passionate about Organic Chemistry",
@@ -8682,8 +8875,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t9",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "d591c7a7-0d07-40da-bfa4-87ac00a7f251",
+                            ConcurrencyStamp = "ec3916c1-1abb-4b0e-b002-4e28c43b6d45",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem2@estigo.com",
                             EmailConfirmed = false,
@@ -8694,7 +8886,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "7204b0c2-4afd-456e-960b-d5b6f660881b",
+                            SecurityStamp = "9a01add1-704e-4793-a449-4fdc2e96f431",
                             TwoFactorEnabled = false,
                             UserName = "chem2@estigo.com",
                             Notes = "Expert in Inorganic Chemistry",
@@ -8705,7 +8897,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t10",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "80a53347-55b7-451c-babc-0fd9d9a111ab",
+                            ConcurrencyStamp = "a4921a25-145e-4cc5-b142-8fa2a5cb25b0",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem3@estigo.com",
                             EmailConfirmed = false,
@@ -8716,7 +8908,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "02175981-f723-409f-b59e-db4f30851418",
+                            SecurityStamp = "16d336de-c3d9-464c-b9d5-2743923a94c9",
                             TwoFactorEnabled = false,
                             UserName = "chem3@estigo.com",
                             Notes = "Skilled in Analytical Chemistry",
@@ -8727,8 +8919,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t11",
                             AccessFailedCount = 0,
-
-                            ConcurrencyStamp = "fc332645-a1e6-468b-87fa-52897b1fd267",
+                            ConcurrencyStamp = "03b589b8-489e-47b0-932c-d6d003907ba7",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem4@estigo.com",
                             EmailConfirmed = false,
@@ -8739,7 +8930,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM4@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "b1222ee5-a7a3-4208-8c9b-a07318369dea",
+                            SecurityStamp = "6d48fd35-8f6b-48bb-926a-c5ec6cfccf15",
                             TwoFactorEnabled = false,
                             UserName = "chem4@estigo.com",
                             Notes = "Focused on Physical Chemistry",
@@ -8750,7 +8941,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t12",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0a3d5140-d75d-423a-9a98-78c5a1432e2f",
+                            ConcurrencyStamp = "a46996d6-597b-4092-ade3-8c69dbe914cb",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng1@estigo.com",
                             EmailConfirmed = false,
@@ -8761,7 +8952,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "ff6457bb-19ed-4a34-b408-4cef6b11b496",
+                            SecurityStamp = "6ba8ddbd-b1b6-42ec-80be-1c6865b3201c",
                             TwoFactorEnabled = false,
                             UserName = "eng1@estigo.com",
                             Notes = "Literature Specialist",
@@ -8772,7 +8963,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t13",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d5847929-2d0a-4aad-904f-cc9df3b38c3f",
+                            ConcurrencyStamp = "4dd58e96-9d22-4b14-a9fd-9f1de33faace",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng2@estigo.com",
                             EmailConfirmed = false,
@@ -8783,7 +8974,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "e423d8e6-0dd1-433c-9ec6-13de97a58167",
+                            SecurityStamp = "e2332e8a-373f-44ad-81c8-f96fc70a2fab",
                             TwoFactorEnabled = false,
                             UserName = "eng2@estigo.com",
                             Notes = "Expert in Creative Writing",
@@ -8834,15 +9025,15 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("Estigo.Models.Payment", b =>
                 {
-                    b.HasOne("Estigo.Models.Course", "Course")
-                        .WithMany("Payments")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Estigo.Models.Student", "Student")
                         .WithMany("Payments")
                         .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Estigo.Models.Course", "Course")
+                        .WithMany("Payments")
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -8934,15 +9125,15 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("MyCourse", b =>
                 {
-                    b.HasOne("Estigo.Models.Course", "Course")
-                        .WithMany()
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Estigo.Models.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Estigo.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

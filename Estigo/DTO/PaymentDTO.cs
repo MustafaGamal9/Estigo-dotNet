@@ -9,7 +9,7 @@ namespace Estigo.DTO
         [Required]
         public string StudentId { get; set; }
         [Required]
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string PaymentMethod { get; set; }
     }

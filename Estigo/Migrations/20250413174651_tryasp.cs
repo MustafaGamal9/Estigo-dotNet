@@ -103,245 +103,245 @@ namespace Estigo.Migrations
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 1,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/algebra.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 2,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/calculas.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 3,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/geo.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 4,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/trig.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 5,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/stat.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 6,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/prob.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 7,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/disc.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 8,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/mecha.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 9,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/elec.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 10,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/iron.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 11,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/optics.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 12,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/thermo.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 13,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/quant.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 14,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/rela.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 15,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/cell.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 16,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/gena.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 17,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/move.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 18,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/eco.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 19,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/elec.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 20,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/zoo.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 21,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/micro.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 22,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/organic.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 23,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/inorganic.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 24,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/physChem.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 25,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/analyt.png");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 26,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/biochem.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 27,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/env.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 28,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/theo.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 29,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/lit.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 30,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/write.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 31,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/gram.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 32,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/poe.png");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 33,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/drama.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 34,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/fiction.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 35,
                 column: "Logo",
                 value: "https://estigo.tryasp.net/nonfic.jpg");
@@ -1668,245 +1668,245 @@ namespace Estigo.Migrations
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 1,
                 column: "Logo",
                 value: "https://est.runasp.net/algebra.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 2,
                 column: "Logo",
                 value: "https://est.runasp.net/calculas.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 3,
                 column: "Logo",
                 value: "https://est.runasp.net/geo.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 4,
                 column: "Logo",
                 value: "https://est.runasp.net/trig.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 5,
                 column: "Logo",
                 value: "https://est.runasp.net/stat.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 6,
                 column: "Logo",
                 value: "https://est.runasp.net/prob.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 7,
                 column: "Logo",
                 value: "https://est.runasp.net/disc.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 8,
                 column: "Logo",
                 value: "https://est.runasp.net/mecha.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 9,
                 column: "Logo",
                 value: "https://est.runasp.net/elec.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 10,
                 column: "Logo",
                 value: "https://est.runasp.net/iron.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 11,
                 column: "Logo",
                 value: "https://est.runasp.net/optics.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 12,
                 column: "Logo",
                 value: "https://est.runasp.net/thermo.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 13,
                 column: "Logo",
                 value: "https://est.runasp.net/quant.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 14,
                 column: "Logo",
                 value: "https://est.runasp.net/rela.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 15,
                 column: "Logo",
                 value: "https://est.runasp.net/cell.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 16,
                 column: "Logo",
                 value: "https://est.runasp.net/gena.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 17,
                 column: "Logo",
                 value: "https://est.runasp.net/move.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 18,
                 column: "Logo",
                 value: "https://est.runasp.net/eco.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 19,
                 column: "Logo",
                 value: "https://est.runasp.net/elec.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 20,
                 column: "Logo",
                 value: "https://est.runasp.net/zoo.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 21,
                 column: "Logo",
                 value: "https://est.runasp.net/micro.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 22,
                 column: "Logo",
                 value: "https://est.runasp.net/organic.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 23,
                 column: "Logo",
                 value: "https://est.runasp.net/inorganic.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 24,
                 column: "Logo",
                 value: "https://est.runasp.net/physChem.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 25,
                 column: "Logo",
                 value: "https://est.runasp.net/analyt.png");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 26,
                 column: "Logo",
                 value: "https://est.runasp.net/biochem.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 27,
                 column: "Logo",
                 value: "https://est.runasp.net/env.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 28,
                 column: "Logo",
                 value: "https://est.runasp.net/theo.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 29,
                 column: "Logo",
                 value: "https://est.runasp.net/lit.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 30,
                 column: "Logo",
                 value: "https://est.runasp.net/write.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 31,
                 column: "Logo",
                 value: "https://est.runasp.net/gram.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 32,
                 column: "Logo",
                 value: "https://est.runasp.net/poe.png");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 33,
                 column: "Logo",
                 value: "https://est.runasp.net/drama.jpg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 34,
                 column: "Logo",
                 value: "https://est.runasp.net/fiction.jpeg");
 
             migrationBuilder.UpdateData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 35,
                 column: "Logo",
                 value: "https://est.runasp.net/nonfic.jpg");

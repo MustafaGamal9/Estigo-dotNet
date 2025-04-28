@@ -32,10 +32,11 @@ namespace Estigo.Models
 
 
             modelBuilder.Entity<Course>()
-                        .HasMany(c => c.Payments)
-                        .WithOne(p => p.Course)
-                        .HasForeignKey(p => p.CourseId)
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasMany(c => c.lessons)
+                        .WithOne(l => l.Course)
+                        .HasForeignKey(l => l.courseId)
+                        .OnDelete(DeleteBehavior.Cascade);
+
 
 
             modelBuilder.Entity<Student>()
@@ -45,7 +46,7 @@ namespace Estigo.Models
                            j => j
                      .HasOne(mc => mc.Course)
                      .WithMany()
-                     .HasForeignKey(mc => mc.CourseId)
+                     .HasForeignKey(mc => mc.courseId)
                      .OnDelete(DeleteBehavior.Restrict),
                                   j => j
                      .HasOne(mc => mc.Student)
@@ -55,7 +56,7 @@ namespace Estigo.Models
                           j =>
                           {
                               j.ToTable("MyCourses");
-                              j.HasKey(mc => mc.MyCourseId);
+                              j.HasKey(mc => mc.MycourseId);
 
                           });
 

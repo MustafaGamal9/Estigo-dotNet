@@ -24,7 +24,7 @@ public class DashboardController : ControllerBase
         // --- Fetch Student Details ---
         var student = await _context.Students
             .Where(s => s.Id == studentId)
-            .Select(s => new { s.Id, s.Name })
+            .Select(s => new { s.Id, s.Name,s.StudentCode })
             .FirstOrDefaultAsync();
 
         if (student == null)
@@ -32,32 +32,31 @@ public class DashboardController : ControllerBase
             return NotFound($"Student with ID {studentId} not found.");
         }
 
-        // --- Fetch Enrolled Courses (Top 3) ---
+        // --- Fetch Enrolled Courses ---
         var enrolledCourses = await _context.MyCourses
             .Where(mc => mc.StudentId == studentId)
-            .Include(mc => mc.Course) // Include Course to access its properties
+            .Include(mc => mc.Course) 
             .Select(mc => mc.Course)
-            .Where(c => c != null) // Ensure Course is not null after projection
+            .Where(c => c != null) 
             .OrderBy(c => c.CourseTitle)
             .Take(3)
             .Select(c => new EnrolledCourseDTO
             {
-                CourseId = c.CourseId,
+                courseId = c.courseId,
                 CourseName = c.CourseTitle,
-                CourseImageUrl = c.Logo // Assuming Logo is directly on Course
+                CourseImageUrl = c.Logo 
             })
             .ToListAsync();
 
 
-        // --- Fetch Instructors for Enrolled Courses (Top 3 distinct) ---
+        // --- Fetch Instructors for Enrolled Courses ---
         var courseInstructors = await _context.MyCourses
            .Where(mc => mc.StudentId == studentId && mc.Course != null && mc.Course.Teacher != null)
-           .Select(mc => mc.Course.Teacher) // Select the Teacher object
+           .Select(mc => mc.Course.Teacher) 
            .Distinct()
            .Take(3)
-           .Select(t => new InstructorImageDTO // Project from the Teacher object
+           .Select(t => new InstructorImageDTO 
            {
-               // Assuming 'image' is a property directly on the Teacher entity
                InstructorImageUrl = t.image
            })
            .ToListAsync();
@@ -99,9 +98,10 @@ public class DashboardController : ControllerBase
         {
             StudentId = student.Id,
             StudentName = student.Name,
+            StudentCode = student.StudentCode,
             EnrolledCourses = enrolledCourses,
             CourseInstructors = courseInstructors,
-            Quizzes = latestExamResults, // Correct property name
+            Quizzes = latestExamResults,
             PaymentInfo = paymentInfo
         };
 

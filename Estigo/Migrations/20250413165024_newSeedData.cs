@@ -15,7 +15,7 @@ namespace Estigo.Migrations
         {
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CourseId", "Email", "EmailConfirmed", "Gender", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "Notes", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Role", "SecurityStamp", "Subject", "TwoFactorEnabled", "UserName", "UserType", "image" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "courseId", "Email", "EmailConfirmed", "Gender", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "Notes", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Role", "SecurityStamp", "Subject", "TwoFactorEnabled", "UserName", "UserType", "image" },
                 values: new object[,]
                 {
                     { "t1", 0, "c0834eda-02a8-499c-bc74-7b2db53980d7", null, "math1@estigo.com", false, "Male", false, null, "Mahmoud", "MATH1@ESTIGO.COM", "MATH1@ESTIGO.COM", "Expert in Algebra", null, null, false, "Teacher", "37c1f6ea-e105-426a-840b-63a4062c1639", "Mathematics", false, "math1@estigo.com", "Teacher", "https://est.runasp.net/mahmoud.jpg" },
@@ -47,7 +47,7 @@ namespace Estigo.Migrations
 
             migrationBuilder.InsertData(
                 table: "Courses",
-                columns: new[] { "CourseId", "Available", "CategoryId", "CourseTitle", "CreatedAt", "Description", "Logo", "Price", "TeacherId" },
+                columns: new[] { "courseId", "Available", "CategoryId", "CourseTitle", "CreatedAt", "Description", "Logo", "Price", "TeacherId" },
                 values: new object[,]
                 {
                     { 1, true, 1, "Algebra | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to algebraic concepts", "https://est.runasp.net/algebra.jpg", 199, "t1" },
@@ -4332,177 +4332,177 @@ namespace Estigo.Migrations
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 1);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 2);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 3);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 4);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 5);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 6);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 7);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 8);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 9);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 10);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 11);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 12);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 13);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 14);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 15);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 16);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 17);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 18);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 19);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 20);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 21);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 22);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 23);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 24);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 25);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 26);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 27);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 28);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 29);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 30);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 31);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 32);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 33);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 34);
 
             migrationBuilder.DeleteData(
                 table: "Courses",
-                keyColumn: "CourseId",
+                keyColumn: "courseId",
                 keyValue: 35);
 
             migrationBuilder.DeleteData(

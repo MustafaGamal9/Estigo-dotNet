@@ -6,7 +6,7 @@ namespace Estigo.DTO
 {
     public class CoursePageDTO
     {
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
         public string CourseTitle { get; set; }
         public string? ImageBase64 { get; set; }
 

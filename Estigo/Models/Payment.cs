@@ -16,7 +16,7 @@ namespace Estigo.Models
         public string StudentId { get; set; } 
         
         [ForeignKey("Course")]
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
 
         // Navigation property 
         public Course Course { get; set; } 

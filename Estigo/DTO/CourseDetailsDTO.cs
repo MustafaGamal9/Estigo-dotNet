@@ -7,7 +7,7 @@ namespace Estigo.DTO
     public class CourseDetailsDTO
     {
         [Key]
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
         public string CourseTitle { get; set; }
         public string? Description { get; set; }
         public string? Logo { get; set; }

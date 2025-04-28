@@ -10,6 +10,8 @@ namespace Estigo.Models
         public string ExamTitle { get; set; }
         public string ExamDescription { get; set; }
         public string Grade { get; set; }
+        public int attempts { get; set; }
+        public bool final { get; set; } = false;
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; }

@@ -205,7 +205,7 @@ namespace Estigo.Migrations
                 name: "Courses",
                 columns: table => new
                 {
-                    CourseId = table.Column<int>(type: "int", nullable: false)
+                    courseId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -218,7 +218,7 @@ namespace Estigo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Courses", x => x.CourseId);
+                    table.PrimaryKey("PK_Courses", x => x.courseId);
                     table.ForeignKey(
                         name: "FK_Courses_Categories_CategoryId",
                         column: x => x.CategoryId,
@@ -237,16 +237,16 @@ namespace Estigo.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETDATE()"),
-                    CourseId = table.Column<int>(type: "int", nullable: false)
+                    courseId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Chapters", x => x.ChapterId);
                     table.ForeignKey(
-                        name: "FK_Chapters_Courses_CourseId",
-                        column: x => x.CourseId,
+                        name: "FK_Chapters_Courses_courseId",
+                        column: x => x.courseId,
                         principalTable: "Courses",
-                        principalColumn: "CourseId",
+                        principalColumn: "courseId",
                         onDelete: ReferentialAction.NoAction);
                 });
 
@@ -254,15 +254,15 @@ namespace Estigo.Migrations
                 name: "MyCourses",
                 columns: table => new
                 {
-                    MyCourseId = table.Column<int>(type: "int", nullable: false)
+                    MycourseId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CourseId = table.Column<int>(type: "int", nullable: false),
+                    courseId = table.Column<int>(type: "int", nullable: false),
                     EnrollmentDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MyCourses", x => x.MyCourseId);
+                    table.PrimaryKey("PK_MyCourses", x => x.MycourseId);
                     table.ForeignKey(
                         name: "FK_MyCourses_AspNetUsers_StudentId",
                         column: x => x.StudentId,
@@ -270,10 +270,10 @@ namespace Estigo.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_MyCourses_Courses_CourseId",
-                        column: x => x.CourseId,
+                        name: "FK_MyCourses_Courses_courseId",
+                        column: x => x.courseId,
                         principalTable: "Courses",
-                        principalColumn: "CourseId",
+                        principalColumn: "courseId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -286,7 +286,7 @@ namespace Estigo.Migrations
                     PurchaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CourseId = table.Column<int>(type: "int", nullable: false)
+                    courseId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -298,10 +298,10 @@ namespace Estigo.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_Payments_Courses_CourseId",
-                        column: x => x.CourseId,
+                        name: "FK_Payments_Courses_courseId",
+                        column: x => x.courseId,
                         principalTable: "Courses",
-                        principalColumn: "CourseId",
+                        principalColumn: "courseId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -352,7 +352,7 @@ namespace Estigo.Migrations
                         name: "FK_Exams_Courses_courseId",
                         column: x => x.courseId,
                         principalTable: "Courses",
-                        principalColumn: "CourseId",
+                        principalColumn: "courseId",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Exams_lessons_lessonId",
@@ -459,9 +459,9 @@ namespace Estigo.Migrations
                 column: "QuestionsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Chapters_CourseId",
+                name: "IX_Chapters_courseId",
                 table: "Chapters",
-                column: "CourseId");
+                column: "courseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Courses_CategoryId",
@@ -485,9 +485,9 @@ namespace Estigo.Migrations
                 column: "chapterId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MyCourses_CourseId",
+                name: "IX_MyCourses_courseId",
                 table: "MyCourses",
-                column: "CourseId");
+                column: "courseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MyCourses_StudentId",
@@ -495,9 +495,9 @@ namespace Estigo.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Payments_CourseId",
+                name: "IX_Payments_courseId",
                 table: "Payments",
-                column: "CourseId");
+                column: "courseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Payments_StudentId",

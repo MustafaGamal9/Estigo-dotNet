@@ -48,6 +48,7 @@ namespace Estigo.Controllers
                     lessonContent = l.lessonContent,
                     lessonVideo = l.lessonVideo,
                     examTitle = l.Exam != null ? l.Exam.ExamTitle : null,
+                    
                 })
                 .FirstOrDefault();
 
@@ -60,7 +61,7 @@ namespace Estigo.Controllers
         }
 
 
-        // Returns lesson details by courseId
+        // My course page
         [HttpGet("GetCourseDetails/{courseId}")]
         public IActionResult GetCourseDetails(int courseId)
         {

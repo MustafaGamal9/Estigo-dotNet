@@ -16,6 +16,6 @@ namespace Estigo.DTO
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? UpdatedAt { get; set; }
 
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
     }
 }

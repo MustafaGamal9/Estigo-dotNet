@@ -8,5 +8,7 @@
         public string? lessonVideo { get; set; }
         public int? examId { get; set; }
         public string? examTitle { get; set; }
+
+       
     }
 }

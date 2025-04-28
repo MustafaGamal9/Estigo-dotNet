@@ -11,7 +11,7 @@ namespace Estigo.Models
         public string? image { get; set; }
 
         // Foreign Key 
-        public int? CourseId { get; set; }
+        public int? courseId { get; set; }
 
         // Navigation property 
         public virtual ICollection<Course> CoursesTaught { get; set; }

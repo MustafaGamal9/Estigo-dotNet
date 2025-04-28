@@ -841,7 +841,7 @@ namespace Estigo.Migrations
                 table: "Exams",
                 column: "courseId",
                 principalTable: "Courses",
-                principalColumn: "CourseId",
+                principalColumn: "courseId",
                 onDelete: ReferentialAction.Cascade);
         }
     }

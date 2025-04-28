@@ -15,6 +15,8 @@ namespace Estigo.Models
         [Phone]
         public string? ParentPhone { get; set; }
 
+        
+
         // Navigation property
         public ICollection<Course> Courses { get; set; }
 

@@ -11,11 +11,11 @@ namespace Estigo.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_AspNetUsers_Courses_CourseId",
+                name: "FK_AspNetUsers_Courses_courseId",
                 table: "AspNetUsers");
 
             migrationBuilder.DropIndex(
-                name: "IX_AspNetUsers_CourseId",
+                name: "IX_AspNetUsers_courseId",
                 table: "AspNetUsers");
 
             migrationBuilder.AlterColumn<string>(
@@ -62,18 +62,18 @@ namespace Estigo.Migrations
                 oldNullable: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_CourseId",
+                name: "IX_AspNetUsers_courseId",
                 table: "AspNetUsers",
-                column: "CourseId",
+                column: "courseId",
                 unique: true,
-                filter: "[CourseId] IS NOT NULL");
+                filter: "[courseId] IS NOT NULL");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_Courses_CourseId",
+                name: "FK_AspNetUsers_Courses_courseId",
                 table: "AspNetUsers",
-                column: "CourseId",
+                column: "courseId",
                 principalTable: "Courses",
-                principalColumn: "CourseId",
+                principalColumn: "courseId",
                 onDelete: ReferentialAction.Restrict);
         }
     }

@@ -8,7 +8,7 @@ namespace Estigo.Models
     public class Course
     {
         [Key]
-        public int CourseId { get; set; }
+        public int courseId { get; set; }
         [Required]
         public string CourseTitle { get; set; }
         public string? Description { get; set; }

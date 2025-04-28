@@ -225,7 +225,7 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -244,18 +244,18 @@ namespace Estigo.Migrations
 
                     b.HasKey("ChapterId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("courseId");
 
                     b.ToTable("Chapters");
                 });
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
                 {
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("courseId"));
 
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
@@ -289,7 +289,7 @@ namespace Estigo.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.HasKey("CourseId");
+                    b.HasKey("courseId");
 
                     b.HasIndex("CategoryId");
 
@@ -300,7 +300,7 @@ namespace Estigo.Migrations
                     b.HasData(
                         new
                         {
-                            CourseId = 1,
+                            courseId = 1,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Algebra | Unit 1",
@@ -311,7 +311,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 2,
+                            courseId = 2,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Calculus | Unit 2",
@@ -322,7 +322,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 3,
+                            courseId = 3,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Geometry | Unit 3",
@@ -333,7 +333,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 4,
+                            courseId = 4,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Trigonometry | Unit 4",
@@ -344,7 +344,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 5,
+                            courseId = 5,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Statistics | Unit 5",
@@ -355,7 +355,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 6,
+                            courseId = 6,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Probability | Unit 6",
@@ -366,7 +366,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 7,
+                            courseId = 7,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Discrete Math | Unit 7",
@@ -377,7 +377,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 8,
+                            courseId = 8,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Mechanics | Unit 1",
@@ -388,7 +388,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 9,
+                            courseId = 9,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Electricity | Unit 2",
@@ -399,7 +399,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 10,
+                            courseId = 10,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Magnetism | Unit 3",
@@ -410,7 +410,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 11,
+                            courseId = 11,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Optics | Unit 4",
@@ -421,7 +421,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 12,
+                            courseId = 12,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Thermodynamics | Unit 5",
@@ -432,7 +432,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 13,
+                            courseId = 13,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Quantum Physics | Unit 6",
@@ -443,7 +443,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 14,
+                            courseId = 14,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Relativity | Unit 7",
@@ -454,7 +454,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 15,
+                            courseId = 15,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Cell Biology | Unit 1",
@@ -465,7 +465,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 16,
+                            courseId = 16,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Genetics | Unit 2",
@@ -476,7 +476,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 17,
+                            courseId = 17,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Movement | Unit 3",
@@ -487,7 +487,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 18,
+                            courseId = 18,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Ecology | Unit 4",
@@ -498,7 +498,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 19,
+                            courseId = 19,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Botany | Unit 5",
@@ -509,7 +509,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 20,
+                            courseId = 20,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Zoology | Unit 6",
@@ -520,7 +520,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 21,
+                            courseId = 21,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Microbiology | Unit 7",
@@ -531,7 +531,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 22,
+                            courseId = 22,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Organic Chemistry | Unit 1",
@@ -542,7 +542,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 23,
+                            courseId = 23,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Inorganic Chemistry | Unit 2",
@@ -553,7 +553,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 24,
+                            courseId = 24,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Physical Chemistry | Unit 3",
@@ -564,7 +564,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 25,
+                            courseId = 25,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Analytical Chemistry | Unit 4",
@@ -575,7 +575,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 26,
+                            courseId = 26,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Biochemistry | Unit 5",
@@ -586,7 +586,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 27,
+                            courseId = 27,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Environmental Chemistry | Unit 6",
@@ -597,7 +597,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 28,
+                            courseId = 28,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Theoretical Chemistry | Unit 7",
@@ -608,7 +608,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 29,
+                            courseId = 29,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Literature | Unit 1",
@@ -619,7 +619,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 30,
+                            courseId = 30,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Creative Writing | Unit 2",
@@ -630,7 +630,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 31,
+                            courseId = 31,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Grammar & Composition | Unit 3",
@@ -641,7 +641,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 32,
+                            courseId = 32,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Poetry Analysis | Unit 4",
@@ -652,7 +652,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 33,
+                            courseId = 33,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Drama & Theater | Unit 5",
@@ -663,7 +663,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 34,
+                            courseId = 34,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Fiction Writing | Unit 6",
@@ -674,7 +674,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            CourseId = 35,
+                            courseId = 35,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Non-fiction Writing | Unit 7",
@@ -739,7 +739,7 @@ namespace Estigo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .HasColumnType("int");
 
                     b.Property<string>("PaymentMethod")
@@ -755,7 +755,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("PaymentId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("courseId");
 
                     b.HasIndex("StudentId");
 
@@ -980,13 +980,13 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("MyCourse", b =>
                 {
-                    b.Property<int>("MyCourseId")
+                    b.Property<int>("MycourseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MyCourseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MycourseId"));
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("courseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("EnrollmentDate")
@@ -996,9 +996,9 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("MyCourseId");
+                    b.HasKey("MycourseId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("courseId");
 
                     b.HasIndex("StudentId");
 
@@ -1042,7 +1042,7 @@ namespace Estigo.Migrations
                 {
                     b.HasBaseType("Estigo.Models.ApplicationUser");
 
-                    b.Property<int?>("CourseId")
+                    b.Property<int?>("courseId")
                         .HasColumnType("int");
 
                     b.Property<string>("Notes")
@@ -1352,7 +1352,7 @@ namespace Estigo.Migrations
                 {
                     b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany("Chapters")
-                        .HasForeignKey("CourseId")
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1400,7 +1400,7 @@ namespace Estigo.Migrations
                 {
                     b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany("Payments")
-                        .HasForeignKey("CourseId")
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -1500,7 +1500,7 @@ namespace Estigo.Migrations
                 {
                     b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany()
-                        .HasForeignKey("CourseId")
+                        .HasForeignKey("courseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

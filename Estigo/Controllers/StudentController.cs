@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authorization;
 using System.Linq; 
 using System; 
 using System.Collections.Generic;
+using System.Net.Http;
+using Estigo.DTO;
 
 
 namespace Estigo.Controllers
@@ -18,15 +20,18 @@ namespace Estigo.Controllers
         private readonly EstigoDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
+        private readonly HttpClient _httpClient;
 
         public StudentController(
             EstigoDbContext context,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            IHttpClientFactory httpClientFactory)  // <-- add this
         {
             _context = context;
             _userManager = userManager;
-
+            _httpClient = httpClientFactory.CreateClient();  // <-- initialize HttpClient
         }
+
 
 
         [HttpPost("{studentId}/enroll/{courseId}")]
@@ -54,7 +59,7 @@ namespace Estigo.Controllers
 
 
             bool alreadyEnrolled = await _context.MyCourses
-                .AnyAsync(mc => mc.StudentId == studentId && mc.CourseId == courseId);
+                .AnyAsync(mc => mc.StudentId == studentId && mc.courseId == courseId);
 
             if (alreadyEnrolled)
             {
@@ -64,7 +69,7 @@ namespace Estigo.Controllers
             var payment = new Payment
             {
                 StudentId = studentId,
-                CourseId = courseId,
+                courseId = courseId,
                 PurchaseDate = DateTime.UtcNow,
                 PaymentMethod = "Card Kda w Kda"
             };
@@ -72,7 +77,7 @@ namespace Estigo.Controllers
             var enrollment = new MyCourse
             {
                 StudentId = studentId,
-                CourseId = courseId,
+                courseId = courseId,
                 EnrollmentDate = DateTime.UtcNow
             };
 
@@ -87,7 +92,7 @@ namespace Estigo.Controllers
                 return Ok(new
                 {
                     message = "Enrollment successful",
-                    enrollmentId = enrollment.MyCourseId,
+                    enrollmentId = enrollment.MycourseId,
                     paymentId = payment.PaymentId,
                     courseTitle = course.CourseTitle,
                     enrollmentDate = enrollment.EnrollmentDate
@@ -119,7 +124,7 @@ namespace Estigo.Controllers
                 .OrderByDescending(mc => mc.EnrollmentDate)
                 .Select(mc => new
                 {
-                    mc.Course.CourseId,
+                    mc.Course.courseId,
                     mc.Course.CourseTitle,
                     mc.Course.Description,
                     ImageBase64 = mc.Course.Logo,
@@ -156,6 +161,22 @@ namespace Estigo.Controllers
                 })
                 .ToListAsync();
             return Ok(payments);
+        }
+
+        [HttpPost("get-grade")]
+        public async Task<IActionResult> GetPredictedGrade([FromBody] PredictionModel input)
+        {
+            var fastApiUrl = "http://127.0.0.1:8000/predict-grade";
+
+            var response = await _httpClient.PostAsJsonAsync(fastApiUrl, input);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return StatusCode((int)response.StatusCode, "FastAPI service failed.");
+            }
+
+            var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+            return Ok(result);
         }
     }
 }
