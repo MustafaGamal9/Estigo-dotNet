@@ -62,9 +62,48 @@ namespace Estigo.Controllers
 
 
         // My course page
-        [HttpGet("GetCourseDetails/{courseId}")]
-        public IActionResult GetCourseDetails(int courseId)
+        [HttpGet("GetCourseDetails/{courseId}/{userId}")]
+        public async Task<IActionResult> GetCourseDetails(int courseId, string userId)
         {
+            // Validate user ID  
+            if (string.IsNullOrEmpty(userId))
+            {
+                return BadRequest("User ID is required to track attendance.");
+            }
+
+            // Check if the user is an admin  
+            var isAdmin = await context.Admins.AnyAsync(a => a.Id == userId);
+            if (isAdmin)
+            {
+                // Admin is allowed directly  
+                var lessonsForAdmin = context.lessons
+                    .Include(l => l.Exam)
+                    .Where(l => l.courseId == courseId)
+                    .Select(l => new
+                    {
+                        l.lessonTitle,
+                        l.lessonVideo,
+                        ExamTitle = l.Exam != null ? l.Exam.ExamTitle : null,
+                        ExamId = l.Exam != null ? l.Exam.Id : (int?)null
+                    })
+                    .ToList();
+
+                if (lessonsForAdmin == null || !lessonsForAdmin.Any())
+                {
+                    return NotFound($"No lessons found for course ID {courseId}.");
+                }
+
+                return Ok(lessonsForAdmin);
+            }
+
+            // Check if the user is a student  
+            var isStudent = await context.Students.AnyAsync(s => s.Id == userId);
+            if (!isStudent)
+            {
+                return BadRequest("User is neither an admin nor a student.");
+            }
+
+            // Get lessons for the course  
             var lessons = context.lessons
                 .Include(l => l.Exam)
                 .Where(l => l.courseId == courseId)
@@ -82,7 +121,61 @@ namespace Estigo.Controllers
                 return NotFound($"No lessons found for course ID {courseId}.");
             }
 
+            // Update attendance for this student and course  
+            var myCourse = await context.MyCourses
+                .FirstOrDefaultAsync(mc => mc.StudentId == userId && mc.courseId == courseId);
+
+            if (myCourse != null)
+            {
+                // Increment attendance (max value is 1 per course)  
+                if (myCourse.attendance < 1)
+                {
+                    myCourse.attendance = 1;
+                    await context.SaveChangesAsync();
+                }
+            }
+            else
+            {
+                // Student is not enrolled in this course  
+                return BadRequest("Student is not enrolled in this course.");
+            }
+
             return Ok(lessons);
+        }
+
+        // Get student attendance rate
+        [HttpGet("GetAttendanceRate/{studentId}")]
+        public async Task<IActionResult> GetAttendanceRate(string studentId)
+        {
+            // Validate student ID
+            if (string.IsNullOrEmpty(studentId))
+            {
+                return BadRequest("Student ID is required.");
+            }
+
+            // Check if student exists
+            var studentExists = await context.Students.AnyAsync(s => s.Id == studentId);
+            if (!studentExists)
+            {
+                return NotFound($"Student with ID {studentId} not found.");
+            }
+
+            // Get all courses the student is enrolled in
+            var enrolledCourses = await context.MyCourses
+                .Where(mc => mc.StudentId == studentId)
+                .ToListAsync();
+
+            if (!enrolledCourses.Any())
+            {
+                return Ok(new { attendanceRate = 0, message = "Student is not enrolled in any courses." });
+            }
+
+            // Calculate attendance rate
+            int totalCourses = enrolledCourses.Count;
+            int attendedCourses = enrolledCourses.Sum(c => c.attendance);
+            double attendanceRate = (double)attendedCourses / totalCourses * 100;
+
+            return Ok(new { attendanceRate = Math.Round(attendanceRate, 2) });
         }
 
 

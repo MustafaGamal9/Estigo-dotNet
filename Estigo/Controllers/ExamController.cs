@@ -2,6 +2,8 @@
 using Estigo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace Estigo.Controllers
 {
@@ -16,12 +18,12 @@ namespace Estigo.Controllers
             context = _context;
         }
 
-        [HttpGet("Info/{name}")]
-        public async Task<IActionResult> GetExamInfo(string name)
+        [HttpGet("Info/{id}")]
+        public async Task<IActionResult> GetExamInfo(int id)
         {
             var exam = await context.Exams
                 .Include(e => e.Lesson)
-                .FirstOrDefaultAsync(e => e.ExamTitle == name);
+                .FirstOrDefaultAsync(e => e.Id == id);
             if (exam == null)
                 return NotFound();
             var response = new
@@ -29,10 +31,10 @@ namespace Estigo.Controllers
                 exam.Id,
                 exam.ExamTitle,
                 exam.ExamDescription,
-              
+                exam.final
             };
             return Ok(response);
-        }  
+        }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteExam(int id)
@@ -45,7 +47,7 @@ namespace Estigo.Controllers
             return Ok();
         }
 
-       
+
 
         [HttpPut]
         public async Task<IActionResult> UpdateExam([FromBody] Exam exam)
@@ -76,7 +78,7 @@ namespace Estigo.Controllers
         {
             var questions = context.BankOfQuestions
                 .Where(q => q.ExamId == examId)
-                .Select(q => new 
+                .Select(q => new
                 {
                     QuestionText = q.QuestionText,
                     OptionA = q.OptionA,
@@ -148,22 +150,35 @@ namespace Estigo.Controllers
             if (student == null)
                 return NotFound("Student not found.");
 
+            // Set the current date for the exam attempt
             var result = new StudentExamResult
             {
                 StudentId = dto.StudentId,
                 ExamId = dto.ExamId,
                 Score = dto.Score,
+                ExamDate = DateTime.Now
             };
 
             context.StudentExamResults.Add(result);
+
+            // If this is a final exam, increment the attempts counter
+            if (exam.final)
+            {
+                exam.attempts++;
+                context.Entry(exam).State = EntityState.Modified;
+            }
+
             await context.SaveChangesAsync();
 
             return Ok(new
             {
                 Message = "Quiz score submitted successfully.",
-                Score = dto.Score
+                Score = dto.Score,
+                IsFinalExam = exam.final,
+                Attempts = exam.final ? exam.attempts : 0
             });
         }
+
 
         //// POST: api/StudentExamResults/SubmitResult
         //[HttpPost("SubmitResult")]
@@ -225,34 +240,12 @@ namespace Estigo.Controllers
             return Ok(distinctResults);
         }
 
-        [HttpGet("GetStudentAverageByCategory/{studentId}/{categoryId}")]
-        public async Task<ActionResult<double>> GetStudentAverageByCategory(string studentId, int categoryId)
-        {
-            var studentExists = await context.Students.AnyAsync(s => s.Id == studentId);
-            if (!studentExists)
-            {
-                return NotFound($"Student with ID {studentId} not found.");
-            }
-
-            var examScores = await context.StudentExamResults
-                .Where(r => r.StudentId == studentId)
-                .Where(r => r.Exam.Lesson.Course.CategoryId == categoryId)
-                .GroupBy(r => r.ExamId) // Group by ExamId to ensure distinct exams  
-                .Select(g => g.First().Score) // Take the first score for each distinct exam  
-                .ToListAsync();
-
-            if (!examScores.Any())
-            {
-                return NotFound($"No exams found for student {studentId} in category {categoryId}.");
-            }
-
-            // Calculate the average  
-            double averageScore = examScores.Average();
-
-            return Ok("Exams Avg score: " + averageScore);
-        }
-
-
-
+        
     }
-}
+    }
+
+
+
+
+ 
+

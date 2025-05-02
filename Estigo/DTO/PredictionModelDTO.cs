@@ -1,12 +1,10 @@
 ﻿namespace Estigo.DTO
 {
-    public class PredictionModel
+    public class PredictionModelDTO
     {
-        public float assignment_completion_rate { get; set; } // attendance completion rate
+        public float attendance_rate { get; set; } // attendance completion rate
         public float average_quiz_score { get; set; }
-        public float material_completion_rate { get; set; }
-
-        public float time_spent_per_week { get; set; } // videos watched per week
+        public float quizzes_completion_rate { get; set; }
         public int final_exam_attempts { get; set; } 
         public float final_exam_score { get; set; } 
         public int education_system_IGCSE { get; set; } // male or female

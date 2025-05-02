@@ -25,11 +25,11 @@ namespace Estigo.Controllers
         public StudentController(
             EstigoDbContext context,
             UserManager<ApplicationUser> userManager,
-            IHttpClientFactory httpClientFactory)  // <-- add this
+            IHttpClientFactory httpClientFactory)  
         {
             _context = context;
             _userManager = userManager;
-            _httpClient = httpClientFactory.CreateClient();  // <-- initialize HttpClient
+            _httpClient = httpClientFactory.CreateClient(); 
         }
 
 
@@ -163,20 +163,6 @@ namespace Estigo.Controllers
             return Ok(payments);
         }
 
-        [HttpPost("get-grade")]
-        public async Task<IActionResult> GetPredictedGrade([FromBody] PredictionModel input)
-        {
-            var fastApiUrl = "http://127.0.0.1:8000/predict-grade";
-
-            var response = await _httpClient.PostAsJsonAsync(fastApiUrl, input);
-
-            if (!response.IsSuccessStatusCode)
-            {
-                return StatusCode((int)response.StatusCode, "FastAPI service failed.");
-            }
-
-            var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
-            return Ok(result);
-        }
+       
     }
 }

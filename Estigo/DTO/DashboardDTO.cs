@@ -9,5 +9,6 @@
         public List<InstructorImageDTO> CourseInstructors { get; set; } = new List<InstructorImageDTO>();
         public List<StudentExamHistoryDto> Quizzes { get; set; } = new List<StudentExamHistoryDto>();
         public List<PaymentInfoDTO> PaymentInfo { get; set; } = new List<PaymentInfoDTO>();
+        public double AttendanceRate { get; set; }
     }
 }

@@ -2,10 +2,6 @@
 using Estigo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Authorization;
-using Estigo.Migrations;
-using Estigo.Enums;
 using static Estigo.Enums.CourseStatus;
 
 namespace Estigo.Controllers
@@ -41,7 +37,7 @@ namespace Estigo.Controllers
             return Ok(teachers);
         }
 
-        [HttpPost("add")]
+        [HttpPost("add-course")]
         public async Task<IActionResult> TeacherAddCourse([FromBody] courseDTO dto)
         {
             var course = new Course
@@ -150,6 +146,7 @@ namespace Estigo.Controllers
                 ExamDescription = examDto.ExamDescription,
                 Grade = examDto.Grade,
                 lessonId = examDto.lessonId,
+                final = examDto.final,
                 Questions = examDto.Questions.Select(q => new BankOfQuestion
                 {
                     QuestionText = q.QuestionText,
