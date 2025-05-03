@@ -14,7 +14,6 @@ namespace Estigo.DTO
         public int Price { get; set; }
         public bool Available { get; set; } = true;
 
-        public int attendance { get; set; }
         public CourseStatusEnum Status { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
