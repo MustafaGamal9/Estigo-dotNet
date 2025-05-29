@@ -1,9 +1,9 @@
 === DETAILED DEBUG ===
-DTO isLive received: True
-DTO full object: {"lessonId":0,"lessonTitle":"mmmmm2sadasad","lessonDescription":"sdasdadasd","lessonContent":"sdadada","lessonVideo":"https://us05web.zoom.us/j/84547542418?pwd=py34U8kEtPTtvbzalsn91vYEg7CNPz.1","isLive":true,"CreatedAt":"0001-01-01T00:00:00","UpdatedAt":null,"courseId":1}
-Lesson entity isLive BEFORE adding to context: True
-Lesson entity isLive AFTER adding to context: True
+DTO isLive received: False
+DTO full object: {"lessonId":0,"lessonTitle":"sadsd","lessonDescription":"asdsad","lessonContent":"sad","lessonVideo":"https://localhost:5071/10.04.2025_22.24.10_REC.mp4","isLive":false,"CreatedAt":"0001-01-01T00:00:00","UpdatedAt":null,"courseId":41}
+Lesson entity isLive BEFORE adding to context: False
+Lesson entity isLive AFTER adding to context: False
 Entity state: Added
-isLive property current value: True
-Lesson entity isLive AFTER SaveChanges: True
-Re-fetched lesson isLive: True
+isLive property current value: False
+Lesson entity isLive AFTER SaveChanges: False
+Re-fetched lesson isLive: False

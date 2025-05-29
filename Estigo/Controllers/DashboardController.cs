@@ -81,7 +81,7 @@ public class DashboardController : ControllerBase
             })
             .ToListAsync();
             
-        // Note: The frontend should call the track-attendance endpoint when a course is clicked
+
 
 
         // --- Fetch Instructors for Enrolled Courses ---

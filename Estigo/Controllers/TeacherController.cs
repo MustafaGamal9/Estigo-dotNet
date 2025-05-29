@@ -1,4 +1,4 @@
-﻿ using Estigo.DTO;
+﻿using Estigo.DTO;
 using Estigo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +16,33 @@ namespace Estigo.Controllers
         {
             _context = context;
         }
+
+    [HttpGet("{teacherId}/students")]
+    public async Task<IActionResult> GetStudentsByTeacher(string teacherId)
+    {
+            var students = await _context.Courses
+                .Where(c => c.TeacherId == teacherId)
+                .Join(_context.MyCourses,
+                    course => course.courseId,
+                    myCourse => myCourse.courseId,
+                    (course, myCourse) => new {
+                        Student = myCourse.Student,
+                        CategoryId = course.CategoryId
+                    })
+                .Select(x => new {
+                    x.Student.Id,
+                    x.Student.Name,
+                    x.CategoryId
+                })
+                .Distinct()
+                .ToListAsync();
+
+
+            if (!students.Any())
+            return NotFound("No students found for this teacher");
+
+        return Ok(students);
+    }
 
 
         [HttpGet("HomepageTeachers")]

@@ -120,6 +120,7 @@ namespace Estigo.Controllers
 
             return Ok(new
             {
+                studentid = student.Id,
                 StudentName = student.Name,
                 ExamHistory = latestResults
             });
