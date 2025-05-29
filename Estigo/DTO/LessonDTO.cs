@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Estigo.DTO
 {
@@ -11,6 +12,8 @@ namespace Estigo.DTO
         public string lessonDescription { get; set; }
         public string lessonContent { get; set; }
         public string lessonVideo { get; set; }
+
+        public bool isLive { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; }

@@ -4,6 +4,7 @@ using Estigo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    partial class EstigoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250529070345_pascal")]
+    partial class pascal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,7 +156,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("ExamId");
 
-                    b.ToTable("BankOfQuestions", (string)null);
+                    b.ToTable("BankOfQuestions");
 
                     b.HasData(
                         new
@@ -5012,7 +5015,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -5070,7 +5073,7 @@ namespace Estigo.Migrations
 
                     b.HasKey("ChapterId");
 
-                    b.ToTable("Chapter", (string)null);
+                    b.ToTable("Chapter");
                 });
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
@@ -5122,7 +5125,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
 
                     b.HasData(
                         new
@@ -5626,7 +5629,7 @@ namespace Estigo.Migrations
                     b.HasIndex("lessonId")
                         .IsUnique();
 
-                    b.ToTable("Exams", (string)null);
+                    b.ToTable("Exams");
 
                     b.HasData(
                         new
@@ -6627,7 +6630,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("courseId");
 
-                    b.ToTable("Payments", (string)null);
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
@@ -6659,7 +6662,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("StudentExamResults", (string)null);
+                    b.ToTable("StudentExamResults");
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>
@@ -6709,7 +6712,7 @@ namespace Estigo.Migrations
 
                     b.HasIndex("courseId");
 
-                    b.ToTable("lessons", (string)null);
+                    b.ToTable("lessons");
 
                     b.HasData(
                         new

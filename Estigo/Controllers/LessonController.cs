@@ -29,6 +29,7 @@ namespace Estigo.Controllers
                     lessonDescription = l.lessonDescription,
                     lessonContent = l.lessonContent,
                     lessonVideo = l.lessonVideo,
+                    isLive = l.isLive,
                     courseId = l.courseId
                 })
                 .ToList();
@@ -84,7 +85,8 @@ namespace Estigo.Controllers
                         l.lessonTitle,
                         l.lessonVideo,
                         ExamTitle = l.Exam != null ? l.Exam.ExamTitle : null,
-                        ExamId = l.Exam != null ? l.Exam.Id : (int?)null
+                        ExamId = l.Exam != null ? l.Exam.Id : (int?)null,
+                        l.isLive
                     })
                     .ToList();
 
@@ -112,7 +114,8 @@ namespace Estigo.Controllers
                     l.lessonTitle,
                     l.lessonVideo,
                     ExamTitle = l.Exam != null ? l.Exam.ExamTitle : null,
-                    ExamId = l.Exam != null ? l.Exam.Id : (int?)null
+                    ExamId = l.Exam != null ? l.Exam.Id : (int?)null,
+                    l.isLive
                 })
                 .ToList();
 
@@ -224,29 +227,80 @@ namespace Estigo.Controllers
             return Ok(lesson);
         }
 
-        // POST: api/lesson
         [HttpPost]
         public async Task<IActionResult> CreateLesson([FromBody] LessonDTO lessonDto)
         {
-            if (lessonDto == null)
-                return BadRequest("Invalid chapter data.");
+            var debugInfo = new List<string>();
 
-            var lesson = new lesson
+            try
             {
-                lessonTitle = lessonDto.lessonTitle,
-                lessonDescription = lessonDto.lessonDescription,
-                lessonContent = lessonDto.lessonContent,
-                lessonVideo = lessonDto.lessonVideo,
-                courseId = lessonDto.courseId,
-                CreatedAt = DateTime.UtcNow
-            };
+                debugInfo.Add($"=== DETAILED DEBUG ===");
+                debugInfo.Add($"DTO isLive received: {lessonDto?.isLive}");
+                debugInfo.Add($"DTO full object: {System.Text.Json.JsonSerializer.Serialize(lessonDto)}");
 
-            context.lessons.Add(lesson);
-            await context.SaveChangesAsync();
-            return Ok(lesson);
+                if (lessonDto == null)
+                {
+                    debugInfo.Add("LessonDTO is null!");
+                    return BadRequest(new { error = "Invalid lesson data.", debug = debugInfo });
+                }
+
+                // Create the lesson entity
+                var lesson = new lesson
+                {
+                    lessonTitle = lessonDto.lessonTitle,
+                    lessonDescription = lessonDto.lessonDescription,
+                    lessonContent = lessonDto.lessonContent,
+                    lessonVideo = lessonDto.lessonVideo,
+                    isLive = lessonDto.isLive,
+                    courseId = lessonDto.courseId,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                debugInfo.Add($"Lesson entity isLive BEFORE adding to context: {lesson.isLive}");
+
+                // Add to context but don't save yet
+                context.lessons.Add(lesson);
+
+                debugInfo.Add($"Lesson entity isLive AFTER adding to context: {lesson.isLive}");
+
+                // Check the entity state
+                var entry = context.Entry(lesson);
+                debugInfo.Add($"Entity state: {entry.State}");
+                debugInfo.Add($"isLive property current value: {entry.CurrentValues["isLive"]}");
+
+                // Save changes
+                await context.SaveChangesAsync();
+
+                debugInfo.Add($"Lesson entity isLive AFTER SaveChanges: {lesson.isLive}");
+
+                // Re-fetch from database to confirm
+                var savedLesson = await context.lessons.FindAsync(lesson.lessonId);
+                debugInfo.Add($"Re-fetched lesson isLive: {savedLesson?.isLive}");
+
+                // Write debug info to file
+                var debugText = string.Join(Environment.NewLine, debugInfo);
+                await System.IO.File.WriteAllTextAsync("debug_lesson.txt", debugText);
+
+                return Ok(new
+                {
+                    lesson = lesson,
+                    debugInfo = debugInfo  // This will show in your API response
+                });
+            }
+            catch (Exception ex)
+            {
+                debugInfo.Add($"ERROR: {ex.Message}");
+                debugInfo.Add($"STACK TRACE: {ex.StackTrace}");
+
+                // Write error to file
+                var errorText = string.Join(Environment.NewLine, debugInfo);
+                await System.IO.File.WriteAllTextAsync("debug_lesson_error.txt", errorText);
+
+                return StatusCode(500, new { error = ex.Message, debug = debugInfo });
+            }
         }
 
-   
+
 
         // PATCH: api/lesson/{id}
         [HttpPatch("{id}")]

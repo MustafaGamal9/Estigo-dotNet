@@ -37,6 +37,11 @@ namespace Estigo.Models
                         .HasForeignKey(l => l.courseId)
                         .OnDelete(DeleteBehavior.Cascade);
 
+            //modelBuilder.Entity<Course>()
+            //            .HasOne(c => c.Teacher)
+            //            .WithMany()
+            //            .HasForeignKey(c => c.TeacherId)
+            //            .OnDelete(DeleteBehavior.SetNull);
 
 
             modelBuilder.Entity<Student>()
