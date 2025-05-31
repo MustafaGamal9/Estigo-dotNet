@@ -39,10 +39,5 @@ namespace Estigo.Models
 
         public virtual ICollection<Payment> Payments { get; set; }
 
-
-        
-
-
-
     }
 }

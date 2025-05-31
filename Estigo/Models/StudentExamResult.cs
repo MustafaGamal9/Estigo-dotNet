@@ -10,6 +10,9 @@ namespace Estigo.Models
         public double Score { get; set; }
         public DateTime ExamDate { get; set; }
 
+
+        public List<QuestionAnswer> Answers { get; set; } = new();
+
         // Navigation Properties
         [ForeignKey("Student")]
         public string StudentId { get; set; }

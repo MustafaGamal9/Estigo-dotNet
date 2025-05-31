@@ -22,7 +22,6 @@ namespace Estigo.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            // تحديد "Discriminator" تلقائيًا في الجدول AspNetUsers
             modelBuilder.Entity<ApplicationUser>()
                 .HasDiscriminator<string>("UserType")
                 .HasValue<Student>("Student")
@@ -133,6 +132,8 @@ namespace Estigo.Models
             modelBuilder.Entity<ApplicationUser>()
                         .Property(l => l.UpdatedAt)
                         .HasDefaultValueSql("GETDATE()");
+
+
             modelBuilder.Entity<Exam>()
                 .HasOne(e => e.Lesson)
                 .WithOne(l => l.Exam)  
@@ -142,6 +143,21 @@ namespace Estigo.Models
             modelBuilder.Entity<Student>()
                         .HasIndex(s => s.StudentCode)
                         .IsUnique();
+
+            modelBuilder.Entity<lesson>()
+                    .HasOne(l => l.Course)
+                    .WithMany(c => c.lessons)
+                    .HasForeignKey(l => l.courseId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<lesson>()
+                    .HasOne(l => l.Exam)
+                    .WithOne(e => e.Lesson)
+                    .HasForeignKey<Exam>(e => e.lessonId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+            
+
 
             modelBuilder.Seed();
         }

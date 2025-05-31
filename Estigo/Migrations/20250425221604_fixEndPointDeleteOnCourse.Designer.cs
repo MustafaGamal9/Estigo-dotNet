@@ -4,6 +4,7 @@ using Estigo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    partial class EstigoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250425221604_fixEndPointDeleteOnCourse")]
+    partial class fixEndPointDeleteOnCourse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -5075,11 +5078,11 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("Estigo.Models.Course", b =>
                 {
-                    b.Property<int>("courseId")
+                    b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("courseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
 
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
@@ -5116,7 +5119,7 @@ namespace Estigo.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.HasKey("courseId");
+                    b.HasKey("CourseId");
 
                     b.HasIndex("CategoryId");
 
@@ -5127,7 +5130,7 @@ namespace Estigo.Migrations
                     b.HasData(
                         new
                         {
-                            courseId = 1,
+                            CourseId = 1,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Algebra | Unit 1",
@@ -5140,7 +5143,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 2,
+                            CourseId = 2,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Calculus | Unit 2",
@@ -5153,7 +5156,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 3,
+                            CourseId = 3,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Geometry | Unit 3",
@@ -5166,7 +5169,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 4,
+                            CourseId = 4,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Trigonometry | Unit 4",
@@ -5179,7 +5182,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 5,
+                            CourseId = 5,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Statistics | Unit 5",
@@ -5192,7 +5195,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 6,
+                            CourseId = 6,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Probability | Unit 6",
@@ -5205,7 +5208,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 7,
+                            CourseId = 7,
                             Available = true,
                             CategoryId = 1,
                             CourseTitle = "Discrete Math | Unit 7",
@@ -5218,7 +5221,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 8,
+                            CourseId = 8,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Mechanics | Unit 1",
@@ -5231,7 +5234,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 9,
+                            CourseId = 9,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Electricity | Unit 2",
@@ -5244,7 +5247,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 10,
+                            CourseId = 10,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Magnetism | Unit 3",
@@ -5257,7 +5260,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 11,
+                            CourseId = 11,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Optics | Unit 4",
@@ -5270,7 +5273,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 12,
+                            CourseId = 12,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Thermodynamics | Unit 5",
@@ -5283,7 +5286,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 13,
+                            CourseId = 13,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Quantum Physics | Unit 6",
@@ -5296,7 +5299,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 14,
+                            CourseId = 14,
                             Available = true,
                             CategoryId = 2,
                             CourseTitle = "Relativity | Unit 7",
@@ -5309,7 +5312,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 15,
+                            CourseId = 15,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Cell Biology | Unit 1",
@@ -5322,7 +5325,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 16,
+                            CourseId = 16,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Genetics | Unit 2",
@@ -5335,7 +5338,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 17,
+                            CourseId = 17,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Movement | Unit 3",
@@ -5348,7 +5351,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 18,
+                            CourseId = 18,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Ecology | Unit 4",
@@ -5361,7 +5364,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 19,
+                            CourseId = 19,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Botany | Unit 5",
@@ -5374,7 +5377,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 20,
+                            CourseId = 20,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Zoology | Unit 6",
@@ -5387,7 +5390,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 21,
+                            CourseId = 21,
                             Available = true,
                             CategoryId = 3,
                             CourseTitle = "Microbiology | Unit 7",
@@ -5400,7 +5403,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 22,
+                            CourseId = 22,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Organic Chemistry | Unit 1",
@@ -5413,7 +5416,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 23,
+                            CourseId = 23,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Inorganic Chemistry | Unit 2",
@@ -5426,7 +5429,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 24,
+                            CourseId = 24,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Physical Chemistry | Unit 3",
@@ -5439,7 +5442,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 25,
+                            CourseId = 25,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Analytical Chemistry | Unit 4",
@@ -5452,7 +5455,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 26,
+                            CourseId = 26,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Biochemistry | Unit 5",
@@ -5465,7 +5468,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 27,
+                            CourseId = 27,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Environmental Chemistry | Unit 6",
@@ -5478,7 +5481,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 28,
+                            CourseId = 28,
                             Available = true,
                             CategoryId = 4,
                             CourseTitle = "Theoretical Chemistry | Unit 7",
@@ -5491,7 +5494,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 29,
+                            CourseId = 29,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Literature | Unit 1",
@@ -5504,7 +5507,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 30,
+                            CourseId = 30,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Creative Writing | Unit 2",
@@ -5517,7 +5520,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 31,
+                            CourseId = 31,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Grammar & Composition | Unit 3",
@@ -5530,7 +5533,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 32,
+                            CourseId = 32,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Poetry Analysis | Unit 4",
@@ -5543,7 +5546,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 33,
+                            CourseId = 33,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Drama & Theater | Unit 5",
@@ -5556,7 +5559,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 34,
+                            CourseId = 34,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Fiction Writing | Unit 6",
@@ -5569,7 +5572,7 @@ namespace Estigo.Migrations
                         },
                         new
                         {
-                            courseId = 35,
+                            CourseId = 35,
                             Available = true,
                             CategoryId = 5,
                             CourseTitle = "Non-fiction Writing | Unit 7",
@@ -5612,12 +5615,6 @@ namespace Estigo.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<int>("attempts")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("final")
-                        .HasColumnType("bit");
-
                     b.Property<int>("lessonId")
                         .HasColumnType("int");
 
@@ -5636,8 +5633,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of variables and expressions.",
                             ExamTitle = "Algebra Basics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 1
                         },
                         new
@@ -5647,8 +5642,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding and solving of linear inequalities.",
                             ExamTitle = "Inequalities Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 3
                         },
                         new
@@ -5658,8 +5651,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of polynomial expressions and operations.",
                             ExamTitle = "Polynomial Basics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 5
                         },
                         new
@@ -5669,8 +5660,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of defining the derivative and basic rules.",
                             ExamTitle = "Introduction to Derivatives Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 7
                         },
                         new
@@ -5680,8 +5669,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to use derivatives for rates of change and optimization.",
                             ExamTitle = "Applications of Derivatives Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 9
                         },
                         new
@@ -5691,8 +5678,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of fundamental geometric concepts.",
                             ExamTitle = "Points, Lines, and Planes Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 11
                         },
                         new
@@ -5702,8 +5687,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of angles formed by parallel lines.",
                             ExamTitle = "Parallel Lines and Transversals Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 13
                         },
                         new
@@ -5713,8 +5696,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of polygon properties.",
                             ExamTitle = "Introduction to Polygons Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 15
                         },
                         new
@@ -5724,8 +5705,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the unit circle in trigonometry.",
                             ExamTitle = "The Unit Circle Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 17
                         },
                         new
@@ -5735,8 +5714,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of fundamental trigonometric identities.",
                             ExamTitle = "Trigonometric Identities Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 19
                         },
                         new
@@ -5746,8 +5723,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic statistical concepts and data types.",
                             ExamTitle = "Introduction to Statistics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 21
                         },
                         new
@@ -5757,8 +5732,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of graphical data representation.",
                             ExamTitle = "Data Visualization Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 23
                         },
                         new
@@ -5768,8 +5741,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of basic probability distributions.",
                             ExamTitle = "Introduction to Distributions Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 25
                         },
                         new
@@ -5779,8 +5750,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of conditional probability and independence.",
                             ExamTitle = "Conditional Probability Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 27
                         },
                         new
@@ -5790,8 +5759,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to calculate measures for random variables.",
                             ExamTitle = "Expected Value and Variance Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 29
                         },
                         new
@@ -5801,8 +5768,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of propositional logic and proof methods.",
                             ExamTitle = "Logic and Proofs Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 31
                         },
                         new
@@ -5812,8 +5777,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of permutations and combinations.",
                             ExamTitle = "Counting Principles Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 33
                         },
                         new
@@ -5823,8 +5786,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic graph concepts.",
                             ExamTitle = "Introduction to Graph Theory Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 35
                         },
                         new
@@ -5834,8 +5795,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of projectile motion and vector operations.",
                             ExamTitle = "Vectors and 2D Kinematics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 37
                         },
                         new
@@ -5845,8 +5804,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of work, energy concepts, and conservation.",
                             ExamTitle = "Work, Energy, and Power Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 39
                         },
                         new
@@ -5856,8 +5813,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of electric charge properties and Coulomb's Law.",
                             ExamTitle = "Electric Charge and Coulomb's Law Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 41
                         },
                         new
@@ -5867,8 +5822,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of potential difference and electric potential energy.",
                             ExamTitle = "Electric Potential Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 43
                         },
                         new
@@ -5878,8 +5831,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic electric current, resistance, and Ohm's Law.",
                             ExamTitle = "Current, Resistance, and Ohm's Law Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 45
                         },
                         new
@@ -5889,8 +5840,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of magnetic fields produced by currents.",
                             ExamTitle = "Sources of Magnetic Fields Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 47
                         },
                         new
@@ -5900,8 +5849,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of Faraday's Law and Lenz's Law.",
                             ExamTitle = "Electromagnetic Induction Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 49
                         },
                         new
@@ -5911,8 +5858,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of the wave-particle duality and properties of light.",
                             ExamTitle = "Nature of Light Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 51
                         },
                         new
@@ -5922,8 +5867,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of lenses and image formation.",
                             ExamTitle = "Lenses and Image Formation Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 53
                         },
                         new
@@ -5933,8 +5876,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of light diffraction.",
                             ExamTitle = "Wave Optics: Diffraction Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 55
                         },
                         new
@@ -5944,8 +5885,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of internal energy, work, and heat.",
                             ExamTitle = "First Law of Thermodynamics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 57
                         },
                         new
@@ -5955,8 +5894,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of entropy and the direction of processes.",
                             ExamTitle = "Second Law of Thermodynamics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 59
                         },
                         new
@@ -5966,8 +5903,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of blackbody radiation and Planck's hypothesis.",
                             ExamTitle = "Blackbody Radiation Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 61
                         },
                         new
@@ -5977,8 +5912,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the De Broglie hypothesis.",
                             ExamTitle = "Wave Nature of Matter Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 63
                         },
                         new
@@ -5988,8 +5921,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your basic understanding of the Schrödinger equation and wave functions.",
                             ExamTitle = "Introduction to Quantum Mechanics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 65
                         },
                         new
@@ -5999,8 +5930,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of relativistic effects on time and space.",
                             ExamTitle = "Time Dilation and Length Contraction Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 67
                         },
                         new
@@ -6010,8 +5939,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your conceptual understanding of general relativity.",
                             ExamTitle = "Introduction to General Relativity Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 69
                         },
                         new
@@ -6021,8 +5948,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of Prokaryotic vs. Eukaryotic cells.",
                             ExamTitle = "Introduction to Cells Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 71
                         },
                         new
@@ -6032,8 +5957,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of major organelle structures and functions.",
                             ExamTitle = "Eukaryotic Organelles Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 73
                         },
                         new
@@ -6043,8 +5966,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the cell cycle phases and mitosis.",
                             ExamTitle = "The Cell Cycle and Mitosis Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 75
                         },
                         new
@@ -6054,8 +5975,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of the double helix and DNA synthesis.",
                             ExamTitle = "DNA Structure and Replication Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 77
                         },
                         new
@@ -6065,8 +5984,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of protein synthesis from RNA.",
                             ExamTitle = "Gene Expression: Translation Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 79
                         },
                         new
@@ -6076,8 +5993,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of skeleton types and bone structure.",
                             ExamTitle = "Skeletal Systems Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 81
                         },
                         new
@@ -6087,8 +6002,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of forces and levers in biological systems.",
                             ExamTitle = "Biomechanics Basics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 83
                         },
                         new
@@ -6098,8 +6011,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of how the nervous system controls muscles.",
                             ExamTitle = "Nervous System Control of Movement Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 85
                         },
                         new
@@ -6109,8 +6020,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of population growth models.",
                             ExamTitle = "Population Ecology Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 87
                         },
                         new
@@ -6120,8 +6029,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of energy flow and nutrient cycling.",
                             ExamTitle = "Ecosystem Dynamics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 89
                         },
                         new
@@ -6131,8 +6038,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of basic plant anatomy.",
                             ExamTitle = "Plant Structure and Growth Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 91
                         },
                         new
@@ -6142,8 +6047,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of the photosynthesis process.",
                             ExamTitle = "Photosynthesis Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 93
                         },
                         new
@@ -6153,8 +6056,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of chemical signaling in plants.",
                             ExamTitle = "Plant Hormones and Responses Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 95
                         },
                         new
@@ -6164,8 +6065,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of simpler invertebrates.",
                             ExamTitle = "Invertebrate Zoology I Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 97
                         },
                         new
@@ -6175,8 +6074,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of Chordates and Fish.",
                             ExamTitle = "Vertebrate Zoology I Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 99
                         },
                         new
@@ -6186,8 +6083,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of microbial diversity.",
                             ExamTitle = "Introduction to Microbes Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 101
                         },
                         new
@@ -6197,8 +6092,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of microbial growth requirements and pathways.",
                             ExamTitle = "Microbial Growth and Metabolism Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 103
                         },
                         new
@@ -6208,8 +6101,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of microbes in ecosystems, disease, and industry.",
                             ExamTitle = "Microbial Roles Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 105
                         },
                         new
@@ -6219,8 +6110,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of alkane nomenclature and conformations.",
                             ExamTitle = "Alkanes and Cycloalkanes Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 107
                         },
                         new
@@ -6230,8 +6119,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of reaction types and mechanisms.",
                             ExamTitle = "Introduction to Organic Reactions Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 109
                         },
                         new
@@ -6241,8 +6128,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of atomic models and periodic trends.",
                             ExamTitle = "Atomic Structure and Periodicity Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 111
                         },
                         new
@@ -6252,8 +6137,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of VB and MO theories.",
                             ExamTitle = "Bonding Theories Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 113
                         },
                         new
@@ -6263,8 +6146,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of transition metals, ligands, and complex ions.",
                             ExamTitle = "Coordination Chemistry Basics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 115
                         },
                         new
@@ -6274,8 +6155,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of energy, work, heat, and enthalpy.",
                             ExamTitle = "Thermodynamics: First Law Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 117
                         },
                         new
@@ -6285,8 +6164,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of reaction rates and mechanisms.",
                             ExamTitle = "Chemical Kinetics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 119
                         },
                         new
@@ -6296,8 +6173,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of analytical errors and data analysis.",
                             ExamTitle = "Analytical Intro & Stats Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 121
                         },
                         new
@@ -6307,8 +6182,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of light-matter interaction and UV-Vis.",
                             ExamTitle = "Spectroscopic Methods Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 123
                         },
                         new
@@ -6318,8 +6191,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of potentiometry and voltammetry basics.",
                             ExamTitle = "Electroanalytical Methods Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 125
                         },
                         new
@@ -6329,8 +6200,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of biological catalysts and reaction rates.",
                             ExamTitle = "Enzymes and Kinetics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 127
                         },
                         new
@@ -6340,8 +6209,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of lipid types and membrane structure.",
                             ExamTitle = "Lipids and Membranes Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 129
                         },
                         new
@@ -6351,8 +6218,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of atmospheric composition and reactions.",
                             ExamTitle = "Atmospheric Chemistry Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 131
                         },
                         new
@@ -6362,8 +6227,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of soil composition and chemical reactions.",
                             ExamTitle = "Soil Chemistry Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 133
                         },
                         new
@@ -6373,8 +6236,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of principles for safer chemical processes.",
                             ExamTitle = "Green Chemistry Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 135
                         },
                         new
@@ -6384,8 +6245,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of variation principle and perturbation theory.",
                             ExamTitle = "Approximation Methods Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 137
                         },
                         new
@@ -6395,8 +6254,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your basic understanding of Hartree-Fock and DFT.",
                             ExamTitle = "Computational Chemistry Methods Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 139
                         },
                         new
@@ -6406,8 +6263,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to use tools for interpreting literature.",
                             ExamTitle = "Literary Analysis Basics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 141
                         },
                         new
@@ -6417,8 +6272,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of poetic devices and forms.",
                             ExamTitle = "Poetry Fundamentals Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 143
                         },
                         new
@@ -6428,8 +6281,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of the elements of dramatic literature.",
                             ExamTitle = "Introduction to Drama Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 145
                         },
                         new
@@ -6439,8 +6290,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to create believable characters.",
                             ExamTitle = "Character Development Quiz",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 147
                         },
                         new
@@ -6450,8 +6299,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your skills in building immersive worlds.",
                             ExamTitle = "Setting and Description Quiz",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 149
                         },
                         new
@@ -6461,8 +6308,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of nouns, verbs, adjectives, etc.",
                             ExamTitle = "Parts of Speech Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 151
                         },
                         new
@@ -6472,8 +6317,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of correct punctuation usage.",
                             ExamTitle = "Punctuation Rules Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 153
                         },
                         new
@@ -6483,8 +6326,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to organize ideas effectively.",
                             ExamTitle = "Paragraph and Essay Structure Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 155
                         },
                         new
@@ -6494,8 +6335,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to identify and interpret figurative language.",
                             ExamTitle = "Figurative Language Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 157
                         },
                         new
@@ -6505,8 +6344,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to recognize and analyze different poetic structures.",
                             ExamTitle = "Poetic Forms Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 159
                         },
                         new
@@ -6516,8 +6353,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of key periods and playwrights.",
                             ExamTitle = "History of Theater Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 161
                         },
                         new
@@ -6527,8 +6362,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to understand stage directions and subtext.",
                             ExamTitle = "Reading a Play Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 163
                         },
                         new
@@ -6538,8 +6371,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of roles and processes in theater production.",
                             ExamTitle = "Theater Production Basics Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 165
                         },
                         new
@@ -6549,8 +6380,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of narrative perspectives.",
                             ExamTitle = "Point of View Quiz",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 167
                         },
                         new
@@ -6560,8 +6389,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of scene structure and pacing.",
                             ExamTitle = "Crafting Scenes Quiz",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 169
                         },
                         new
@@ -6571,8 +6398,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your knowledge of different non-fiction forms.",
                             ExamTitle = "Types of Non-fiction Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 171
                         },
                         new
@@ -6582,8 +6407,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your ability to organize factual material effectively.",
                             ExamTitle = "Structuring Non-fiction Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 173
                         },
                         new
@@ -6593,8 +6416,6 @@ namespace Estigo.Migrations
                             ExamDescription = "Test your understanding of responsibilities in non-fiction writing.",
                             ExamTitle = "Ethics in Non-fiction Exam",
                             Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
                             lessonId = 175
                         });
                 });
@@ -6607,6 +6428,9 @@ namespace Estigo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
 
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PaymentMethod")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -6618,44 +6442,13 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("courseId")
-                        .HasColumnType("int");
-
                     b.HasKey("PaymentId");
+
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("StudentId");
 
-                    b.HasIndex("courseId");
-
                     b.ToTable("Payments");
-                });
-
-            modelBuilder.Entity("Estigo.Models.QuestionAnswer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsCorrect")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SelectedOption")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StudentExamResultId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentExamResultId");
-
-                    b.ToTable("QuestionAnswer");
                 });
 
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
@@ -6711,9 +6504,6 @@ namespace Estigo.Migrations
                     b.Property<int>("courseId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("isLive")
-                        .HasColumnType("bit");
-
                     b.Property<string>("lessonContent")
                         .IsRequired()
                         .HasMaxLength(250)
@@ -6730,6 +6520,7 @@ namespace Estigo.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("lessonVideo")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
@@ -6745,7 +6536,6 @@ namespace Estigo.Migrations
                             lessonId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
-                            isLive = false,
                             lessonContent = "Content covering basic algebraic notation and terminology.",
                             lessonDescription = "Introduction to variables and expressions.",
                             lessonTitle = "Algebra Basics",
@@ -6756,7 +6546,6 @@ namespace Estigo.Migrations
                             lessonId = 2,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
-                            isLive = false,
                             lessonContent = "Step-by-step examples of solving linear equations.",
                             lessonDescription = "Techniques for solving single-variable linear equations.",
                             lessonTitle = "Solving Linear Equations",
@@ -6767,7 +6556,6 @@ namespace Estigo.Migrations
                             lessonId = 3,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
-                            isLive = false,
                             lessonContent = "Graphing inequalities on a number line and solving.",
                             lessonDescription = "Understanding and solving linear inequalities.",
                             lessonTitle = "Inequalities",
@@ -6778,7 +6566,6 @@ namespace Estigo.Migrations
                             lessonId = 4,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
-                            isLive = false,
                             lessonContent = "Defining functions and evaluating function values.",
                             lessonDescription = "Basic concepts of functions, domain, and range.",
                             lessonTitle = "Functions Introduction",
@@ -6789,7 +6576,6 @@ namespace Estigo.Migrations
                             lessonId = 5,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
-                            isLive = false,
                             lessonContent = "Adding, subtracting, and multiplying polynomials.",
                             lessonDescription = "Introduction to polynomial expressions and operations.",
                             lessonTitle = "Polynomial Basics",
@@ -6800,7 +6586,6 @@ namespace Estigo.Migrations
                             lessonId = 6,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
-                            isLive = false,
                             lessonContent = "Evaluating limits and understanding continuity.",
                             lessonDescription = "Understanding the concept of limits in calculus.",
                             lessonTitle = "Limits and Continuity",
@@ -6811,7 +6596,6 @@ namespace Estigo.Migrations
                             lessonId = 7,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
-                            isLive = false,
                             lessonContent = "Calculating derivatives using the power rule.",
                             lessonDescription = "Defining the derivative and basic differentiation rules.",
                             lessonTitle = "Introduction to Derivatives",
@@ -6822,7 +6606,6 @@ namespace Estigo.Migrations
                             lessonId = 8,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
-                            isLive = false,
                             lessonContent = "Applying advanced differentiation rules.",
                             lessonDescription = "Product rule, quotient rule, and chain rule.",
                             lessonTitle = "Differentiation Techniques",
@@ -6833,7 +6616,6 @@ namespace Estigo.Migrations
                             lessonId = 9,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
-                            isLive = false,
                             lessonContent = "Solving related rates and optimization problems.",
                             lessonDescription = "Using derivatives to find rates of change and optimization.",
                             lessonTitle = "Applications of Derivatives",
@@ -6844,7 +6626,6 @@ namespace Estigo.Migrations
                             lessonId = 10,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
-                            isLive = false,
                             lessonContent = "Understanding the indefinite integral.",
                             lessonDescription = "Basic concepts of integration and antiderivatives.",
                             lessonTitle = "Introduction to Integrals",
@@ -6855,7 +6636,6 @@ namespace Estigo.Migrations
                             lessonId = 11,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
-                            isLive = false,
                             lessonContent = "Definitions and postulates of basic geometric elements.",
                             lessonDescription = "Fundamental concepts of geometry.",
                             lessonTitle = "Points, Lines, and Planes",
@@ -6866,7 +6646,6 @@ namespace Estigo.Migrations
                             lessonId = 12,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
-                            isLive = false,
                             lessonContent = "Measuring angles, complementary and supplementary angles.",
                             lessonDescription = "Types of angles and their properties.",
                             lessonTitle = "Angles and Angle Relationships",
@@ -6877,7 +6656,6 @@ namespace Estigo.Migrations
                             lessonId = 13,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
-                            isLive = false,
                             lessonContent = "Identifying alternate interior, corresponding angles, etc.",
                             lessonDescription = "Properties of angles formed by parallel lines.",
                             lessonTitle = "Parallel Lines and Transversals",
@@ -6888,7 +6666,6 @@ namespace Estigo.Migrations
                             lessonId = 14,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
-                            isLive = false,
                             lessonContent = "SSS, SAS, ASA congruence postulates.",
                             lessonDescription = "Classifying triangles and proving congruence.",
                             lessonTitle = "Triangles and Congruence",
@@ -6899,7 +6676,6 @@ namespace Estigo.Migrations
                             lessonId = 15,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
-                            isLive = false,
                             lessonContent = "Calculating interior angles and classifying polygons.",
                             lessonDescription = "Properties of polygons, focusing on quadrilaterals.",
                             lessonTitle = "Introduction to Polygons",
@@ -6910,7 +6686,6 @@ namespace Estigo.Migrations
                             lessonId = 16,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
-                            isLive = false,
                             lessonContent = "SOH CAH TOA and solving right triangles.",
                             lessonDescription = "Sine, cosine, and tangent in right triangles.",
                             lessonTitle = "Right Triangle Trigonometry",
@@ -6921,7 +6696,6 @@ namespace Estigo.Migrations
                             lessonId = 17,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
-                            isLive = false,
                             lessonContent = "Finding trig values for standard angles.",
                             lessonDescription = "Understanding trigonometric functions using the unit circle.",
                             lessonTitle = "The Unit Circle",
@@ -6932,7 +6706,6 @@ namespace Estigo.Migrations
                             lessonId = 18,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
-                            isLive = false,
                             lessonContent = "Amplitude, period, and phase shift.",
                             lessonDescription = "Graphing sine, cosine, and tangent functions.",
                             lessonTitle = "Trigonometric Graphs",
@@ -6943,7 +6716,6 @@ namespace Estigo.Migrations
                             lessonId = 19,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
-                            isLive = false,
                             lessonContent = "Pythagorean identities, sum/difference identities.",
                             lessonDescription = "Fundamental trigonometric identities.",
                             lessonTitle = "Trigonometric Identities",
@@ -6954,7 +6726,6 @@ namespace Estigo.Migrations
                             lessonId = 20,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
-                            isLive = false,
                             lessonContent = "Finding solutions within a given interval.",
                             lessonDescription = "Techniques for solving equations involving trig functions.",
                             lessonTitle = "Solving Trigonometric Equations",
@@ -6965,7 +6736,6 @@ namespace Estigo.Migrations
                             lessonId = 21,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
-                            isLive = false,
                             lessonContent = "Populations, samples, descriptive vs. inferential statistics.",
                             lessonDescription = "Types of data and data collection methods.",
                             lessonTitle = "Introduction to Statistics",
@@ -6976,7 +6746,6 @@ namespace Estigo.Migrations
                             lessonId = 22,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
-                            isLive = false,
                             lessonContent = "Mean, median, mode, variance, standard deviation.",
                             lessonDescription = "Measures of central tendency and dispersion.",
                             lessonTitle = "Descriptive Statistics",
@@ -6987,7 +6756,6 @@ namespace Estigo.Migrations
                             lessonId = 23,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
-                            isLive = false,
                             lessonContent = "Histograms, box plots, scatter plots.",
                             lessonDescription = "Graphical representation of data.",
                             lessonTitle = "Data Visualization",
@@ -6998,7 +6766,6 @@ namespace Estigo.Migrations
                             lessonId = 24,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
-                            isLive = false,
                             lessonContent = "Sample spaces, events, conditional probability.",
                             lessonDescription = "Introduction to probability rules.",
                             lessonTitle = "Basic Probability Concepts",
@@ -7009,7 +6776,6 @@ namespace Estigo.Migrations
                             lessonId = 25,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
-                            isLive = false,
                             lessonContent = "Binomial and Normal distributions basics.",
                             lessonDescription = "Understanding probability distributions.",
                             lessonTitle = "Introduction to Distributions",
@@ -7020,7 +6786,6 @@ namespace Estigo.Migrations
                             lessonId = 26,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
-                            isLive = false,
                             lessonContent = "Defining events and calculating basic probabilities.",
                             lessonDescription = "Axioms of probability and sample spaces.",
                             lessonTitle = "Foundations of Probability",
@@ -7031,7 +6796,6 @@ namespace Estigo.Migrations
                             lessonId = 27,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
-                            isLive = false,
                             lessonContent = "Bayes' Theorem and its applications.",
                             lessonDescription = "Understanding dependent and independent events.",
                             lessonTitle = "Conditional Probability and Independence",
@@ -7042,7 +6806,6 @@ namespace Estigo.Migrations
                             lessonId = 28,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
-                            isLive = false,
                             lessonContent = "Probability mass functions and density functions.",
                             lessonDescription = "Discrete and continuous random variables.",
                             lessonTitle = "Random Variables",
@@ -7053,7 +6816,6 @@ namespace Estigo.Migrations
                             lessonId = 29,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
-                            isLive = false,
                             lessonContent = "Properties of expectation and variance.",
                             lessonDescription = "Calculating measures for random variables.",
                             lessonTitle = "Expected Value and Variance",
@@ -7064,7 +6826,6 @@ namespace Estigo.Migrations
                             lessonId = 30,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
-                            isLive = false,
                             lessonContent = "Applications and calculations for common distributions.",
                             lessonDescription = "Detailed look at Binomial, Poisson, Normal distributions.",
                             lessonTitle = "Common Probability Distributions",
@@ -7075,7 +6836,6 @@ namespace Estigo.Migrations
                             lessonId = 31,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
-                            isLive = false,
                             lessonContent = "Truth tables, logical equivalences, direct proof, proof by contradiction.",
                             lessonDescription = "Propositional logic and methods of proof.",
                             lessonTitle = "Logic and Proofs",
@@ -7086,7 +6846,6 @@ namespace Estigo.Migrations
                             lessonId = 32,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
-                            isLive = false,
                             lessonContent = "Union, intersection, complement, power sets.",
                             lessonDescription = "Operations on sets, Venn diagrams.",
                             lessonTitle = "Set Theory",
@@ -7097,7 +6856,6 @@ namespace Estigo.Migrations
                             lessonId = 33,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
-                            isLive = false,
                             lessonContent = "The pigeonhole principle, binomial coefficients.",
                             lessonDescription = "Permutations and combinations.",
                             lessonTitle = "Counting Principles",
@@ -7108,7 +6866,6 @@ namespace Estigo.Migrations
                             lessonId = 34,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
-                            isLive = false,
                             lessonContent = "Equivalence relations, injective, surjective functions.",
                             lessonDescription = "Properties of relations and types of functions.",
                             lessonTitle = "Relations and Functions",
@@ -7119,7 +6876,6 @@ namespace Estigo.Migrations
                             lessonId = 35,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
-                            isLive = false,
                             lessonContent = "Vertices, edges, paths, cycles, graph coloring.",
                             lessonDescription = "Basic concepts of graphs and trees.",
                             lessonTitle = "Introduction to Graph Theory",
@@ -7130,7 +6886,6 @@ namespace Estigo.Migrations
                             lessonId = 36,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
-                            isLive = false,
                             lessonContent = "Equations of motion for constant acceleration.",
                             lessonDescription = "Motion, velocity, and acceleration.",
                             lessonTitle = "Kinematics in One Dimension",
@@ -7141,7 +6896,6 @@ namespace Estigo.Migrations
                             lessonId = 37,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
-                            isLive = false,
                             lessonContent = "Adding vectors, resolving vectors into components.",
                             lessonDescription = "Projectile motion and vector operations.",
                             lessonTitle = "Vectors and 2D Kinematics",
@@ -7152,7 +6906,6 @@ namespace Estigo.Migrations
                             lessonId = 38,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
-                            isLive = false,
                             lessonContent = "Applying Newton's first, second, and third laws.",
                             lessonDescription = "Force, mass, and acceleration.",
                             lessonTitle = "Newton's Laws of Motion",
@@ -7163,7 +6916,6 @@ namespace Estigo.Migrations
                             lessonId = 39,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
-                            isLive = false,
                             lessonContent = "Conservation of energy principle.",
                             lessonDescription = "Concepts of work, kinetic and potential energy.",
                             lessonTitle = "Work, Energy, and Power",
@@ -7174,7 +6926,6 @@ namespace Estigo.Migrations
                             lessonId = 40,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
-                            isLive = false,
                             lessonContent = "Conservation of momentum in collisions.",
                             lessonDescription = "Linear momentum and impulse.",
                             lessonTitle = "Momentum and Collisions",
@@ -7185,7 +6936,6 @@ namespace Estigo.Migrations
                             lessonId = 41,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
-                            isLive = false,
                             lessonContent = "Calculating electrostatic forces.",
                             lessonDescription = "Properties of electric charge and forces between charges.",
                             lessonTitle = "Electric Charge and Coulomb's Law",
@@ -7196,7 +6946,6 @@ namespace Estigo.Migrations
                             lessonId = 42,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
-                            isLive = false,
                             lessonContent = "Calculating electric fields for point charges.",
                             lessonDescription = "Concept of the electric field and field lines.",
                             lessonTitle = "Electric Fields",
@@ -7207,7 +6956,6 @@ namespace Estigo.Migrations
                             lessonId = 43,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
-                            isLive = false,
                             lessonContent = "Calculating potential for point charges and systems.",
                             lessonDescription = "Potential difference and electric potential energy.",
                             lessonTitle = "Electric Potential",
@@ -7218,7 +6966,6 @@ namespace Estigo.Migrations
                             lessonId = 44,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
-                            isLive = false,
                             lessonContent = "Calculating capacitance for parallel plate capacitors.",
                             lessonDescription = "Capacitors and energy storage.",
                             lessonTitle = "Capacitance",
@@ -7229,7 +6976,6 @@ namespace Estigo.Migrations
                             lessonId = 45,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
-                            isLive = false,
                             lessonContent = "Applying Ohm's Law to simple circuits.",
                             lessonDescription = "Basics of electric current and resistance.",
                             lessonTitle = "Current, Resistance, and Ohm's Law",
@@ -7240,7 +6986,6 @@ namespace Estigo.Migrations
                             lessonId = 46,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
-                            isLive = false,
                             lessonContent = "Calculating magnetic force using the Lorentz force law.",
                             lessonDescription = "Introduction to magnetic fields and forces on moving charges.",
                             lessonTitle = "Magnetic Fields and Forces",
@@ -7251,7 +6996,6 @@ namespace Estigo.Migrations
                             lessonId = 47,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
-                            isLive = false,
                             lessonContent = "Calculating fields for wires and loops.",
                             lessonDescription = "Magnetic fields produced by currents (Biot-Savart Law).",
                             lessonTitle = "Sources of Magnetic Fields",
@@ -7262,7 +7006,6 @@ namespace Estigo.Migrations
                             lessonId = 48,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
-                            isLive = false,
                             lessonContent = "Applications for solenoids and toroids.",
                             lessonDescription = "Using Ampere's Law to find magnetic fields.",
                             lessonTitle = "Ampere's Law",
@@ -7273,7 +7016,6 @@ namespace Estigo.Migrations
                             lessonId = 49,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
-                            isLive = false,
                             lessonContent = "Induced EMF and magnetic flux.",
                             lessonDescription = "Faraday's Law of Induction and Lenz's Law.",
                             lessonTitle = "Electromagnetic Induction",
@@ -7284,7 +7026,6 @@ namespace Estigo.Migrations
                             lessonId = 50,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
-                            isLive = false,
                             lessonContent = "RL circuits and energy stored in inductors.",
                             lessonDescription = "Self-inductance and mutual inductance.",
                             lessonTitle = "Inductance",
@@ -7295,7 +7036,6 @@ namespace Estigo.Migrations
                             lessonId = 51,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
-                            isLive = false,
                             lessonContent = "Properties of light waves.",
                             lessonDescription = "Wave-particle duality and the electromagnetic spectrum.",
                             lessonTitle = "Nature of Light",
@@ -7306,7 +7046,6 @@ namespace Estigo.Migrations
                             lessonId = 52,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
-                            isLive = false,
                             lessonContent = "Total internal reflection and index of refraction.",
                             lessonDescription = "Laws of reflection and Snell's Law of refraction.",
                             lessonTitle = "Reflection and Refraction",
@@ -7317,7 +7056,6 @@ namespace Estigo.Migrations
                             lessonId = 53,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
-                            isLive = false,
                             lessonContent = "Ray tracing and the thin lens equation.",
                             lessonDescription = "Converging and diverging lenses.",
                             lessonTitle = "Lenses and Image Formation",
@@ -7328,7 +7066,6 @@ namespace Estigo.Migrations
                             lessonId = 54,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
-                            isLive = false,
                             lessonContent = "Young's double-slit experiment.",
                             lessonDescription = "Principle of superposition and interference patterns.",
                             lessonTitle = "Wave Optics: Interference",
@@ -7339,7 +7076,6 @@ namespace Estigo.Migrations
                             lessonId = 55,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
-                            isLive = false,
                             lessonContent = "Single-slit diffraction patterns.",
                             lessonDescription = "Diffraction of light through slits and gratings.",
                             lessonTitle = "Wave Optics: Diffraction",
@@ -7350,7 +7086,6 @@ namespace Estigo.Migrations
                             lessonId = 56,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
-                            isLive = false,
                             lessonContent = "Specific heat and calorimetry.",
                             lessonDescription = "Concepts of thermal energy, temperature scales, and heat transfer.",
                             lessonTitle = "Temperature and Heat",
@@ -7361,7 +7096,6 @@ namespace Estigo.Migrations
                             lessonId = 57,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
-                            isLive = false,
                             lessonContent = "Conservation of energy in thermal systems.",
                             lessonDescription = "Internal energy, work, and heat in thermodynamic processes.",
                             lessonTitle = "First Law of Thermodynamics",
@@ -7372,7 +7106,6 @@ namespace Estigo.Migrations
                             lessonId = 58,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
-                            isLive = false,
                             lessonContent = "PV=nRT and kinetic theory of gases.",
                             lessonDescription = "Behavior of ideal gases.",
                             lessonTitle = "Ideal Gas Law",
@@ -7383,7 +7116,6 @@ namespace Estigo.Migrations
                             lessonId = 59,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
-                            isLive = false,
                             lessonContent = "Heat engines and refrigerators.",
                             lessonDescription = "Entropy and the direction of thermodynamic processes.",
                             lessonTitle = "Second Law of Thermodynamics",
@@ -7394,7 +7126,6 @@ namespace Estigo.Migrations
                             lessonId = 60,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
-                            isLive = false,
                             lessonContent = "Efficiency of heat engines.",
                             lessonDescription = "Analyzing cycles like the Carnot cycle.",
                             lessonTitle = "Thermodynamic Cycles",
@@ -7405,7 +7136,6 @@ namespace Estigo.Migrations
                             lessonId = 61,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
-                            isLive = false,
                             lessonContent = "Planck's constant and energy quanta.",
                             lessonDescription = "The ultraviolet catastrophe and quantization of energy.",
                             lessonTitle = "Blackbody Radiation & Planck's Hypothesis",
@@ -7416,7 +7146,6 @@ namespace Estigo.Migrations
                             lessonId = 62,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
-                            isLive = false,
                             lessonContent = "Work function and stopping potential.",
                             lessonDescription = "Einstein's explanation and the particle nature of light.",
                             lessonTitle = "Photoelectric Effect",
@@ -7427,7 +7156,6 @@ namespace Estigo.Migrations
                             lessonId = 63,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
-                            isLive = false,
                             lessonContent = "Electron diffraction experiments.",
                             lessonDescription = "De Broglie hypothesis and matter waves.",
                             lessonTitle = "Wave Nature of Matter",
@@ -7438,7 +7166,6 @@ namespace Estigo.Migrations
                             lessonId = 64,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
-                            isLive = false,
                             lessonContent = "Quantized energy levels and spectral lines.",
                             lessonDescription = "Early model of the hydrogen atom.",
                             lessonTitle = "The Bohr Model",
@@ -7449,7 +7176,6 @@ namespace Estigo.Migrations
                             lessonId = 65,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
-                            isLive = false,
                             lessonContent = "Probability interpretation and uncertainty principle.",
                             lessonDescription = "The Schrödinger equation and wave functions.",
                             lessonTitle = "Introduction to Quantum Mechanics",
@@ -7460,7 +7186,6 @@ namespace Estigo.Migrations
                             lessonId = 66,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
-                            isLive = false,
                             lessonContent = "Inertial frames and the constancy of the speed of light.",
                             lessonDescription = "Postulates of special relativity.",
                             lessonTitle = "Principles of Special Relativity",
@@ -7471,7 +7196,6 @@ namespace Estigo.Migrations
                             lessonId = 67,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
-                            isLive = false,
                             lessonContent = "Relativistic effects on time and space.",
                             lessonDescription = "Consequences of special relativity.",
                             lessonTitle = "Time Dilation and Length Contraction",
@@ -7482,7 +7206,6 @@ namespace Estigo.Migrations
                             lessonId = 68,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
-                            isLive = false,
                             lessonContent = "E=mc² and its implications.",
                             lessonDescription = "Modifications to classical momentum and energy.",
                             lessonTitle = "Relativistic Momentum and Energy",
@@ -7493,7 +7216,6 @@ namespace Estigo.Migrations
                             lessonId = 69,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
-                            isLive = false,
                             lessonContent = "Conceptual overview of general relativity.",
                             lessonDescription = "Principle of equivalence and gravity as spacetime curvature.",
                             lessonTitle = "Introduction to General Relativity",
@@ -7504,7 +7226,6 @@ namespace Estigo.Migrations
                             lessonId = 70,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
-                            isLive = false,
                             lessonContent = "Observational evidence for general relativity.",
                             lessonDescription = "Gravitational lensing, black holes, and gravitational waves.",
                             lessonTitle = "Consequences of General Relativity",
@@ -7515,7 +7236,6 @@ namespace Estigo.Migrations
                             lessonId = 71,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
-                            isLive = false,
                             lessonContent = "Basic cell structures and functions.",
                             lessonDescription = "Prokaryotic vs. Eukaryotic cells.",
                             lessonTitle = "Introduction to Cells",
@@ -7526,7 +7246,6 @@ namespace Estigo.Migrations
                             lessonId = 72,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
-                            isLive = false,
                             lessonContent = "Passive transport, active transport, endocytosis.",
                             lessonDescription = "The fluid mosaic model and transport mechanisms.",
                             lessonTitle = "Cell Membrane Structure and Function",
@@ -7537,7 +7256,6 @@ namespace Estigo.Migrations
                             lessonId = 73,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
-                            isLive = false,
                             lessonContent = "Nucleus, mitochondria, chloroplasts, ER, Golgi.",
                             lessonDescription = "Structure and function of major organelles.",
                             lessonTitle = "Eukaryotic Organelles",
@@ -7548,7 +7266,6 @@ namespace Estigo.Migrations
                             lessonId = 74,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
-                            isLive = false,
                             lessonContent = "Glycolysis, Krebs cycle, electron transport chain.",
                             lessonDescription = "Overview of energy production in cells.",
                             lessonTitle = "Cellular Respiration",
@@ -7559,7 +7276,6 @@ namespace Estigo.Migrations
                             lessonId = 75,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
-                            isLive = false,
                             lessonContent = "Interphase, prophase, metaphase, anaphase, telophase.",
                             lessonDescription = "Phases of the cell cycle and cell division.",
                             lessonTitle = "The Cell Cycle and Mitosis",
@@ -7570,7 +7286,6 @@ namespace Estigo.Migrations
                             lessonId = 76,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
-                            isLive = false,
                             lessonContent = "Dominance, segregation, independent assortment.",
                             lessonDescription = "Principles of inheritance discovered by Mendel.",
                             lessonTitle = "Mendelian Genetics",
@@ -7581,7 +7296,6 @@ namespace Estigo.Migrations
                             lessonId = 77,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
-                            isLive = false,
                             lessonContent = "Base pairing rules, enzymes involved in replication.",
                             lessonDescription = "The double helix structure and DNA synthesis.",
                             lessonTitle = "DNA Structure and Replication",
@@ -7592,7 +7306,6 @@ namespace Estigo.Migrations
                             lessonId = 78,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
-                            isLive = false,
                             lessonContent = "Process of transcription, RNA polymerase.",
                             lessonDescription = "From DNA to RNA.",
                             lessonTitle = "Gene Expression: Transcription",
@@ -7603,7 +7316,6 @@ namespace Estigo.Migrations
                             lessonId = 79,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
-                            isLive = false,
                             lessonContent = "Ribosomes, codons, tRNA, protein synthesis.",
                             lessonDescription = "From RNA to Protein.",
                             lessonTitle = "Gene Expression: Translation",
@@ -7614,7 +7326,6 @@ namespace Estigo.Migrations
                             lessonId = 80,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
-                            isLive = false,
                             lessonContent = "Point mutations, chromosomal mutations, sources of variation.",
                             lessonDescription = "Types of mutations and their effects.",
                             lessonTitle = "Mutations and Genetic Variation",
@@ -7625,7 +7336,6 @@ namespace Estigo.Migrations
                             lessonId = 81,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
-                            isLive = false,
                             lessonContent = "Human skeleton overview, bone composition.",
                             lessonDescription = "Types of skeletons and bone structure.",
                             lessonTitle = "Skeletal Systems",
@@ -7636,7 +7346,6 @@ namespace Estigo.Migrations
                             lessonId = 82,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
-                            isLive = false,
                             lessonContent = "Skeletal, smooth, cardiac muscle; sliding filament theory.",
                             lessonDescription = "Types of muscles and muscle contraction.",
                             lessonTitle = "Muscular Systems",
@@ -7647,7 +7356,6 @@ namespace Estigo.Migrations
                             lessonId = 83,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
-                            isLive = false,
                             lessonContent = "Analyzing movement from a mechanical perspective.",
                             lessonDescription = "Forces and levers in biological systems.",
                             lessonTitle = "Biomechanics Basics",
@@ -7658,7 +7366,6 @@ namespace Estigo.Migrations
                             lessonId = 84,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
-                            isLive = false,
                             lessonContent = "Walking, running, swimming, flying adaptations.",
                             lessonDescription = "Different modes of animal movement.",
                             lessonTitle = "Locomotion in Animals",
@@ -7669,7 +7376,6 @@ namespace Estigo.Migrations
                             lessonId = 85,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
-                            isLive = false,
                             lessonContent = "Motor neurons, reflexes, brain control centers.",
                             lessonDescription = "How the nervous system coordinates muscle action.",
                             lessonTitle = "Nervous System Control of Movement",
@@ -7680,7 +7386,6 @@ namespace Estigo.Migrations
                             lessonId = 86,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
-                            isLive = false,
                             lessonContent = "Organisms, populations, communities, ecosystems, biosphere.",
                             lessonDescription = "Levels of ecological organization.",
                             lessonTitle = "Introduction to Ecology",
@@ -7691,7 +7396,6 @@ namespace Estigo.Migrations
                             lessonId = 87,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
-                            isLive = false,
                             lessonContent = "Exponential and logistic growth, carrying capacity.",
                             lessonDescription = "Population growth models and limiting factors.",
                             lessonTitle = "Population Ecology",
@@ -7702,7 +7406,6 @@ namespace Estigo.Migrations
                             lessonId = 88,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
-                            isLive = false,
                             lessonContent = "Competition, predation, symbiosis, biodiversity.",
                             lessonDescription = "Species interactions within communities.",
                             lessonTitle = "Community Ecology",
@@ -7713,7 +7416,6 @@ namespace Estigo.Migrations
                             lessonId = 89,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
-                            isLive = false,
                             lessonContent = "Food webs, trophic levels, biogeochemical cycles.",
                             lessonDescription = "Energy flow and nutrient cycling.",
                             lessonTitle = "Ecosystem Dynamics",
@@ -7724,7 +7426,6 @@ namespace Estigo.Migrations
                             lessonId = 90,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
-                            isLive = false,
                             lessonContent = "Threats to biodiversity and conservation efforts.",
                             lessonDescription = "Major terrestrial and aquatic biomes.",
                             lessonTitle = "Biomes and Conservation",
@@ -7735,7 +7436,6 @@ namespace Estigo.Migrations
                             lessonId = 91,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
-                            isLive = false,
                             lessonContent = "Meristems and primary/secondary growth.",
                             lessonDescription = "Basic anatomy of plants: roots, stems, leaves.",
                             lessonTitle = "Plant Structure and Growth",
@@ -7746,7 +7446,6 @@ namespace Estigo.Migrations
                             lessonId = 92,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
-                            isLive = false,
                             lessonContent = "Xylem, phloem, transpiration.",
                             lessonDescription = "Water and nutrient transport in plants.",
                             lessonTitle = "Plant Transport Systems",
@@ -7757,7 +7456,6 @@ namespace Estigo.Migrations
                             lessonId = 93,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
-                            isLive = false,
                             lessonContent = "Light-dependent reactions and the Calvin cycle.",
                             lessonDescription = "The process of converting light energy to chemical energy.",
                             lessonTitle = "Photosynthesis",
@@ -7768,7 +7466,6 @@ namespace Estigo.Migrations
                             lessonId = 94,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
-                            isLive = false,
                             lessonContent = "Flower structure, pollination, fertilization, seed development.",
                             lessonDescription = "Asexual and sexual reproduction in plants.",
                             lessonTitle = "Plant Reproduction",
@@ -7779,7 +7476,6 @@ namespace Estigo.Migrations
                             lessonId = 95,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
-                            isLive = false,
                             lessonContent = "Auxins, gibberellins, phototropism, gravitropism.",
                             lessonDescription = "Chemical signaling in plants.",
                             lessonTitle = "Plant Hormones and Responses",
@@ -7790,7 +7486,6 @@ namespace Estigo.Migrations
                             lessonId = 96,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
-                            isLive = false,
                             lessonContent = "Body plans, symmetry, evolutionary relationships.",
                             lessonDescription = "Major animal phyla and characteristics.",
                             lessonTitle = "Introduction to Animal Diversity",
@@ -7801,7 +7496,6 @@ namespace Estigo.Migrations
                             lessonId = 97,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
-                            isLive = false,
                             lessonContent = "Sponges, cnidarians, flatworms, roundworms.",
                             lessonDescription = "Focus on simpler invertebrates.",
                             lessonTitle = "Invertebrate Zoology I",
@@ -7812,7 +7506,6 @@ namespace Estigo.Migrations
                             lessonId = 98,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
-                            isLive = false,
                             lessonContent = "Mollusks, annelids, arthropods, echinoderms.",
                             lessonDescription = "Focus on more complex invertebrates.",
                             lessonTitle = "Invertebrate Zoology II",
@@ -7823,7 +7516,6 @@ namespace Estigo.Migrations
                             lessonId = 99,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
-                            isLive = false,
                             lessonContent = "Characteristics of chordates, evolution of fish.",
                             lessonDescription = "Introduction to Chordates and Fish.",
                             lessonTitle = "Vertebrate Zoology I",
@@ -7834,7 +7526,6 @@ namespace Estigo.Migrations
                             lessonId = 100,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
-                            isLive = false,
                             lessonContent = "Key characteristics and adaptations of terrestrial vertebrates.",
                             lessonDescription = "Amphibians, Reptiles, Birds, and Mammals.",
                             lessonTitle = "Vertebrate Zoology II",
@@ -7845,7 +7536,6 @@ namespace Estigo.Migrations
                             lessonId = 101,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
-                            isLive = false,
                             lessonContent = "Microbial diversity and history of microbiology.",
                             lessonDescription = "Overview of bacteria, archaea, viruses, fungi, protists.",
                             lessonTitle = "Introduction to Microbes",
@@ -7856,7 +7546,6 @@ namespace Estigo.Migrations
                             lessonId = 102,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
-                            isLive = false,
                             lessonContent = "Gram staining and bacterial morphology.",
                             lessonDescription = "Cell walls, flagella, capsules, endospores.",
                             lessonTitle = "Bacterial Structure and Function",
@@ -7867,7 +7556,6 @@ namespace Estigo.Migrations
                             lessonId = 103,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
-                            isLive = false,
                             lessonContent = "Binary fission, nutritional types.",
                             lessonDescription = "Requirements for growth, growth curve, metabolic pathways.",
                             lessonTitle = "Microbial Growth and Metabolism",
@@ -7878,7 +7566,6 @@ namespace Estigo.Migrations
                             lessonId = 104,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
-                            isLive = false,
                             lessonContent = "Lytic vs. lysogenic cycles, viral diseases.",
                             lessonDescription = "Structure, replication cycles, and characteristics.",
                             lessonTitle = "Viruses and Prions",
@@ -7889,7 +7576,6 @@ namespace Estigo.Migrations
                             lessonId = 105,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
-                            isLive = false,
                             lessonContent = "Pathogens, decomposers, biotechnology.",
                             lessonDescription = "Microbes in ecosystems, disease, and industry.",
                             lessonTitle = "Microbial Roles and Applications",
@@ -7900,7 +7586,6 @@ namespace Estigo.Migrations
                             lessonId = 106,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
-                            isLive = false,
                             lessonContent = "Lewis structures, VSEPR theory, hybridization.",
                             lessonDescription = "Structure, bonding, and properties of organic molecules.",
                             lessonTitle = "Introduction & Bonding",
@@ -7911,7 +7596,6 @@ namespace Estigo.Migrations
                             lessonId = 107,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
-                            isLive = false,
                             lessonContent = "Naming alkanes (IUPAC), Newman projections.",
                             lessonDescription = "Nomenclature and conformations.",
                             lessonTitle = "Alkanes and Cycloalkanes",
@@ -7922,7 +7606,6 @@ namespace Estigo.Migrations
                             lessonId = 108,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
-                            isLive = false,
                             lessonContent = "R/S configuration, optical activity.",
                             lessonDescription = "Chirality, enantiomers, diastereomers.",
                             lessonTitle = "Stereochemistry",
@@ -7933,7 +7616,6 @@ namespace Estigo.Migrations
                             lessonId = 109,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
-                            isLive = false,
                             lessonContent = "Arrows formalism, reaction energy diagrams.",
                             lessonDescription = "Reaction types, mechanisms, and thermodynamics.",
                             lessonTitle = "Introduction to Organic Reactions",
@@ -7944,7 +7626,6 @@ namespace Estigo.Migrations
                             lessonId = 110,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
-                            isLive = false,
                             lessonContent = "Pi bonds, electrophilic addition basics.",
                             lessonDescription = "Structure, nomenclature, and introduction to addition reactions.",
                             lessonTitle = "Alkenes and Alkynes: Structure & Reactivity",
@@ -7955,7 +7636,6 @@ namespace Estigo.Migrations
                             lessonId = 111,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
-                            isLive = false,
                             lessonContent = "Electron configurations, ionization energy, electronegativity.",
                             lessonDescription = "Review of atomic models and periodic trends.",
                             lessonTitle = "Atomic Structure and Periodicity",
@@ -7966,7 +7646,6 @@ namespace Estigo.Migrations
                             lessonId = 112,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
-                            isLive = false,
                             lessonContent = "Predicting molecular geometry.",
                             lessonDescription = "Ionic and covalent bonding theories.",
                             lessonTitle = "Chemical Bonding: Lewis & VSEPR",
@@ -7977,7 +7656,6 @@ namespace Estigo.Migrations
                             lessonId = 113,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
-                            isLive = false,
                             lessonContent = "Hybridization, MO diagrams for diatomic molecules.",
                             lessonDescription = "Advanced bonding theories.",
                             lessonTitle = "Valence Bond and Molecular Orbital Theory",
@@ -7988,7 +7666,6 @@ namespace Estigo.Migrations
                             lessonId = 114,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
-                            isLive = false,
                             lessonContent = "Acid strength, hard/soft acids and bases.",
                             lessonDescription = "Bronsted-Lowry and Lewis definitions.",
                             lessonTitle = "Acid-Base Chemistry",
@@ -7999,7 +7676,6 @@ namespace Estigo.Migrations
                             lessonId = 115,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
-                            isLive = false,
                             lessonContent = "Nomenclature and basic structures.",
                             lessonDescription = "Transition metals, ligands, and complex ions.",
                             lessonTitle = "Introduction to Coordination Chemistry",
@@ -8010,7 +7686,6 @@ namespace Estigo.Migrations
                             lessonId = 116,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
-                            isLive = false,
                             lessonContent = "Gas laws, Maxwell-Boltzmann distribution.",
                             lessonDescription = "Ideal and real gas behavior.",
                             lessonTitle = "Gases and Kinetic Theory",
@@ -8021,7 +7696,6 @@ namespace Estigo.Migrations
                             lessonId = 117,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
-                            isLive = false,
                             lessonContent = "State functions, calorimetry.",
                             lessonDescription = "Energy, work, heat, enthalpy.",
                             lessonTitle = "Thermodynamics: First Law",
@@ -8032,7 +7706,6 @@ namespace Estigo.Migrations
                             lessonId = 118,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
-                            isLive = false,
                             lessonContent = "Calculating entropy changes, absolute entropy.",
                             lessonDescription = "Entropy, spontaneity, Gibbs free energy.",
                             lessonTitle = "Thermodynamics: Second & Third Laws",
@@ -8043,7 +7716,6 @@ namespace Estigo.Migrations
                             lessonId = 119,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
-                            isLive = false,
                             lessonContent = "Rate laws, activation energy, Arrhenius equation.",
                             lessonDescription = "Reaction rates and mechanisms.",
                             lessonTitle = "Chemical Kinetics",
@@ -8054,7 +7726,6 @@ namespace Estigo.Migrations
                             lessonId = 120,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
-                            isLive = false,
                             lessonContent = "Particle in a box, hydrogen atom basics.",
                             lessonDescription = "Basic principles and applications.",
                             lessonTitle = "Introduction to Quantum Chemistry",
@@ -8065,7 +7736,6 @@ namespace Estigo.Migrations
                             lessonId = 121,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
-                            isLive = false,
                             lessonContent = "Significant figures, precision vs. accuracy, basic stats.",
                             lessonDescription = "Role of analytical chemistry, errors, and data analysis.",
                             lessonTitle = "Introduction & Statistics",
@@ -8076,7 +7746,6 @@ namespace Estigo.Migrations
                             lessonId = 122,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
-                            isLive = false,
                             lessonContent = "Precipitation methods, titration techniques.",
                             lessonDescription = "Classical methods of analysis.",
                             lessonTitle = "Gravimetric and Volumetric Analysis",
@@ -8087,7 +7756,6 @@ namespace Estigo.Migrations
                             lessonId = 123,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
-                            isLive = false,
                             lessonContent = "UV-Vis spectroscopy, Beer-Lambert Law.",
                             lessonDescription = "Interaction of light and matter.",
                             lessonTitle = "Spectroscopic Methods",
@@ -8098,7 +7766,6 @@ namespace Estigo.Migrations
                             lessonId = 124,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
-                            isLive = false,
                             lessonContent = "Gas chromatography (GC) and Liquid chromatography (LC) overview.",
                             lessonDescription = "Principles of separation techniques.",
                             lessonTitle = "Chromatography Basics",
@@ -8109,7 +7776,6 @@ namespace Estigo.Migrations
                             lessonId = 125,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
-                            isLive = false,
                             lessonContent = "Potentiometry, voltammetry basics.",
                             lessonDescription = "Techniques based on electrical properties.",
                             lessonTitle = "Electroanalytical Methods",
@@ -8120,7 +7786,6 @@ namespace Estigo.Migrations
                             lessonId = 126,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
-                            isLive = false,
                             lessonContent = "Peptide bonds, primary to quaternary structure.",
                             lessonDescription = "Structure and properties of amino acids and protein hierarchy.",
                             lessonTitle = "Amino Acids and Proteins",
@@ -8131,7 +7796,6 @@ namespace Estigo.Migrations
                             lessonId = 127,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
-                            isLive = false,
                             lessonContent = "Michaelis-Menten kinetics, enzyme inhibition.",
                             lessonDescription = "Biological catalysts and reaction rates.",
                             lessonTitle = "Enzymes and Enzyme Kinetics",
@@ -8142,7 +7806,6 @@ namespace Estigo.Migrations
                             lessonId = 128,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
-                            isLive = false,
                             lessonContent = "Glycosidic bonds, common sugars.",
                             lessonDescription = "Structure and function of monosaccharides and polysaccharides.",
                             lessonTitle = "Carbohydrates",
@@ -8153,7 +7816,6 @@ namespace Estigo.Migrations
                             lessonId = 129,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
-                            isLive = false,
                             lessonContent = "Fatty acids, triglycerides, phospholipids, fluid mosaic model.",
                             lessonDescription = "Types of lipids and biological membrane structure.",
                             lessonTitle = "Lipids and Membranes",
@@ -8164,7 +7826,6 @@ namespace Estigo.Migrations
                             lessonId = 130,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
-                            isLive = false,
                             lessonContent = "Anabolism vs. catabolism, ATP production.",
                             lessonDescription = "Introduction to major pathways like glycolysis.",
                             lessonTitle = "Metabolic Pathways Overview",
@@ -8175,7 +7836,6 @@ namespace Estigo.Migrations
                             lessonId = 131,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
-                            isLive = false,
                             lessonContent = "Ozone layer, greenhouse effect, air pollution.",
                             lessonDescription = "Composition and reactions in the atmosphere.",
                             lessonTitle = "Atmospheric Chemistry",
@@ -8186,7 +7846,6 @@ namespace Estigo.Migrations
                             lessonId = 132,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
-                            isLive = false,
                             lessonContent = "Water quality parameters (pH, DO), water pollution.",
                             lessonDescription = "Chemical processes in water bodies.",
                             lessonTitle = "Aquatic Chemistry",
@@ -8197,7 +7856,6 @@ namespace Estigo.Migrations
                             lessonId = 133,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
-                            isLive = false,
                             lessonContent = "Nutrient cycles, soil contamination.",
                             lessonDescription = "Composition and chemical reactions in soil.",
                             lessonTitle = "Soil Chemistry",
@@ -8208,7 +7866,6 @@ namespace Estigo.Migrations
                             lessonId = 134,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
-                            isLive = false,
                             lessonContent = "Dose-response relationships, environmental risk.",
                             lessonDescription = "Effects of chemicals on organisms and ecosystems.",
                             lessonTitle = "Toxicology and Risk Assessment",
@@ -8219,7 +7876,6 @@ namespace Estigo.Migrations
                             lessonId = 135,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
-                            isLive = false,
                             lessonContent = "Waste reduction, sustainable chemistry practices.",
                             lessonDescription = "Principles for designing safer chemical processes.",
                             lessonTitle = "Green Chemistry",
@@ -8230,7 +7886,6 @@ namespace Estigo.Migrations
                             lessonId = 136,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
-                            isLive = false,
                             lessonContent = "Operators, eigenfunctions, eigenvalues.",
                             lessonDescription = "Postulates and mathematical framework.",
                             lessonTitle = "Quantum Mechanics Fundamentals",
@@ -8241,7 +7896,6 @@ namespace Estigo.Migrations
                             lessonId = 137,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
-                            isLive = false,
                             lessonContent = "Variation principle, perturbation theory.",
                             lessonDescription = "Techniques for solving the Schrödinger equation.",
                             lessonTitle = "Approximation Methods",
@@ -8252,7 +7906,6 @@ namespace Estigo.Migrations
                             lessonId = 138,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
-                            isLive = false,
                             lessonContent = "Point groups, character tables.",
                             lessonDescription = "Using symmetry to simplify chemical problems.",
                             lessonTitle = "Molecular Symmetry and Group Theory",
@@ -8263,7 +7916,6 @@ namespace Estigo.Migrations
                             lessonId = 139,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
-                            isLive = false,
                             lessonContent = "Hartree-Fock, Density Functional Theory (DFT) basics.",
                             lessonDescription = "Overview of computational techniques.",
                             lessonTitle = "Computational Chemistry Methods",
@@ -8274,7 +7926,6 @@ namespace Estigo.Migrations
                             lessonId = 140,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
-                            isLive = false,
                             lessonContent = "Partition functions, ensemble theory.",
                             lessonDescription = "Connecting microscopic properties to macroscopic behavior.",
                             lessonTitle = "Statistical Thermodynamics",
@@ -8285,7 +7936,6 @@ namespace Estigo.Migrations
                             lessonId = 141,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
-                            isLive = false,
                             lessonContent = "Theme, plot, character, setting, point of view.",
                             lessonDescription = "Tools and techniques for interpreting literature.",
                             lessonTitle = "Introduction to Literary Analysis",
@@ -8296,7 +7946,6 @@ namespace Estigo.Migrations
                             lessonId = 142,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
-                            isLive = false,
                             lessonContent = "Examining notable short stories.",
                             lessonDescription = "Analyzing elements of short fiction.",
                             lessonTitle = "Short Story Analysis",
@@ -8307,7 +7956,6 @@ namespace Estigo.Migrations
                             lessonId = 143,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
-                            isLive = false,
                             lessonContent = "Meter, rhyme, imagery, metaphor, sonnets.",
                             lessonDescription = "Understanding poetic devices and forms.",
                             lessonTitle = "Poetry Fundamentals",
@@ -8318,7 +7966,6 @@ namespace Estigo.Migrations
                             lessonId = 144,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
-                            isLive = false,
                             lessonContent = "Context, structure, and major themes in a sample novel.",
                             lessonDescription = "Approaches to reading and analyzing novels.",
                             lessonTitle = "Novel Study: Introduction",
@@ -8329,7 +7976,6 @@ namespace Estigo.Migrations
                             lessonId = 145,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
-                            isLive = false,
                             lessonContent = "Dialogue, stage directions, character arcs in plays.",
                             lessonDescription = "Elements of dramatic literature.",
                             lessonTitle = "Introduction to Drama",
@@ -8340,7 +7986,6 @@ namespace Estigo.Migrations
                             lessonId = 146,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
-                            isLive = false,
                             lessonContent = "Exercises in tone, perspective, and style.",
                             lessonDescription = "Developing a unique writing style.",
                             lessonTitle = "Finding Your Voice",
@@ -8351,7 +7996,6 @@ namespace Estigo.Migrations
                             lessonId = 147,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
-                            isLive = false,
                             lessonContent = "Character archetypes, backstory, motivations.",
                             lessonDescription = "Creating believable and engaging characters.",
                             lessonTitle = "Character Development",
@@ -8362,7 +8006,6 @@ namespace Estigo.Migrations
                             lessonId = 148,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
-                            isLive = false,
                             lessonContent = "Three-act structure, outlining techniques, pacing.",
                             lessonDescription = "Crafting compelling narratives.",
                             lessonTitle = "Plotting and Structure",
@@ -8373,7 +8016,6 @@ namespace Estigo.Migrations
                             lessonId = 149,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
-                            isLive = false,
                             lessonContent = "Using sensory details, creating atmosphere.",
                             lessonDescription = "Building immersive worlds.",
                             lessonTitle = "Setting and Description",
@@ -8384,7 +8026,6 @@ namespace Estigo.Migrations
                             lessonId = 150,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
-                            isLive = false,
                             lessonContent = "Subtext, character voice in dialogue, formatting.",
                             lessonDescription = "Writing effective and natural dialogue.",
                             lessonTitle = "Dialogue Writing",
@@ -8395,7 +8036,6 @@ namespace Estigo.Migrations
                             lessonId = 151,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
-                            isLive = false,
                             lessonContent = "Identifying parts of speech in sentences.",
                             lessonDescription = "Understanding nouns, verbs, adjectives, etc.",
                             lessonTitle = "Parts of Speech Review",
@@ -8406,7 +8046,6 @@ namespace Estigo.Migrations
                             lessonId = 152,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
-                            isLive = false,
                             lessonContent = "Simple, compound, complex, compound-complex sentences.",
                             lessonDescription = "Clauses, phrases, and sentence types.",
                             lessonTitle = "Sentence Structure",
@@ -8417,7 +8056,6 @@ namespace Estigo.Migrations
                             lessonId = 153,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
-                            isLive = false,
                             lessonContent = "Common punctuation errors and fixes.",
                             lessonDescription = "Correct usage of commas, semicolons, apostrophes, etc.",
                             lessonTitle = "Punctuation Rules",
@@ -8428,7 +8066,6 @@ namespace Estigo.Migrations
                             lessonId = 154,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
-                            isLive = false,
                             lessonContent = "Identifying and correcting frequent mistakes.",
                             lessonDescription = "Subject-verb agreement, pronoun usage, modifiers.",
                             lessonTitle = "Common Grammatical Errors",
@@ -8439,7 +8076,6 @@ namespace Estigo.Migrations
                             lessonId = 155,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
-                            isLive = false,
                             lessonContent = "Topic sentences, transitions, thesis statements.",
                             lessonDescription = "Organizing ideas effectively.",
                             lessonTitle = "Paragraph and Essay Structure",
@@ -8450,7 +8086,6 @@ namespace Estigo.Migrations
                             lessonId = 156,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
-                            isLive = false,
                             lessonContent = "Scanning poetry, identifying different meters.",
                             lessonDescription = "Rhythm, meter, rhyme schemes.",
                             lessonTitle = "Elements of Poetry",
@@ -8461,7 +8096,6 @@ namespace Estigo.Migrations
                             lessonId = 157,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
-                            isLive = false,
                             lessonContent = "Identifying and interpreting figurative language.",
                             lessonDescription = "Metaphor, simile, personification, hyperbole.",
                             lessonTitle = "Figurative Language",
@@ -8472,7 +8106,6 @@ namespace Estigo.Migrations
                             lessonId = 158,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
-                            isLive = false,
                             lessonContent = "Analyzing the musicality of poetry.",
                             lessonDescription = "Alliteration, assonance, consonance, onomatopoeia.",
                             lessonTitle = "Sound Devices",
@@ -8483,7 +8116,6 @@ namespace Estigo.Migrations
                             lessonId = 159,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
-                            isLive = false,
                             lessonContent = "Recognizing and analyzing different poetic structures.",
                             lessonDescription = "Sonnets, haikus, villanelles, free verse.",
                             lessonTitle = "Poetic Forms",
@@ -8494,7 +8126,6 @@ namespace Estigo.Migrations
                             lessonId = 160,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
-                            isLive = false,
                             lessonContent = "Close reading techniques and thematic analysis.",
                             lessonDescription = "Developing analytical arguments about poetry.",
                             lessonTitle = "Interpreting Poems",
@@ -8505,7 +8136,6 @@ namespace Estigo.Migrations
                             lessonId = 161,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
-                            isLive = false,
                             lessonContent = "Key periods and influential playwrights.",
                             lessonDescription = "From ancient Greek tragedy to modern drama.",
                             lessonTitle = "History of Theater",
@@ -8516,7 +8146,6 @@ namespace Estigo.Migrations
                             lessonId = 162,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
-                            isLive = false,
                             lessonContent = "Aristotle's Poetics and dramatic structure.",
                             lessonDescription = "Plot, character, theme, dialogue, spectacle.",
                             lessonTitle = "Elements of Drama",
@@ -8527,7 +8156,6 @@ namespace Estigo.Migrations
                             lessonId = 163,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
-                            isLive = false,
                             lessonContent = "Visualizing the play and interpreting character motivations.",
                             lessonDescription = "Understanding stage directions and subtext.",
                             lessonTitle = "Reading a Play",
@@ -8538,7 +8166,6 @@ namespace Estigo.Migrations
                             lessonId = 164,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
-                            isLive = false,
                             lessonContent = "Characteristics and examples of different genres.",
                             lessonDescription = "Tragedy, comedy, tragicomedy, melodrama.",
                             lessonTitle = "Major Dramatic Genres",
@@ -8549,7 +8176,6 @@ namespace Estigo.Migrations
                             lessonId = 165,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
-                            isLive = false,
                             lessonContent = "Overview of the process from script to stage.",
                             lessonDescription = "Roles in theater (director, actor, designer).",
                             lessonTitle = "Theater Production Basics",
@@ -8560,7 +8186,6 @@ namespace Estigo.Migrations
                             lessonId = 166,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
-                            isLive = false,
                             lessonContent = "Brainstorming techniques, prompts, observation.",
                             lessonDescription = "Finding inspiration for fiction stories.",
                             lessonTitle = "Generating Ideas",
@@ -8571,7 +8196,6 @@ namespace Estigo.Migrations
                             lessonId = 167,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
-                            isLive = false,
                             lessonContent = "Impact of POV choices on the story.",
                             lessonDescription = "Choosing the right perspective (1st, 3rd limited/omniscient).",
                             lessonTitle = "Point of View and Narrative Voice",
@@ -8582,7 +8206,6 @@ namespace Estigo.Migrations
                             lessonId = 168,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
-                            isLive = false,
                             lessonContent = "Techniques for showing emotion and action.",
                             lessonDescription = "Using concrete details to engage readers.",
                             lessonTitle = "Show, Don't Tell",
@@ -8593,7 +8216,6 @@ namespace Estigo.Migrations
                             lessonId = 169,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
-                            isLive = false,
                             lessonContent = "Scene structure, pacing within scenes, transitions.",
                             lessonDescription = "Building blocks of a story.",
                             lessonTitle = "Crafting Scenes",
@@ -8604,7 +8226,6 @@ namespace Estigo.Migrations
                             lessonId = 170,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
-                            isLive = false,
                             lessonContent = "Self-editing, seeking feedback, common pitfalls.",
                             lessonDescription = "Techniques for improving a draft.",
                             lessonTitle = "Revision Strategies",
@@ -8615,7 +8236,6 @@ namespace Estigo.Migrations
                             lessonId = 171,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
-                            isLive = false,
                             lessonContent = "Understanding different forms and their conventions.",
                             lessonDescription = "Memoir, biography, essays, journalism.",
                             lessonTitle = "Types of Non-fiction",
@@ -8626,7 +8246,6 @@ namespace Estigo.Migrations
                             lessonId = 172,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
-                            isLive = false,
                             lessonContent = "Interviews, archival research, evaluating sources.",
                             lessonDescription = "Gathering information for non-fiction.",
                             lessonTitle = "Research Techniques",
@@ -8637,7 +8256,6 @@ namespace Estigo.Migrations
                             lessonId = 173,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
-                            isLive = false,
                             lessonContent = "Chronological, thematic, and narrative structures.",
                             lessonDescription = "Organizing factual material effectively.",
                             lessonTitle = "Structuring Non-fiction",
@@ -8648,7 +8266,6 @@ namespace Estigo.Migrations
                             lessonId = 174,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
-                            isLive = false,
                             lessonContent = "Using vivid language, maintaining accuracy.",
                             lessonDescription = "Engaging readers with factual content.",
                             lessonTitle = "Writing with Clarity and Style",
@@ -8659,7 +8276,16 @@ namespace Estigo.Migrations
                             lessonId = 175,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
-                            isLive = false,
+                            lessonContent = "Fact-checking, privacy concerns, representation.",
+                            lessonDescription = "Responsibilities when writing about real people and events.",
+                            lessonTitle = "Ethics in Non-fiction",
+                            lessonVideo = "https://estigo.tryasp.net/vv.mp4"
+                        },
+                        new
+                        {
+                            lessonId = 176,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            courseId = 35,
                             lessonContent = "Fact-checking, privacy concerns, representation.",
                             lessonDescription = "Responsibilities when writing about real people and events.",
                             lessonTitle = "Ethics in Non-fiction",
@@ -8802,11 +8428,14 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("MyCourse", b =>
                 {
-                    b.Property<int>("MycourseId")
+                    b.Property<int>("MyCourseId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MycourseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MyCourseId"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("datetime2");
@@ -8815,17 +8444,11 @@ namespace Estigo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("attendance")
-                        .HasColumnType("int");
+                    b.HasKey("MyCourseId");
 
-                    b.Property<int>("courseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MycourseId");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("StudentId");
-
-                    b.HasIndex("courseId");
 
                     b.ToTable("MyCourses", (string)null);
                 });
@@ -8874,15 +8497,15 @@ namespace Estigo.Migrations
                 {
                     b.HasBaseType("Estigo.Models.ApplicationUser");
 
+                    b.Property<int?>("CourseId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subject")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("courseId")
-                        .HasColumnType("int");
 
                     b.Property<string>("image")
                         .HasColumnType("nvarchar(max)");
@@ -8894,7 +8517,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3558278b-c9de-40d8-9830-97356d2e7c8b",
+                            ConcurrencyStamp = "c32dd088-7fc1-4718-b373-66053b55ae32",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math1@estigo.com",
                             EmailConfirmed = false,
@@ -8905,7 +8528,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "15e46b43-c4a6-422f-a58c-815ec11c05dc",
+                            SecurityStamp = "90752e73-0507-4718-ad5a-13a84513af20",
                             TwoFactorEnabled = false,
                             UserName = "math1@estigo.com",
                             Notes = "Expert in Algebra",
@@ -8916,7 +8539,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "af2b6860-1724-4c50-9a11-070c9287859e",
+                            ConcurrencyStamp = "e0a2db82-3682-458f-828e-d230bacf9991",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math2@estigo.com",
                             EmailConfirmed = false,
@@ -8927,7 +8550,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "bf0f7dea-97d1-4658-be63-af5a298e004d",
+                            SecurityStamp = "78efc31a-ad7e-4b91-91af-56479b83405b",
                             TwoFactorEnabled = false,
                             UserName = "math2@estigo.com",
                             Notes = "Specialist in Calculus",
@@ -8938,7 +8561,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2ea70051-bfe2-4e30-8153-c571ea3dfbc4",
+                            ConcurrencyStamp = "0e6f5f42-0f98-496f-9ab7-7ac92b22fc04",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys1@estigo.com",
                             EmailConfirmed = false,
@@ -8949,7 +8572,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "4823a348-a891-4e52-91ab-bda8a55e26ad",
+                            SecurityStamp = "70d808a3-abd5-427e-b6ac-ed7a8261549b",
                             TwoFactorEnabled = false,
                             UserName = "phys1@estigo.com",
                             Notes = "Specialist in Mechanics",
@@ -8960,7 +8583,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "07613041-6fb7-43a8-9fbd-800b435d52d5",
+                            ConcurrencyStamp = "59394da2-f9d2-4ba5-b7fe-355003cdd78f",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys2@estigo.com",
                             EmailConfirmed = false,
@@ -8971,7 +8594,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "af8d33e9-8397-456b-811c-69f0b200edba",
+                            SecurityStamp = "aea28903-1cd4-4816-8df7-341520b92031",
                             TwoFactorEnabled = false,
                             UserName = "phys2@estigo.com",
                             Notes = "Expert in Electromagnetism",
@@ -8982,7 +8605,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "baecd9af-95a4-475e-a085-dcdfe86ab3c2",
+                            ConcurrencyStamp = "9eabc88f-324c-460d-ac40-3593e848d099",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys3@estigo.com",
                             EmailConfirmed = false,
@@ -8993,7 +8616,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "d7ee56e0-4624-4790-ab54-4d60c8019752",
+                            SecurityStamp = "ef6390b1-8835-49b2-a9db-8dd271e35b95",
                             TwoFactorEnabled = false,
                             UserName = "phys3@estigo.com",
                             Notes = "Enthusiast in Quantum Physics",
@@ -9004,7 +8627,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ef7aea35-0b65-4de6-a9b5-c60f8b882a17",
+                            ConcurrencyStamp = "a0195194-1e65-4747-b0e2-c536bf62afb7",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio1@estigo.com",
                             EmailConfirmed = false,
@@ -9015,7 +8638,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "626d7503-6c81-47a7-99f3-9effcc712bbe",
+                            SecurityStamp = "0326b4a7-7452-4109-be95-e80f0b3fafdb",
                             TwoFactorEnabled = false,
                             UserName = "bio1@estigo.com",
                             Notes = "Expert in Cell Biology",
@@ -9026,7 +8649,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e0a475c8-efae-40fc-b374-ef631f83144b",
+                            ConcurrencyStamp = "db230d97-ef84-402a-b4e9-a3ec18996aec",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio2@estigo.com",
                             EmailConfirmed = false,
@@ -9037,7 +8660,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "f900cd1e-2c89-41e0-9d3c-0e51ce3347d4",
+                            SecurityStamp = "986e63cf-1d1d-4996-aa03-a685afaf0317",
                             TwoFactorEnabled = false,
                             UserName = "bio2@estigo.com",
                             Notes = "Specialist in Genetics",
@@ -9048,7 +8671,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8f2ab604-b252-4367-899f-cb8d4858a427",
+                            ConcurrencyStamp = "0c38ff8b-f68c-46e7-a0ec-4d6b71ad54a9",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem1@estigo.com",
                             EmailConfirmed = false,
@@ -9059,7 +8682,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "48cf7a12-e18e-4389-a7ee-7c3a477865a0",
+                            SecurityStamp = "375f3be5-9e86-47d3-a3a2-465e17b4b9db",
                             TwoFactorEnabled = false,
                             UserName = "chem1@estigo.com",
                             Notes = "Passionate about Organic Chemistry",
@@ -9070,7 +8693,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "96674dec-e8c4-4635-b8b4-3080d0e0efa7",
+                            ConcurrencyStamp = "c1d5c6e4-6a5b-4ccb-8298-f40a8b74c3df",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem2@estigo.com",
                             EmailConfirmed = false,
@@ -9081,7 +8704,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "95cd6822-6ef9-44da-ad35-1b0a28124830",
+                            SecurityStamp = "7d821ecc-6a34-45f1-bbcf-4f1bbdae8a57",
                             TwoFactorEnabled = false,
                             UserName = "chem2@estigo.com",
                             Notes = "Expert in Inorganic Chemistry",
@@ -9092,7 +8715,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t10",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dbd927cb-f0b4-4b9e-a302-d1661ef2b0a7",
+                            ConcurrencyStamp = "13f4cb85-3619-4733-a3d9-f74ea9620db2",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem3@estigo.com",
                             EmailConfirmed = false,
@@ -9103,7 +8726,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "dff40f53-b039-4d4d-9bb6-b0d4f9503fa3",
+                            SecurityStamp = "dbb9e960-77bd-4124-8884-248006a266cf",
                             TwoFactorEnabled = false,
                             UserName = "chem3@estigo.com",
                             Notes = "Skilled in Analytical Chemistry",
@@ -9114,7 +8737,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t11",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c355c88b-0e0f-43d2-a740-837004a75a1e",
+                            ConcurrencyStamp = "e895e5c1-e6c3-420d-9598-fd8272f33a56",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem4@estigo.com",
                             EmailConfirmed = false,
@@ -9125,7 +8748,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM4@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "90904b21-9409-46c8-8c63-a8160af44400",
+                            SecurityStamp = "1cf77523-d273-467d-9e42-3d31423f74c2",
                             TwoFactorEnabled = false,
                             UserName = "chem4@estigo.com",
                             Notes = "Focused on Physical Chemistry",
@@ -9136,7 +8759,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t12",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f3cb186e-e344-4297-8aeb-e38db9eb5013",
+                            ConcurrencyStamp = "a57ff863-c4b4-452a-a0c7-4e8ddd95e343",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng1@estigo.com",
                             EmailConfirmed = false,
@@ -9147,7 +8770,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "e5b63502-0cb2-4d81-a9d3-aa9f5538de9a",
+                            SecurityStamp = "dbbc5bff-d3a7-4a2f-bacd-646f5eaa3190",
                             TwoFactorEnabled = false,
                             UserName = "eng1@estigo.com",
                             Notes = "Literature Specialist",
@@ -9158,7 +8781,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t13",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "76166f32-af89-4be1-8029-1603fcd8d71c",
+                            ConcurrencyStamp = "ed392998-5f52-4203-97f8-61b91da7a2b4",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng2@estigo.com",
                             EmailConfirmed = false,
@@ -9169,7 +8792,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "8bfcaf0f-8f3f-4e45-977d-1895a2e62817",
+                            SecurityStamp = "690ee055-8fdf-4e78-a890-64dcffe41884",
                             TwoFactorEnabled = false,
                             UserName = "eng2@estigo.com",
                             Notes = "Expert in Creative Writing",
@@ -9220,32 +8843,21 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("Estigo.Models.Payment", b =>
                 {
+                    b.HasOne("Estigo.Models.Course", "Course")
+                        .WithMany("Payments")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Estigo.Models.Student", "Student")
                         .WithMany("Payments")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Estigo.Models.Course", "Course")
-                        .WithMany("Payments")
-                        .HasForeignKey("courseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Course");
 
                     b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("Estigo.Models.QuestionAnswer", b =>
-                {
-                    b.HasOne("Estigo.Models.StudentExamResult", "StudentExamResult")
-                        .WithMany("Answers")
-                        .HasForeignKey("StudentExamResultId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("StudentExamResult");
                 });
 
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
@@ -9331,15 +8943,15 @@ namespace Estigo.Migrations
 
             modelBuilder.Entity("MyCourse", b =>
                 {
-                    b.HasOne("Estigo.Models.Student", "Student")
+                    b.HasOne("Estigo.Models.Course", "Course")
                         .WithMany()
-                        .HasForeignKey("StudentId")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Estigo.Models.Course", "Course")
+                    b.HasOne("Estigo.Models.Student", "Student")
                         .WithMany()
-                        .HasForeignKey("courseId")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -9363,11 +8975,6 @@ namespace Estigo.Migrations
             modelBuilder.Entity("Estigo.Models.Exam", b =>
                 {
                     b.Navigation("Questions");
-                });
-
-            modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
-                {
-                    b.Navigation("Answers");
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>

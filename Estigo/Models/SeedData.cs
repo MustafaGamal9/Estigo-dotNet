@@ -341,9 +341,7 @@ namespace Estigo.Models
                 new lesson { lessonId = 172, lessonTitle = "Research Techniques", lessonDescription = "Gathering information for non-fiction.", lessonContent = "Interviews, archival research, evaluating sources.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
                 new lesson { lessonId = 173, lessonTitle = "Structuring Non-fiction", lessonDescription = "Organizing factual material effectively.", lessonContent = "Chronological, thematic, and narrative structures.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
                 new lesson { lessonId = 174, lessonTitle = "Writing with Clarity and Style", lessonDescription = "Engaging readers with factual content.", lessonContent = "Using vivid language, maintaining accuracy.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
-                new lesson { lessonId = 175, lessonTitle = "Ethics in Non-fiction", lessonDescription = "Responsibilities when writing about real people and events.", lessonContent = "Fact-checking, privacy concerns, representation.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 },
-                new lesson { lessonId = 176, lessonTitle = "Ethics in Non-fiction", lessonDescription = "Responsibilities when writing about real people and events.", lessonContent = "Fact-checking, privacy concerns, representation.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 }
-
+                new lesson { lessonId = 175, lessonTitle = "Ethics in Non-fiction", lessonDescription = "Responsibilities when writing about real people and events.", lessonContent = "Fact-checking, privacy concerns, representation.", lessonVideo = "https://estigo.tryasp.net/vv.mp4", courseId = 35 }
                 );
 
             // Ensure the seedDate variable is accessible here

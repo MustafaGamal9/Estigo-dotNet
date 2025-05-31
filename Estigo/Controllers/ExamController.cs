@@ -139,40 +139,53 @@ namespace Estigo.Controllers
 
             return Ok(questions);
         }
+
+
         [HttpPost("SubmitQuizScore")]
-        public async Task<ActionResult<object>> SubmitQuizScore([FromBody] SubmitQuizAnswerDTO dto)
+        public async Task<ActionResult<object>> SubmitQuizScore([FromBody] SubmitExamResultDto dto)
         {
+            // Find the exam by ID
             var exam = await context.Exams.FindAsync(dto.ExamId);
             if (exam == null)
                 return NotFound("Exam not found.");
 
+            // Find the student by ID
             var student = await context.Students.FindAsync(dto.StudentId);
             if (student == null)
                 return NotFound("Student not found.");
 
-            // Set the current date for the exam attempt
+            // Create a new StudentExamResult object and map QuestionAnswers inside it
             var result = new StudentExamResult
             {
                 StudentId = dto.StudentId,
                 ExamId = dto.ExamId,
                 Score = dto.Score,
-                ExamDate = DateTime.Now
+                ExamDate = DateTime.Now,
+                Answers = dto.QuestionAnswers.Select(qa => new QuestionAnswer
+                {
+                    QuestionId = qa.QuestionId,
+                    SelectedOption = qa.SelectedOption,
+                    IsCorrect = qa.IsCorrect
+                }).ToList()
             };
 
+            // Add the exam result (with answers) to the database
             context.StudentExamResults.Add(result);
 
-            // If this is a final exam, increment the attempts counter
+            // If the exam is final, increment the attempts count
             if (exam.final)
             {
                 exam.attempts++;
                 context.Entry(exam).State = EntityState.Modified;
             }
 
+            // Save all changes in one transaction
             await context.SaveChangesAsync();
 
+            // Return success response with details
             return Ok(new
             {
-                Message = "Quiz score submitted successfully.",
+                Message = "Quiz score and answers submitted successfully.",
                 Score = dto.Score,
                 IsFinalExam = exam.final,
                 Attempts = exam.final ? exam.attempts : 0
@@ -180,33 +193,9 @@ namespace Estigo.Controllers
         }
 
 
-        //// POST: api/StudentExamResults/SubmitResult
-        //[HttpPost("SubmitResult")]
-        //public async Task<ActionResult<StudentExamResult>> PostStudentExamResult([FromBody] SubmitExamResultDto dto)
-        //{
-        //    // تأكد من وجود الطالب والامتحان
-        //    var student = await context.Students.FindAsync(dto.StudentId);
-        //    var exam = await context.Exams.FindAsync(dto.ExamId);
 
-        //    if (student == null || exam == null)
-        //    {
-        //        return BadRequest("Student or Exam not found.");
-        //    }
 
-        //    // أنشئ النتيجة
-        //    var result = new StudentExamResult
-        //    {
-        //        StudentId = dto.StudentId,
-        //        ExamId = dto.ExamId,
-        //        Score = dto.Score,
-        //        ExamDate = DateTime.Now // أو لو عندك وقت مخصص ممكن تستلمه كمان من الـ DTO
-        //    };
 
-        //    context.StudentExamResults.Add(result);
-        //    await context.SaveChangesAsync();
-
-        //    return Ok("Grade stored successfully");
-        //}
         [HttpGet("GetExamsByStudentId/{studentId}")]
         public async Task<ActionResult<IEnumerable<StudentExamHistoryDto>>> GetExamsByStudentId(string studentId)
         {
@@ -239,13 +228,6 @@ namespace Estigo.Controllers
 
             return Ok(distinctResults);
         }
-
-        
     }
-    }
-
-
-
-
- 
+}
 

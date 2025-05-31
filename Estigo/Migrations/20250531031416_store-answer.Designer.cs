@@ -4,6 +4,7 @@ using Estigo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    partial class EstigoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250531031416_store-answer")]
+    partial class storeanswer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -6630,34 +6633,6 @@ namespace Estigo.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("Estigo.Models.QuestionAnswer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsCorrect")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SelectedOption")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StudentExamResultId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentExamResultId");
-
-                    b.ToTable("QuestionAnswer");
-                });
-
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
                 {
                     b.Property<int>("Id")
@@ -8894,7 +8869,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3558278b-c9de-40d8-9830-97356d2e7c8b",
+                            ConcurrencyStamp = "f284b80d-3a3f-462e-9f9a-fe1f2fbe3d8e",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math1@estigo.com",
                             EmailConfirmed = false,
@@ -8905,7 +8880,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "15e46b43-c4a6-422f-a58c-815ec11c05dc",
+                            SecurityStamp = "2749c280-1700-46ac-83ea-bcedf2d02a78",
                             TwoFactorEnabled = false,
                             UserName = "math1@estigo.com",
                             Notes = "Expert in Algebra",
@@ -8916,7 +8891,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "af2b6860-1724-4c50-9a11-070c9287859e",
+                            ConcurrencyStamp = "945cacd5-545a-4d40-9d0e-59be60df2fd2",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "math2@estigo.com",
                             EmailConfirmed = false,
@@ -8927,7 +8902,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "MATH2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "bf0f7dea-97d1-4658-be63-af5a298e004d",
+                            SecurityStamp = "b82c6673-a3ac-40b0-8f51-239d34caae3c",
                             TwoFactorEnabled = false,
                             UserName = "math2@estigo.com",
                             Notes = "Specialist in Calculus",
@@ -8938,7 +8913,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2ea70051-bfe2-4e30-8153-c571ea3dfbc4",
+                            ConcurrencyStamp = "718312ea-e0c0-4349-b0b5-6d826c8c4baf",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys1@estigo.com",
                             EmailConfirmed = false,
@@ -8949,7 +8924,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "4823a348-a891-4e52-91ab-bda8a55e26ad",
+                            SecurityStamp = "528d5215-57c8-4f5c-83f3-1131d1df3ad1",
                             TwoFactorEnabled = false,
                             UserName = "phys1@estigo.com",
                             Notes = "Specialist in Mechanics",
@@ -8960,7 +8935,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "07613041-6fb7-43a8-9fbd-800b435d52d5",
+                            ConcurrencyStamp = "7767a88c-49c6-4ddc-b7e9-75cf3d6f7ae4",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys2@estigo.com",
                             EmailConfirmed = false,
@@ -8971,7 +8946,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "af8d33e9-8397-456b-811c-69f0b200edba",
+                            SecurityStamp = "7d7bcf04-4536-49a3-ae99-14323f513789",
                             TwoFactorEnabled = false,
                             UserName = "phys2@estigo.com",
                             Notes = "Expert in Electromagnetism",
@@ -8982,7 +8957,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "baecd9af-95a4-475e-a085-dcdfe86ab3c2",
+                            ConcurrencyStamp = "741cfbd2-16d5-4c8e-94fa-eb1a4a6fcfd5",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "phys3@estigo.com",
                             EmailConfirmed = false,
@@ -8993,7 +8968,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "PHYS3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "d7ee56e0-4624-4790-ab54-4d60c8019752",
+                            SecurityStamp = "078a989e-18a2-4ccd-9941-c5edbfea9448",
                             TwoFactorEnabled = false,
                             UserName = "phys3@estigo.com",
                             Notes = "Enthusiast in Quantum Physics",
@@ -9004,7 +8979,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ef7aea35-0b65-4de6-a9b5-c60f8b882a17",
+                            ConcurrencyStamp = "3afc2838-7734-4db6-b5b1-d777651da6e7",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio1@estigo.com",
                             EmailConfirmed = false,
@@ -9015,7 +8990,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "626d7503-6c81-47a7-99f3-9effcc712bbe",
+                            SecurityStamp = "d856994e-8d9c-4097-8185-ae456d0b269d",
                             TwoFactorEnabled = false,
                             UserName = "bio1@estigo.com",
                             Notes = "Expert in Cell Biology",
@@ -9026,7 +9001,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e0a475c8-efae-40fc-b374-ef631f83144b",
+                            ConcurrencyStamp = "421be4e3-944f-4383-b2f7-24f7a79d2180",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bio2@estigo.com",
                             EmailConfirmed = false,
@@ -9037,7 +9012,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "BIO2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "f900cd1e-2c89-41e0-9d3c-0e51ce3347d4",
+                            SecurityStamp = "e059bc59-c77b-4007-895c-7ca1cfafeaf7",
                             TwoFactorEnabled = false,
                             UserName = "bio2@estigo.com",
                             Notes = "Specialist in Genetics",
@@ -9048,7 +9023,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8f2ab604-b252-4367-899f-cb8d4858a427",
+                            ConcurrencyStamp = "a45d3e60-d35d-4628-8fe2-a1aad535f707",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem1@estigo.com",
                             EmailConfirmed = false,
@@ -9059,7 +9034,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "48cf7a12-e18e-4389-a7ee-7c3a477865a0",
+                            SecurityStamp = "1927c8c8-2d1c-4f43-99b8-541d71ad280a",
                             TwoFactorEnabled = false,
                             UserName = "chem1@estigo.com",
                             Notes = "Passionate about Organic Chemistry",
@@ -9070,7 +9045,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "96674dec-e8c4-4635-b8b4-3080d0e0efa7",
+                            ConcurrencyStamp = "2778109e-23fd-4e98-b678-5aa660e41db7",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem2@estigo.com",
                             EmailConfirmed = false,
@@ -9081,7 +9056,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "95cd6822-6ef9-44da-ad35-1b0a28124830",
+                            SecurityStamp = "73743cff-43c6-492e-9015-48bd015f1ebd",
                             TwoFactorEnabled = false,
                             UserName = "chem2@estigo.com",
                             Notes = "Expert in Inorganic Chemistry",
@@ -9092,7 +9067,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t10",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dbd927cb-f0b4-4b9e-a302-d1661ef2b0a7",
+                            ConcurrencyStamp = "d19967bf-a6a8-4042-8172-27d68f932666",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem3@estigo.com",
                             EmailConfirmed = false,
@@ -9103,7 +9078,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM3@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "dff40f53-b039-4d4d-9bb6-b0d4f9503fa3",
+                            SecurityStamp = "5d092196-c15c-4a85-ac95-40117e0254eb",
                             TwoFactorEnabled = false,
                             UserName = "chem3@estigo.com",
                             Notes = "Skilled in Analytical Chemistry",
@@ -9114,7 +9089,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t11",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c355c88b-0e0f-43d2-a740-837004a75a1e",
+                            ConcurrencyStamp = "013f9766-7ba7-4b2b-9732-9384c25fbad9",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "chem4@estigo.com",
                             EmailConfirmed = false,
@@ -9125,7 +9100,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "CHEM4@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "90904b21-9409-46c8-8c63-a8160af44400",
+                            SecurityStamp = "f7641f40-35b3-4772-8894-4ff4876e396a",
                             TwoFactorEnabled = false,
                             UserName = "chem4@estigo.com",
                             Notes = "Focused on Physical Chemistry",
@@ -9136,7 +9111,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t12",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f3cb186e-e344-4297-8aeb-e38db9eb5013",
+                            ConcurrencyStamp = "d2d26f35-dbbf-4dcf-b283-64eb36b834b1",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng1@estigo.com",
                             EmailConfirmed = false,
@@ -9147,7 +9122,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG1@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "e5b63502-0cb2-4d81-a9d3-aa9f5538de9a",
+                            SecurityStamp = "e7191a41-ed1e-4b1c-a715-8c667d548415",
                             TwoFactorEnabled = false,
                             UserName = "eng1@estigo.com",
                             Notes = "Literature Specialist",
@@ -9158,7 +9133,7 @@ namespace Estigo.Migrations
                         {
                             Id = "t13",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "76166f32-af89-4be1-8029-1603fcd8d71c",
+                            ConcurrencyStamp = "b65748fd-31d1-40f1-bf3a-4c74afbe3ee4",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eng2@estigo.com",
                             EmailConfirmed = false,
@@ -9169,7 +9144,7 @@ namespace Estigo.Migrations
                             NormalizedUserName = "ENG2@ESTIGO.COM",
                             PhoneNumberConfirmed = false,
                             Role = "Teacher",
-                            SecurityStamp = "8bfcaf0f-8f3f-4e45-977d-1895a2e62817",
+                            SecurityStamp = "7af934b1-5ffb-4124-90f3-e0511e88abdb",
                             TwoFactorEnabled = false,
                             UserName = "eng2@estigo.com",
                             Notes = "Expert in Creative Writing",
@@ -9237,17 +9212,6 @@ namespace Estigo.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("Estigo.Models.QuestionAnswer", b =>
-                {
-                    b.HasOne("Estigo.Models.StudentExamResult", "StudentExamResult")
-                        .WithMany("Answers")
-                        .HasForeignKey("StudentExamResultId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("StudentExamResult");
-                });
-
             modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
                 {
                     b.HasOne("Estigo.Models.Exam", "Exam")
@@ -9261,6 +9225,52 @@ namespace Estigo.Migrations
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.OwnsMany("Estigo.Models.QuestionAnswer", "Answers", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<bool>("IsCorrect")
+                                .HasColumnType("bit");
+
+                            b1.Property<int>("QuestionId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("SelectedOption")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("StudentExamResultId")
+                                .HasColumnType("int");
+
+                            b1.Property<int>("StudentExamResultId1")
+                                .HasColumnType("int");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("StudentExamResultId");
+
+                            b1.HasIndex("StudentExamResultId1");
+
+                            b1.ToTable("QuestionAnswers");
+
+                            b1.WithOwner()
+                                .HasForeignKey("StudentExamResultId");
+
+                            b1.HasOne("Estigo.Models.StudentExamResult", "StudentExamResult")
+                                .WithMany()
+                                .HasForeignKey("StudentExamResultId1")
+                                .OnDelete(DeleteBehavior.Cascade)
+                                .IsRequired();
+
+                            b1.Navigation("StudentExamResult");
+                        });
+
+                    b.Navigation("Answers");
 
                     b.Navigation("Exam");
 
@@ -9363,11 +9373,6 @@ namespace Estigo.Migrations
             modelBuilder.Entity("Estigo.Models.Exam", b =>
                 {
                     b.Navigation("Questions");
-                });
-
-            modelBuilder.Entity("Estigo.Models.StudentExamResult", b =>
-                {
-                    b.Navigation("Answers");
                 });
 
             modelBuilder.Entity("Estigo.Models.lesson", b =>

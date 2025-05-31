@@ -69,6 +69,8 @@ namespace Estigo
             builder.Services.AddScoped<UserManager<ApplicationUser>>();
             builder.Services.AddScoped<SignInManager<ApplicationUser>>();
 
+
+
             // ✅ 6. Configure JWT Authentication
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -134,6 +136,7 @@ namespace Estigo
 
             // ✅ 9. Build the app
             var app = builder.Build();
+
 
             // ✅ 10. Configure middleware
             app.UseSwagger();
