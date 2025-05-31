@@ -190,5 +190,56 @@ namespace Estigo.Controllers
 
             return Ok(new { ExamId = exam.Id, Message = "Exam created successfully." });
         }
+
+        [HttpGet("QuizResults/{quizId}")]
+        public async Task<IActionResult> GetQuizResults(int quizId)
+        {
+            var results = await _context.StudentExamResults
+                .Where(r => r.ExamId == quizId)
+                .Include(r => r.Answers)
+                .Select(r => new
+                {
+                    StudentId = r.StudentId,
+                    StudentName = _context.Users.FirstOrDefault(u => u.Id == r.StudentId).UserName,
+                    Score = r.Score,
+                    TotalQuestions = r.Answers.Count, // Fix: Replace 'CorrectAnswers' with 'Answers.Count'  
+                    DateTaken = r.ExamDate
+                })
+                .ToListAsync();
+
+            return Ok(results);
+        }
+
+
+        [HttpGet("exam/{examId}/student/{studentId}/answers")]
+        public async Task<IActionResult> GetStudentAnswersOnly(int examId, string studentId)
+        {
+            var result = await _context.StudentExamResults
+                .Where(r => r.ExamId == examId && r.StudentId == studentId)
+                .Include(r => r.Answers)
+                .Include(r => r.Student)
+                .FirstOrDefaultAsync();
+
+            if (result == null)
+                return NotFound("No result found for this student and exam.");
+
+            var response = new
+            {
+                StudentId = result.Student.Id,
+                StudentName = result.Student.Name, 
+                Score = result.Score,
+                ExamDate = result.ExamDate,
+                Answers = result.Answers.Select(a => new
+                {
+                    a.QuestionId,
+                    a.SelectedOption,
+                    a.IsCorrect
+                }).ToList()
+            };
+
+            return Ok(response);
+        }
+
+
     }
 }
