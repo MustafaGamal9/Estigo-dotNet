@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Estigo.Migrations
 {
     /// <inheritdoc />
-    public partial class seedData : Migration
+    public partial class addSeedData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,223 +30,223 @@ namespace Estigo.Migrations
                 columns: new[] { "courseId", "Available", "CategoryId", "CourseTitle", "CreatedAt", "Description", "Logo", "Price", "Status", "TeacherId" },
                 values: new object[,]
                 {
-                    { 1, true, 1, "Algebra | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to algebraic concepts", "https://estigo.tryasp.net/u1.jpg", 199, 1, "ba60d4a7-c9d5-46ef-8199-be470cf60bcb" },
-                    { 2, true, 1, "Calculus | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of differential calculus", "https://estigo.tryasp.net/u2.jpeg", 199, 1, "ba60d4a7-c9d5-46ef-8199-be470cf60bcb" },
-                    { 3, true, 1, "Geometry | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of geometric shapes and theorems", "https://estigo.tryasp.net/u3.jpeg", 189, 1, "ba60d4a7-c9d5-46ef-8199-be470cf60bcb" },
-                    { 4, true, 1, "Trigonometry | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Understanding angles and trigonometric functions", "https://estigo.tryasp.net/u4.jpeg", 189, 1, "ba60d4a7-c9d5-46ef-8199-be470cf60bcb" },
-                    { 5, true, 1, "Statistics | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to data analysis and probability", "https://estigo.tryasp.net/u5.jpeg", 179, 1, "ba60d4a7-c9d5-46ef-8199-be470cf60bcb" },
-                    { 6, true, 1, "Probability | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Exploring probability theories and applications", "https://estigo.tryasp.net/u6.jpeg", 179, 1, "ba60d4a7-c9d5-46ef-8199-be470cf60bcb" },
-                    { 7, true, 1, "Discrete Math | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of logic, set theory, and combinatorics", "https://estigo.tryasp.net/u7.jpeg", 189, 1, "ba60d4a7-c9d5-46ef-8199-be470cf60bcb" },
-                    { 8, true, 2, "Mechanics | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to Newtonian mechanics", "https://estigo.tryasp.net/f1.jpg", 149, 1, "23a875f7-2ab5-40e1-9f31-476068e04332" },
-                    { 9, true, 2, "Electricity | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of electric circuits and fields", "https://estigo.tryasp.net/f2.jpg", 149, 1, "23a875f7-2ab5-40e1-9f31-476068e04332" },
-                    { 10, true, 2, "Magnetism | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Principles of magnetic forces and fields", "https://estigo.tryasp.net/f3.jpg", 159, 1, "23a875f7-2ab5-40e1-9f31-476068e04332" },
-                    { 11, true, 2, "Optics | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of light behavior and properties", "https://estigo.tryasp.net/f4.jpeg", 159, 1, "23a875f7-2ab5-40e1-9f31-476068e04332" },
-                    { 12, true, 2, "Thermodynamics | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of heat and energy", "https://estigo.tryasp.net/f5.jpeg", 169, 1, "23a875f7-2ab5-40e1-9f31-476068e04332" },
-                    { 13, true, 2, "Quantum Physics | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to quantum theory", "https://estigo.tryasp.net/f6.jpeg", 169, 1, "23a875f7-2ab5-40e1-9f31-476068e04332" },
-                    { 14, true, 2, "Relativity | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Concepts of special and general relativity", "https://estigo.tryasp.net/f7.jpg", 169, 1, "23a875f7-2ab5-40e1-9f31-476068e04332" },
-                    { 15, true, 3, "Cell Biology | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of cell structure and function", "https://estigo.tryasp.net/uu1.jpg", 179, 1, "b3ccf381-440d-4fd3-91ae-c2e72285c491" },
-                    { 16, true, 3, "Genetics | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to heredity and DNA", "https://estigo.tryasp.net/uu2.jpeg", 179, 1, "b3ccf381-440d-4fd3-91ae-c2e72285c491" },
-                    { 17, true, 3, "Movement | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Principles of Movement", "https://estigo.tryasp.net/uu3.jpeg", 189, 1, "b3ccf381-440d-4fd3-91ae-c2e72285c491" },
-                    { 18, true, 3, "Ecology | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of ecosystems and environment", "https://estigo.tryasp.net/uu4.jpg", 189, 1, "b3ccf381-440d-4fd3-91ae-c2e72285c491" },
-                    { 19, true, 3, "Botany | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of plant biology and physiology", "https://estigo.tryasp.net/uu5.jpg", 179, 1, "b3ccf381-440d-4fd3-91ae-c2e72285c491" },
-                    { 20, true, 3, "Zoology | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to animal biology", "https://estigo.tryasp.net/uu6.jpg", 179, 1, "b3ccf381-440d-4fd3-91ae-c2e72285c491" },
-                    { 21, true, 3, "Microbiology | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of microorganisms and their roles", "https://estigo.tryasp.net/uu7.jpg", 189, 1, "b3ccf381-440d-4fd3-91ae-c2e72285c491" },
-                    { 22, true, 4, "Organic Chemistry | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to organic compounds", "https://estigo.tryasp.net/y1.jpeg", 159, 1, "ed8550c7-dc8a-4e45-901f-1cb73ffd8643" },
-                    { 23, true, 4, "Inorganic Chemistry | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of inorganic substances", "https://estigo.tryasp.net/y2.jpeg", 159, 1, "ed8550c7-dc8a-4e45-901f-1cb73ffd8643" },
-                    { 24, true, 4, "Physical Chemistry | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of chemical thermodynamics and kinetics", "https://estigo.tryasp.net/y3.jpg", 169, 1, "ed8550c7-dc8a-4e45-901f-1cb73ffd8643" },
-                    { 25, true, 4, "Analytical Chemistry | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Techniques for chemical analysis", "https://estigo.tryasp.net/y4.png", 169, 1, "ed8550c7-dc8a-4e45-901f-1cb73ffd8643" },
-                    { 26, true, 4, "Biochemistry | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Chemical processes within living organisms", "https://estigo.tryasp.net/y5.jpeg", 179, 1, "ed8550c7-dc8a-4e45-901f-1cb73ffd8643" },
-                    { 27, true, 4, "Environmental Chemistry | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Chemistry in environmental processes", "https://estigo.tryasp.net/y6.jpg", 179, 1, "ed8550c7-dc8a-4e45-901f-1cb73ffd8643" },
-                    { 28, true, 4, "Theoretical Chemistry | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Conceptual frameworks of chemical behavior", "https://estigo.tryasp.net/y7.jpeg", 169, 1, "ed8550c7-dc8a-4e45-901f-1cb73ffd8643" },
-                    { 29, true, 5, "Literature | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Exploring classic and modern literature", "https://estigo.tryasp.net/m1.jpg", 129, 1, "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4" },
-                    { 30, true, 5, "Creative Writing | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Develop storytelling and narrative skills", "https://estigo.tryasp.net/m2.jpg", 129, 1, "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4" },
-                    { 31, true, 5, "Grammar & Composition | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Mastering the rules of English grammar", "https://estigo.tryasp.net/m3.jpg", 119, 1, "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4" },
-                    { 32, true, 5, "Poetry Analysis | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study and analysis of poetry", "https://estigo.tryasp.net/m4.png", 119, 1, "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4" },
-                    { 33, true, 5, "Drama & Theater | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to dramatic literature and performance", "https://estigo.tryasp.net/m5.jpg", 129, 1, "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4" },
-                    { 34, true, 5, "Fiction Writing | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Techniques for writing compelling fiction", "https://estigo.tryasp.net/m6.jpeg", 129, 1, "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4" },
-                    { 35, true, 5, "Non-fiction Writing | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Crafting engaging non-fiction narratives", "https://estigo.tryasp.net/m7.jpg", 119, 1, "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4" }
+                    { 1, true, 1, "Algebra | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to algebraic concepts", "https://estigo.runasp.net/u1.jpg", 199, 1, "f3000e69-e194-41ec-acb3-4a3d41253987" },
+                    { 2, true, 1, "Calculus | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of differential calculus", "https://estigo.runasp.net/u2.jpg", 199, 1, "f3000e69-e194-41ec-acb3-4a3d41253987" },
+                    { 3, true, 1, "Geometry | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of geometric shapes and theorems", "https://estigo.runasp.net/u3.jpg", 189, 1, "f3000e69-e194-41ec-acb3-4a3d41253987" },
+                    { 4, true, 1, "Trigonometry | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Understanding angles and trigonometric functions", "https://estigo.runasp.net/u4.jpg", 189, 1, "f3000e69-e194-41ec-acb3-4a3d41253987" },
+                    { 5, true, 1, "Statistics | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to data analysis and probability", "https://estigo.runasp.net/u5.jpg", 179, 1, "f3000e69-e194-41ec-acb3-4a3d41253987" },
+                    { 6, true, 1, "Probability | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Exploring probability theories and applications", "https://estigo.runasp.net/u6.jpg", 179, 1, "f3000e69-e194-41ec-acb3-4a3d41253987" },
+                    { 7, true, 1, "Discrete Math | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of logic, set theory, and combinatorics", "https://estigo.runasp.net/u7.jpg", 189, 1, "f3000e69-e194-41ec-acb3-4a3d41253987" },
+                    { 8, true, 2, "Mechanics | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to Newtonian mechanics", "https://estigo.runasp.net/f1.jpg", 149, 1, "22f718af-7a07-48a3-a501-a032466aeef2" },
+                    { 9, true, 2, "Electricity | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of electric circuits and fields", "https://estigo.runasp.net/f2.jpg", 149, 1, "22f718af-7a07-48a3-a501-a032466aeef2" },
+                    { 10, true, 2, "Magnetism | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Principles of magnetic forces and fields", "https://estigo.runasp.net/f3.jpg", 159, 1, "22f718af-7a07-48a3-a501-a032466aeef2" },
+                    { 11, true, 2, "Optics | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of light behavior and properties", "https://estigo.runasp.net/f4.jpg", 159, 1, "22f718af-7a07-48a3-a501-a032466aeef2" },
+                    { 12, true, 2, "Thermodynamics | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of heat and energy", "https://estigo.runasp.net/f5.jpg", 169, 1, "22f718af-7a07-48a3-a501-a032466aeef2" },
+                    { 13, true, 2, "Quantum Physics | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to quantum theory", "https://estigo.runasp.net/f6.jpg", 169, 1, "22f718af-7a07-48a3-a501-a032466aeef2" },
+                    { 14, true, 2, "Relativity | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Concepts of special and general relativity", "https://estigo.runasp.net/f7.jpg", 169, 1, "22f718af-7a07-48a3-a501-a032466aeef2" },
+                    { 15, true, 3, "Cell Biology | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of cell structure and function", "https://estigo.runasp.net/uu1.jpg", 179, 1, "dbac4aa8-2cdb-4a66-9080-23ddf8fde838" },
+                    { 16, true, 3, "Genetics | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to heredity and DNA", "https://estigo.runasp.net/uu2.jpg", 179, 1, "dbac4aa8-2cdb-4a66-9080-23ddf8fde838" },
+                    { 17, true, 3, "Movement | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Principles of Movement", "https://estigo.runasp.net/uu3.jpg", 189, 1, "dbac4aa8-2cdb-4a66-9080-23ddf8fde838" },
+                    { 18, true, 3, "Ecology | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of ecosystems and environment", "https://estigo.runasp.net/uu4.jpg", 189, 1, "dbac4aa8-2cdb-4a66-9080-23ddf8fde838" },
+                    { 19, true, 3, "Botany | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of plant biology and physiology", "https://estigo.runasp.net/uu5.jpg", 179, 1, "dbac4aa8-2cdb-4a66-9080-23ddf8fde838" },
+                    { 20, true, 3, "Zoology | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to animal biology", "https://estigo.runasp.net/uu6.jpg", 179, 1, "dbac4aa8-2cdb-4a66-9080-23ddf8fde838" },
+                    { 21, true, 3, "Microbiology | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Basics of microorganisms and their roles", "https://estigo.runasp.net/uu7.jpg", 189, 1, "dbac4aa8-2cdb-4a66-9080-23ddf8fde838" },
+                    { 22, true, 4, "Organic Chemistry | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to organic compounds", "https://estigo.runasp.net/y1.jpg", 159, 1, "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9" },
+                    { 23, true, 4, "Inorganic Chemistry | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fundamentals of inorganic substances", "https://estigo.runasp.net/y2.jpg", 159, 1, "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9" },
+                    { 24, true, 4, "Physical Chemistry | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study of chemical thermodynamics and kinetics", "https://estigo.runasp.net/y3.jpg", 169, 1, "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9" },
+                    { 25, true, 4, "Analytical Chemistry | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Techniques for chemical analysis", "https://estigo.runasp.net/y4.jpg", 169, 1, "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9" },
+                    { 26, true, 4, "Biochemistry | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Chemical processes within living organisms", "https://estigo.runasp.net/y5.jpg", 179, 1, "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9" },
+                    { 27, true, 4, "Environmental Chemistry | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Chemistry in environmental processes", "https://estigo.runasp.net/y6.jpg", 179, 1, "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9" },
+                    { 28, true, 4, "Theoretical Chemistry | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Conceptual frameworks of chemical behavior", "https://estigo.runasp.net/y7.jpg", 169, 1, "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9" },
+                    { 29, true, 5, "Literature | Unit 1", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Exploring classic and modern literature", "https://estigo.runasp.net/m1.jpg", 129, 1, "290f0fe9-c8cb-4a6e-b863-b61df939f025" },
+                    { 30, true, 5, "Creative Writing | Unit 2", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Develop storytelling and narrative skills", "https://estigo.runasp.net/m2.jpg", 129, 1, "290f0fe9-c8cb-4a6e-b863-b61df939f025" },
+                    { 31, true, 5, "Grammar & Composition | Unit 3", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Mastering the rules of English grammar", "https://estigo.runasp.net/m3.jpg", 119, 1, "290f0fe9-c8cb-4a6e-b863-b61df939f025" },
+                    { 32, true, 5, "Poetry Analysis | Unit 4", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Study and analysis of poetry", "https://estigo.runasp.net/m4.jpg", 119, 1, "290f0fe9-c8cb-4a6e-b863-b61df939f025" },
+                    { 33, true, 5, "Drama & Theater | Unit 5", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introduction to dramatic literature and performance", "https://estigo.runasp.net/m5.jpg", 129, 1, "290f0fe9-c8cb-4a6e-b863-b61df939f025" },
+                    { 34, true, 5, "Fiction Writing | Unit 6", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Techniques for writing compelling fiction", "https://estigo.runasp.net/m6.jpg", 129, 1, "290f0fe9-c8cb-4a6e-b863-b61df939f025" },
+                    { 35, true, 5, "Non-fiction Writing | Unit 7", new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Crafting engaging non-fiction narratives", "https://estigo.runasp.net/m7.jpg", 119, 1, "290f0fe9-c8cb-4a6e-b863-b61df939f025" }
                 });
 
             migrationBuilder.InsertData(
                 table: "lessons",
-                columns: new[] { "lessonId", "courseId", "isLive", "lessonContent", "lessonDescription", "lessonTitle", "lessonVideo" },
+                columns: new[] { "lessonId", "courseId", "isLive", "lessonTitle", "lessonVideo" },
                 values: new object[,]
                 {
-                    { 1, 1, false, "Content covering basic algebraic notation and terminology.", "Introduction to variables and expressions.", "Algebra Basics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 2, 1, false, "Step-by-step examples of solving linear equations.", "Techniques for solving single-variable linear equations.", "Solving Linear Equations", "https://estigo.tryasp.net/vv.mp4" },
-                    { 3, 1, false, "Graphing inequalities on a number line and solving.", "Understanding and solving linear inequalities.", "Inequalities", "https://estigo.tryasp.net/vv.mp4" },
-                    { 4, 1, false, "Defining functions and evaluating function values.", "Basic concepts of functions, domain, and range.", "Functions Introduction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 5, 1, false, "Adding, subtracting, and multiplying polynomials.", "Introduction to polynomial expressions and operations.", "Polynomial Basics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 6, 2, false, "Evaluating limits and understanding continuity.", "Understanding the concept of limits in calculus.", "Limits and Continuity", "https://estigo.tryasp.net/vv.mp4" },
-                    { 7, 2, false, "Calculating derivatives using the power rule.", "Defining the derivative and basic differentiation rules.", "Introduction to Derivatives", "https://estigo.tryasp.net/vv.mp4" },
-                    { 8, 2, false, "Applying advanced differentiation rules.", "Product rule, quotient rule, and chain rule.", "Differentiation Techniques", "https://estigo.tryasp.net/vv.mp4" },
-                    { 9, 2, false, "Solving related rates and optimization problems.", "Using derivatives to find rates of change and optimization.", "Applications of Derivatives", "https://estigo.tryasp.net/vv.mp4" },
-                    { 10, 2, false, "Understanding the indefinite integral.", "Basic concepts of integration and antiderivatives.", "Introduction to Integrals", "https://estigo.tryasp.net/vv.mp4" },
-                    { 11, 3, false, "Definitions and postulates of basic geometric elements.", "Fundamental concepts of geometry.", "Points, Lines, and Planes", "https://estigo.tryasp.net/vv.mp4" },
-                    { 12, 3, false, "Measuring angles, complementary and supplementary angles.", "Types of angles and their properties.", "Angles and Angle Relationships", "https://estigo.tryasp.net/vv.mp4" },
-                    { 13, 3, false, "Identifying alternate interior, corresponding angles, etc.", "Properties of angles formed by parallel lines.", "Parallel Lines and Transversals", "https://estigo.tryasp.net/vv.mp4" },
-                    { 14, 3, false, "SSS, SAS, ASA congruence postulates.", "Classifying triangles and proving congruence.", "Triangles and Congruence", "https://estigo.tryasp.net/vv.mp4" },
-                    { 15, 3, false, "Calculating interior angles and classifying polygons.", "Properties of polygons, focusing on quadrilaterals.", "Introduction to Polygons", "https://estigo.tryasp.net/vv.mp4" },
-                    { 16, 4, false, "SOH CAH TOA and solving right triangles.", "Sine, cosine, and tangent in right triangles.", "Right Triangle Trigonometry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 17, 4, false, "Finding trig values for standard angles.", "Understanding trigonometric functions using the unit circle.", "The Unit Circle", "https://estigo.tryasp.net/vv.mp4" },
-                    { 18, 4, false, "Amplitude, period, and phase shift.", "Graphing sine, cosine, and tangent functions.", "Trigonometric Graphs", "https://estigo.tryasp.net/vv.mp4" },
-                    { 19, 4, false, "Pythagorean identities, sum/difference identities.", "Fundamental trigonometric identities.", "Trigonometric Identities", "https://estigo.tryasp.net/vv.mp4" },
-                    { 20, 4, false, "Finding solutions within a given interval.", "Techniques for solving equations involving trig functions.", "Solving Trigonometric Equations", "https://estigo.tryasp.net/vv.mp4" },
-                    { 21, 5, false, "Populations, samples, descriptive vs. inferential statistics.", "Types of data and data collection methods.", "Introduction to Statistics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 22, 5, false, "Mean, median, mode, variance, standard deviation.", "Measures of central tendency and dispersion.", "Descriptive Statistics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 23, 5, false, "Histograms, box plots, scatter plots.", "Graphical representation of data.", "Data Visualization", "https://estigo.tryasp.net/vv.mp4" },
-                    { 24, 5, false, "Sample spaces, events, conditional probability.", "Introduction to probability rules.", "Basic Probability Concepts", "https://estigo.tryasp.net/vv.mp4" },
-                    { 25, 5, false, "Binomial and Normal distributions basics.", "Understanding probability distributions.", "Introduction to Distributions", "https://estigo.tryasp.net/vv.mp4" },
-                    { 26, 6, false, "Defining events and calculating basic probabilities.", "Axioms of probability and sample spaces.", "Foundations of Probability", "https://estigo.tryasp.net/vv.mp4" },
-                    { 27, 6, false, "Bayes' Theorem and its applications.", "Understanding dependent and independent events.", "Conditional Probability and Independence", "https://estigo.tryasp.net/vv.mp4" },
-                    { 28, 6, false, "Probability mass functions and density functions.", "Discrete and continuous random variables.", "Random Variables", "https://estigo.tryasp.net/vv.mp4" },
-                    { 29, 6, false, "Properties of expectation and variance.", "Calculating measures for random variables.", "Expected Value and Variance", "https://estigo.tryasp.net/vv.mp4" },
-                    { 30, 6, false, "Applications and calculations for common distributions.", "Detailed look at Binomial, Poisson, Normal distributions.", "Common Probability Distributions", "https://estigo.tryasp.net/vv.mp4" },
-                    { 31, 7, false, "Truth tables, logical equivalences, direct proof, proof by contradiction.", "Propositional logic and methods of proof.", "Logic and Proofs", "https://estigo.tryasp.net/vv.mp4" },
-                    { 32, 7, false, "Union, intersection, complement, power sets.", "Operations on sets, Venn diagrams.", "Set Theory", "https://estigo.tryasp.net/vv.mp4" },
-                    { 33, 7, false, "The pigeonhole principle, binomial coefficients.", "Permutations and combinations.", "Counting Principles", "https://estigo.tryasp.net/vv.mp4" },
-                    { 34, 7, false, "Equivalence relations, injective, surjective functions.", "Properties of relations and types of functions.", "Relations and Functions", "https://estigo.tryasp.net/vv.mp4" },
-                    { 35, 7, false, "Vertices, edges, paths, cycles, graph coloring.", "Basic concepts of graphs and trees.", "Introduction to Graph Theory", "https://estigo.tryasp.net/vv.mp4" },
-                    { 36, 8, false, "Equations of motion for constant acceleration.", "Motion, velocity, and acceleration.", "Kinematics in One Dimension", "https://estigo.tryasp.net/vv.mp4" },
-                    { 37, 8, false, "Adding vectors, resolving vectors into components.", "Projectile motion and vector operations.", "Vectors and 2D Kinematics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 38, 8, false, "Applying Newton's first, second, and third laws.", "Force, mass, and acceleration.", "Newton's Laws of Motion", "https://estigo.tryasp.net/vv.mp4" },
-                    { 39, 8, false, "Conservation of energy principle.", "Concepts of work, kinetic and potential energy.", "Work, Energy, and Power", "https://estigo.tryasp.net/vv.mp4" },
-                    { 40, 8, false, "Conservation of momentum in collisions.", "Linear momentum and impulse.", "Momentum and Collisions", "https://estigo.tryasp.net/vv.mp4" },
-                    { 41, 9, false, "Calculating electrostatic forces.", "Properties of electric charge and forces between charges.", "Electric Charge and Coulomb's Law", "https://estigo.tryasp.net/vv.mp4" },
-                    { 42, 9, false, "Calculating electric fields for point charges.", "Concept of the electric field and field lines.", "Electric Fields", "https://estigo.tryasp.net/vv.mp4" },
-                    { 43, 9, false, "Calculating potential for point charges and systems.", "Potential difference and electric potential energy.", "Electric Potential", "https://estigo.tryasp.net/vv.mp4" },
-                    { 44, 9, false, "Calculating capacitance for parallel plate capacitors.", "Capacitors and energy storage.", "Capacitance", "https://estigo.tryasp.net/vv.mp4" },
-                    { 45, 9, false, "Applying Ohm's Law to simple circuits.", "Basics of electric current and resistance.", "Current, Resistance, and Ohm's Law", "https://estigo.tryasp.net/vv.mp4" },
-                    { 46, 10, false, "Calculating magnetic force using the Lorentz force law.", "Introduction to magnetic fields and forces on moving charges.", "Magnetic Fields and Forces", "https://estigo.tryasp.net/vv.mp4" },
-                    { 47, 10, false, "Calculating fields for wires and loops.", "Magnetic fields produced by currents (Biot-Savart Law).", "Sources of Magnetic Fields", "https://estigo.tryasp.net/vv.mp4" },
-                    { 48, 10, false, "Applications for solenoids and toroids.", "Using Ampere's Law to find magnetic fields.", "Ampere's Law", "https://estigo.tryasp.net/vv.mp4" },
-                    { 49, 10, false, "Induced EMF and magnetic flux.", "Faraday's Law of Induction and Lenz's Law.", "Electromagnetic Induction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 50, 10, false, "RL circuits and energy stored in inductors.", "Self-inductance and mutual inductance.", "Inductance", "https://estigo.tryasp.net/vv.mp4" },
-                    { 51, 11, false, "Properties of light waves.", "Wave-particle duality and the electromagnetic spectrum.", "Nature of Light", "https://estigo.tryasp.net/vv.mp4" },
-                    { 52, 11, false, "Total internal reflection and index of refraction.", "Laws of reflection and Snell's Law of refraction.", "Reflection and Refraction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 53, 11, false, "Ray tracing and the thin lens equation.", "Converging and diverging lenses.", "Lenses and Image Formation", "https://estigo.tryasp.net/vv.mp4" },
-                    { 54, 11, false, "Young's double-slit experiment.", "Principle of superposition and interference patterns.", "Wave Optics: Interference", "https://estigo.tryasp.net/vv.mp4" },
-                    { 55, 11, false, "Single-slit diffraction patterns.", "Diffraction of light through slits and gratings.", "Wave Optics: Diffraction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 56, 12, false, "Specific heat and calorimetry.", "Concepts of thermal energy, temperature scales, and heat transfer.", "Temperature and Heat", "https://estigo.tryasp.net/vv.mp4" },
-                    { 57, 12, false, "Conservation of energy in thermal systems.", "Internal energy, work, and heat in thermodynamic processes.", "First Law of Thermodynamics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 58, 12, false, "PV=nRT and kinetic theory of gases.", "Behavior of ideal gases.", "Ideal Gas Law", "https://estigo.tryasp.net/vv.mp4" },
-                    { 59, 12, false, "Heat engines and refrigerators.", "Entropy and the direction of thermodynamic processes.", "Second Law of Thermodynamics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 60, 12, false, "Efficiency of heat engines.", "Analyzing cycles like the Carnot cycle.", "Thermodynamic Cycles", "https://estigo.tryasp.net/vv.mp4" },
-                    { 61, 13, false, "Planck's constant and energy quanta.", "The ultraviolet catastrophe and quantization of energy.", "Blackbody Radiation & Planck's Hypothesis", "https://estigo.tryasp.net/vv.mp4" },
-                    { 62, 13, false, "Work function and stopping potential.", "Einstein's explanation and the particle nature of light.", "Photoelectric Effect", "https://estigo.tryasp.net/vv.mp4" },
-                    { 63, 13, false, "Electron diffraction experiments.", "De Broglie hypothesis and matter waves.", "Wave Nature of Matter", "https://estigo.tryasp.net/vv.mp4" },
-                    { 64, 13, false, "Quantized energy levels and spectral lines.", "Early model of the hydrogen atom.", "The Bohr Model", "https://estigo.tryasp.net/vv.mp4" },
-                    { 65, 13, false, "Probability interpretation and uncertainty principle.", "The Schrödinger equation and wave functions.", "Introduction to Quantum Mechanics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 66, 14, false, "Inertial frames and the constancy of the speed of light.", "Postulates of special relativity.", "Principles of Special Relativity", "https://estigo.tryasp.net/vv.mp4" },
-                    { 67, 14, false, "Relativistic effects on time and space.", "Consequences of special relativity.", "Time Dilation and Length Contraction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 68, 14, false, "E=mc² and its implications.", "Modifications to classical momentum and energy.", "Relativistic Momentum and Energy", "https://estigo.tryasp.net/vv.mp4" },
-                    { 69, 14, false, "Conceptual overview of general relativity.", "Principle of equivalence and gravity as spacetime curvature.", "Introduction to General Relativity", "https://estigo.tryasp.net/vv.mp4" },
-                    { 70, 14, false, "Observational evidence for general relativity.", "Gravitational lensing, black holes, and gravitational waves.", "Consequences of General Relativity", "https://estigo.tryasp.net/vv.mp4" },
-                    { 71, 15, false, "Basic cell structures and functions.", "Prokaryotic vs. Eukaryotic cells.", "Introduction to Cells", "https://estigo.tryasp.net/vv.mp4" },
-                    { 72, 15, false, "Passive transport, active transport, endocytosis.", "The fluid mosaic model and transport mechanisms.", "Cell Membrane Structure and Function", "https://estigo.tryasp.net/vv.mp4" },
-                    { 73, 15, false, "Nucleus, mitochondria, chloroplasts, ER, Golgi.", "Structure and function of major organelles.", "Eukaryotic Organelles", "https://estigo.tryasp.net/vv.mp4" },
-                    { 74, 15, false, "Glycolysis, Krebs cycle, electron transport chain.", "Overview of energy production in cells.", "Cellular Respiration", "https://estigo.tryasp.net/vv.mp4" },
-                    { 75, 15, false, "Interphase, prophase, metaphase, anaphase, telophase.", "Phases of the cell cycle and cell division.", "The Cell Cycle and Mitosis", "https://estigo.tryasp.net/vv.mp4" },
-                    { 76, 16, false, "Dominance, segregation, independent assortment.", "Principles of inheritance discovered by Mendel.", "Mendelian Genetics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 77, 16, false, "Base pairing rules, enzymes involved in replication.", "The double helix structure and DNA synthesis.", "DNA Structure and Replication", "https://estigo.tryasp.net/vv.mp4" },
-                    { 78, 16, false, "Process of transcription, RNA polymerase.", "From DNA to RNA.", "Gene Expression: Transcription", "https://estigo.tryasp.net/vv.mp4" },
-                    { 79, 16, false, "Ribosomes, codons, tRNA, protein synthesis.", "From RNA to Protein.", "Gene Expression: Translation", "https://estigo.tryasp.net/vv.mp4" },
-                    { 80, 16, false, "Point mutations, chromosomal mutations, sources of variation.", "Types of mutations and their effects.", "Mutations and Genetic Variation", "https://estigo.tryasp.net/vv.mp4" },
-                    { 81, 17, false, "Human skeleton overview, bone composition.", "Types of skeletons and bone structure.", "Skeletal Systems", "https://estigo.tryasp.net/vv.mp4" },
-                    { 82, 17, false, "Skeletal, smooth, cardiac muscle; sliding filament theory.", "Types of muscles and muscle contraction.", "Muscular Systems", "https://estigo.tryasp.net/vv.mp4" },
-                    { 83, 17, false, "Analyzing movement from a mechanical perspective.", "Forces and levers in biological systems.", "Biomechanics Basics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 84, 17, false, "Walking, running, swimming, flying adaptations.", "Different modes of animal movement.", "Locomotion in Animals", "https://estigo.tryasp.net/vv.mp4" },
-                    { 85, 17, false, "Motor neurons, reflexes, brain control centers.", "How the nervous system coordinates muscle action.", "Nervous System Control of Movement", "https://estigo.tryasp.net/vv.mp4" },
-                    { 86, 18, false, "Organisms, populations, communities, ecosystems, biosphere.", "Levels of ecological organization.", "Introduction to Ecology", "https://estigo.tryasp.net/vv.mp4" },
-                    { 87, 18, false, "Exponential and logistic growth, carrying capacity.", "Population growth models and limiting factors.", "Population Ecology", "https://estigo.tryasp.net/vv.mp4" },
-                    { 88, 18, false, "Competition, predation, symbiosis, biodiversity.", "Species interactions within communities.", "Community Ecology", "https://estigo.tryasp.net/vv.mp4" },
-                    { 89, 18, false, "Food webs, trophic levels, biogeochemical cycles.", "Energy flow and nutrient cycling.", "Ecosystem Dynamics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 90, 18, false, "Threats to biodiversity and conservation efforts.", "Major terrestrial and aquatic biomes.", "Biomes and Conservation", "https://estigo.tryasp.net/vv.mp4" },
-                    { 91, 19, false, "Meristems and primary/secondary growth.", "Basic anatomy of plants: roots, stems, leaves.", "Plant Structure and Growth", "https://estigo.tryasp.net/vv.mp4" },
-                    { 92, 19, false, "Xylem, phloem, transpiration.", "Water and nutrient transport in plants.", "Plant Transport Systems", "https://estigo.tryasp.net/vv.mp4" },
-                    { 93, 19, false, "Light-dependent reactions and the Calvin cycle.", "The process of converting light energy to chemical energy.", "Photosynthesis", "https://estigo.tryasp.net/vv.mp4" },
-                    { 94, 19, false, "Flower structure, pollination, fertilization, seed development.", "Asexual and sexual reproduction in plants.", "Plant Reproduction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 95, 19, false, "Auxins, gibberellins, phototropism, gravitropism.", "Chemical signaling in plants.", "Plant Hormones and Responses", "https://estigo.tryasp.net/vv.mp4" },
-                    { 96, 20, false, "Body plans, symmetry, evolutionary relationships.", "Major animal phyla and characteristics.", "Introduction to Animal Diversity", "https://estigo.tryasp.net/vv.mp4" },
-                    { 97, 20, false, "Sponges, cnidarians, flatworms, roundworms.", "Focus on simpler invertebrates.", "Invertebrate Zoology I", "https://estigo.tryasp.net/vv.mp4" },
-                    { 98, 20, false, "Mollusks, annelids, arthropods, echinoderms.", "Focus on more complex invertebrates.", "Invertebrate Zoology II", "https://estigo.tryasp.net/vv.mp4" },
-                    { 99, 20, false, "Characteristics of chordates, evolution of fish.", "Introduction to Chordates and Fish.", "Vertebrate Zoology I", "https://estigo.tryasp.net/vv.mp4" },
-                    { 100, 20, false, "Key characteristics and adaptations of terrestrial vertebrates.", "Amphibians, Reptiles, Birds, and Mammals.", "Vertebrate Zoology II", "https://estigo.tryasp.net/vv.mp4" },
-                    { 101, 21, false, "Microbial diversity and history of microbiology.", "Overview of bacteria, archaea, viruses, fungi, protists.", "Introduction to Microbes", "https://estigo.tryasp.net/vv.mp4" },
-                    { 102, 21, false, "Gram staining and bacterial morphology.", "Cell walls, flagella, capsules, endospores.", "Bacterial Structure and Function", "https://estigo.tryasp.net/vv.mp4" },
-                    { 103, 21, false, "Binary fission, nutritional types.", "Requirements for growth, growth curve, metabolic pathways.", "Microbial Growth and Metabolism", "https://estigo.tryasp.net/vv.mp4" },
-                    { 104, 21, false, "Lytic vs. lysogenic cycles, viral diseases.", "Structure, replication cycles, and characteristics.", "Viruses and Prions", "https://estigo.tryasp.net/vv.mp4" },
-                    { 105, 21, false, "Pathogens, decomposers, biotechnology.", "Microbes in ecosystems, disease, and industry.", "Microbial Roles and Applications", "https://estigo.tryasp.net/vv.mp4" },
-                    { 106, 22, false, "Lewis structures, VSEPR theory, hybridization.", "Structure, bonding, and properties of organic molecules.", "Introduction & Bonding", "https://estigo.tryasp.net/vv.mp4" },
-                    { 107, 22, false, "Naming alkanes (IUPAC), Newman projections.", "Nomenclature and conformations.", "Alkanes and Cycloalkanes", "https://estigo.tryasp.net/vv.mp4" },
-                    { 108, 22, false, "R/S configuration, optical activity.", "Chirality, enantiomers, diastereomers.", "Stereochemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 109, 22, false, "Arrows formalism, reaction energy diagrams.", "Reaction types, mechanisms, and thermodynamics.", "Introduction to Organic Reactions", "https://estigo.tryasp.net/vv.mp4" },
-                    { 110, 22, false, "Pi bonds, electrophilic addition basics.", "Structure, nomenclature, and introduction to addition reactions.", "Alkenes and Alkynes: Structure & Reactivity", "https://estigo.tryasp.net/vv.mp4" },
-                    { 111, 23, false, "Electron configurations, ionization energy, electronegativity.", "Review of atomic models and periodic trends.", "Atomic Structure and Periodicity", "https://estigo.tryasp.net/vv.mp4" },
-                    { 112, 23, false, "Predicting molecular geometry.", "Ionic and covalent bonding theories.", "Chemical Bonding: Lewis & VSEPR", "https://estigo.tryasp.net/vv.mp4" },
-                    { 113, 23, false, "Hybridization, MO diagrams for diatomic molecules.", "Advanced bonding theories.", "Valence Bond and Molecular Orbital Theory", "https://estigo.tryasp.net/vv.mp4" },
-                    { 114, 23, false, "Acid strength, hard/soft acids and bases.", "Bronsted-Lowry and Lewis definitions.", "Acid-Base Chemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 115, 23, false, "Nomenclature and basic structures.", "Transition metals, ligands, and complex ions.", "Introduction to Coordination Chemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 116, 24, false, "Gas laws, Maxwell-Boltzmann distribution.", "Ideal and real gas behavior.", "Gases and Kinetic Theory", "https://estigo.tryasp.net/vv.mp4" },
-                    { 117, 24, false, "State functions, calorimetry.", "Energy, work, heat, enthalpy.", "Thermodynamics: First Law", "https://estigo.tryasp.net/vv.mp4" },
-                    { 118, 24, false, "Calculating entropy changes, absolute entropy.", "Entropy, spontaneity, Gibbs free energy.", "Thermodynamics: Second & Third Laws", "https://estigo.tryasp.net/vv.mp4" },
-                    { 119, 24, false, "Rate laws, activation energy, Arrhenius equation.", "Reaction rates and mechanisms.", "Chemical Kinetics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 120, 24, false, "Particle in a box, hydrogen atom basics.", "Basic principles and applications.", "Introduction to Quantum Chemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 121, 25, false, "Significant figures, precision vs. accuracy, basic stats.", "Role of analytical chemistry, errors, and data analysis.", "Introduction & Statistics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 122, 25, false, "Precipitation methods, titration techniques.", "Classical methods of analysis.", "Gravimetric and Volumetric Analysis", "https://estigo.tryasp.net/vv.mp4" },
-                    { 123, 25, false, "UV-Vis spectroscopy, Beer-Lambert Law.", "Interaction of light and matter.", "Spectroscopic Methods", "https://estigo.tryasp.net/vv.mp4" },
-                    { 124, 25, false, "Gas chromatography (GC) and Liquid chromatography (LC) overview.", "Principles of separation techniques.", "Chromatography Basics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 125, 25, false, "Potentiometry, voltammetry basics.", "Techniques based on electrical properties.", "Electroanalytical Methods", "https://estigo.tryasp.net/vv.mp4" },
-                    { 126, 26, false, "Peptide bonds, primary to quaternary structure.", "Structure and properties of amino acids and protein hierarchy.", "Amino Acids and Proteins", "https://estigo.tryasp.net/vv.mp4" },
-                    { 127, 26, false, "Michaelis-Menten kinetics, enzyme inhibition.", "Biological catalysts and reaction rates.", "Enzymes and Enzyme Kinetics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 128, 26, false, "Glycosidic bonds, common sugars.", "Structure and function of monosaccharides and polysaccharides.", "Carbohydrates", "https://estigo.tryasp.net/vv.mp4" },
-                    { 129, 26, false, "Fatty acids, triglycerides, phospholipids, fluid mosaic model.", "Types of lipids and biological membrane structure.", "Lipids and Membranes", "https://estigo.tryasp.net/vv.mp4" },
-                    { 130, 26, false, "Anabolism vs. catabolism, ATP production.", "Introduction to major pathways like glycolysis.", "Metabolic Pathways Overview", "https://estigo.tryasp.net/vv.mp4" },
-                    { 131, 27, false, "Ozone layer, greenhouse effect, air pollution.", "Composition and reactions in the atmosphere.", "Atmospheric Chemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 132, 27, false, "Water quality parameters (pH, DO), water pollution.", "Chemical processes in water bodies.", "Aquatic Chemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 133, 27, false, "Nutrient cycles, soil contamination.", "Composition and chemical reactions in soil.", "Soil Chemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 134, 27, false, "Dose-response relationships, environmental risk.", "Effects of chemicals on organisms and ecosystems.", "Toxicology and Risk Assessment", "https://estigo.tryasp.net/vv.mp4" },
-                    { 135, 27, false, "Waste reduction, sustainable chemistry practices.", "Principles for designing safer chemical processes.", "Green Chemistry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 136, 28, false, "Operators, eigenfunctions, eigenvalues.", "Postulates and mathematical framework.", "Quantum Mechanics Fundamentals", "https://estigo.tryasp.net/vv.mp4" },
-                    { 137, 28, false, "Variation principle, perturbation theory.", "Techniques for solving the Schrödinger equation.", "Approximation Methods", "https://estigo.tryasp.net/vv.mp4" },
-                    { 138, 28, false, "Point groups, character tables.", "Using symmetry to simplify chemical problems.", "Molecular Symmetry and Group Theory", "https://estigo.tryasp.net/vv.mp4" },
-                    { 139, 28, false, "Hartree-Fock, Density Functional Theory (DFT) basics.", "Overview of computational techniques.", "Computational Chemistry Methods", "https://estigo.tryasp.net/vv.mp4" },
-                    { 140, 28, false, "Partition functions, ensemble theory.", "Connecting microscopic properties to macroscopic behavior.", "Statistical Thermodynamics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 141, 29, false, "Theme, plot, character, setting, point of view.", "Tools and techniques for interpreting literature.", "Introduction to Literary Analysis", "https://estigo.tryasp.net/vv.mp4" },
-                    { 142, 29, false, "Examining notable short stories.", "Analyzing elements of short fiction.", "Short Story Analysis", "https://estigo.tryasp.net/vv.mp4" },
-                    { 143, 29, false, "Meter, rhyme, imagery, metaphor, sonnets.", "Understanding poetic devices and forms.", "Poetry Fundamentals", "https://estigo.tryasp.net/vv.mp4" },
-                    { 144, 29, false, "Context, structure, and major themes in a sample novel.", "Approaches to reading and analyzing novels.", "Novel Study: Introduction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 145, 29, false, "Dialogue, stage directions, character arcs in plays.", "Elements of dramatic literature.", "Introduction to Drama", "https://estigo.tryasp.net/vv.mp4" },
-                    { 146, 30, false, "Exercises in tone, perspective, and style.", "Developing a unique writing style.", "Finding Your Voice", "https://estigo.tryasp.net/vv.mp4" },
-                    { 147, 30, false, "Character archetypes, backstory, motivations.", "Creating believable and engaging characters.", "Character Development", "https://estigo.tryasp.net/vv.mp4" },
-                    { 148, 30, false, "Three-act structure, outlining techniques, pacing.", "Crafting compelling narratives.", "Plotting and Structure", "https://estigo.tryasp.net/vv.mp4" },
-                    { 149, 30, false, "Using sensory details, creating atmosphere.", "Building immersive worlds.", "Setting and Description", "https://estigo.tryasp.net/vv.mp4" },
-                    { 150, 30, false, "Subtext, character voice in dialogue, formatting.", "Writing effective and natural dialogue.", "Dialogue Writing", "https://estigo.tryasp.net/vv.mp4" },
-                    { 151, 31, false, "Identifying parts of speech in sentences.", "Understanding nouns, verbs, adjectives, etc.", "Parts of Speech Review", "https://estigo.tryasp.net/vv.mp4" },
-                    { 152, 31, false, "Simple, compound, complex, compound-complex sentences.", "Clauses, phrases, and sentence types.", "Sentence Structure", "https://estigo.tryasp.net/vv.mp4" },
-                    { 153, 31, false, "Common punctuation errors and fixes.", "Correct usage of commas, semicolons, apostrophes, etc.", "Punctuation Rules", "https://estigo.tryasp.net/vv.mp4" },
-                    { 154, 31, false, "Identifying and correcting frequent mistakes.", "Subject-verb agreement, pronoun usage, modifiers.", "Common Grammatical Errors", "https://estigo.tryasp.net/vv.mp4" },
-                    { 155, 31, false, "Topic sentences, transitions, thesis statements.", "Organizing ideas effectively.", "Paragraph and Essay Structure", "https://estigo.tryasp.net/vv.mp4" },
-                    { 156, 32, false, "Scanning poetry, identifying different meters.", "Rhythm, meter, rhyme schemes.", "Elements of Poetry", "https://estigo.tryasp.net/vv.mp4" },
-                    { 157, 32, false, "Identifying and interpreting figurative language.", "Metaphor, simile, personification, hyperbole.", "Figurative Language", "https://estigo.tryasp.net/vv.mp4" },
-                    { 158, 32, false, "Analyzing the musicality of poetry.", "Alliteration, assonance, consonance, onomatopoeia.", "Sound Devices", "https://estigo.tryasp.net/vv.mp4" },
-                    { 159, 32, false, "Recognizing and analyzing different poetic structures.", "Sonnets, haikus, villanelles, free verse.", "Poetic Forms", "https://estigo.tryasp.net/vv.mp4" },
-                    { 160, 32, false, "Close reading techniques and thematic analysis.", "Developing analytical arguments about poetry.", "Interpreting Poems", "https://estigo.tryasp.net/vv.mp4" },
-                    { 161, 33, false, "Key periods and influential playwrights.", "From ancient Greek tragedy to modern drama.", "History of Theater", "https://estigo.tryasp.net/vv.mp4" },
-                    { 162, 33, false, "Aristotle's Poetics and dramatic structure.", "Plot, character, theme, dialogue, spectacle.", "Elements of Drama", "https://estigo.tryasp.net/vv.mp4" },
-                    { 163, 33, false, "Visualizing the play and interpreting character motivations.", "Understanding stage directions and subtext.", "Reading a Play", "https://estigo.tryasp.net/vv.mp4" },
-                    { 164, 33, false, "Characteristics and examples of different genres.", "Tragedy, comedy, tragicomedy, melodrama.", "Major Dramatic Genres", "https://estigo.tryasp.net/vv.mp4" },
-                    { 165, 33, false, "Overview of the process from script to stage.", "Roles in theater (director, actor, designer).", "Theater Production Basics", "https://estigo.tryasp.net/vv.mp4" },
-                    { 166, 34, false, "Brainstorming techniques, prompts, observation.", "Finding inspiration for fiction stories.", "Generating Ideas", "https://estigo.tryasp.net/vv.mp4" },
-                    { 167, 34, false, "Impact of POV choices on the story.", "Choosing the right perspective (1st, 3rd limited/omniscient).", "Point of View and Narrative Voice", "https://estigo.tryasp.net/vv.mp4" },
-                    { 168, 34, false, "Techniques for showing emotion and action.", "Using concrete details to engage readers.", "Show, Don't Tell", "https://estigo.tryasp.net/vv.mp4" },
-                    { 169, 34, false, "Scene structure, pacing within scenes, transitions.", "Building blocks of a story.", "Crafting Scenes", "https://estigo.tryasp.net/vv.mp4" },
-                    { 170, 34, false, "Self-editing, seeking feedback, common pitfalls.", "Techniques for improving a draft.", "Revision Strategies", "https://estigo.tryasp.net/vv.mp4" },
-                    { 171, 35, false, "Understanding different forms and their conventions.", "Memoir, biography, essays, journalism.", "Types of Non-fiction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 172, 35, false, "Interviews, archival research, evaluating sources.", "Gathering information for non-fiction.", "Research Techniques", "https://estigo.tryasp.net/vv.mp4" },
-                    { 173, 35, false, "Chronological, thematic, and narrative structures.", "Organizing factual material effectively.", "Structuring Non-fiction", "https://estigo.tryasp.net/vv.mp4" },
-                    { 174, 35, false, "Using vivid language, maintaining accuracy.", "Engaging readers with factual content.", "Writing with Clarity and Style", "https://estigo.tryasp.net/vv.mp4" },
-                    { 175, 35, false, "Fact-checking, privacy concerns, representation.", "Responsibilities when writing about real people and events.", "Ethics in Non-fiction", "https://estigo.tryasp.net/vv.mp4" }
+                    { 1, 1, false, "Algebra Basics", "https://estigo.runasp.net/vv.mp4" },
+                    { 2, 1, false, "Solving Linear Equations", "https://estigo.runasp.net/vv.mp4" },
+                    { 3, 1, false, "Inequalities", "https://estigo.runasp.net/vv.mp4" },
+                    { 4, 1, false, "Functions Introduction", "https://estigo.runasp.net/vv.mp4" },
+                    { 5, 1, false, "Polynomial Basics", "https://estigo.runasp.net/vv.mp4" },
+                    { 6, 2, false, "Limits and Continuity", "https://estigo.runasp.net/vv.mp4" },
+                    { 7, 2, false, "Introduction to Derivatives", "https://estigo.runasp.net/vv.mp4" },
+                    { 8, 2, false, "Differentiation Techniques", "https://estigo.runasp.net/vv.mp4" },
+                    { 9, 2, false, "Applications of Derivatives", "https://estigo.runasp.net/vv.mp4" },
+                    { 10, 2, false, "Introduction to Integrals", "https://estigo.runasp.net/vv.mp4" },
+                    { 11, 3, false, "Points, Lines, and Planes", "https://estigo.runasp.net/vv.mp4" },
+                    { 12, 3, false, "Angles and Angle Relationships", "https://estigo.runasp.net/vv.mp4" },
+                    { 13, 3, false, "Parallel Lines and Transversals", "https://estigo.runasp.net/vv.mp4" },
+                    { 14, 3, false, "Triangles and Congruence", "https://estigo.runasp.net/vv.mp4" },
+                    { 15, 3, false, "Introduction to Polygons", "https://estigo.runasp.net/vv.mp4" },
+                    { 16, 4, false, "Right Triangle Trigonometry", "https://estigo.runasp.net/vv.mp4" },
+                    { 17, 4, false, "The Unit Circle", "https://estigo.runasp.net/vv.mp4" },
+                    { 18, 4, false, "Trigonometric Graphs", "https://estigo.runasp.net/vv.mp4" },
+                    { 19, 4, false, "Trigonometric Identities", "https://estigo.runasp.net/vv.mp4" },
+                    { 20, 4, false, "Solving Trigonometric Equations", "https://estigo.runasp.net/vv.mp4" },
+                    { 21, 5, false, "Introduction to Statistics", "https://estigo.runasp.net/vv.mp4" },
+                    { 22, 5, false, "Descriptive Statistics", "https://estigo.runasp.net/vv.mp4" },
+                    { 23, 5, false, "Data Visualization", "https://estigo.runasp.net/vv.mp4" },
+                    { 24, 5, false, "Basic Probability Concepts", "https://estigo.runasp.net/vv.mp4" },
+                    { 25, 5, false, "Introduction to Distributions", "https://estigo.runasp.net/vv.mp4" },
+                    { 26, 6, false, "Foundations of Probability", "https://estigo.runasp.net/vv.mp4" },
+                    { 27, 6, false, "Conditional Probability and Independence", "https://estigo.runasp.net/vv.mp4" },
+                    { 28, 6, false, "Random Variables", "https://estigo.runasp.net/vv.mp4" },
+                    { 29, 6, false, "Expected Value and Variance", "https://estigo.runasp.net/vv.mp4" },
+                    { 30, 6, false, "Common Probability Distributions", "https://estigo.runasp.net/vv.mp4" },
+                    { 31, 7, false, "Logic and Proofs", "https://estigo.runasp.net/vv.mp4" },
+                    { 32, 7, false, "Set Theory", "https://estigo.runasp.net/vv.mp4" },
+                    { 33, 7, false, "Counting Principles", "https://estigo.runasp.net/vv.mp4" },
+                    { 34, 7, false, "Relations and Functions", "https://estigo.runasp.net/vv.mp4" },
+                    { 35, 7, false, "Introduction to Graph Theory", "https://estigo.runasp.net/vv.mp4" },
+                    { 36, 8, false, "Kinematics in One Dimension", "https://estigo.runasp.net/vv.mp4" },
+                    { 37, 8, false, "Vectors and 2D Kinematics", "https://estigo.runasp.net/vv.mp4" },
+                    { 38, 8, false, "Newton's Laws of Motion", "https://estigo.runasp.net/vv.mp4" },
+                    { 39, 8, false, "Work, Energy, and Power", "https://estigo.runasp.net/vv.mp4" },
+                    { 40, 8, false, "Momentum and Collisions", "https://estigo.runasp.net/vv.mp4" },
+                    { 41, 9, false, "Electric Charge and Coulomb's Law", "https://estigo.runasp.net/vv.mp4" },
+                    { 42, 9, false, "Electric Fields", "https://estigo.runasp.net/vv.mp4" },
+                    { 43, 9, false, "Electric Potential", "https://estigo.runasp.net/vv.mp4" },
+                    { 44, 9, false, "Capacitance", "https://estigo.runasp.net/vv.mp4" },
+                    { 45, 9, false, "Current, Resistance, and Ohm's Law", "https://estigo.runasp.net/vv.mp4" },
+                    { 46, 10, false, "Magnetic Fields and Forces", "https://estigo.runasp.net/vv.mp4" },
+                    { 47, 10, false, "Sources of Magnetic Fields", "https://estigo.runasp.net/vv.mp4" },
+                    { 48, 10, false, "Ampere's Law", "https://estigo.runasp.net/vv.mp4" },
+                    { 49, 10, false, "Electromagnetic Induction", "https://estigo.runasp.net/vv.mp4" },
+                    { 50, 10, false, "Inductance", "https://estigo.runasp.net/vv.mp4" },
+                    { 51, 11, false, "Nature of Light", "https://estigo.runasp.net/vv.mp4" },
+                    { 52, 11, false, "Reflection and Refraction", "https://estigo.runasp.net/vv.mp4" },
+                    { 53, 11, false, "Lenses and Image Formation", "https://estigo.runasp.net/vv.mp4" },
+                    { 54, 11, false, "Wave Optics: Interference", "https://estigo.runasp.net/vv.mp4" },
+                    { 55, 11, false, "Wave Optics: Diffraction", "https://estigo.runasp.net/vv.mp4" },
+                    { 56, 12, false, "Temperature and Heat", "https://estigo.runasp.net/vv.mp4" },
+                    { 57, 12, false, "First Law of Thermodynamics", "https://estigo.runasp.net/vv.mp4" },
+                    { 58, 12, false, "Ideal Gas Law", "https://estigo.runasp.net/vv.mp4" },
+                    { 59, 12, false, "Second Law of Thermodynamics", "https://estigo.runasp.net/vv.mp4" },
+                    { 60, 12, false, "Thermodynamic Cycles", "https://estigo.runasp.net/vv.mp4" },
+                    { 61, 13, false, "Blackbody Radiation & Planck's Hypothesis", "https://estigo.runasp.net/vv.mp4" },
+                    { 62, 13, false, "Photoelectric Effect", "https://estigo.runasp.net/vv.mp4" },
+                    { 63, 13, false, "Wave Nature of Matter", "https://estigo.runasp.net/vv.mp4" },
+                    { 64, 13, false, "The Bohr Model", "https://estigo.runasp.net/vv.mp4" },
+                    { 65, 13, false, "Introduction to Quantum Mechanics", "https://estigo.runasp.net/vv.mp4" },
+                    { 66, 14, false, "Principles of Special Relativity", "https://estigo.runasp.net/vv.mp4" },
+                    { 67, 14, false, "Time Dilation and Length Contraction", "https://estigo.runasp.net/vv.mp4" },
+                    { 68, 14, false, "Relativistic Momentum and Energy", "https://estigo.runasp.net/vv.mp4" },
+                    { 69, 14, false, "Introduction to General Relativity", "https://estigo.runasp.net/vv.mp4" },
+                    { 70, 14, false, "Consequences of General Relativity", "https://estigo.runasp.net/vv.mp4" },
+                    { 71, 15, false, "Introduction to Cells", "https://estigo.runasp.net/vv.mp4" },
+                    { 72, 15, false, "Cell Membrane Structure and Function", "https://estigo.runasp.net/vv.mp4" },
+                    { 73, 15, false, "Eukaryotic Organelles", "https://estigo.runasp.net/vv.mp4" },
+                    { 74, 15, false, "Cellular Respiration", "https://estigo.runasp.net/vv.mp4" },
+                    { 75, 15, false, "The Cell Cycle and Mitosis", "https://estigo.runasp.net/vv.mp4" },
+                    { 76, 16, false, "Mendelian Genetics", "https://estigo.runasp.net/vv.mp4" },
+                    { 77, 16, false, "DNA Structure and Replication", "https://estigo.runasp.net/vv.mp4" },
+                    { 78, 16, false, "Gene Expression: Transcription", "https://estigo.runasp.net/vv.mp4" },
+                    { 79, 16, false, "Gene Expression: Translation", "https://estigo.runasp.net/vv.mp4" },
+                    { 80, 16, false, "Mutations and Genetic Variation", "https://estigo.runasp.net/vv.mp4" },
+                    { 81, 17, false, "Skeletal Systems", "https://estigo.runasp.net/vv.mp4" },
+                    { 82, 17, false, "Muscular Systems", "https://estigo.runasp.net/vv.mp4" },
+                    { 83, 17, false, "Biomechanics Basics", "https://estigo.runasp.net/vv.mp4" },
+                    { 84, 17, false, "Locomotion in Animals", "https://estigo.runasp.net/vv.mp4" },
+                    { 85, 17, false, "Nervous System Control of Movement", "https://estigo.runasp.net/vv.mp4" },
+                    { 86, 18, false, "Introduction to Ecology", "https://estigo.runasp.net/vv.mp4" },
+                    { 87, 18, false, "Population Ecology", "https://estigo.runasp.net/vv.mp4" },
+                    { 88, 18, false, "Community Ecology", "https://estigo.runasp.net/vv.mp4" },
+                    { 89, 18, false, "Ecosystem Dynamics", "https://estigo.runasp.net/vv.mp4" },
+                    { 90, 18, false, "Biomes and Conservation", "https://estigo.runasp.net/vv.mp4" },
+                    { 91, 19, false, "Plant Structure and Growth", "https://estigo.runasp.net/vv.mp4" },
+                    { 92, 19, false, "Plant Transport Systems", "https://estigo.runasp.net/vv.mp4" },
+                    { 93, 19, false, "Photosynthesis", "https://estigo.runasp.net/vv.mp4" },
+                    { 94, 19, false, "Plant Reproduction", "https://estigo.runasp.net/vv.mp4" },
+                    { 95, 19, false, "Plant Hormones and Responses", "https://estigo.runasp.net/vv.mp4" },
+                    { 96, 20, false, "Introduction to Animal Diversity", "https://estigo.runasp.net/vv.mp4" },
+                    { 97, 20, false, "Invertebrate Zoology I", "https://estigo.runasp.net/vv.mp4" },
+                    { 98, 20, false, "Invertebrate Zoology II", "https://estigo.runasp.net/vv.mp4" },
+                    { 99, 20, false, "Vertebrate Zoology I", "https://estigo.runasp.net/vv.mp4" },
+                    { 100, 20, false, "Vertebrate Zoology II", "https://estigo.runasp.net/vv.mp4" },
+                    { 101, 21, false, "Introduction to Microbes", "https://estigo.runasp.net/vv.mp4" },
+                    { 102, 21, false, "Bacterial Structure and Function", "https://estigo.runasp.net/vv.mp4" },
+                    { 103, 21, false, "Microbial Growth and Metabolism", "https://estigo.runasp.net/vv.mp4" },
+                    { 104, 21, false, "Viruses and Prions", "https://estigo.runasp.net/vv.mp4" },
+                    { 105, 21, false, "Microbial Roles and Applications", "https://estigo.runasp.net/vv.mp4" },
+                    { 106, 22, false, "Introduction & Bonding", "https://estigo.runasp.net/vv.mp4" },
+                    { 107, 22, false, "Alkanes and Cycloalkanes", "https://estigo.runasp.net/vv.mp4" },
+                    { 108, 22, false, "Stereochemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 109, 22, false, "Introduction to Organic Reactions", "https://estigo.runasp.net/vv.mp4" },
+                    { 110, 22, false, "Alkenes and Alkynes: Structure & Reactivity", "https://estigo.runasp.net/vv.mp4" },
+                    { 111, 23, false, "Atomic Structure and Periodicity", "https://estigo.runasp.net/vv.mp4" },
+                    { 112, 23, false, "Chemical Bonding: Lewis & VSEPR", "https://estigo.runasp.net/vv.mp4" },
+                    { 113, 23, false, "Valence Bond and Molecular Orbital Theory", "https://estigo.runasp.net/vv.mp4" },
+                    { 114, 23, false, "Acid-Base Chemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 115, 23, false, "Introduction to Coordination Chemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 116, 24, false, "Gases and Kinetic Theory", "https://estigo.runasp.net/vv.mp4" },
+                    { 117, 24, false, "Thermodynamics: First Law", "https://estigo.runasp.net/vv.mp4" },
+                    { 118, 24, false, "Thermodynamics: Second & Third Laws", "https://estigo.runasp.net/vv.mp4" },
+                    { 119, 24, false, "Chemical Kinetics", "https://estigo.runasp.net/vv.mp4" },
+                    { 120, 24, false, "Introduction to Quantum Chemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 121, 25, false, "Introduction & Statistics", "https://estigo.runasp.net/vv.mp4" },
+                    { 122, 25, false, "Gravimetric and Volumetric Analysis", "https://estigo.runasp.net/vv.mp4" },
+                    { 123, 25, false, "Spectroscopic Methods", "https://estigo.runasp.net/vv.mp4" },
+                    { 124, 25, false, "Chromatography Basics", "https://estigo.runasp.net/vv.mp4" },
+                    { 125, 25, false, "Electroanalytical Methods", "https://estigo.runasp.net/vv.mp4" },
+                    { 126, 26, false, "Amino Acids and Proteins", "https://estigo.runasp.net/vv.mp4" },
+                    { 127, 26, false, "Enzymes and Enzyme Kinetics", "https://estigo.runasp.net/vv.mp4" },
+                    { 128, 26, false, "Carbohydrates", "https://estigo.runasp.net/vv.mp4" },
+                    { 129, 26, false, "Lipids and Membranes", "https://estigo.runasp.net/vv.mp4" },
+                    { 130, 26, false, "Metabolic Pathways Overview", "https://estigo.runasp.net/vv.mp4" },
+                    { 131, 27, false, "Atmospheric Chemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 132, 27, false, "Aquatic Chemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 133, 27, false, "Soil Chemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 134, 27, false, "Toxicology and Risk Assessment", "https://estigo.runasp.net/vv.mp4" },
+                    { 135, 27, false, "Green Chemistry", "https://estigo.runasp.net/vv.mp4" },
+                    { 136, 28, false, "Quantum Mechanics Fundamentals", "https://estigo.runasp.net/vv.mp4" },
+                    { 137, 28, false, "Approximation Methods", "https://estigo.runasp.net/vv.mp4" },
+                    { 138, 28, false, "Molecular Symmetry and Group Theory", "https://estigo.runasp.net/vv.mp4" },
+                    { 139, 28, false, "Computational Chemistry Methods", "https://estigo.runasp.net/vv.mp4" },
+                    { 140, 28, false, "Statistical Thermodynamics", "https://estigo.runasp.net/vv.mp4" },
+                    { 141, 29, false, "Introduction to Literary Analysis", "https://estigo.runasp.net/vv.mp4" },
+                    { 142, 29, false, "Short Story Analysis", "https://estigo.runasp.net/vv.mp4" },
+                    { 143, 29, false, "Poetry Fundamentals", "https://estigo.runasp.net/vv.mp4" },
+                    { 144, 29, false, "Novel Study: Introduction", "https://estigo.runasp.net/vv.mp4" },
+                    { 145, 29, false, "Introduction to Drama", "https://estigo.runasp.net/vv.mp4" },
+                    { 146, 30, false, "Finding Your Voice", "https://estigo.runasp.net/vv.mp4" },
+                    { 147, 30, false, "Character Development", "https://estigo.runasp.net/vv.mp4" },
+                    { 148, 30, false, "Plotting and Structure", "https://estigo.runasp.net/vv.mp4" },
+                    { 149, 30, false, "Setting and Description", "https://estigo.runasp.net/vv.mp4" },
+                    { 150, 30, false, "Dialogue Writing", "https://estigo.runasp.net/vv.mp4" },
+                    { 151, 31, false, "Parts of Speech Review", "https://estigo.runasp.net/vv.mp4" },
+                    { 152, 31, false, "Sentence Structure", "https://estigo.runasp.net/vv.mp4" },
+                    { 153, 31, false, "Punctuation Rules", "https://estigo.runasp.net/vv.mp4" },
+                    { 154, 31, false, "Common Grammatical Errors", "https://estigo.runasp.net/vv.mp4" },
+                    { 155, 31, false, "Paragraph and Essay Structure", "https://estigo.runasp.net/vv.mp4" },
+                    { 156, 32, false, "Elements of Poetry", "https://estigo.runasp.net/vv.mp4" },
+                    { 157, 32, false, "Figurative Language", "https://estigo.runasp.net/vv.mp4" },
+                    { 158, 32, false, "Sound Devices", "https://estigo.runasp.net/vv.mp4" },
+                    { 159, 32, false, "Poetic Forms", "https://estigo.runasp.net/vv.mp4" },
+                    { 160, 32, false, "Interpreting Poems", "https://estigo.runasp.net/vv.mp4" },
+                    { 161, 33, false, "History of Theater", "https://estigo.runasp.net/vv.mp4" },
+                    { 162, 33, false, "Elements of Drama", "https://estigo.runasp.net/vv.mp4" },
+                    { 163, 33, false, "Reading a Play", "https://estigo.runasp.net/vv.mp4" },
+                    { 164, 33, false, "Major Dramatic Genres", "https://estigo.runasp.net/vv.mp4" },
+                    { 165, 33, false, "Theater Production Basics", "https://estigo.runasp.net/vv.mp4" },
+                    { 166, 34, false, "Generating Ideas", "https://estigo.runasp.net/vv.mp4" },
+                    { 167, 34, false, "Point of View and Narrative Voice", "https://estigo.runasp.net/vv.mp4" },
+                    { 168, 34, false, "Show, Don't Tell", "https://estigo.runasp.net/vv.mp4" },
+                    { 169, 34, false, "Crafting Scenes", "https://estigo.runasp.net/vv.mp4" },
+                    { 170, 34, false, "Revision Strategies", "https://estigo.runasp.net/vv.mp4" },
+                    { 171, 35, false, "Types of Non-fiction", "https://estigo.runasp.net/vv.mp4" },
+                    { 172, 35, false, "Research Techniques", "https://estigo.runasp.net/vv.mp4" },
+                    { 173, 35, false, "Structuring Non-fiction", "https://estigo.runasp.net/vv.mp4" },
+                    { 174, 35, false, "Writing with Clarity and Style", "https://estigo.runasp.net/vv.mp4" },
+                    { 175, 35, false, "Ethics in Non-fiction", "https://estigo.runasp.net/vv.mp4" }
                 });
 
             migrationBuilder.InsertData(
@@ -268,10 +268,10 @@ namespace Estigo.Migrations
                     { 12, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of graphical data representation.", "Data Visualization Exam", "Not Graded", 0, false, 23 },
                     { 13, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of basic probability distributions.", "Introduction to Distributions Exam", "Not Graded", 0, false, 25 },
                     { 14, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of conditional probability and independence.", "Conditional Probability Exam", "Not Graded", 0, false, 27 },
-                    { 15, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your ability to calculate measures for random variables.", "Expected Value and Variance Exam", "Not Graded", 0, false, 29 },
+                    { 15, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comprehensive test of statistical concepts, data visualization, probability distributions, conditional probability, and expected value.", "Statistics & Probability Comprehensive Exam", "Not Graded", 0, false, 29 },
                     { 16, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of propositional logic and proof methods.", "Logic and Proofs Exam", "Not Graded", 0, false, 31 },
                     { 17, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of permutations and combinations.", "Counting Principles Exam", "Not Graded", 0, false, 33 },
-                    { 18, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of basic graph concepts.", "Introduction to Graph Theory Exam", "Not Graded", 0, false, 35 },
+                    { 18, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comprehensive test of core mathematical concepts including algebra, calculus, geometry, trigonometry, and discrete math.", "Core Mathematics Comprehensive Exam", "Not Graded", 0, true, 35 },
                     { 19, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of projectile motion and vector operations.", "Vectors and 2D Kinematics Exam", "Not Graded", 0, false, 37 },
                     { 20, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of work, energy concepts, and conservation.", "Work, Energy, and Power Exam", "Not Graded", 0, false, 39 },
                     { 21, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of electric charge properties and Coulomb's Law.", "Electric Charge and Coulomb's Law Exam", "Not Graded", 0, false, 41 },
@@ -288,7 +288,7 @@ namespace Estigo.Migrations
                     { 32, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of the De Broglie hypothesis.", "Wave Nature of Matter Exam", "Not Graded", 0, false, 63 },
                     { 33, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your basic understanding of the Schrödinger equation and wave functions.", "Introduction to Quantum Mechanics Exam", "Not Graded", 0, false, 65 },
                     { 34, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of relativistic effects on time and space.", "Time Dilation and Length Contraction Exam", "Not Graded", 0, false, 67 },
-                    { 35, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your conceptual understanding of general relativity.", "Introduction to General Relativity Exam", "Not Graded", 0, false, 69 },
+                    { 35, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comprehensive test of classical mechanics, electricity, magnetism, optics, thermodynamics, and modern physics concepts.", "Physics Comprehensive Exam", "Not Graded", 0, true, 69 },
                     { 36, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of Prokaryotic vs. Eukaryotic cells.", "Introduction to Cells Exam", "Not Graded", 0, false, 71 },
                     { 37, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of major organelle structures and functions.", "Eukaryotic Organelles Exam", "Not Graded", 0, false, 73 },
                     { 38, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of the cell cycle phases and mitosis.", "The Cell Cycle and Mitosis Exam", "Not Graded", 0, false, 75 },
@@ -306,7 +306,7 @@ namespace Estigo.Migrations
                     { 50, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of Chordates and Fish.", "Vertebrate Zoology I Exam", "Not Graded", 0, false, 99 },
                     { 51, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of microbial diversity.", "Introduction to Microbes Exam", "Not Graded", 0, false, 101 },
                     { 52, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of microbial growth requirements and pathways.", "Microbial Growth and Metabolism Exam", "Not Graded", 0, false, 103 },
-                    { 53, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of microbes in ecosystems, disease, and industry.", "Microbial Roles Exam", "Not Graded", 0, false, 105 },
+                    { 53, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comprehensive test of cell biology, genetics, physiology, ecology, botany, zoology, and microbiology.", "Biology Comprehensive Exam", "Not Graded", 0, true, 105 },
                     { 54, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of alkane nomenclature and conformations.", "Alkanes and Cycloalkanes Exam", "Not Graded", 0, false, 107 },
                     { 55, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of reaction types and mechanisms.", "Introduction to Organic Reactions Exam", "Not Graded", 0, false, 109 },
                     { 56, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of atomic models and periodic trends.", "Atomic Structure and Periodicity Exam", "Not Graded", 0, false, 111 },
@@ -323,7 +323,7 @@ namespace Estigo.Migrations
                     { 67, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of soil composition and chemical reactions.", "Soil Chemistry Exam", "Not Graded", 0, false, 133 },
                     { 68, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of principles for safer chemical processes.", "Green Chemistry Exam", "Not Graded", 0, false, 135 },
                     { 69, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of variation principle and perturbation theory.", "Approximation Methods Exam", "Not Graded", 0, false, 137 },
-                    { 70, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your basic understanding of Hartree-Fock and DFT.", "Computational Chemistry Methods Exam", "Not Graded", 0, false, 139 },
+                    { 70, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comprehensive test of organic, inorganic, physical, analytical, bio, environmental, and theoretical chemistry.", "Chemistry Comprehensive Exam", "Not Graded", 0, true, 139 },
                     { 71, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your ability to use tools for interpreting literature.", "Literary Analysis Basics Exam", "Not Graded", 0, false, 141 },
                     { 72, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of poetic devices and forms.", "Poetry Fundamentals Exam", "Not Graded", 0, false, 143 },
                     { 73, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of the elements of dramatic literature.", "Introduction to Drama Exam", "Not Graded", 0, false, 145 },
@@ -341,7 +341,7 @@ namespace Estigo.Migrations
                     { 85, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of scene structure and pacing.", "Crafting Scenes Quiz", "Not Graded", 0, false, 169 },
                     { 86, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your knowledge of different non-fiction forms.", "Types of Non-fiction Exam", "Not Graded", 0, false, 171 },
                     { 87, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your ability to organize factual material effectively.", "Structuring Non-fiction Exam", "Not Graded", 0, false, 173 },
-                    { 88, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test your understanding of responsibilities in non-fiction writing.", "Ethics in Non-fiction Exam", "Not Graded", 0, false, 175 }
+                    { 88, new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comprehensive test of literary analysis, creative writing, grammar, composition, and non-fiction.", "English & Literature Comprehensive Exam", "Not Graded", 0, true, 175 }
                 });
 
             migrationBuilder.InsertData(
@@ -788,7 +788,87 @@ namespace Estigo.Migrations
                     { 437, "B", 88, "Plagiarism", "Fact-checking", "Speculation", "Fictionalization", "Verifying information through multiple reliable sources is called:" },
                     { 438, "C", 88, "Citation", "Paraphrasing", "Plagiarism", "Quoting", "Presenting someone else's work or ideas as your own is:" },
                     { 439, "B", 88, "Plot structure", "Privacy and potential harm", "Rhyme scheme", "Character archetypes", "When writing about real people, authors must consider issues of:" },
-                    { 440, "B", 88, "Fictionalization", "Representation", "Speculation", "Exaggeration", "Fairly portraying subjects and avoiding bias is crucial for ethical:" }
+                    { 440, "B", 88, "Fictionalization", "Representation", "Speculation", "Exaggeration", "Fairly portraying subjects and avoiding bias is crucial for ethical:" },
+                    { 471, "A", 18, "1", "-1", "i", "-i", "What is the value of 'i' raised to the power of 4 (i^4), where 'i' is the imaginary unit?" },
+                    { 472, "B", 18, "Differentiation", "Integration", "Factorization", "Extrapolation", "The process of finding the area under a curve is known as:" },
+                    { 473, "D", 18, "The limit of f(x) as x approaches 'a' exists", "f(a) is defined", "The limit of f(x) as x approaches 'a' equals f(a)", "All of the above", "A function f(x) is continuous at a point 'a' if which condition is met?" },
+                    { 474, "C", 18, "Sine", "Tangent", "Secant", "Cosecant", "Which trigonometric function is the reciprocal of cosine?" },
+                    { 475, "C", 18, "An identity matrix", "A zero matrix", "An involutory matrix", "A singular matrix", "A matrix that is its own inverse is called:" },
+                    { 476, "B", 18, "Real root", "Complex root", "Rational root", "Integer root", "The Fundamental Theorem of Algebra states that every non-constant single-variable polynomial with complex coefficients has at least one:" },
+                    { 477, "A", 18, "0", "1", "Greater than 1", "Between 0 and 1", "What is the eccentricity of a circle in conic sections?" },
+                    { 478, "B", 18, "nx^(n+1)", "n*x^(n-1)", "x^n / n", "(n-1)x^n", "The power rule for derivatives states that d/dx(x^n) =" },
+                    { 479, "B", 18, "Intersection of A and B", "Union of A and B", "Complement of A", "Cartesian product of A and B", "In set theory, the set of all elements that are in A or in B (or in both) is called the:" },
+                    { 480, "C", 18, "A function that is only injective (one-to-one)", "A function that is only surjective (onto)", "A function that is both injective and surjective", "A function that is neither injective nor surjective", "What does the term 'bijection' refer to in functions?" },
+                    { 481, "C", 18, "Translation", "Rotation", "Reflection", "Dilation", "Which geometric transformation involves flipping a figure over a line?" },
+                    { 482, "B", 18, "Permutations P(n,k)", "Combinations C(n,k)", "Factorial of n+k", "Arithmetic series sum", "The expression (n!) / (k!(n-k)!) is the formula for:" },
+                    { 483, "B", 18, "Always false", "Always true", "Sometimes true, sometimes false", "Undefined", "A tautology in propositional logic is a statement that is:" },
+                    { 484, "A", 18, "cos(x)", "-sin(x)", "-cos(x)", "tan(x)", "What is the derivative of sin(x)?" },
+                    { 485, "B", 18, "It has no cycles", "Every vertex is connected to every other vertex", "It is a tree", "It is planar", "A graph is considered 'complete' if:" },
+                    { 486, "B", 15, "Summing all values", "Subtracting the minimum value from the maximum value", "Finding the most frequent value", "Averaging all values", "The range of a dataset is calculated by:" },
+                    { 487, "C", 15, "The null hypothesis being true", "The alternative hypothesis being true", "Observing the test statistic (or more extreme) if the null hypothesis is true", "Making a Type II error", "A p-value in hypothesis testing represents the probability of:" },
+                    { 488, "D", 15, "Symmetric about the mean", "Bell-shaped curve", "Mean, median, and mode are equal", "Skewed to the right", "Which of these is NOT a characteristic of a normal distribution?" },
+                    { 489, "B", 15, "P(A) * P(B)", "P(A) + P(B)", "P(A) + P(B) - P(A and B)", "0", "If events A and B are mutually exclusive, then P(A or B) is:" },
+                    { 490, "B", 15, "Perfect positive linear relationship", "Perfect negative linear relationship", "No linear relationship", "Weak positive linear relationship", "What does a correlation coefficient of -1 indicate?" },
+                    { 501, "A", 35, "Joule/second (J/s)", "Newton-meter (N·m)", "Kilogram-meter/second (kg·m/s)", "Coulomb/second (C/s)", "The unit of power is the Watt (W), which is equivalent to:" },
+                    { 502, "C", 35, "Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Conservation of Momentum", "Which law states that for every action, there is an equal and opposite reaction?" },
+                    { 503, "B", 35, "Product", "Sum", "Reciprocal of the sum of reciprocals", "Average", "In a series circuit, the total resistance is the ___ of individual resistances." },
+                    { 504, "B", 35, "Wave", "Particle (photon)", "Continuous", "Magnetic", "The photoelectric effect demonstrates the ___ nature of light." },
+                    { 505, "C", 35, "Volt (V)", "Ampere (A)", "Tesla (T)", "Weber (Wb)", "What is the SI unit of magnetic field strength?" },
+                    { 506, "C", 35, "They reflect off each other", "They cancel each other out completely", "Their displacements add algebraically", "Their frequencies double", "The principle of superposition in waves states that when two waves meet:" },
+                    { 507, "A", 35, "Heat added minus work done by the system", "Work done by the system minus heat added", "Heat added plus work done on the system", "Always zero", "According to the First Law of Thermodynamics, the change in internal energy of a system is equal to:" },
+                    { 508, "C", 35, "Velocity", "Acceleration", "Total momentum", "Force", "Which quantity remains constant in an isolated system according to the law of conservation of momentum?" },
+                    { 509, "B", 35, "Real and inverted", "Virtual and upright", "Real and upright", "Virtual and inverted", "A concave lens always produces images that are:" },
+                    { 510, "B", 35, "Temperature", "Cross-sectional area", "Voltage", "Current", "The resistance of a wire is directly proportional to its length and inversely proportional to its:" },
+                    { 511, "B", 35, "Alpha decay", "Beta-minus decay", "Gamma decay", "Positron emission (Beta-plus decay)", "Which type of nuclear decay involves the emission of an electron?" },
+                    { 512, "B", 35, "f = vλ", "f = v/λ", "f = λ/v", "f = v + λ", "The frequency of a wave is related to its wavelength (λ) and speed (v) by the equation:" },
+                    { 513, "C", 35, "Tangent to the circle", "Away from the center", "Towards the center of the circle", "In the direction of velocity", "In a uniform circular motion, the acceleration vector is always directed:" },
+                    { 514, "B", 35, "Relative to the observer", "Constant for all observers", "Dependent on the source's speed", "Variable", "Special Relativity postulates that the laws of physics are the same in all inertial frames and that the speed of light in a vacuum is:" },
+                    { 515, "B", 35, "First Law of Thermodynamics", "Second Law of Thermodynamics", "Zeroth Law of Thermodynamics", "Third Law of Thermodynamics", "The tendency of a system to move towards a state of greater disorder is described by the:" },
+                    { 516, "B", 53, "Glucose", "ATP (Adenosine Triphosphate)", "DNA", "RNA", "What is the primary molecule used by cells for energy currency?" },
+                    { 517, "B", 53, "Meiosis", "Mitosis", "Fertilization", "Binary Fission", "The process where a cell divides to produce two genetically identical daughter cells is:" },
+                    { 518, "B", 53, "Cellulose", "Phospholipids", "Starch", "Amino acids", "Which of these is a key component of the cell membrane, forming a bilayer?" },
+                    { 519, "C", 53, "Nucleus", "Mitochondrion", "Ribosome", "Golgi apparatus", "The site of protein synthesis in a eukaryotic cell is the:" },
+                    { 520, "C", 53, "Plantae", "Animalia", "Fungi", "Protista", "Which kingdom do mushrooms and yeasts belong to?" },
+                    { 521, "B", 53, "Genotype", "Phenotype", "Allele", "Genome", "The observable characteristics of an organism, resulting from its genotype and environment, are its:" },
+                    { 522, "A", 53, "To absorb light energy", "To produce glucose", "To release oxygen", "To transport water", "What is the primary role of chlorophyll in photosynthesis?" },
+                    { 523, "C", 53, "Community", "Ecosystem", "Population", "Biome", "A group of individuals of the same species living in the same area is called a:" },
+                    { 524, "C", 53, "Respiratory System", "Digestive System", "Circulatory System", "Nervous System", "Which human body system is primarily responsible for transporting oxygen, nutrients, and waste?" },
+                    { 525, "C", 53, "Transcription", "Translation", "Replication", "Mutation", "The process by which DNA makes a copy of itself is called:" },
+                    { 526, "D", 53, "Lipids", "Carbohydrates", "Nucleic Acids", "Proteins", "What are enzymes primarily composed of?" },
+                    { 527, "C", 53, "Parasitism", "Commensalism", "Mutualism", "Predation", "The interaction between two different species where both benefit is called:" },
+                    { 528, "C", 53, "Presence of a nucleus", "Membrane-bound organelles", "Circular DNA not enclosed in a nucleus", "Multiple linear chromosomes", "Which of the following is a characteristic of prokaryotic cells but not eukaryotic cells?" },
+                    { 529, "B", 53, "Reproduce rapidly", "Maintain a stable internal environment", "Evolve over time", "Respond to external stimuli", "Homeostasis refers to the ability of an organism to:" },
+                    { 530, "C", 53, "Herbivores", "Carnivores", "Producers (e.g., plants)", "Decomposers", "The first trophic level in an ecosystem is typically occupied by:" },
+                    { 531, "B", 70, "Mass number", "Atomic number", "Isotope", "Ion charge", "The number of protons in an atom's nucleus defines its:" },
+                    { 532, "C", 70, "Oxygen (O)", "Nitrogen (N)", "Helium (He)", "Hydrogen (H)", "Which of the following is an example of a noble gas?" },
+                    { 533, "A", 70, "Strongly acidic", "Weakly acidic", "Neutral", "Weakly basic", "A solution with a pH of 3 is considered:" },
+                    { 534, "B", 70, "Reduction", "Oxidation", "Neutralization", "Hydration", "What type of reaction involves the loss of electrons by a chemical species?" },
+                    { 535, "C", 70, "Gram", "Liter", "Mole", "Milliliter", "Avogadro's number (approximately 6.022 x 10^23) represents the number of entities in one:" },
+                    { 536, "D", 70, "Poor conductor of electricity", "Brittle solid", "Forms anions readily", "Good conductor of heat and electricity", "Which of these is a characteristic property of metals?" },
+                    { 537, "B", 70, "Energy is conserved", "Mass is conserved", "Volume is conserved", "Moles are conserved", "The law of conservation of mass states that in a chemical reaction:" },
+                    { 538, "B", 70, "Inorganic Chemistry", "Organic Chemistry", "Physical Chemistry", "Analytical Chemistry", "Which branch of chemistry deals primarily with carbon-containing compounds?" },
+                    { 539, "B", 70, "Increasing the activation energy", "Decreasing the activation energy", "Increasing the temperature", "Shifting the equilibrium", "A catalyst increases the rate of a chemical reaction by:" },
+                    { 540, "B", 70, "CnH2n", "CnH2n+2", "CnH2n-2", "CnHn", "What is the general formula for alkanes?" },
+                    { 541, "C", 70, "Melting", "Evaporation", "Sublimation", "Condensation", "The process by which a solid changes directly to a gas without passing through the liquid phase is called:" },
+                    { 542, "C", 70, "Sodium (Na)", "Calcium (Ca)", "Chlorine (Cl)", "Sulfur (S)", "Which of the following elements is a halogen?" },
+                    { 543, "B", 70, "The actual number of atoms of each element", "The simplest whole-number ratio of atoms", "The structural arrangement of atoms", "The molecular weight of the compound", "The empirical formula of a compound represents:" },
+                    { 544, "C", 70, "Ethane", "Propane", "Methane", "Butane", "What is the main component of natural gas?" },
+                    { 545, "B", 70, "Absorbed by the system", "Released by the system", "Neither absorbed nor released", "Converted to work", "In an exothermic reaction, heat is:" },
+                    { 546, "C", 88, "Second-person", "Third-person limited", "First-person", "Third-person omniscient", "A story told from the 'I' perspective is using which point of view?" },
+                    { 547, "B", 88, "Metaphor", "Simile", "Personification", "Hyperbole", "The use of 'like' or 'as' to compare two unlike things is a:" },
+                    { 548, "B", 88, "Period (.)", "Comma (,)", "Semicolon (;)", "Question Mark (?)", "Which punctuation mark is used to indicate a pause or to separate items in a series?" },
+                    { 549, "C", 88, "Plot", "Setting", "Theme", "Conflict", "The underlying meaning or message the author conveys in a literary work is the:" },
+                    { 550, "C", 88, "Protagonist", "Narrator", "Antagonist", "Foil", "A character who opposes the main character is the:" },
+                    { 551, "C", 88, "Adverb", "Verb", "Adjective", "Preposition", "What part of speech describes a noun or pronoun (e.g., 'beautiful' flower)?" },
+                    { 552, "B", 88, "Diction", "Syntax", "Tone", "Imagery", "The structure of a sentence, including the arrangement of words and phrases, is known as:" },
+                    { 553, "C", 88, "Realism", "Historical Fiction", "Epic", "Satire", "Which literary genre typically features a hero on a quest, often involving supernatural elements?" },
+                    { 554, "B", 88, "Mood", "Tone", "Theme", "Plot", "A writer's attitude toward the subject or audience, conveyed through word choice and style, is the:" },
+                    { 555, "C", 88, "Topic sentence", "Supporting detail", "Thesis statement", "Conclusion", "In essay writing, the sentence that states the main argument or purpose of the essay is the:" },
+                    { 556, "C", 88, "Simile", "Metaphor", "Personification", "Allusion", "Giving human qualities to an inanimate object or animal is called:" },
+                    { 557, "B", 88, "Allegory", "Anecdote", "Analogy", "Aphorism", "A short, amusing or interesting story about a real incident or person is an:" },
+                    { 558, "B", 88, "Biography", "Autobiography", "Memoir", "Journal", "Which of the following is a type of non-fiction that tells the story of a person's life, written by that person?" },
+                    { 559, "B", 88, "Tone", "Mood", "Style", "Voice", "The feeling or atmosphere that a writer creates for the reader is the:" },
+                    { 560, "C", 88, "Pathos", "Logos", "Satire", "Foreshadowing", "The literary technique of using humor, irony, exaggeration, or ridicule to expose and criticize people's stupidity or vices is:" }
                 });
         }
 
@@ -2994,6 +3074,406 @@ namespace Estigo.Migrations
                 table: "BankOfQuestions",
                 keyColumn: "Id",
                 keyValue: 440);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 471);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 472);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 473);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 474);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 475);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 476);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 477);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 478);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 479);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 480);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 481);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 482);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 483);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 484);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 485);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 486);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 487);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 488);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 489);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 490);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 501);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 502);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 503);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 504);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 505);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 506);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 507);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 508);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 509);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 510);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 511);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 512);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 513);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 514);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 515);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 516);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 517);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 518);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 519);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 520);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 521);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 522);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 523);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 524);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 525);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 526);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 527);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 528);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 529);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 530);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 531);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 532);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 533);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 534);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 535);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 536);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 537);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 538);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 539);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 540);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 541);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 542);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 543);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 544);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 545);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 546);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 547);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 548);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 549);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 550);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 551);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 552);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 553);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 554);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 555);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 556);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 557);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 558);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 559);
+
+            migrationBuilder.DeleteData(
+                table: "BankOfQuestions",
+                keyColumn: "Id",
+                keyValue: 560);
 
             migrationBuilder.DeleteData(
                 table: "lessons",

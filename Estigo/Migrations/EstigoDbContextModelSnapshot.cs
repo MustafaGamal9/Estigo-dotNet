@@ -6016,7 +6016,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u1.jpg",
                             Price = 199,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -6029,7 +6029,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u2.jpg",
                             Price = 199,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -6042,7 +6042,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u3.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -6055,7 +6055,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u4.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -6068,7 +6068,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u5.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -6081,7 +6081,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u6.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -6094,7 +6094,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u7.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -6107,7 +6107,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f1.jpg",
                             Price = 149,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -6120,7 +6120,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f2.jpg",
                             Price = 149,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -6133,7 +6133,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f3.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -6146,7 +6146,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f4.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -6159,7 +6159,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f5.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -6172,7 +6172,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f6.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -6185,7 +6185,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f7.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -6198,7 +6198,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu1.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -6211,7 +6211,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu2.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -6224,7 +6224,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu3.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -6237,7 +6237,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu4.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -6250,7 +6250,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu5.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -6263,7 +6263,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu6.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -6276,7 +6276,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu7.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -6289,7 +6289,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y1.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -6302,7 +6302,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y2.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -6315,7 +6315,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y3.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -6328,7 +6328,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y4.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -6341,7 +6341,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y5.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -6354,7 +6354,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y6.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -6367,7 +6367,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y7.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -6380,7 +6380,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m1.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -6393,7 +6393,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m2.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -6406,7 +6406,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m3.jpg",
                             Price = 119,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -6419,7 +6419,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m4.jpg",
                             Price = 119,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -6432,7 +6432,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m5.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -6445,7 +6445,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m6.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -6458,7 +6458,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m7.jpg",
                             Price = 119,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         });
                 });
 

@@ -241,8 +241,6 @@ namespace Estigo.Migrations
                     lessonId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     lessonTitle = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    lessonDescription = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    lessonContent = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     lessonVideo = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     isLive = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),

@@ -264,16 +264,16 @@ namespace Estigo.Controllers
         }
 
 
-        
-        // Our popular courses section
+
+        // Our selected courses section
         [HttpGet("HomepageCourses")]
-        public async Task<IActionResult> GetPopularCourses()
+        public async Task<IActionResult> GetSelectedCourses()
         {
+            var selectedCourseIds = new List<int> { 1, 9, 17, 24 };
+
             var courses = await context.Courses
                 .Include(c => c.Teacher)
-                .Where(c => c.Available)
-                .OrderBy(c => Guid.NewGuid())
-                .Take(4)
+                .Where(c => c.Available && selectedCourseIds.Contains(c.courseId))
                 .ToListAsync();
 
             if (courses == null || courses.Count == 0)
@@ -281,7 +281,7 @@ namespace Estigo.Controllers
                 return Ok(new List<CourseHomeDTO>()); // Return empty list if no courses found
             }
 
-            var popularCoursesDTOs = courses.Select(course => new CourseHomeDTO
+            var selectedCoursesDTOs = courses.Select(course => new CourseHomeDTO
             {
                 courseId = course.courseId,
                 CourseTitle = course.CourseTitle,
@@ -289,11 +289,12 @@ namespace Estigo.Controllers
                 TeacherName = course.Teacher?.Name
             }).ToList();
 
-            return Ok(popularCoursesDTOs);
+            return Ok(selectedCoursesDTOs);
         }
 
 
-    [HttpGet("category/{categoryId}")]
+
+        [HttpGet("category/{categoryId}")]
     public async Task<ActionResult<IEnumerable<Course>>> GetCoursesByCategoryVm(int categoryId)
     {
         try

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    [Migration("20250602054451_newDB")]
+    [Migration("20250602133434_newDB")]
     partial class newDB
     {
         /// <inheritdoc />
@@ -420,16 +420,6 @@ namespace Estigo.Migrations
 
                     b.Property<bool>("isLive")
                         .HasColumnType("bit");
-
-                    b.Property<string>("lessonContent")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("lessonDescription")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("lessonTitle")
                         .IsRequired()

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Estigo.Migrations
 {
     [DbContext(typeof(EstigoDbContext))]
-    [Migration("20250602075459_removedLessonDescAndContent")]
-    partial class removedLessonDescAndContent
+    [Migration("20250602134601_addSeedData")]
+    partial class addSeedData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -4998,6 +4998,886 @@ namespace Estigo.Migrations
                             OptionC = "Speculation",
                             OptionD = "Exaggeration",
                             QuestionText = "Fairly portraying subjects and avoiding bias is crucial for ethical:"
+                        },
+                        new
+                        {
+                            Id = 471,
+                            CorrectAnswer = "A",
+                            ExamId = 18,
+                            OptionA = "1",
+                            OptionB = "-1",
+                            OptionC = "i",
+                            OptionD = "-i",
+                            QuestionText = "What is the value of 'i' raised to the power of 4 (i^4), where 'i' is the imaginary unit?"
+                        },
+                        new
+                        {
+                            Id = 472,
+                            CorrectAnswer = "B",
+                            ExamId = 18,
+                            OptionA = "Differentiation",
+                            OptionB = "Integration",
+                            OptionC = "Factorization",
+                            OptionD = "Extrapolation",
+                            QuestionText = "The process of finding the area under a curve is known as:"
+                        },
+                        new
+                        {
+                            Id = 473,
+                            CorrectAnswer = "D",
+                            ExamId = 18,
+                            OptionA = "The limit of f(x) as x approaches 'a' exists",
+                            OptionB = "f(a) is defined",
+                            OptionC = "The limit of f(x) as x approaches 'a' equals f(a)",
+                            OptionD = "All of the above",
+                            QuestionText = "A function f(x) is continuous at a point 'a' if which condition is met?"
+                        },
+                        new
+                        {
+                            Id = 474,
+                            CorrectAnswer = "C",
+                            ExamId = 18,
+                            OptionA = "Sine",
+                            OptionB = "Tangent",
+                            OptionC = "Secant",
+                            OptionD = "Cosecant",
+                            QuestionText = "Which trigonometric function is the reciprocal of cosine?"
+                        },
+                        new
+                        {
+                            Id = 475,
+                            CorrectAnswer = "C",
+                            ExamId = 18,
+                            OptionA = "An identity matrix",
+                            OptionB = "A zero matrix",
+                            OptionC = "An involutory matrix",
+                            OptionD = "A singular matrix",
+                            QuestionText = "A matrix that is its own inverse is called:"
+                        },
+                        new
+                        {
+                            Id = 476,
+                            CorrectAnswer = "B",
+                            ExamId = 18,
+                            OptionA = "Real root",
+                            OptionB = "Complex root",
+                            OptionC = "Rational root",
+                            OptionD = "Integer root",
+                            QuestionText = "The Fundamental Theorem of Algebra states that every non-constant single-variable polynomial with complex coefficients has at least one:"
+                        },
+                        new
+                        {
+                            Id = 477,
+                            CorrectAnswer = "A",
+                            ExamId = 18,
+                            OptionA = "0",
+                            OptionB = "1",
+                            OptionC = "Greater than 1",
+                            OptionD = "Between 0 and 1",
+                            QuestionText = "What is the eccentricity of a circle in conic sections?"
+                        },
+                        new
+                        {
+                            Id = 478,
+                            CorrectAnswer = "B",
+                            ExamId = 18,
+                            OptionA = "nx^(n+1)",
+                            OptionB = "n*x^(n-1)",
+                            OptionC = "x^n / n",
+                            OptionD = "(n-1)x^n",
+                            QuestionText = "The power rule for derivatives states that d/dx(x^n) ="
+                        },
+                        new
+                        {
+                            Id = 479,
+                            CorrectAnswer = "B",
+                            ExamId = 18,
+                            OptionA = "Intersection of A and B",
+                            OptionB = "Union of A and B",
+                            OptionC = "Complement of A",
+                            OptionD = "Cartesian product of A and B",
+                            QuestionText = "In set theory, the set of all elements that are in A or in B (or in both) is called the:"
+                        },
+                        new
+                        {
+                            Id = 480,
+                            CorrectAnswer = "C",
+                            ExamId = 18,
+                            OptionA = "A function that is only injective (one-to-one)",
+                            OptionB = "A function that is only surjective (onto)",
+                            OptionC = "A function that is both injective and surjective",
+                            OptionD = "A function that is neither injective nor surjective",
+                            QuestionText = "What does the term 'bijection' refer to in functions?"
+                        },
+                        new
+                        {
+                            Id = 481,
+                            CorrectAnswer = "C",
+                            ExamId = 18,
+                            OptionA = "Translation",
+                            OptionB = "Rotation",
+                            OptionC = "Reflection",
+                            OptionD = "Dilation",
+                            QuestionText = "Which geometric transformation involves flipping a figure over a line?"
+                        },
+                        new
+                        {
+                            Id = 482,
+                            CorrectAnswer = "B",
+                            ExamId = 18,
+                            OptionA = "Permutations P(n,k)",
+                            OptionB = "Combinations C(n,k)",
+                            OptionC = "Factorial of n+k",
+                            OptionD = "Arithmetic series sum",
+                            QuestionText = "The expression (n!) / (k!(n-k)!) is the formula for:"
+                        },
+                        new
+                        {
+                            Id = 483,
+                            CorrectAnswer = "B",
+                            ExamId = 18,
+                            OptionA = "Always false",
+                            OptionB = "Always true",
+                            OptionC = "Sometimes true, sometimes false",
+                            OptionD = "Undefined",
+                            QuestionText = "A tautology in propositional logic is a statement that is:"
+                        },
+                        new
+                        {
+                            Id = 484,
+                            CorrectAnswer = "A",
+                            ExamId = 18,
+                            OptionA = "cos(x)",
+                            OptionB = "-sin(x)",
+                            OptionC = "-cos(x)",
+                            OptionD = "tan(x)",
+                            QuestionText = "What is the derivative of sin(x)?"
+                        },
+                        new
+                        {
+                            Id = 485,
+                            CorrectAnswer = "B",
+                            ExamId = 18,
+                            OptionA = "It has no cycles",
+                            OptionB = "Every vertex is connected to every other vertex",
+                            OptionC = "It is a tree",
+                            OptionD = "It is planar",
+                            QuestionText = "A graph is considered 'complete' if:"
+                        },
+                        new
+                        {
+                            Id = 486,
+                            CorrectAnswer = "B",
+                            ExamId = 15,
+                            OptionA = "Summing all values",
+                            OptionB = "Subtracting the minimum value from the maximum value",
+                            OptionC = "Finding the most frequent value",
+                            OptionD = "Averaging all values",
+                            QuestionText = "The range of a dataset is calculated by:"
+                        },
+                        new
+                        {
+                            Id = 487,
+                            CorrectAnswer = "C",
+                            ExamId = 15,
+                            OptionA = "The null hypothesis being true",
+                            OptionB = "The alternative hypothesis being true",
+                            OptionC = "Observing the test statistic (or more extreme) if the null hypothesis is true",
+                            OptionD = "Making a Type II error",
+                            QuestionText = "A p-value in hypothesis testing represents the probability of:"
+                        },
+                        new
+                        {
+                            Id = 488,
+                            CorrectAnswer = "D",
+                            ExamId = 15,
+                            OptionA = "Symmetric about the mean",
+                            OptionB = "Bell-shaped curve",
+                            OptionC = "Mean, median, and mode are equal",
+                            OptionD = "Skewed to the right",
+                            QuestionText = "Which of these is NOT a characteristic of a normal distribution?"
+                        },
+                        new
+                        {
+                            Id = 489,
+                            CorrectAnswer = "B",
+                            ExamId = 15,
+                            OptionA = "P(A) * P(B)",
+                            OptionB = "P(A) + P(B)",
+                            OptionC = "P(A) + P(B) - P(A and B)",
+                            OptionD = "0",
+                            QuestionText = "If events A and B are mutually exclusive, then P(A or B) is:"
+                        },
+                        new
+                        {
+                            Id = 490,
+                            CorrectAnswer = "B",
+                            ExamId = 15,
+                            OptionA = "Perfect positive linear relationship",
+                            OptionB = "Perfect negative linear relationship",
+                            OptionC = "No linear relationship",
+                            OptionD = "Weak positive linear relationship",
+                            QuestionText = "What does a correlation coefficient of -1 indicate?"
+                        },
+                        new
+                        {
+                            Id = 501,
+                            CorrectAnswer = "A",
+                            ExamId = 35,
+                            OptionA = "Joule/second (J/s)",
+                            OptionB = "Newton-meter (N·m)",
+                            OptionC = "Kilogram-meter/second (kg·m/s)",
+                            OptionD = "Coulomb/second (C/s)",
+                            QuestionText = "The unit of power is the Watt (W), which is equivalent to:"
+                        },
+                        new
+                        {
+                            Id = 502,
+                            CorrectAnswer = "C",
+                            ExamId = 35,
+                            OptionA = "Newton's First Law",
+                            OptionB = "Newton's Second Law",
+                            OptionC = "Newton's Third Law",
+                            OptionD = "Law of Conservation of Momentum",
+                            QuestionText = "Which law states that for every action, there is an equal and opposite reaction?"
+                        },
+                        new
+                        {
+                            Id = 503,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "Product",
+                            OptionB = "Sum",
+                            OptionC = "Reciprocal of the sum of reciprocals",
+                            OptionD = "Average",
+                            QuestionText = "In a series circuit, the total resistance is the ___ of individual resistances."
+                        },
+                        new
+                        {
+                            Id = 504,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "Wave",
+                            OptionB = "Particle (photon)",
+                            OptionC = "Continuous",
+                            OptionD = "Magnetic",
+                            QuestionText = "The photoelectric effect demonstrates the ___ nature of light."
+                        },
+                        new
+                        {
+                            Id = 505,
+                            CorrectAnswer = "C",
+                            ExamId = 35,
+                            OptionA = "Volt (V)",
+                            OptionB = "Ampere (A)",
+                            OptionC = "Tesla (T)",
+                            OptionD = "Weber (Wb)",
+                            QuestionText = "What is the SI unit of magnetic field strength?"
+                        },
+                        new
+                        {
+                            Id = 506,
+                            CorrectAnswer = "C",
+                            ExamId = 35,
+                            OptionA = "They reflect off each other",
+                            OptionB = "They cancel each other out completely",
+                            OptionC = "Their displacements add algebraically",
+                            OptionD = "Their frequencies double",
+                            QuestionText = "The principle of superposition in waves states that when two waves meet:"
+                        },
+                        new
+                        {
+                            Id = 507,
+                            CorrectAnswer = "A",
+                            ExamId = 35,
+                            OptionA = "Heat added minus work done by the system",
+                            OptionB = "Work done by the system minus heat added",
+                            OptionC = "Heat added plus work done on the system",
+                            OptionD = "Always zero",
+                            QuestionText = "According to the First Law of Thermodynamics, the change in internal energy of a system is equal to:"
+                        },
+                        new
+                        {
+                            Id = 508,
+                            CorrectAnswer = "C",
+                            ExamId = 35,
+                            OptionA = "Velocity",
+                            OptionB = "Acceleration",
+                            OptionC = "Total momentum",
+                            OptionD = "Force",
+                            QuestionText = "Which quantity remains constant in an isolated system according to the law of conservation of momentum?"
+                        },
+                        new
+                        {
+                            Id = 509,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "Real and inverted",
+                            OptionB = "Virtual and upright",
+                            OptionC = "Real and upright",
+                            OptionD = "Virtual and inverted",
+                            QuestionText = "A concave lens always produces images that are:"
+                        },
+                        new
+                        {
+                            Id = 510,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "Temperature",
+                            OptionB = "Cross-sectional area",
+                            OptionC = "Voltage",
+                            OptionD = "Current",
+                            QuestionText = "The resistance of a wire is directly proportional to its length and inversely proportional to its:"
+                        },
+                        new
+                        {
+                            Id = 511,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "Alpha decay",
+                            OptionB = "Beta-minus decay",
+                            OptionC = "Gamma decay",
+                            OptionD = "Positron emission (Beta-plus decay)",
+                            QuestionText = "Which type of nuclear decay involves the emission of an electron?"
+                        },
+                        new
+                        {
+                            Id = 512,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "f = vλ",
+                            OptionB = "f = v/λ",
+                            OptionC = "f = λ/v",
+                            OptionD = "f = v + λ",
+                            QuestionText = "The frequency of a wave is related to its wavelength (λ) and speed (v) by the equation:"
+                        },
+                        new
+                        {
+                            Id = 513,
+                            CorrectAnswer = "C",
+                            ExamId = 35,
+                            OptionA = "Tangent to the circle",
+                            OptionB = "Away from the center",
+                            OptionC = "Towards the center of the circle",
+                            OptionD = "In the direction of velocity",
+                            QuestionText = "In a uniform circular motion, the acceleration vector is always directed:"
+                        },
+                        new
+                        {
+                            Id = 514,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "Relative to the observer",
+                            OptionB = "Constant for all observers",
+                            OptionC = "Dependent on the source's speed",
+                            OptionD = "Variable",
+                            QuestionText = "Special Relativity postulates that the laws of physics are the same in all inertial frames and that the speed of light in a vacuum is:"
+                        },
+                        new
+                        {
+                            Id = 515,
+                            CorrectAnswer = "B",
+                            ExamId = 35,
+                            OptionA = "First Law of Thermodynamics",
+                            OptionB = "Second Law of Thermodynamics",
+                            OptionC = "Zeroth Law of Thermodynamics",
+                            OptionD = "Third Law of Thermodynamics",
+                            QuestionText = "The tendency of a system to move towards a state of greater disorder is described by the:"
+                        },
+                        new
+                        {
+                            Id = 516,
+                            CorrectAnswer = "B",
+                            ExamId = 53,
+                            OptionA = "Glucose",
+                            OptionB = "ATP (Adenosine Triphosphate)",
+                            OptionC = "DNA",
+                            OptionD = "RNA",
+                            QuestionText = "What is the primary molecule used by cells for energy currency?"
+                        },
+                        new
+                        {
+                            Id = 517,
+                            CorrectAnswer = "B",
+                            ExamId = 53,
+                            OptionA = "Meiosis",
+                            OptionB = "Mitosis",
+                            OptionC = "Fertilization",
+                            OptionD = "Binary Fission",
+                            QuestionText = "The process where a cell divides to produce two genetically identical daughter cells is:"
+                        },
+                        new
+                        {
+                            Id = 518,
+                            CorrectAnswer = "B",
+                            ExamId = 53,
+                            OptionA = "Cellulose",
+                            OptionB = "Phospholipids",
+                            OptionC = "Starch",
+                            OptionD = "Amino acids",
+                            QuestionText = "Which of these is a key component of the cell membrane, forming a bilayer?"
+                        },
+                        new
+                        {
+                            Id = 519,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Nucleus",
+                            OptionB = "Mitochondrion",
+                            OptionC = "Ribosome",
+                            OptionD = "Golgi apparatus",
+                            QuestionText = "The site of protein synthesis in a eukaryotic cell is the:"
+                        },
+                        new
+                        {
+                            Id = 520,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Plantae",
+                            OptionB = "Animalia",
+                            OptionC = "Fungi",
+                            OptionD = "Protista",
+                            QuestionText = "Which kingdom do mushrooms and yeasts belong to?"
+                        },
+                        new
+                        {
+                            Id = 521,
+                            CorrectAnswer = "B",
+                            ExamId = 53,
+                            OptionA = "Genotype",
+                            OptionB = "Phenotype",
+                            OptionC = "Allele",
+                            OptionD = "Genome",
+                            QuestionText = "The observable characteristics of an organism, resulting from its genotype and environment, are its:"
+                        },
+                        new
+                        {
+                            Id = 522,
+                            CorrectAnswer = "A",
+                            ExamId = 53,
+                            OptionA = "To absorb light energy",
+                            OptionB = "To produce glucose",
+                            OptionC = "To release oxygen",
+                            OptionD = "To transport water",
+                            QuestionText = "What is the primary role of chlorophyll in photosynthesis?"
+                        },
+                        new
+                        {
+                            Id = 523,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Community",
+                            OptionB = "Ecosystem",
+                            OptionC = "Population",
+                            OptionD = "Biome",
+                            QuestionText = "A group of individuals of the same species living in the same area is called a:"
+                        },
+                        new
+                        {
+                            Id = 524,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Respiratory System",
+                            OptionB = "Digestive System",
+                            OptionC = "Circulatory System",
+                            OptionD = "Nervous System",
+                            QuestionText = "Which human body system is primarily responsible for transporting oxygen, nutrients, and waste?"
+                        },
+                        new
+                        {
+                            Id = 525,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Transcription",
+                            OptionB = "Translation",
+                            OptionC = "Replication",
+                            OptionD = "Mutation",
+                            QuestionText = "The process by which DNA makes a copy of itself is called:"
+                        },
+                        new
+                        {
+                            Id = 526,
+                            CorrectAnswer = "D",
+                            ExamId = 53,
+                            OptionA = "Lipids",
+                            OptionB = "Carbohydrates",
+                            OptionC = "Nucleic Acids",
+                            OptionD = "Proteins",
+                            QuestionText = "What are enzymes primarily composed of?"
+                        },
+                        new
+                        {
+                            Id = 527,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Parasitism",
+                            OptionB = "Commensalism",
+                            OptionC = "Mutualism",
+                            OptionD = "Predation",
+                            QuestionText = "The interaction between two different species where both benefit is called:"
+                        },
+                        new
+                        {
+                            Id = 528,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Presence of a nucleus",
+                            OptionB = "Membrane-bound organelles",
+                            OptionC = "Circular DNA not enclosed in a nucleus",
+                            OptionD = "Multiple linear chromosomes",
+                            QuestionText = "Which of the following is a characteristic of prokaryotic cells but not eukaryotic cells?"
+                        },
+                        new
+                        {
+                            Id = 529,
+                            CorrectAnswer = "B",
+                            ExamId = 53,
+                            OptionA = "Reproduce rapidly",
+                            OptionB = "Maintain a stable internal environment",
+                            OptionC = "Evolve over time",
+                            OptionD = "Respond to external stimuli",
+                            QuestionText = "Homeostasis refers to the ability of an organism to:"
+                        },
+                        new
+                        {
+                            Id = 530,
+                            CorrectAnswer = "C",
+                            ExamId = 53,
+                            OptionA = "Herbivores",
+                            OptionB = "Carnivores",
+                            OptionC = "Producers (e.g., plants)",
+                            OptionD = "Decomposers",
+                            QuestionText = "The first trophic level in an ecosystem is typically occupied by:"
+                        },
+                        new
+                        {
+                            Id = 531,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "Mass number",
+                            OptionB = "Atomic number",
+                            OptionC = "Isotope",
+                            OptionD = "Ion charge",
+                            QuestionText = "The number of protons in an atom's nucleus defines its:"
+                        },
+                        new
+                        {
+                            Id = 532,
+                            CorrectAnswer = "C",
+                            ExamId = 70,
+                            OptionA = "Oxygen (O)",
+                            OptionB = "Nitrogen (N)",
+                            OptionC = "Helium (He)",
+                            OptionD = "Hydrogen (H)",
+                            QuestionText = "Which of the following is an example of a noble gas?"
+                        },
+                        new
+                        {
+                            Id = 533,
+                            CorrectAnswer = "A",
+                            ExamId = 70,
+                            OptionA = "Strongly acidic",
+                            OptionB = "Weakly acidic",
+                            OptionC = "Neutral",
+                            OptionD = "Weakly basic",
+                            QuestionText = "A solution with a pH of 3 is considered:"
+                        },
+                        new
+                        {
+                            Id = 534,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "Reduction",
+                            OptionB = "Oxidation",
+                            OptionC = "Neutralization",
+                            OptionD = "Hydration",
+                            QuestionText = "What type of reaction involves the loss of electrons by a chemical species?"
+                        },
+                        new
+                        {
+                            Id = 535,
+                            CorrectAnswer = "C",
+                            ExamId = 70,
+                            OptionA = "Gram",
+                            OptionB = "Liter",
+                            OptionC = "Mole",
+                            OptionD = "Milliliter",
+                            QuestionText = "Avogadro's number (approximately 6.022 x 10^23) represents the number of entities in one:"
+                        },
+                        new
+                        {
+                            Id = 536,
+                            CorrectAnswer = "D",
+                            ExamId = 70,
+                            OptionA = "Poor conductor of electricity",
+                            OptionB = "Brittle solid",
+                            OptionC = "Forms anions readily",
+                            OptionD = "Good conductor of heat and electricity",
+                            QuestionText = "Which of these is a characteristic property of metals?"
+                        },
+                        new
+                        {
+                            Id = 537,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "Energy is conserved",
+                            OptionB = "Mass is conserved",
+                            OptionC = "Volume is conserved",
+                            OptionD = "Moles are conserved",
+                            QuestionText = "The law of conservation of mass states that in a chemical reaction:"
+                        },
+                        new
+                        {
+                            Id = 538,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "Inorganic Chemistry",
+                            OptionB = "Organic Chemistry",
+                            OptionC = "Physical Chemistry",
+                            OptionD = "Analytical Chemistry",
+                            QuestionText = "Which branch of chemistry deals primarily with carbon-containing compounds?"
+                        },
+                        new
+                        {
+                            Id = 539,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "Increasing the activation energy",
+                            OptionB = "Decreasing the activation energy",
+                            OptionC = "Increasing the temperature",
+                            OptionD = "Shifting the equilibrium",
+                            QuestionText = "A catalyst increases the rate of a chemical reaction by:"
+                        },
+                        new
+                        {
+                            Id = 540,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "CnH2n",
+                            OptionB = "CnH2n+2",
+                            OptionC = "CnH2n-2",
+                            OptionD = "CnHn",
+                            QuestionText = "What is the general formula for alkanes?"
+                        },
+                        new
+                        {
+                            Id = 541,
+                            CorrectAnswer = "C",
+                            ExamId = 70,
+                            OptionA = "Melting",
+                            OptionB = "Evaporation",
+                            OptionC = "Sublimation",
+                            OptionD = "Condensation",
+                            QuestionText = "The process by which a solid changes directly to a gas without passing through the liquid phase is called:"
+                        },
+                        new
+                        {
+                            Id = 542,
+                            CorrectAnswer = "C",
+                            ExamId = 70,
+                            OptionA = "Sodium (Na)",
+                            OptionB = "Calcium (Ca)",
+                            OptionC = "Chlorine (Cl)",
+                            OptionD = "Sulfur (S)",
+                            QuestionText = "Which of the following elements is a halogen?"
+                        },
+                        new
+                        {
+                            Id = 543,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "The actual number of atoms of each element",
+                            OptionB = "The simplest whole-number ratio of atoms",
+                            OptionC = "The structural arrangement of atoms",
+                            OptionD = "The molecular weight of the compound",
+                            QuestionText = "The empirical formula of a compound represents:"
+                        },
+                        new
+                        {
+                            Id = 544,
+                            CorrectAnswer = "C",
+                            ExamId = 70,
+                            OptionA = "Ethane",
+                            OptionB = "Propane",
+                            OptionC = "Methane",
+                            OptionD = "Butane",
+                            QuestionText = "What is the main component of natural gas?"
+                        },
+                        new
+                        {
+                            Id = 545,
+                            CorrectAnswer = "B",
+                            ExamId = 70,
+                            OptionA = "Absorbed by the system",
+                            OptionB = "Released by the system",
+                            OptionC = "Neither absorbed nor released",
+                            OptionD = "Converted to work",
+                            QuestionText = "In an exothermic reaction, heat is:"
+                        },
+                        new
+                        {
+                            Id = 546,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Second-person",
+                            OptionB = "Third-person limited",
+                            OptionC = "First-person",
+                            OptionD = "Third-person omniscient",
+                            QuestionText = "A story told from the 'I' perspective is using which point of view?"
+                        },
+                        new
+                        {
+                            Id = 547,
+                            CorrectAnswer = "B",
+                            ExamId = 88,
+                            OptionA = "Metaphor",
+                            OptionB = "Simile",
+                            OptionC = "Personification",
+                            OptionD = "Hyperbole",
+                            QuestionText = "The use of 'like' or 'as' to compare two unlike things is a:"
+                        },
+                        new
+                        {
+                            Id = 548,
+                            CorrectAnswer = "B",
+                            ExamId = 88,
+                            OptionA = "Period (.)",
+                            OptionB = "Comma (,)",
+                            OptionC = "Semicolon (;)",
+                            OptionD = "Question Mark (?)",
+                            QuestionText = "Which punctuation mark is used to indicate a pause or to separate items in a series?"
+                        },
+                        new
+                        {
+                            Id = 549,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Plot",
+                            OptionB = "Setting",
+                            OptionC = "Theme",
+                            OptionD = "Conflict",
+                            QuestionText = "The underlying meaning or message the author conveys in a literary work is the:"
+                        },
+                        new
+                        {
+                            Id = 550,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Protagonist",
+                            OptionB = "Narrator",
+                            OptionC = "Antagonist",
+                            OptionD = "Foil",
+                            QuestionText = "A character who opposes the main character is the:"
+                        },
+                        new
+                        {
+                            Id = 551,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Adverb",
+                            OptionB = "Verb",
+                            OptionC = "Adjective",
+                            OptionD = "Preposition",
+                            QuestionText = "What part of speech describes a noun or pronoun (e.g., 'beautiful' flower)?"
+                        },
+                        new
+                        {
+                            Id = 552,
+                            CorrectAnswer = "B",
+                            ExamId = 88,
+                            OptionA = "Diction",
+                            OptionB = "Syntax",
+                            OptionC = "Tone",
+                            OptionD = "Imagery",
+                            QuestionText = "The structure of a sentence, including the arrangement of words and phrases, is known as:"
+                        },
+                        new
+                        {
+                            Id = 553,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Realism",
+                            OptionB = "Historical Fiction",
+                            OptionC = "Epic",
+                            OptionD = "Satire",
+                            QuestionText = "Which literary genre typically features a hero on a quest, often involving supernatural elements?"
+                        },
+                        new
+                        {
+                            Id = 554,
+                            CorrectAnswer = "B",
+                            ExamId = 88,
+                            OptionA = "Mood",
+                            OptionB = "Tone",
+                            OptionC = "Theme",
+                            OptionD = "Plot",
+                            QuestionText = "A writer's attitude toward the subject or audience, conveyed through word choice and style, is the:"
+                        },
+                        new
+                        {
+                            Id = 555,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Topic sentence",
+                            OptionB = "Supporting detail",
+                            OptionC = "Thesis statement",
+                            OptionD = "Conclusion",
+                            QuestionText = "In essay writing, the sentence that states the main argument or purpose of the essay is the:"
+                        },
+                        new
+                        {
+                            Id = 556,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Simile",
+                            OptionB = "Metaphor",
+                            OptionC = "Personification",
+                            OptionD = "Allusion",
+                            QuestionText = "Giving human qualities to an inanimate object or animal is called:"
+                        },
+                        new
+                        {
+                            Id = 557,
+                            CorrectAnswer = "B",
+                            ExamId = 88,
+                            OptionA = "Allegory",
+                            OptionB = "Anecdote",
+                            OptionC = "Analogy",
+                            OptionD = "Aphorism",
+                            QuestionText = "A short, amusing or interesting story about a real incident or person is an:"
+                        },
+                        new
+                        {
+                            Id = 558,
+                            CorrectAnswer = "B",
+                            ExamId = 88,
+                            OptionA = "Biography",
+                            OptionB = "Autobiography",
+                            OptionC = "Memoir",
+                            OptionD = "Journal",
+                            QuestionText = "Which of the following is a type of non-fiction that tells the story of a person's life, written by that person?"
+                        },
+                        new
+                        {
+                            Id = 559,
+                            CorrectAnswer = "B",
+                            ExamId = 88,
+                            OptionA = "Tone",
+                            OptionB = "Mood",
+                            OptionC = "Style",
+                            OptionD = "Voice",
+                            QuestionText = "The feeling or atmosphere that a writer creates for the reader is the:"
+                        },
+                        new
+                        {
+                            Id = 560,
+                            CorrectAnswer = "C",
+                            ExamId = 88,
+                            OptionA = "Pathos",
+                            OptionB = "Logos",
+                            OptionC = "Satire",
+                            OptionD = "Foreshadowing",
+                            QuestionText = "The literary technique of using humor, irony, exaggeration, or ridicule to expose and criticize people's stupidity or vices is:"
                         });
                 });
 
@@ -5139,7 +6019,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u1.jpg",
                             Price = 199,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -5152,7 +6032,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u2.jpg",
                             Price = 199,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -5165,7 +6045,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u3.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -5178,7 +6058,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u4.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -5191,7 +6071,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u5.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -5204,7 +6084,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u6.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -5217,7 +6097,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/u7.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "ba60d4a7-c9d5-46ef-8199-be470cf60bcb"
+                            TeacherId = "f3000e69-e194-41ec-acb3-4a3d41253987"
                         },
                         new
                         {
@@ -5230,7 +6110,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f1.jpg",
                             Price = 149,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -5243,7 +6123,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f2.jpg",
                             Price = 149,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -5256,7 +6136,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f3.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -5269,7 +6149,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f4.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -5282,7 +6162,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f5.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -5295,7 +6175,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f6.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -5308,7 +6188,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/f7.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "23a875f7-2ab5-40e1-9f31-476068e04332"
+                            TeacherId = "22f718af-7a07-48a3-a501-a032466aeef2"
                         },
                         new
                         {
@@ -5321,7 +6201,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu1.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -5334,7 +6214,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu2.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -5347,7 +6227,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu3.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -5360,7 +6240,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu4.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -5373,7 +6253,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu5.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -5386,7 +6266,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu6.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -5399,7 +6279,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/uu7.jpg",
                             Price = 189,
                             Status = 1,
-                            TeacherId = "b3ccf381-440d-4fd3-91ae-c2e72285c491"
+                            TeacherId = "dbac4aa8-2cdb-4a66-9080-23ddf8fde838"
                         },
                         new
                         {
@@ -5412,7 +6292,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y1.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -5425,7 +6305,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y2.jpg",
                             Price = 159,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -5438,7 +6318,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y3.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -5451,7 +6331,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y4.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -5464,7 +6344,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y5.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -5477,7 +6357,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y6.jpg",
                             Price = 179,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -5490,7 +6370,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/y7.jpg",
                             Price = 169,
                             Status = 1,
-                            TeacherId = "ed8550c7-dc8a-4e45-901f-1cb73ffd8643"
+                            TeacherId = "bb3a1427-d95f-4cbe-9a12-1841e6c3ead9"
                         },
                         new
                         {
@@ -5503,7 +6383,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m1.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -5516,7 +6396,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m2.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -5529,7 +6409,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m3.jpg",
                             Price = 119,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -5542,7 +6422,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m4.jpg",
                             Price = 119,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -5555,7 +6435,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m5.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -5568,7 +6448,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m6.jpg",
                             Price = 129,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         },
                         new
                         {
@@ -5581,7 +6461,7 @@ namespace Estigo.Migrations
                             Logo = "https://estigo.runasp.net/m7.jpg",
                             Price = 119,
                             Status = 1,
-                            TeacherId = "5cdf45b4-2047-4d0d-a29a-85e6977ef3f4"
+                            TeacherId = "290f0fe9-c8cb-4a6e-b863-b61df939f025"
                         });
                 });
 
@@ -5744,6 +6624,39 @@ namespace Estigo.Migrations
                         },
                         new
                         {
+                            Id = 16,
+                            CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExamDescription = "Test your knowledge of propositional logic and proof methods.",
+                            ExamTitle = "Logic and Proofs Exam",
+                            Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
+                            lessonId = 31
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExamDescription = "Test your knowledge of permutations and combinations.",
+                            ExamTitle = "Counting Principles Exam",
+                            Grade = "Not Graded",
+                            attempts = 0,
+                            final = false,
+                            lessonId = 33
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExamDescription = "Comprehensive test of core mathematical concepts including algebra, calculus, geometry, trigonometry, and discrete math.",
+                            ExamTitle = "Core Mathematics Comprehensive Exam",
+                            Grade = "Not Graded",
+                            attempts = 0,
+                            final = true,
+                            lessonId = 35
+                        },
+                        new
+                        {
                             Id = 11,
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExamDescription = "Test your knowledge of basic statistical concepts and data types.",
@@ -5790,45 +6703,12 @@ namespace Estigo.Migrations
                         {
                             Id = 15,
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your ability to calculate measures for random variables.",
-                            ExamTitle = "Expected Value and Variance Exam",
+                            ExamDescription = "Comprehensive test of statistical concepts, data visualization, probability distributions, conditional probability, and expected value.",
+                            ExamTitle = "Statistics & Probability Comprehensive Exam",
                             Grade = "Not Graded",
                             attempts = 0,
                             final = false,
                             lessonId = 29
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your knowledge of propositional logic and proof methods.",
-                            ExamTitle = "Logic and Proofs Exam",
-                            Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
-                            lessonId = 31
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your knowledge of permutations and combinations.",
-                            ExamTitle = "Counting Principles Exam",
-                            Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
-                            lessonId = 33
-                        },
-                        new
-                        {
-                            Id = 18,
-                            CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your knowledge of basic graph concepts.",
-                            ExamTitle = "Introduction to Graph Theory Exam",
-                            Grade = "Not Graded",
-                            attempts = 0,
-                            final = false,
-                            lessonId = 35
                         },
                         new
                         {
@@ -6010,11 +6890,11 @@ namespace Estigo.Migrations
                         {
                             Id = 35,
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your conceptual understanding of general relativity.",
-                            ExamTitle = "Introduction to General Relativity Exam",
+                            ExamDescription = "Comprehensive test of classical mechanics, electricity, magnetism, optics, thermodynamics, and modern physics concepts.",
+                            ExamTitle = "Physics Comprehensive Exam",
                             Grade = "Not Graded",
                             attempts = 0,
-                            final = false,
+                            final = true,
                             lessonId = 69
                         },
                         new
@@ -6208,11 +7088,11 @@ namespace Estigo.Migrations
                         {
                             Id = 53,
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your knowledge of microbes in ecosystems, disease, and industry.",
-                            ExamTitle = "Microbial Roles Exam",
+                            ExamDescription = "Comprehensive test of cell biology, genetics, physiology, ecology, botany, zoology, and microbiology.",
+                            ExamTitle = "Biology Comprehensive Exam",
                             Grade = "Not Graded",
                             attempts = 0,
-                            final = false,
+                            final = true,
                             lessonId = 105
                         },
                         new
@@ -6395,11 +7275,11 @@ namespace Estigo.Migrations
                         {
                             Id = 70,
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your basic understanding of Hartree-Fock and DFT.",
-                            ExamTitle = "Computational Chemistry Methods Exam",
+                            ExamDescription = "Comprehensive test of organic, inorganic, physical, analytical, bio, environmental, and theoretical chemistry.",
+                            ExamTitle = "Chemistry Comprehensive Exam",
                             Grade = "Not Graded",
                             attempts = 0,
-                            final = false,
+                            final = true,
                             lessonId = 139
                         },
                         new
@@ -6593,11 +7473,11 @@ namespace Estigo.Migrations
                         {
                             Id = 88,
                             CreatedAt = new DateTime(2024, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExamDescription = "Test your understanding of responsibilities in non-fiction writing.",
-                            ExamTitle = "Ethics in Non-fiction Exam",
+                            ExamDescription = "Comprehensive test of literary analysis, creative writing, grammar, composition, and non-fiction.",
+                            ExamTitle = "English & Literature Comprehensive Exam",
                             Grade = "Not Graded",
                             attempts = 0,
-                            final = false,
+                            final = true,
                             lessonId = 175
                         });
                 });
