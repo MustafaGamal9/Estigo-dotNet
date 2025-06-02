@@ -8,8 +8,6 @@ namespace Estigo.Models
         [Key]
         public int lessonId { get; set; }
         public string lessonTitle { get; set; }
-        public string lessonDescription { get; set; }
-        public string lessonContent { get; set; }
         public string? lessonVideo { get; set; }
 
         public bool isLive { get; set; } = false;

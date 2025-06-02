@@ -6714,16 +6714,6 @@ namespace Estigo.Migrations
                     b.Property<bool>("isLive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("lessonContent")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("lessonDescription")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
                     b.Property<string>("lessonTitle")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -6746,8 +6736,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
                             isLive = false,
-                            lessonContent = "Content covering basic algebraic notation and terminology.",
-                            lessonDescription = "Introduction to variables and expressions.",
                             lessonTitle = "Algebra Basics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6757,8 +6745,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
                             isLive = false,
-                            lessonContent = "Step-by-step examples of solving linear equations.",
-                            lessonDescription = "Techniques for solving single-variable linear equations.",
                             lessonTitle = "Solving Linear Equations",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6768,8 +6754,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
                             isLive = false,
-                            lessonContent = "Graphing inequalities on a number line and solving.",
-                            lessonDescription = "Understanding and solving linear inequalities.",
                             lessonTitle = "Inequalities",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6779,8 +6763,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
                             isLive = false,
-                            lessonContent = "Defining functions and evaluating function values.",
-                            lessonDescription = "Basic concepts of functions, domain, and range.",
                             lessonTitle = "Functions Introduction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6790,8 +6772,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 1,
                             isLive = false,
-                            lessonContent = "Adding, subtracting, and multiplying polynomials.",
-                            lessonDescription = "Introduction to polynomial expressions and operations.",
                             lessonTitle = "Polynomial Basics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6801,8 +6781,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
                             isLive = false,
-                            lessonContent = "Evaluating limits and understanding continuity.",
-                            lessonDescription = "Understanding the concept of limits in calculus.",
                             lessonTitle = "Limits and Continuity",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6812,8 +6790,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
                             isLive = false,
-                            lessonContent = "Calculating derivatives using the power rule.",
-                            lessonDescription = "Defining the derivative and basic differentiation rules.",
                             lessonTitle = "Introduction to Derivatives",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6823,8 +6799,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
                             isLive = false,
-                            lessonContent = "Applying advanced differentiation rules.",
-                            lessonDescription = "Product rule, quotient rule, and chain rule.",
                             lessonTitle = "Differentiation Techniques",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6834,8 +6808,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
                             isLive = false,
-                            lessonContent = "Solving related rates and optimization problems.",
-                            lessonDescription = "Using derivatives to find rates of change and optimization.",
                             lessonTitle = "Applications of Derivatives",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6845,8 +6817,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 2,
                             isLive = false,
-                            lessonContent = "Understanding the indefinite integral.",
-                            lessonDescription = "Basic concepts of integration and antiderivatives.",
                             lessonTitle = "Introduction to Integrals",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6856,8 +6826,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
                             isLive = false,
-                            lessonContent = "Definitions and postulates of basic geometric elements.",
-                            lessonDescription = "Fundamental concepts of geometry.",
                             lessonTitle = "Points, Lines, and Planes",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6867,8 +6835,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
                             isLive = false,
-                            lessonContent = "Measuring angles, complementary and supplementary angles.",
-                            lessonDescription = "Types of angles and their properties.",
                             lessonTitle = "Angles and Angle Relationships",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6878,8 +6844,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
                             isLive = false,
-                            lessonContent = "Identifying alternate interior, corresponding angles, etc.",
-                            lessonDescription = "Properties of angles formed by parallel lines.",
                             lessonTitle = "Parallel Lines and Transversals",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6889,8 +6853,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
                             isLive = false,
-                            lessonContent = "SSS, SAS, ASA congruence postulates.",
-                            lessonDescription = "Classifying triangles and proving congruence.",
                             lessonTitle = "Triangles and Congruence",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6900,8 +6862,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 3,
                             isLive = false,
-                            lessonContent = "Calculating interior angles and classifying polygons.",
-                            lessonDescription = "Properties of polygons, focusing on quadrilaterals.",
                             lessonTitle = "Introduction to Polygons",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6911,8 +6871,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
                             isLive = false,
-                            lessonContent = "SOH CAH TOA and solving right triangles.",
-                            lessonDescription = "Sine, cosine, and tangent in right triangles.",
                             lessonTitle = "Right Triangle Trigonometry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6922,8 +6880,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
                             isLive = false,
-                            lessonContent = "Finding trig values for standard angles.",
-                            lessonDescription = "Understanding trigonometric functions using the unit circle.",
                             lessonTitle = "The Unit Circle",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6933,8 +6889,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
                             isLive = false,
-                            lessonContent = "Amplitude, period, and phase shift.",
-                            lessonDescription = "Graphing sine, cosine, and tangent functions.",
                             lessonTitle = "Trigonometric Graphs",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6944,8 +6898,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
                             isLive = false,
-                            lessonContent = "Pythagorean identities, sum/difference identities.",
-                            lessonDescription = "Fundamental trigonometric identities.",
                             lessonTitle = "Trigonometric Identities",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6955,8 +6907,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 4,
                             isLive = false,
-                            lessonContent = "Finding solutions within a given interval.",
-                            lessonDescription = "Techniques for solving equations involving trig functions.",
                             lessonTitle = "Solving Trigonometric Equations",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6966,8 +6916,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
                             isLive = false,
-                            lessonContent = "Populations, samples, descriptive vs. inferential statistics.",
-                            lessonDescription = "Types of data and data collection methods.",
                             lessonTitle = "Introduction to Statistics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6977,8 +6925,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
                             isLive = false,
-                            lessonContent = "Mean, median, mode, variance, standard deviation.",
-                            lessonDescription = "Measures of central tendency and dispersion.",
                             lessonTitle = "Descriptive Statistics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6988,8 +6934,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
                             isLive = false,
-                            lessonContent = "Histograms, box plots, scatter plots.",
-                            lessonDescription = "Graphical representation of data.",
                             lessonTitle = "Data Visualization",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -6999,8 +6943,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
                             isLive = false,
-                            lessonContent = "Sample spaces, events, conditional probability.",
-                            lessonDescription = "Introduction to probability rules.",
                             lessonTitle = "Basic Probability Concepts",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7010,8 +6952,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 5,
                             isLive = false,
-                            lessonContent = "Binomial and Normal distributions basics.",
-                            lessonDescription = "Understanding probability distributions.",
                             lessonTitle = "Introduction to Distributions",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7021,8 +6961,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
                             isLive = false,
-                            lessonContent = "Defining events and calculating basic probabilities.",
-                            lessonDescription = "Axioms of probability and sample spaces.",
                             lessonTitle = "Foundations of Probability",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7032,8 +6970,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
                             isLive = false,
-                            lessonContent = "Bayes' Theorem and its applications.",
-                            lessonDescription = "Understanding dependent and independent events.",
                             lessonTitle = "Conditional Probability and Independence",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7043,8 +6979,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
                             isLive = false,
-                            lessonContent = "Probability mass functions and density functions.",
-                            lessonDescription = "Discrete and continuous random variables.",
                             lessonTitle = "Random Variables",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7054,8 +6988,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
                             isLive = false,
-                            lessonContent = "Properties of expectation and variance.",
-                            lessonDescription = "Calculating measures for random variables.",
                             lessonTitle = "Expected Value and Variance",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7065,8 +6997,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 6,
                             isLive = false,
-                            lessonContent = "Applications and calculations for common distributions.",
-                            lessonDescription = "Detailed look at Binomial, Poisson, Normal distributions.",
                             lessonTitle = "Common Probability Distributions",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7076,8 +7006,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
                             isLive = false,
-                            lessonContent = "Truth tables, logical equivalences, direct proof, proof by contradiction.",
-                            lessonDescription = "Propositional logic and methods of proof.",
                             lessonTitle = "Logic and Proofs",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7087,8 +7015,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
                             isLive = false,
-                            lessonContent = "Union, intersection, complement, power sets.",
-                            lessonDescription = "Operations on sets, Venn diagrams.",
                             lessonTitle = "Set Theory",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7098,8 +7024,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
                             isLive = false,
-                            lessonContent = "The pigeonhole principle, binomial coefficients.",
-                            lessonDescription = "Permutations and combinations.",
                             lessonTitle = "Counting Principles",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7109,8 +7033,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
                             isLive = false,
-                            lessonContent = "Equivalence relations, injective, surjective functions.",
-                            lessonDescription = "Properties of relations and types of functions.",
                             lessonTitle = "Relations and Functions",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7120,8 +7042,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 7,
                             isLive = false,
-                            lessonContent = "Vertices, edges, paths, cycles, graph coloring.",
-                            lessonDescription = "Basic concepts of graphs and trees.",
                             lessonTitle = "Introduction to Graph Theory",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7131,8 +7051,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
                             isLive = false,
-                            lessonContent = "Equations of motion for constant acceleration.",
-                            lessonDescription = "Motion, velocity, and acceleration.",
                             lessonTitle = "Kinematics in One Dimension",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7142,8 +7060,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
                             isLive = false,
-                            lessonContent = "Adding vectors, resolving vectors into components.",
-                            lessonDescription = "Projectile motion and vector operations.",
                             lessonTitle = "Vectors and 2D Kinematics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7153,8 +7069,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
                             isLive = false,
-                            lessonContent = "Applying Newton's first, second, and third laws.",
-                            lessonDescription = "Force, mass, and acceleration.",
                             lessonTitle = "Newton's Laws of Motion",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7164,8 +7078,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
                             isLive = false,
-                            lessonContent = "Conservation of energy principle.",
-                            lessonDescription = "Concepts of work, kinetic and potential energy.",
                             lessonTitle = "Work, Energy, and Power",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7175,8 +7087,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 8,
                             isLive = false,
-                            lessonContent = "Conservation of momentum in collisions.",
-                            lessonDescription = "Linear momentum and impulse.",
                             lessonTitle = "Momentum and Collisions",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7186,8 +7096,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
                             isLive = false,
-                            lessonContent = "Calculating electrostatic forces.",
-                            lessonDescription = "Properties of electric charge and forces between charges.",
                             lessonTitle = "Electric Charge and Coulomb's Law",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7197,8 +7105,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
                             isLive = false,
-                            lessonContent = "Calculating electric fields for point charges.",
-                            lessonDescription = "Concept of the electric field and field lines.",
                             lessonTitle = "Electric Fields",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7208,8 +7114,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
                             isLive = false,
-                            lessonContent = "Calculating potential for point charges and systems.",
-                            lessonDescription = "Potential difference and electric potential energy.",
                             lessonTitle = "Electric Potential",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7219,8 +7123,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
                             isLive = false,
-                            lessonContent = "Calculating capacitance for parallel plate capacitors.",
-                            lessonDescription = "Capacitors and energy storage.",
                             lessonTitle = "Capacitance",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7230,8 +7132,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 9,
                             isLive = false,
-                            lessonContent = "Applying Ohm's Law to simple circuits.",
-                            lessonDescription = "Basics of electric current and resistance.",
                             lessonTitle = "Current, Resistance, and Ohm's Law",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7241,8 +7141,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
                             isLive = false,
-                            lessonContent = "Calculating magnetic force using the Lorentz force law.",
-                            lessonDescription = "Introduction to magnetic fields and forces on moving charges.",
                             lessonTitle = "Magnetic Fields and Forces",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7252,8 +7150,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
                             isLive = false,
-                            lessonContent = "Calculating fields for wires and loops.",
-                            lessonDescription = "Magnetic fields produced by currents (Biot-Savart Law).",
                             lessonTitle = "Sources of Magnetic Fields",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7263,8 +7159,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
                             isLive = false,
-                            lessonContent = "Applications for solenoids and toroids.",
-                            lessonDescription = "Using Ampere's Law to find magnetic fields.",
                             lessonTitle = "Ampere's Law",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7274,8 +7168,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
                             isLive = false,
-                            lessonContent = "Induced EMF and magnetic flux.",
-                            lessonDescription = "Faraday's Law of Induction and Lenz's Law.",
                             lessonTitle = "Electromagnetic Induction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7285,8 +7177,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 10,
                             isLive = false,
-                            lessonContent = "RL circuits and energy stored in inductors.",
-                            lessonDescription = "Self-inductance and mutual inductance.",
                             lessonTitle = "Inductance",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7296,8 +7186,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
                             isLive = false,
-                            lessonContent = "Properties of light waves.",
-                            lessonDescription = "Wave-particle duality and the electromagnetic spectrum.",
                             lessonTitle = "Nature of Light",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7307,8 +7195,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
                             isLive = false,
-                            lessonContent = "Total internal reflection and index of refraction.",
-                            lessonDescription = "Laws of reflection and Snell's Law of refraction.",
                             lessonTitle = "Reflection and Refraction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7318,8 +7204,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
                             isLive = false,
-                            lessonContent = "Ray tracing and the thin lens equation.",
-                            lessonDescription = "Converging and diverging lenses.",
                             lessonTitle = "Lenses and Image Formation",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7329,8 +7213,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
                             isLive = false,
-                            lessonContent = "Young's double-slit experiment.",
-                            lessonDescription = "Principle of superposition and interference patterns.",
                             lessonTitle = "Wave Optics: Interference",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7340,8 +7222,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 11,
                             isLive = false,
-                            lessonContent = "Single-slit diffraction patterns.",
-                            lessonDescription = "Diffraction of light through slits and gratings.",
                             lessonTitle = "Wave Optics: Diffraction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7351,8 +7231,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
                             isLive = false,
-                            lessonContent = "Specific heat and calorimetry.",
-                            lessonDescription = "Concepts of thermal energy, temperature scales, and heat transfer.",
                             lessonTitle = "Temperature and Heat",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7362,8 +7240,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
                             isLive = false,
-                            lessonContent = "Conservation of energy in thermal systems.",
-                            lessonDescription = "Internal energy, work, and heat in thermodynamic processes.",
                             lessonTitle = "First Law of Thermodynamics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7373,8 +7249,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
                             isLive = false,
-                            lessonContent = "PV=nRT and kinetic theory of gases.",
-                            lessonDescription = "Behavior of ideal gases.",
                             lessonTitle = "Ideal Gas Law",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7384,8 +7258,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
                             isLive = false,
-                            lessonContent = "Heat engines and refrigerators.",
-                            lessonDescription = "Entropy and the direction of thermodynamic processes.",
                             lessonTitle = "Second Law of Thermodynamics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7395,8 +7267,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 12,
                             isLive = false,
-                            lessonContent = "Efficiency of heat engines.",
-                            lessonDescription = "Analyzing cycles like the Carnot cycle.",
                             lessonTitle = "Thermodynamic Cycles",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7406,8 +7276,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
                             isLive = false,
-                            lessonContent = "Planck's constant and energy quanta.",
-                            lessonDescription = "The ultraviolet catastrophe and quantization of energy.",
                             lessonTitle = "Blackbody Radiation & Planck's Hypothesis",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7417,8 +7285,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
                             isLive = false,
-                            lessonContent = "Work function and stopping potential.",
-                            lessonDescription = "Einstein's explanation and the particle nature of light.",
                             lessonTitle = "Photoelectric Effect",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7428,8 +7294,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
                             isLive = false,
-                            lessonContent = "Electron diffraction experiments.",
-                            lessonDescription = "De Broglie hypothesis and matter waves.",
                             lessonTitle = "Wave Nature of Matter",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7439,8 +7303,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
                             isLive = false,
-                            lessonContent = "Quantized energy levels and spectral lines.",
-                            lessonDescription = "Early model of the hydrogen atom.",
                             lessonTitle = "The Bohr Model",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7450,8 +7312,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 13,
                             isLive = false,
-                            lessonContent = "Probability interpretation and uncertainty principle.",
-                            lessonDescription = "The Schrödinger equation and wave functions.",
                             lessonTitle = "Introduction to Quantum Mechanics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7461,8 +7321,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
                             isLive = false,
-                            lessonContent = "Inertial frames and the constancy of the speed of light.",
-                            lessonDescription = "Postulates of special relativity.",
                             lessonTitle = "Principles of Special Relativity",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7472,8 +7330,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
                             isLive = false,
-                            lessonContent = "Relativistic effects on time and space.",
-                            lessonDescription = "Consequences of special relativity.",
                             lessonTitle = "Time Dilation and Length Contraction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7483,8 +7339,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
                             isLive = false,
-                            lessonContent = "E=mc² and its implications.",
-                            lessonDescription = "Modifications to classical momentum and energy.",
                             lessonTitle = "Relativistic Momentum and Energy",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7494,8 +7348,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
                             isLive = false,
-                            lessonContent = "Conceptual overview of general relativity.",
-                            lessonDescription = "Principle of equivalence and gravity as spacetime curvature.",
                             lessonTitle = "Introduction to General Relativity",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7505,8 +7357,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 14,
                             isLive = false,
-                            lessonContent = "Observational evidence for general relativity.",
-                            lessonDescription = "Gravitational lensing, black holes, and gravitational waves.",
                             lessonTitle = "Consequences of General Relativity",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7516,8 +7366,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
                             isLive = false,
-                            lessonContent = "Basic cell structures and functions.",
-                            lessonDescription = "Prokaryotic vs. Eukaryotic cells.",
                             lessonTitle = "Introduction to Cells",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7527,8 +7375,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
                             isLive = false,
-                            lessonContent = "Passive transport, active transport, endocytosis.",
-                            lessonDescription = "The fluid mosaic model and transport mechanisms.",
                             lessonTitle = "Cell Membrane Structure and Function",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7538,8 +7384,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
                             isLive = false,
-                            lessonContent = "Nucleus, mitochondria, chloroplasts, ER, Golgi.",
-                            lessonDescription = "Structure and function of major organelles.",
                             lessonTitle = "Eukaryotic Organelles",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7549,8 +7393,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
                             isLive = false,
-                            lessonContent = "Glycolysis, Krebs cycle, electron transport chain.",
-                            lessonDescription = "Overview of energy production in cells.",
                             lessonTitle = "Cellular Respiration",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7560,8 +7402,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 15,
                             isLive = false,
-                            lessonContent = "Interphase, prophase, metaphase, anaphase, telophase.",
-                            lessonDescription = "Phases of the cell cycle and cell division.",
                             lessonTitle = "The Cell Cycle and Mitosis",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7571,8 +7411,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
                             isLive = false,
-                            lessonContent = "Dominance, segregation, independent assortment.",
-                            lessonDescription = "Principles of inheritance discovered by Mendel.",
                             lessonTitle = "Mendelian Genetics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7582,8 +7420,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
                             isLive = false,
-                            lessonContent = "Base pairing rules, enzymes involved in replication.",
-                            lessonDescription = "The double helix structure and DNA synthesis.",
                             lessonTitle = "DNA Structure and Replication",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7593,8 +7429,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
                             isLive = false,
-                            lessonContent = "Process of transcription, RNA polymerase.",
-                            lessonDescription = "From DNA to RNA.",
                             lessonTitle = "Gene Expression: Transcription",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7604,8 +7438,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
                             isLive = false,
-                            lessonContent = "Ribosomes, codons, tRNA, protein synthesis.",
-                            lessonDescription = "From RNA to Protein.",
                             lessonTitle = "Gene Expression: Translation",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7615,8 +7447,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 16,
                             isLive = false,
-                            lessonContent = "Point mutations, chromosomal mutations, sources of variation.",
-                            lessonDescription = "Types of mutations and their effects.",
                             lessonTitle = "Mutations and Genetic Variation",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7626,8 +7456,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
                             isLive = false,
-                            lessonContent = "Human skeleton overview, bone composition.",
-                            lessonDescription = "Types of skeletons and bone structure.",
                             lessonTitle = "Skeletal Systems",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7637,8 +7465,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
                             isLive = false,
-                            lessonContent = "Skeletal, smooth, cardiac muscle; sliding filament theory.",
-                            lessonDescription = "Types of muscles and muscle contraction.",
                             lessonTitle = "Muscular Systems",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7648,8 +7474,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
                             isLive = false,
-                            lessonContent = "Analyzing movement from a mechanical perspective.",
-                            lessonDescription = "Forces and levers in biological systems.",
                             lessonTitle = "Biomechanics Basics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7659,8 +7483,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
                             isLive = false,
-                            lessonContent = "Walking, running, swimming, flying adaptations.",
-                            lessonDescription = "Different modes of animal movement.",
                             lessonTitle = "Locomotion in Animals",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7670,8 +7492,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 17,
                             isLive = false,
-                            lessonContent = "Motor neurons, reflexes, brain control centers.",
-                            lessonDescription = "How the nervous system coordinates muscle action.",
                             lessonTitle = "Nervous System Control of Movement",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7681,8 +7501,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
                             isLive = false,
-                            lessonContent = "Organisms, populations, communities, ecosystems, biosphere.",
-                            lessonDescription = "Levels of ecological organization.",
                             lessonTitle = "Introduction to Ecology",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7692,8 +7510,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
                             isLive = false,
-                            lessonContent = "Exponential and logistic growth, carrying capacity.",
-                            lessonDescription = "Population growth models and limiting factors.",
                             lessonTitle = "Population Ecology",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7703,8 +7519,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
                             isLive = false,
-                            lessonContent = "Competition, predation, symbiosis, biodiversity.",
-                            lessonDescription = "Species interactions within communities.",
                             lessonTitle = "Community Ecology",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7714,8 +7528,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
                             isLive = false,
-                            lessonContent = "Food webs, trophic levels, biogeochemical cycles.",
-                            lessonDescription = "Energy flow and nutrient cycling.",
                             lessonTitle = "Ecosystem Dynamics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7725,8 +7537,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 18,
                             isLive = false,
-                            lessonContent = "Threats to biodiversity and conservation efforts.",
-                            lessonDescription = "Major terrestrial and aquatic biomes.",
                             lessonTitle = "Biomes and Conservation",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7736,8 +7546,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
                             isLive = false,
-                            lessonContent = "Meristems and primary/secondary growth.",
-                            lessonDescription = "Basic anatomy of plants: roots, stems, leaves.",
                             lessonTitle = "Plant Structure and Growth",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7747,8 +7555,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
                             isLive = false,
-                            lessonContent = "Xylem, phloem, transpiration.",
-                            lessonDescription = "Water and nutrient transport in plants.",
                             lessonTitle = "Plant Transport Systems",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7758,8 +7564,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
                             isLive = false,
-                            lessonContent = "Light-dependent reactions and the Calvin cycle.",
-                            lessonDescription = "The process of converting light energy to chemical energy.",
                             lessonTitle = "Photosynthesis",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7769,8 +7573,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
                             isLive = false,
-                            lessonContent = "Flower structure, pollination, fertilization, seed development.",
-                            lessonDescription = "Asexual and sexual reproduction in plants.",
                             lessonTitle = "Plant Reproduction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7780,8 +7582,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 19,
                             isLive = false,
-                            lessonContent = "Auxins, gibberellins, phototropism, gravitropism.",
-                            lessonDescription = "Chemical signaling in plants.",
                             lessonTitle = "Plant Hormones and Responses",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7791,8 +7591,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
                             isLive = false,
-                            lessonContent = "Body plans, symmetry, evolutionary relationships.",
-                            lessonDescription = "Major animal phyla and characteristics.",
                             lessonTitle = "Introduction to Animal Diversity",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7802,8 +7600,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
                             isLive = false,
-                            lessonContent = "Sponges, cnidarians, flatworms, roundworms.",
-                            lessonDescription = "Focus on simpler invertebrates.",
                             lessonTitle = "Invertebrate Zoology I",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7813,8 +7609,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
                             isLive = false,
-                            lessonContent = "Mollusks, annelids, arthropods, echinoderms.",
-                            lessonDescription = "Focus on more complex invertebrates.",
                             lessonTitle = "Invertebrate Zoology II",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7824,8 +7618,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
                             isLive = false,
-                            lessonContent = "Characteristics of chordates, evolution of fish.",
-                            lessonDescription = "Introduction to Chordates and Fish.",
                             lessonTitle = "Vertebrate Zoology I",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7835,8 +7627,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 20,
                             isLive = false,
-                            lessonContent = "Key characteristics and adaptations of terrestrial vertebrates.",
-                            lessonDescription = "Amphibians, Reptiles, Birds, and Mammals.",
                             lessonTitle = "Vertebrate Zoology II",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7846,8 +7636,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
                             isLive = false,
-                            lessonContent = "Microbial diversity and history of microbiology.",
-                            lessonDescription = "Overview of bacteria, archaea, viruses, fungi, protists.",
                             lessonTitle = "Introduction to Microbes",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7857,8 +7645,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
                             isLive = false,
-                            lessonContent = "Gram staining and bacterial morphology.",
-                            lessonDescription = "Cell walls, flagella, capsules, endospores.",
                             lessonTitle = "Bacterial Structure and Function",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7868,8 +7654,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
                             isLive = false,
-                            lessonContent = "Binary fission, nutritional types.",
-                            lessonDescription = "Requirements for growth, growth curve, metabolic pathways.",
                             lessonTitle = "Microbial Growth and Metabolism",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7879,8 +7663,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
                             isLive = false,
-                            lessonContent = "Lytic vs. lysogenic cycles, viral diseases.",
-                            lessonDescription = "Structure, replication cycles, and characteristics.",
                             lessonTitle = "Viruses and Prions",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7890,8 +7672,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 21,
                             isLive = false,
-                            lessonContent = "Pathogens, decomposers, biotechnology.",
-                            lessonDescription = "Microbes in ecosystems, disease, and industry.",
                             lessonTitle = "Microbial Roles and Applications",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7901,8 +7681,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
                             isLive = false,
-                            lessonContent = "Lewis structures, VSEPR theory, hybridization.",
-                            lessonDescription = "Structure, bonding, and properties of organic molecules.",
                             lessonTitle = "Introduction & Bonding",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7912,8 +7690,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
                             isLive = false,
-                            lessonContent = "Naming alkanes (IUPAC), Newman projections.",
-                            lessonDescription = "Nomenclature and conformations.",
                             lessonTitle = "Alkanes and Cycloalkanes",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7923,8 +7699,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
                             isLive = false,
-                            lessonContent = "R/S configuration, optical activity.",
-                            lessonDescription = "Chirality, enantiomers, diastereomers.",
                             lessonTitle = "Stereochemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7934,8 +7708,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
                             isLive = false,
-                            lessonContent = "Arrows formalism, reaction energy diagrams.",
-                            lessonDescription = "Reaction types, mechanisms, and thermodynamics.",
                             lessonTitle = "Introduction to Organic Reactions",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7945,8 +7717,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 22,
                             isLive = false,
-                            lessonContent = "Pi bonds, electrophilic addition basics.",
-                            lessonDescription = "Structure, nomenclature, and introduction to addition reactions.",
                             lessonTitle = "Alkenes and Alkynes: Structure & Reactivity",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7956,8 +7726,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
                             isLive = false,
-                            lessonContent = "Electron configurations, ionization energy, electronegativity.",
-                            lessonDescription = "Review of atomic models and periodic trends.",
                             lessonTitle = "Atomic Structure and Periodicity",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7967,8 +7735,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
                             isLive = false,
-                            lessonContent = "Predicting molecular geometry.",
-                            lessonDescription = "Ionic and covalent bonding theories.",
                             lessonTitle = "Chemical Bonding: Lewis & VSEPR",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7978,8 +7744,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
                             isLive = false,
-                            lessonContent = "Hybridization, MO diagrams for diatomic molecules.",
-                            lessonDescription = "Advanced bonding theories.",
                             lessonTitle = "Valence Bond and Molecular Orbital Theory",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -7989,8 +7753,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
                             isLive = false,
-                            lessonContent = "Acid strength, hard/soft acids and bases.",
-                            lessonDescription = "Bronsted-Lowry and Lewis definitions.",
                             lessonTitle = "Acid-Base Chemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8000,8 +7762,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 23,
                             isLive = false,
-                            lessonContent = "Nomenclature and basic structures.",
-                            lessonDescription = "Transition metals, ligands, and complex ions.",
                             lessonTitle = "Introduction to Coordination Chemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8011,8 +7771,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
                             isLive = false,
-                            lessonContent = "Gas laws, Maxwell-Boltzmann distribution.",
-                            lessonDescription = "Ideal and real gas behavior.",
                             lessonTitle = "Gases and Kinetic Theory",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8022,8 +7780,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
                             isLive = false,
-                            lessonContent = "State functions, calorimetry.",
-                            lessonDescription = "Energy, work, heat, enthalpy.",
                             lessonTitle = "Thermodynamics: First Law",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8033,8 +7789,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
                             isLive = false,
-                            lessonContent = "Calculating entropy changes, absolute entropy.",
-                            lessonDescription = "Entropy, spontaneity, Gibbs free energy.",
                             lessonTitle = "Thermodynamics: Second & Third Laws",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8044,8 +7798,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
                             isLive = false,
-                            lessonContent = "Rate laws, activation energy, Arrhenius equation.",
-                            lessonDescription = "Reaction rates and mechanisms.",
                             lessonTitle = "Chemical Kinetics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8055,8 +7807,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 24,
                             isLive = false,
-                            lessonContent = "Particle in a box, hydrogen atom basics.",
-                            lessonDescription = "Basic principles and applications.",
                             lessonTitle = "Introduction to Quantum Chemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8066,8 +7816,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
                             isLive = false,
-                            lessonContent = "Significant figures, precision vs. accuracy, basic stats.",
-                            lessonDescription = "Role of analytical chemistry, errors, and data analysis.",
                             lessonTitle = "Introduction & Statistics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8077,8 +7825,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
                             isLive = false,
-                            lessonContent = "Precipitation methods, titration techniques.",
-                            lessonDescription = "Classical methods of analysis.",
                             lessonTitle = "Gravimetric and Volumetric Analysis",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8088,8 +7834,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
                             isLive = false,
-                            lessonContent = "UV-Vis spectroscopy, Beer-Lambert Law.",
-                            lessonDescription = "Interaction of light and matter.",
                             lessonTitle = "Spectroscopic Methods",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8099,8 +7843,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
                             isLive = false,
-                            lessonContent = "Gas chromatography (GC) and Liquid chromatography (LC) overview.",
-                            lessonDescription = "Principles of separation techniques.",
                             lessonTitle = "Chromatography Basics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8110,8 +7852,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 25,
                             isLive = false,
-                            lessonContent = "Potentiometry, voltammetry basics.",
-                            lessonDescription = "Techniques based on electrical properties.",
                             lessonTitle = "Electroanalytical Methods",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8121,8 +7861,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
                             isLive = false,
-                            lessonContent = "Peptide bonds, primary to quaternary structure.",
-                            lessonDescription = "Structure and properties of amino acids and protein hierarchy.",
                             lessonTitle = "Amino Acids and Proteins",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8132,8 +7870,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
                             isLive = false,
-                            lessonContent = "Michaelis-Menten kinetics, enzyme inhibition.",
-                            lessonDescription = "Biological catalysts and reaction rates.",
                             lessonTitle = "Enzymes and Enzyme Kinetics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8143,8 +7879,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
                             isLive = false,
-                            lessonContent = "Glycosidic bonds, common sugars.",
-                            lessonDescription = "Structure and function of monosaccharides and polysaccharides.",
                             lessonTitle = "Carbohydrates",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8154,8 +7888,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
                             isLive = false,
-                            lessonContent = "Fatty acids, triglycerides, phospholipids, fluid mosaic model.",
-                            lessonDescription = "Types of lipids and biological membrane structure.",
                             lessonTitle = "Lipids and Membranes",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8165,8 +7897,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 26,
                             isLive = false,
-                            lessonContent = "Anabolism vs. catabolism, ATP production.",
-                            lessonDescription = "Introduction to major pathways like glycolysis.",
                             lessonTitle = "Metabolic Pathways Overview",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8176,8 +7906,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
                             isLive = false,
-                            lessonContent = "Ozone layer, greenhouse effect, air pollution.",
-                            lessonDescription = "Composition and reactions in the atmosphere.",
                             lessonTitle = "Atmospheric Chemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8187,8 +7915,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
                             isLive = false,
-                            lessonContent = "Water quality parameters (pH, DO), water pollution.",
-                            lessonDescription = "Chemical processes in water bodies.",
                             lessonTitle = "Aquatic Chemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8198,8 +7924,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
                             isLive = false,
-                            lessonContent = "Nutrient cycles, soil contamination.",
-                            lessonDescription = "Composition and chemical reactions in soil.",
                             lessonTitle = "Soil Chemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8209,8 +7933,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
                             isLive = false,
-                            lessonContent = "Dose-response relationships, environmental risk.",
-                            lessonDescription = "Effects of chemicals on organisms and ecosystems.",
                             lessonTitle = "Toxicology and Risk Assessment",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8220,8 +7942,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 27,
                             isLive = false,
-                            lessonContent = "Waste reduction, sustainable chemistry practices.",
-                            lessonDescription = "Principles for designing safer chemical processes.",
                             lessonTitle = "Green Chemistry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8231,8 +7951,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
                             isLive = false,
-                            lessonContent = "Operators, eigenfunctions, eigenvalues.",
-                            lessonDescription = "Postulates and mathematical framework.",
                             lessonTitle = "Quantum Mechanics Fundamentals",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8242,8 +7960,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
                             isLive = false,
-                            lessonContent = "Variation principle, perturbation theory.",
-                            lessonDescription = "Techniques for solving the Schrödinger equation.",
                             lessonTitle = "Approximation Methods",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8253,8 +7969,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
                             isLive = false,
-                            lessonContent = "Point groups, character tables.",
-                            lessonDescription = "Using symmetry to simplify chemical problems.",
                             lessonTitle = "Molecular Symmetry and Group Theory",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8264,8 +7978,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
                             isLive = false,
-                            lessonContent = "Hartree-Fock, Density Functional Theory (DFT) basics.",
-                            lessonDescription = "Overview of computational techniques.",
                             lessonTitle = "Computational Chemistry Methods",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8275,8 +7987,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 28,
                             isLive = false,
-                            lessonContent = "Partition functions, ensemble theory.",
-                            lessonDescription = "Connecting microscopic properties to macroscopic behavior.",
                             lessonTitle = "Statistical Thermodynamics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8286,8 +7996,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
                             isLive = false,
-                            lessonContent = "Theme, plot, character, setting, point of view.",
-                            lessonDescription = "Tools and techniques for interpreting literature.",
                             lessonTitle = "Introduction to Literary Analysis",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8297,8 +8005,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
                             isLive = false,
-                            lessonContent = "Examining notable short stories.",
-                            lessonDescription = "Analyzing elements of short fiction.",
                             lessonTitle = "Short Story Analysis",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8308,8 +8014,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
                             isLive = false,
-                            lessonContent = "Meter, rhyme, imagery, metaphor, sonnets.",
-                            lessonDescription = "Understanding poetic devices and forms.",
                             lessonTitle = "Poetry Fundamentals",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8319,8 +8023,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
                             isLive = false,
-                            lessonContent = "Context, structure, and major themes in a sample novel.",
-                            lessonDescription = "Approaches to reading and analyzing novels.",
                             lessonTitle = "Novel Study: Introduction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8330,8 +8032,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 29,
                             isLive = false,
-                            lessonContent = "Dialogue, stage directions, character arcs in plays.",
-                            lessonDescription = "Elements of dramatic literature.",
                             lessonTitle = "Introduction to Drama",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8341,8 +8041,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
                             isLive = false,
-                            lessonContent = "Exercises in tone, perspective, and style.",
-                            lessonDescription = "Developing a unique writing style.",
                             lessonTitle = "Finding Your Voice",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8352,8 +8050,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
                             isLive = false,
-                            lessonContent = "Character archetypes, backstory, motivations.",
-                            lessonDescription = "Creating believable and engaging characters.",
                             lessonTitle = "Character Development",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8363,8 +8059,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
                             isLive = false,
-                            lessonContent = "Three-act structure, outlining techniques, pacing.",
-                            lessonDescription = "Crafting compelling narratives.",
                             lessonTitle = "Plotting and Structure",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8374,8 +8068,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
                             isLive = false,
-                            lessonContent = "Using sensory details, creating atmosphere.",
-                            lessonDescription = "Building immersive worlds.",
                             lessonTitle = "Setting and Description",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8385,8 +8077,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 30,
                             isLive = false,
-                            lessonContent = "Subtext, character voice in dialogue, formatting.",
-                            lessonDescription = "Writing effective and natural dialogue.",
                             lessonTitle = "Dialogue Writing",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8396,8 +8086,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
                             isLive = false,
-                            lessonContent = "Identifying parts of speech in sentences.",
-                            lessonDescription = "Understanding nouns, verbs, adjectives, etc.",
                             lessonTitle = "Parts of Speech Review",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8407,8 +8095,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
                             isLive = false,
-                            lessonContent = "Simple, compound, complex, compound-complex sentences.",
-                            lessonDescription = "Clauses, phrases, and sentence types.",
                             lessonTitle = "Sentence Structure",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8418,8 +8104,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
                             isLive = false,
-                            lessonContent = "Common punctuation errors and fixes.",
-                            lessonDescription = "Correct usage of commas, semicolons, apostrophes, etc.",
                             lessonTitle = "Punctuation Rules",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8429,8 +8113,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
                             isLive = false,
-                            lessonContent = "Identifying and correcting frequent mistakes.",
-                            lessonDescription = "Subject-verb agreement, pronoun usage, modifiers.",
                             lessonTitle = "Common Grammatical Errors",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8440,8 +8122,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 31,
                             isLive = false,
-                            lessonContent = "Topic sentences, transitions, thesis statements.",
-                            lessonDescription = "Organizing ideas effectively.",
                             lessonTitle = "Paragraph and Essay Structure",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8451,8 +8131,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
                             isLive = false,
-                            lessonContent = "Scanning poetry, identifying different meters.",
-                            lessonDescription = "Rhythm, meter, rhyme schemes.",
                             lessonTitle = "Elements of Poetry",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8462,8 +8140,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
                             isLive = false,
-                            lessonContent = "Identifying and interpreting figurative language.",
-                            lessonDescription = "Metaphor, simile, personification, hyperbole.",
                             lessonTitle = "Figurative Language",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8473,8 +8149,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
                             isLive = false,
-                            lessonContent = "Analyzing the musicality of poetry.",
-                            lessonDescription = "Alliteration, assonance, consonance, onomatopoeia.",
                             lessonTitle = "Sound Devices",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8484,8 +8158,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
                             isLive = false,
-                            lessonContent = "Recognizing and analyzing different poetic structures.",
-                            lessonDescription = "Sonnets, haikus, villanelles, free verse.",
                             lessonTitle = "Poetic Forms",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8495,8 +8167,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 32,
                             isLive = false,
-                            lessonContent = "Close reading techniques and thematic analysis.",
-                            lessonDescription = "Developing analytical arguments about poetry.",
                             lessonTitle = "Interpreting Poems",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8506,8 +8176,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
                             isLive = false,
-                            lessonContent = "Key periods and influential playwrights.",
-                            lessonDescription = "From ancient Greek tragedy to modern drama.",
                             lessonTitle = "History of Theater",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8517,8 +8185,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
                             isLive = false,
-                            lessonContent = "Aristotle's Poetics and dramatic structure.",
-                            lessonDescription = "Plot, character, theme, dialogue, spectacle.",
                             lessonTitle = "Elements of Drama",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8528,8 +8194,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
                             isLive = false,
-                            lessonContent = "Visualizing the play and interpreting character motivations.",
-                            lessonDescription = "Understanding stage directions and subtext.",
                             lessonTitle = "Reading a Play",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8539,8 +8203,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
                             isLive = false,
-                            lessonContent = "Characteristics and examples of different genres.",
-                            lessonDescription = "Tragedy, comedy, tragicomedy, melodrama.",
                             lessonTitle = "Major Dramatic Genres",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8550,8 +8212,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 33,
                             isLive = false,
-                            lessonContent = "Overview of the process from script to stage.",
-                            lessonDescription = "Roles in theater (director, actor, designer).",
                             lessonTitle = "Theater Production Basics",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8561,8 +8221,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
                             isLive = false,
-                            lessonContent = "Brainstorming techniques, prompts, observation.",
-                            lessonDescription = "Finding inspiration for fiction stories.",
                             lessonTitle = "Generating Ideas",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8572,8 +8230,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
                             isLive = false,
-                            lessonContent = "Impact of POV choices on the story.",
-                            lessonDescription = "Choosing the right perspective (1st, 3rd limited/omniscient).",
                             lessonTitle = "Point of View and Narrative Voice",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8583,8 +8239,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
                             isLive = false,
-                            lessonContent = "Techniques for showing emotion and action.",
-                            lessonDescription = "Using concrete details to engage readers.",
                             lessonTitle = "Show, Don't Tell",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8594,8 +8248,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
                             isLive = false,
-                            lessonContent = "Scene structure, pacing within scenes, transitions.",
-                            lessonDescription = "Building blocks of a story.",
                             lessonTitle = "Crafting Scenes",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8605,8 +8257,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 34,
                             isLive = false,
-                            lessonContent = "Self-editing, seeking feedback, common pitfalls.",
-                            lessonDescription = "Techniques for improving a draft.",
                             lessonTitle = "Revision Strategies",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8616,8 +8266,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
                             isLive = false,
-                            lessonContent = "Understanding different forms and their conventions.",
-                            lessonDescription = "Memoir, biography, essays, journalism.",
                             lessonTitle = "Types of Non-fiction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8627,8 +8275,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
                             isLive = false,
-                            lessonContent = "Interviews, archival research, evaluating sources.",
-                            lessonDescription = "Gathering information for non-fiction.",
                             lessonTitle = "Research Techniques",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8638,8 +8284,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
                             isLive = false,
-                            lessonContent = "Chronological, thematic, and narrative structures.",
-                            lessonDescription = "Organizing factual material effectively.",
                             lessonTitle = "Structuring Non-fiction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8649,8 +8293,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
                             isLive = false,
-                            lessonContent = "Using vivid language, maintaining accuracy.",
-                            lessonDescription = "Engaging readers with factual content.",
                             lessonTitle = "Writing with Clarity and Style",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         },
@@ -8660,8 +8302,6 @@ namespace Estigo.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             courseId = 35,
                             isLive = false,
-                            lessonContent = "Fact-checking, privacy concerns, representation.",
-                            lessonDescription = "Responsibilities when writing about real people and events.",
                             lessonTitle = "Ethics in Non-fiction",
                             lessonVideo = "https://estigo.runasp.net/vv.mp4"
                         });

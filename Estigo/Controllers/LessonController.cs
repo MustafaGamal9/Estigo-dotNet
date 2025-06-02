@@ -26,8 +26,6 @@ namespace Estigo.Controllers
                 {
                     lessonId = l.lessonId,
                     lessonTitle = l.lessonTitle,
-                    lessonDescription = l.lessonDescription,
-                    lessonContent = l.lessonContent,
                     lessonVideo = l.lessonVideo,
                     isLive = l.isLive,
                     courseId = l.courseId
@@ -45,8 +43,6 @@ namespace Estigo.Controllers
                 .Select(l => new LessonExamDTO
                 {
                     lessonTitle = l.lessonTitle,
-                    lessonDescription = l.lessonDescription,
-                    lessonContent = l.lessonContent,
                     lessonVideo = l.lessonVideo,
                     examTitle = l.Exam != null ? l.Exam.ExamTitle : null,
                     
@@ -248,8 +244,6 @@ namespace Estigo.Controllers
                 var lesson = new lesson
                 {
                     lessonTitle = lessonDto.lessonTitle,
-                    lessonDescription = lessonDto.lessonDescription,
-                    lessonContent = lessonDto.lessonContent,
                     lessonVideo = lessonDto.lessonVideo,
                     isLive = lessonDto.isLive,
                     courseId = lessonDto.courseId,
@@ -319,8 +313,6 @@ namespace Estigo.Controllers
             var lessonDto = new LessonDTO
             {
                 lessonTitle = lessonEntity.lessonTitle,
-                lessonDescription = lessonEntity.lessonDescription,
-                lessonContent = lessonEntity.lessonContent,
                 lessonVideo = lessonEntity.lessonVideo,
                 courseId = lessonEntity.courseId
             };
@@ -335,8 +327,6 @@ namespace Estigo.Controllers
 
             // Map changes from DTO back to entity
             lessonEntity.lessonTitle = lessonDto.lessonTitle;
-            lessonEntity.lessonDescription = lessonDto.lessonDescription;
-            lessonEntity.lessonContent = lessonDto.lessonContent;
             lessonEntity.lessonVideo = lessonDto.lessonVideo;
             lessonEntity.courseId = lessonDto.courseId;
             // lessonEntity.UpdatedAt = DateTime.UtcNow; // Optional

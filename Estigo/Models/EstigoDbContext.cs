@@ -85,17 +85,12 @@ namespace Estigo.Models
                 .Property(l => l.lessonTitle)
                 .HasMaxLength(100);
 
-            modelBuilder.Entity<lesson>()
-                .Property(l => l.lessonContent)
-                .HasMaxLength(250);
 
             modelBuilder.Entity<lesson>()
                 .Property(l => l.lessonVideo)
                 .HasMaxLength(250);
 
-            modelBuilder.Entity<lesson>()
-                .Property(l => l.lessonDescription)
-                .HasMaxLength(250);
+ 
 
 
             modelBuilder.Entity<lesson>()
