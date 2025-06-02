@@ -107,6 +107,28 @@ namespace Estigo.Controllers
             }
         }
 
+        [HttpPost("SetTeacherImage")]
+        public async Task<IActionResult> SetTeacherImage(string teacherId, string imagePath)
+        {
+            var teacher = await _userManager.Users
+                .OfType<Teacher>()
+                .FirstOrDefaultAsync(t => t.Id == teacherId);
+
+            if (teacher == null)
+                return NotFound("Teacher not found.");
+
+            teacher.image = imagePath;
+            var result = await _userManager.UpdateAsync(teacher);
+
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
+
+            return Ok("Teacher image updated.");
+        }
+
+
+
+
         [HttpGet("{studentId}/mycourses")]
 
         public async Task<IActionResult> GetMyCourses(string studentId)

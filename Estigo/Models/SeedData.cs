@@ -323,190 +323,197 @@ namespace Estigo.Models
             // Ensure the seedDate variable is accessible here
             // var seedDate = new DateTime(2023, 1, 1); // Or your actual seed date variable
 
-            // Seed Exams - For every other lesson (approx. half)
+            // Seed Exams
             modelBuilder.Entity<Exam>().HasData(
+                // Category 1: Core Mathematics (Courses 1, 2, 3, 4, 7) - Ends with Lesson 35 (ExamId 18)
                 // Exam for Lesson 1 (Course 1)
-                new Exam { Id = 1, ExamTitle = "Algebra Basics Exam", ExamDescription = "Test your knowledge of variables and expressions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 1 },
+                new Exam { Id = 1, ExamTitle = "Algebra Basics Exam", ExamDescription = "Test your knowledge of variables and expressions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 1, final = false },
                 // Exam for Lesson 3 (Course 1)
-                new Exam { Id = 2, ExamTitle = "Inequalities Exam", ExamDescription = "Test your understanding and solving of linear inequalities.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 3 },
+                new Exam { Id = 2, ExamTitle = "Inequalities Exam", ExamDescription = "Test your understanding and solving of linear inequalities.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 3, final = false },
                 // Exam for Lesson 5 (Course 1)
-                new Exam { Id = 3, ExamTitle = "Polynomial Basics Exam", ExamDescription = "Test your knowledge of polynomial expressions and operations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 5 },
+                new Exam { Id = 3, ExamTitle = "Polynomial Basics Exam", ExamDescription = "Test your knowledge of polynomial expressions and operations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 5, final = false },
                 // Exam for Lesson 7 (Course 2)
-                new Exam { Id = 4, ExamTitle = "Introduction to Derivatives Exam", ExamDescription = "Test your knowledge of defining the derivative and basic rules.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 7 },
+                new Exam { Id = 4, ExamTitle = "Introduction to Derivatives Exam", ExamDescription = "Test your knowledge of defining the derivative and basic rules.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 7, final = false },
                 // Exam for Lesson 9 (Course 2)
-                new Exam { Id = 5, ExamTitle = "Applications of Derivatives Exam", ExamDescription = "Test your ability to use derivatives for rates of change and optimization.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 9 },
+                new Exam { Id = 5, ExamTitle = "Applications of Derivatives Exam", ExamDescription = "Test your ability to use derivatives for rates of change and optimization.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 9, final = false },
                 // Exam for Lesson 11 (Course 3)
-                new Exam { Id = 6, ExamTitle = "Points, Lines, and Planes Exam", ExamDescription = "Test your knowledge of fundamental geometric concepts.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 11 },
+                new Exam { Id = 6, ExamTitle = "Points, Lines, and Planes Exam", ExamDescription = "Test your knowledge of fundamental geometric concepts.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 11, final = false },
                 // Exam for Lesson 13 (Course 3)
-                new Exam { Id = 7, ExamTitle = "Parallel Lines and Transversals Exam", ExamDescription = "Test your knowledge of angles formed by parallel lines.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 13 },
+                new Exam { Id = 7, ExamTitle = "Parallel Lines and Transversals Exam", ExamDescription = "Test your knowledge of angles formed by parallel lines.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 13, final = false },
                 // Exam for Lesson 15 (Course 3)
-
-                new Exam { Id = 8, ExamTitle = "Introduction to Polygons Exam", ExamDescription = "Test your knowledge of polygon properties.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 15 },
+                new Exam { Id = 8, ExamTitle = "Introduction to Polygons Exam", ExamDescription = "Test your knowledge of polygon properties.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 15, final = false },
                 // Exam for Lesson 17 (Course 4)
-                new Exam { Id = 9, ExamTitle = "The Unit Circle Exam", ExamDescription = "Test your understanding of the unit circle in trigonometry.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 17 },
+                new Exam { Id = 9, ExamTitle = "The Unit Circle Exam", ExamDescription = "Test your understanding of the unit circle in trigonometry.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 17, final = false },
                 // Exam for Lesson 19 (Course 4)
-                new Exam { Id = 10, ExamTitle = "Trigonometric Identities Exam", ExamDescription = "Test your knowledge of fundamental trigonometric identities.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 19 },
-                // Exam for Lesson 21 (Course 5)
-                new Exam { Id = 11, ExamTitle = "Introduction to Statistics Exam", ExamDescription = "Test your knowledge of basic statistical concepts and data types.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 21 },
-                // Exam for Lesson 23 (Course 5)
-                new Exam { Id = 12, ExamTitle = "Data Visualization Exam", ExamDescription = "Test your understanding of graphical data representation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 23 },
-                // Exam for Lesson 25 (Course 5)
-                new Exam { Id = 13, ExamTitle = "Introduction to Distributions Exam", ExamDescription = "Test your understanding of basic probability distributions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 25 },
-                // Exam for Lesson 27 (Course 6)
-                new Exam { Id = 14, ExamTitle = "Conditional Probability Exam", ExamDescription = "Test your understanding of conditional probability and independence.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 27 },
-                // Exam for Lesson 29 (Course 6)
-                new Exam { Id = 15, ExamTitle = "Expected Value and Variance Exam", ExamDescription = "Test your ability to calculate measures for random variables.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 29 },
+                new Exam { Id = 10, ExamTitle = "Trigonometric Identities Exam", ExamDescription = "Test your knowledge of fundamental trigonometric identities.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 19, final = false },
                 // Exam for Lesson 31 (Course 7)
-                new Exam { Id = 16, ExamTitle = "Logic and Proofs Exam", ExamDescription = "Test your knowledge of propositional logic and proof methods.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 31 },
+                new Exam { Id = 16, ExamTitle = "Logic and Proofs Exam", ExamDescription = "Test your knowledge of propositional logic and proof methods.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 31, final = false },
                 // Exam for Lesson 33 (Course 7)
-                new Exam { Id = 17, ExamTitle = "Counting Principles Exam", ExamDescription = "Test your knowledge of permutations and combinations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 33 },
-                // Exam for Lesson 35 (Course 7)
-                new Exam { Id = 18, ExamTitle = "Introduction to Graph Theory Exam", ExamDescription = "Test your knowledge of basic graph concepts.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 35 },
+                new Exam { Id = 17, ExamTitle = "Counting Principles Exam", ExamDescription = "Test your knowledge of permutations and combinations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 33, final = false },
+                // Exam for Lesson 35 (Course 7) - FINAL EXAM FOR CORE MATHEMATICS CATEGORY
+                new Exam { Id = 18, ExamTitle = "Core Mathematics Comprehensive Exam", ExamDescription = "Comprehensive test of core mathematical concepts including algebra, calculus, geometry, trigonometry, and discrete math.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 35, final = true },
+
+                // Category 2: Statistics and Probability (Courses 5, 6) - Ends with Lesson 29 (ExamId 15)
+                // Exam for Lesson 21 (Course 5)
+                new Exam { Id = 11, ExamTitle = "Introduction to Statistics Exam", ExamDescription = "Test your knowledge of basic statistical concepts and data types.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 21, final = false },
+                // Exam for Lesson 23 (Course 5)
+                new Exam { Id = 12, ExamTitle = "Data Visualization Exam", ExamDescription = "Test your understanding of graphical data representation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 23, final = false },
+                // Exam for Lesson 25 (Course 5)
+                new Exam { Id = 13, ExamTitle = "Introduction to Distributions Exam", ExamDescription = "Test your understanding of basic probability distributions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 25, final = false },
+                // Exam for Lesson 27 (Course 6)
+                new Exam { Id = 14, ExamTitle = "Conditional Probability Exam", ExamDescription = "Test your understanding of conditional probability and independence.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 27, final = false },
+                // Exam for Lesson 29 (Course 6) - FINAL EXAM FOR STATISTICS & PROBABILITY CATEGORY
+                new Exam { Id = 15, ExamTitle = "Statistics & Probability Comprehensive Exam", ExamDescription = "Comprehensive test of statistical concepts, data visualization, probability distributions, conditional probability, and expected value.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 29, final = false },
+
+                // Category 3: Physics (Courses 8, 9, 10, 11, 12, 13, 14) - Ends with Lesson 69 (ExamId 35)
                 // Exam for Lesson 37 (Course 8)
-                new Exam { Id = 19, ExamTitle = "Vectors and 2D Kinematics Exam", ExamDescription = "Test your knowledge of projectile motion and vector operations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 37 },
+                new Exam { Id = 19, ExamTitle = "Vectors and 2D Kinematics Exam", ExamDescription = "Test your knowledge of projectile motion and vector operations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 37, final = false },
                 // Exam for Lesson 39 (Course 8)
-                new Exam { Id = 20, ExamTitle = "Work, Energy, and Power Exam", ExamDescription = "Test your understanding of work, energy concepts, and conservation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 39 },
+                new Exam { Id = 20, ExamTitle = "Work, Energy, and Power Exam", ExamDescription = "Test your understanding of work, energy concepts, and conservation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 39, final = false },
                 // Exam for Lesson 41 (Course 9)
-                new Exam { Id = 21, ExamTitle = "Electric Charge and Coulomb's Law Exam", ExamDescription = "Test your knowledge of electric charge properties and Coulomb's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 41 },
+                new Exam { Id = 21, ExamTitle = "Electric Charge and Coulomb's Law Exam", ExamDescription = "Test your knowledge of electric charge properties and Coulomb's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 41, final = false },
                 // Exam for Lesson 43 (Course 9)
-                new Exam { Id = 22, ExamTitle = "Electric Potential Exam", ExamDescription = "Test your understanding of potential difference and electric potential energy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 43 },
+                new Exam { Id = 22, ExamTitle = "Electric Potential Exam", ExamDescription = "Test your understanding of potential difference and electric potential energy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 43, final = false },
                 // Exam for Lesson 45 (Course 9)
-                new Exam { Id = 23, ExamTitle = "Current, Resistance, and Ohm's Law Exam", ExamDescription = "Test your knowledge of basic electric current, resistance, and Ohm's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 45 },
+                new Exam { Id = 23, ExamTitle = "Current, Resistance, and Ohm's Law Exam", ExamDescription = "Test your knowledge of basic electric current, resistance, and Ohm's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 45, final = false },
                 // Exam for Lesson 47 (Course 10)
-                new Exam { Id = 24, ExamTitle = "Sources of Magnetic Fields Exam", ExamDescription = "Test your knowledge of magnetic fields produced by currents.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 47 },
+                new Exam { Id = 24, ExamTitle = "Sources of Magnetic Fields Exam", ExamDescription = "Test your knowledge of magnetic fields produced by currents.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 47, final = false },
                 // Exam for Lesson 49 (Course 10)
-                new Exam { Id = 25, ExamTitle = "Electromagnetic Induction Exam", ExamDescription = "Test your understanding of Faraday's Law and Lenz's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 49 },
+                new Exam { Id = 25, ExamTitle = "Electromagnetic Induction Exam", ExamDescription = "Test your understanding of Faraday's Law and Lenz's Law.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 49, final = false },
                 // Exam for Lesson 51 (Course 11)
-                new Exam { Id = 26, ExamTitle = "Nature of Light Exam", ExamDescription = "Test your knowledge of the wave-particle duality and properties of light.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 51 },
+                new Exam { Id = 26, ExamTitle = "Nature of Light Exam", ExamDescription = "Test your knowledge of the wave-particle duality and properties of light.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 51, final = false },
                 // Exam for Lesson 53 (Course 11)
-                new Exam { Id = 27, ExamTitle = "Lenses and Image Formation Exam", ExamDescription = "Test your understanding of lenses and image formation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 53 },
+                new Exam { Id = 27, ExamTitle = "Lenses and Image Formation Exam", ExamDescription = "Test your understanding of lenses and image formation.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 53, final = false },
                 // Exam for Lesson 55 (Course 11)
-                new Exam { Id = 28, ExamTitle = "Wave Optics: Diffraction Exam", ExamDescription = "Test your knowledge of light diffraction.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 55 },
+                new Exam { Id = 28, ExamTitle = "Wave Optics: Diffraction Exam", ExamDescription = "Test your knowledge of light diffraction.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 55, final = false },
                 // Exam for Lesson 57 (Course 12)
-                new Exam { Id = 29, ExamTitle = "First Law of Thermodynamics Exam", ExamDescription = "Test your understanding of internal energy, work, and heat.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 57 },
+                new Exam { Id = 29, ExamTitle = "First Law of Thermodynamics Exam", ExamDescription = "Test your understanding of internal energy, work, and heat.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 57, final = false },
                 // Exam for Lesson 59 (Course 12)
-                new Exam { Id = 30, ExamTitle = "Second Law of Thermodynamics Exam", ExamDescription = "Test your knowledge of entropy and the direction of processes.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 59 },
+                new Exam { Id = 30, ExamTitle = "Second Law of Thermodynamics Exam", ExamDescription = "Test your knowledge of entropy and the direction of processes.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 59, final = false },
                 // Exam for Lesson 61 (Course 13)
-                new Exam { Id = 31, ExamTitle = "Blackbody Radiation Exam", ExamDescription = "Test your knowledge of blackbody radiation and Planck's hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 61 },
+                new Exam { Id = 31, ExamTitle = "Blackbody Radiation Exam", ExamDescription = "Test your knowledge of blackbody radiation and Planck's hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 61, final = false },
                 // Exam for Lesson 63 (Course 13)
-                new Exam { Id = 32, ExamTitle = "Wave Nature of Matter Exam", ExamDescription = "Test your understanding of the De Broglie hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 63 },
+                new Exam { Id = 32, ExamTitle = "Wave Nature of Matter Exam", ExamDescription = "Test your understanding of the De Broglie hypothesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 63, final = false },
                 // Exam for Lesson 65 (Course 13)
-                new Exam { Id = 33, ExamTitle = "Introduction to Quantum Mechanics Exam", ExamDescription = "Test your basic understanding of the Schrödinger equation and wave functions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 65 },
+                new Exam { Id = 33, ExamTitle = "Introduction to Quantum Mechanics Exam", ExamDescription = "Test your basic understanding of the Schrödinger equation and wave functions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 65, final = false },
                 // Exam for Lesson 67 (Course 14)
-                new Exam { Id = 34, ExamTitle = "Time Dilation and Length Contraction Exam", ExamDescription = "Test your knowledge of relativistic effects on time and space.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 67 },
-                // Exam for Lesson 69 (Course 14)
-                new Exam { Id = 35, ExamTitle = "Introduction to General Relativity Exam", ExamDescription = "Test your conceptual understanding of general relativity.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 69 },
+                new Exam { Id = 34, ExamTitle = "Time Dilation and Length Contraction Exam", ExamDescription = "Test your knowledge of relativistic effects on time and space.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 67, final = false },
+                // Exam for Lesson 69 (Course 14) - FINAL EXAM FOR PHYSICS CATEGORY
+                new Exam { Id = 35, ExamTitle = "Physics Comprehensive Exam", ExamDescription = "Comprehensive test of classical mechanics, electricity, magnetism, optics, thermodynamics, and modern physics concepts.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 69, final = true },
+
+                // Category 4: Biology (Courses 15, 16, 17, 18, 19, 20, 21) - Ends with Lesson 105 (ExamId 53)
                 // Exam for Lesson 71 (Course 15)
-                new Exam { Id = 36, ExamTitle = "Introduction to Cells Exam", ExamDescription = "Test your knowledge of Prokaryotic vs. Eukaryotic cells.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 71 },
+                new Exam { Id = 36, ExamTitle = "Introduction to Cells Exam", ExamDescription = "Test your knowledge of Prokaryotic vs. Eukaryotic cells.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 71, final = false },
                 // Exam for Lesson 73 (Course 15)
-                new Exam { Id = 37, ExamTitle = "Eukaryotic Organelles Exam", ExamDescription = "Test your knowledge of major organelle structures and functions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 73 },
+                new Exam { Id = 37, ExamTitle = "Eukaryotic Organelles Exam", ExamDescription = "Test your knowledge of major organelle structures and functions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 73, final = false },
                 // Exam for Lesson 75 (Course 15)
-                new Exam { Id = 38, ExamTitle = "The Cell Cycle and Mitosis Exam", ExamDescription = "Test your understanding of the cell cycle phases and mitosis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 75 },
+                new Exam { Id = 38, ExamTitle = "The Cell Cycle and Mitosis Exam", ExamDescription = "Test your understanding of the cell cycle phases and mitosis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 75, final = false },
                 // Exam for Lesson 77 (Course 16)
-                new Exam { Id = 39, ExamTitle = "DNA Structure and Replication Exam", ExamDescription = "Test your knowledge of the double helix and DNA synthesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 77 },
+                new Exam { Id = 39, ExamTitle = "DNA Structure and Replication Exam", ExamDescription = "Test your knowledge of the double helix and DNA synthesis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 77, final = false },
                 // Exam for Lesson 79 (Course 16)
-                new Exam { Id = 40, ExamTitle = "Gene Expression: Translation Exam", ExamDescription = "Test your understanding of protein synthesis from RNA.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 79 },
+                new Exam { Id = 40, ExamTitle = "Gene Expression: Translation Exam", ExamDescription = "Test your understanding of protein synthesis from RNA.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 79, final = false },
                 // Exam for Lesson 81 (Course 17)
-                new Exam { Id = 41, ExamTitle = "Skeletal Systems Exam", ExamDescription = "Test your knowledge of skeleton types and bone structure.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 81 },
+                new Exam { Id = 41, ExamTitle = "Skeletal Systems Exam", ExamDescription = "Test your knowledge of skeleton types and bone structure.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 81, final = false },
                 // Exam for Lesson 83 (Course 17)
-                new Exam { Id = 42, ExamTitle = "Biomechanics Basics Exam", ExamDescription = "Test your understanding of forces and levers in biological systems.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 83 },
+                new Exam { Id = 42, ExamTitle = "Biomechanics Basics Exam", ExamDescription = "Test your understanding of forces and levers in biological systems.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 83, final = false },
                 // Exam for Lesson 85 (Course 17)
-                new Exam { Id = 43, ExamTitle = "Nervous System Control of Movement Exam", ExamDescription = "Test your knowledge of how the nervous system controls muscles.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 85 },
+                new Exam { Id = 43, ExamTitle = "Nervous System Control of Movement Exam", ExamDescription = "Test your knowledge of how the nervous system controls muscles.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 85, final = false },
                 // Exam for Lesson 87 (Course 18)
-                new Exam { Id = 44, ExamTitle = "Population Ecology Exam", ExamDescription = "Test your understanding of population growth models.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 87 },
+                new Exam { Id = 44, ExamTitle = "Population Ecology Exam", ExamDescription = "Test your understanding of population growth models.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 87, final = false },
                 // Exam for Lesson 89 (Course 18)
-                new Exam { Id = 45, ExamTitle = "Ecosystem Dynamics Exam", ExamDescription = "Test your knowledge of energy flow and nutrient cycling.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 89 },
+                new Exam { Id = 45, ExamTitle = "Ecosystem Dynamics Exam", ExamDescription = "Test your knowledge of energy flow and nutrient cycling.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 89, final = false },
                 // Exam for Lesson 91 (Course 19)
-                new Exam { Id = 46, ExamTitle = "Plant Structure and Growth Exam", ExamDescription = "Test your knowledge of basic plant anatomy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 91 },
+                new Exam { Id = 46, ExamTitle = "Plant Structure and Growth Exam", ExamDescription = "Test your knowledge of basic plant anatomy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 91, final = false },
                 // Exam for Lesson 93 (Course 19)
-                new Exam { Id = 47, ExamTitle = "Photosynthesis Exam", ExamDescription = "Test your understanding of the photosynthesis process.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 93 },
+                new Exam { Id = 47, ExamTitle = "Photosynthesis Exam", ExamDescription = "Test your understanding of the photosynthesis process.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 93, final = false },
                 // Exam for Lesson 95 (Course 19)
-                new Exam { Id = 48, ExamTitle = "Plant Hormones and Responses Exam", ExamDescription = "Test your knowledge of chemical signaling in plants.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 95 },
+                new Exam { Id = 48, ExamTitle = "Plant Hormones and Responses Exam", ExamDescription = "Test your knowledge of chemical signaling in plants.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 95, final = false },
                 // Exam for Lesson 97 (Course 20)
-                new Exam { Id = 49, ExamTitle = "Invertebrate Zoology I Exam", ExamDescription = "Test your knowledge of simpler invertebrates.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 97 },
+                new Exam { Id = 49, ExamTitle = "Invertebrate Zoology I Exam", ExamDescription = "Test your knowledge of simpler invertebrates.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 97, final = false },
                 // Exam for Lesson 99 (Course 20)
-                new Exam { Id = 50, ExamTitle = "Vertebrate Zoology I Exam", ExamDescription = "Test your knowledge of Chordates and Fish.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 99 },
+                new Exam { Id = 50, ExamTitle = "Vertebrate Zoology I Exam", ExamDescription = "Test your knowledge of Chordates and Fish.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 99, final = false },
                 // Exam for Lesson 101 (Course 21)
-                new Exam { Id = 51, ExamTitle = "Introduction to Microbes Exam", ExamDescription = "Test your knowledge of microbial diversity.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 101 },
+                new Exam { Id = 51, ExamTitle = "Introduction to Microbes Exam", ExamDescription = "Test your knowledge of microbial diversity.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 101, final = false },
                 // Exam for Lesson 103 (Course 21)
-                new Exam { Id = 52, ExamTitle = "Microbial Growth and Metabolism Exam", ExamDescription = "Test your understanding of microbial growth requirements and pathways.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 103 },
-                // Exam for Lesson 105 (Course 21)
-                new Exam { Id = 53, ExamTitle = "Microbial Roles Exam", ExamDescription = "Test your knowledge of microbes in ecosystems, disease, and industry.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 105 },
+                new Exam { Id = 52, ExamTitle = "Microbial Growth and Metabolism Exam", ExamDescription = "Test your understanding of microbial growth requirements and pathways.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 103, final = false },
+                // Exam for Lesson 105 (Course 21) - FINAL EXAM FOR BIOLOGY CATEGORY
+                new Exam { Id = 53, ExamTitle = "Biology Comprehensive Exam", ExamDescription = "Comprehensive test of cell biology, genetics, physiology, ecology, botany, zoology, and microbiology.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 105, final = true },
+
+                // Category 5: Chemistry (Courses 22, 23, 24, 25, 26, 27, 28) - Ends with Lesson 139 (ExamId 70)
                 // Exam for Lesson 107 (Course 22)
-                new Exam { Id = 54, ExamTitle = "Alkanes and Cycloalkanes Exam", ExamDescription = "Test your knowledge of alkane nomenclature and conformations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 107 },
+                new Exam { Id = 54, ExamTitle = "Alkanes and Cycloalkanes Exam", ExamDescription = "Test your knowledge of alkane nomenclature and conformations.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 107, final = false },
                 // Exam for Lesson 109 (Course 22)
-                new Exam { Id = 55, ExamTitle = "Introduction to Organic Reactions Exam", ExamDescription = "Test your understanding of reaction types and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 109 },
+                new Exam { Id = 55, ExamTitle = "Introduction to Organic Reactions Exam", ExamDescription = "Test your understanding of reaction types and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 109, final = false },
                 // Exam for Lesson 111 (Course 23)
-                new Exam { Id = 56, ExamTitle = "Atomic Structure and Periodicity Exam", ExamDescription = "Test your knowledge of atomic models and periodic trends.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 111 },
+                new Exam { Id = 56, ExamTitle = "Atomic Structure and Periodicity Exam", ExamDescription = "Test your knowledge of atomic models and periodic trends.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 111, final = false },
                 // Exam for Lesson 113 (Course 23)
-                new Exam { Id = 57, ExamTitle = "Bonding Theories Exam", ExamDescription = "Test your understanding of VB and MO theories.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 113 },
+                new Exam { Id = 57, ExamTitle = "Bonding Theories Exam", ExamDescription = "Test your understanding of VB and MO theories.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 113, final = false },
                 // Exam for Lesson 115 (Course 23)
-                new Exam { Id = 58, ExamTitle = "Coordination Chemistry Basics Exam", ExamDescription = "Test your knowledge of transition metals, ligands, and complex ions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 115 },
+                new Exam { Id = 58, ExamTitle = "Coordination Chemistry Basics Exam", ExamDescription = "Test your knowledge of transition metals, ligands, and complex ions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 115, final = false },
                 // Exam for Lesson 117 (Course 24)
-                new Exam { Id = 59, ExamTitle = "Thermodynamics: First Law Exam", ExamDescription = "Test your knowledge of energy, work, heat, and enthalpy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 117 },
+                new Exam { Id = 59, ExamTitle = "Thermodynamics: First Law Exam", ExamDescription = "Test your knowledge of energy, work, heat, and enthalpy.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 117, final = false },
                 // Exam for Lesson 119 (Course 24)
-                new Exam { Id = 60, ExamTitle = "Chemical Kinetics Exam", ExamDescription = "Test your understanding of reaction rates and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 119 },
+                new Exam { Id = 60, ExamTitle = "Chemical Kinetics Exam", ExamDescription = "Test your understanding of reaction rates and mechanisms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 119, final = false },
                 // Exam for Lesson 121 (Course 25)
-                new Exam { Id = 61, ExamTitle = "Analytical Intro & Stats Exam", ExamDescription = "Test your knowledge of analytical errors and data analysis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 121 },
+                new Exam { Id = 61, ExamTitle = "Analytical Intro & Stats Exam", ExamDescription = "Test your knowledge of analytical errors and data analysis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 121, final = false },
                 // Exam for Lesson 123 (Course 25)
-                new Exam { Id = 62, ExamTitle = "Spectroscopic Methods Exam", ExamDescription = "Test your understanding of light-matter interaction and UV-Vis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 123 },
+                new Exam { Id = 62, ExamTitle = "Spectroscopic Methods Exam", ExamDescription = "Test your understanding of light-matter interaction and UV-Vis.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 123, final = false },
                 // Exam for Lesson 125 (Course 25)
-                new Exam { Id = 63, ExamTitle = "Electroanalytical Methods Exam", ExamDescription = "Test your knowledge of potentiometry and voltammetry basics.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 125 },
+                new Exam { Id = 63, ExamTitle = "Electroanalytical Methods Exam", ExamDescription = "Test your knowledge of potentiometry and voltammetry basics.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 125, final = false },
                 // Exam for Lesson 127 (Course 26)
-                new Exam { Id = 64, ExamTitle = "Enzymes and Kinetics Exam", ExamDescription = "Test your knowledge of biological catalysts and reaction rates.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 127 },
+                new Exam { Id = 64, ExamTitle = "Enzymes and Kinetics Exam", ExamDescription = "Test your knowledge of biological catalysts and reaction rates.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 127, final = false },
                 // Exam for Lesson 129 (Course 26)
-                new Exam { Id = 65, ExamTitle = "Lipids and Membranes Exam", ExamDescription = "Test your understanding of lipid types and membrane structure.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 129 },
+                new Exam { Id = 65, ExamTitle = "Lipids and Membranes Exam", ExamDescription = "Test your understanding of lipid types and membrane structure.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 129, final = false },
                 // Exam for Lesson 131 (Course 27)
-                new Exam { Id = 66, ExamTitle = "Atmospheric Chemistry Exam", ExamDescription = "Test your knowledge of atmospheric composition and reactions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 131 },
+                new Exam { Id = 66, ExamTitle = "Atmospheric Chemistry Exam", ExamDescription = "Test your knowledge of atmospheric composition and reactions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 131, final = false },
                 // Exam for Lesson 133 (Course 27)
-                new Exam { Id = 67, ExamTitle = "Soil Chemistry Exam", ExamDescription = "Test your understanding of soil composition and chemical reactions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 133 },
+                new Exam { Id = 67, ExamTitle = "Soil Chemistry Exam", ExamDescription = "Test your understanding of soil composition and chemical reactions.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 133, final = false },
                 // Exam for Lesson 135 (Course 27)
-                new Exam { Id = 68, ExamTitle = "Green Chemistry Exam", ExamDescription = "Test your knowledge of principles for safer chemical processes.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 135 },
+                new Exam { Id = 68, ExamTitle = "Green Chemistry Exam", ExamDescription = "Test your knowledge of principles for safer chemical processes.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 135, final = false },
                 // Exam for Lesson 137 (Course 28)
-                new Exam { Id = 69, ExamTitle = "Approximation Methods Exam", ExamDescription = "Test your knowledge of variation principle and perturbation theory.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 137 },
-                // Exam for Lesson 139 (Course 28)
+                new Exam { Id = 69, ExamTitle = "Approximation Methods Exam", ExamDescription = "Test your knowledge of variation principle and perturbation theory.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 137, final = false },
+                // Exam for Lesson 139 (Course 28) - FINAL EXAM FOR CHEMISTRY CATEGORY
+                new Exam { Id = 70, ExamTitle = "Chemistry Comprehensive Exam", ExamDescription = "Comprehensive test of organic, inorganic, physical, analytical, bio, environmental, and theoretical chemistry.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 139, final = true },
 
-                new Exam { Id = 70, ExamTitle = "Computational Chemistry Methods Exam", ExamDescription = "Test your basic understanding of Hartree-Fock and DFT.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 139 },
-
+                // Category 6: English & Literature (Courses 29, 30, 31, 32, 33, 34, 35) - Ends with Lesson 175 (ExamId 88)
                 // Exam for Lesson 141 (Course 29)
-                new Exam { Id = 71, ExamTitle = "Literary Analysis Basics Exam", ExamDescription = "Test your ability to use tools for interpreting literature.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 141 },
+                new Exam { Id = 71, ExamTitle = "Literary Analysis Basics Exam", ExamDescription = "Test your ability to use tools for interpreting literature.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 141, final = false },
                 // Exam for Lesson 143 (Course 29)
-                new Exam { Id = 72, ExamTitle = "Poetry Fundamentals Exam", ExamDescription = "Test your understanding of poetic devices and forms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 143 },
+                new Exam { Id = 72, ExamTitle = "Poetry Fundamentals Exam", ExamDescription = "Test your understanding of poetic devices and forms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 143, final = false },
                 // Exam for Lesson 145 (Course 29)
-                new Exam { Id = 73, ExamTitle = "Introduction to Drama Exam", ExamDescription = "Test your knowledge of the elements of dramatic literature.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 145 },
+                new Exam { Id = 73, ExamTitle = "Introduction to Drama Exam", ExamDescription = "Test your knowledge of the elements of dramatic literature.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 145, final = false },
                 // Exam for Lesson 147 (Course 30)
-                new Exam { Id = 74, ExamTitle = "Character Development Quiz", ExamDescription = "Test your ability to create believable characters.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 147 },
+                new Exam { Id = 74, ExamTitle = "Character Development Quiz", ExamDescription = "Test your ability to create believable characters.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 147, final = false },
                 // Exam for Lesson 149 (Course 30)
-                new Exam { Id = 75, ExamTitle = "Setting and Description Quiz", ExamDescription = "Test your skills in building immersive worlds.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 149 },
+                new Exam { Id = 75, ExamTitle = "Setting and Description Quiz", ExamDescription = "Test your skills in building immersive worlds.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 149, final = false },
                 // Exam for Lesson 151 (Course 31)
-                new Exam { Id = 76, ExamTitle = "Parts of Speech Exam", ExamDescription = "Test your understanding of nouns, verbs, adjectives, etc.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 151 },
+                new Exam { Id = 76, ExamTitle = "Parts of Speech Exam", ExamDescription = "Test your understanding of nouns, verbs, adjectives, etc.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 151, final = false },
                 // Exam for Lesson 153 (Course 31)
-                new Exam { Id = 77, ExamTitle = "Punctuation Rules Exam", ExamDescription = "Test your knowledge of correct punctuation usage.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 153 },
+                new Exam { Id = 77, ExamTitle = "Punctuation Rules Exam", ExamDescription = "Test your knowledge of correct punctuation usage.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 153, final = false },
                 // Exam for Lesson 155 (Course 31)
-                new Exam { Id = 78, ExamTitle = "Paragraph and Essay Structure Exam", ExamDescription = "Test your ability to organize ideas effectively.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 155 },
+                new Exam { Id = 78, ExamTitle = "Paragraph and Essay Structure Exam", ExamDescription = "Test your ability to organize ideas effectively.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 155, final = false },
                 // Exam for Lesson 157 (Course 32)
-                new Exam { Id = 79, ExamTitle = "Figurative Language Exam", ExamDescription = "Test your ability to identify and interpret figurative language.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 157 },
+                new Exam { Id = 79, ExamTitle = "Figurative Language Exam", ExamDescription = "Test your ability to identify and interpret figurative language.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 157, final = false },
                 // Exam for Lesson 159 (Course 32)
-                new Exam { Id = 80, ExamTitle = "Poetic Forms Exam", ExamDescription = "Test your ability to recognize and analyze different poetic structures.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 159 },
+                new Exam { Id = 80, ExamTitle = "Poetic Forms Exam", ExamDescription = "Test your ability to recognize and analyze different poetic structures.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 159, final = false },
                 // Exam for Lesson 161 (Course 33)
-
-                new Exam { Id = 81, ExamTitle = "History of Theater Exam", ExamDescription = "Test your knowledge of key periods and playwrights.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 161 },
-
+                new Exam { Id = 81, ExamTitle = "History of Theater Exam", ExamDescription = "Test your knowledge of key periods and playwrights.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 161, final = false },
                 // Exam for Lesson 163 (Course 33)
-                new Exam { Id = 82, ExamTitle = "Reading a Play Exam", ExamDescription = "Test your ability to understand stage directions and subtext.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 163 },
+                new Exam { Id = 82, ExamTitle = "Reading a Play Exam", ExamDescription = "Test your ability to understand stage directions and subtext.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 163, final = false },
                 // Exam for Lesson 165 (Course 33)
-                new Exam { Id = 83, ExamTitle = "Theater Production Basics Exam", ExamDescription = "Test your knowledge of roles and processes in theater production.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 165 },
+                new Exam { Id = 83, ExamTitle = "Theater Production Basics Exam", ExamDescription = "Test your knowledge of roles and processes in theater production.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 165, final = false },
                 // Exam for Lesson 167 (Course 34)
-                new Exam { Id = 84, ExamTitle = "Point of View Quiz", ExamDescription = "Test your understanding of narrative perspectives.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 167 },
+                new Exam { Id = 84, ExamTitle = "Point of View Quiz", ExamDescription = "Test your understanding of narrative perspectives.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 167, final = false },
                 // Exam for Lesson 169 (Course 34)
-                new Exam { Id = 85, ExamTitle = "Crafting Scenes Quiz", ExamDescription = "Test your knowledge of scene structure and pacing.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 169 },
+                new Exam { Id = 85, ExamTitle = "Crafting Scenes Quiz", ExamDescription = "Test your knowledge of scene structure and pacing.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 169, final = false },
                 // Exam for Lesson 171 (Course 35)
-                new Exam { Id = 86, ExamTitle = "Types of Non-fiction Exam", ExamDescription = "Test your knowledge of different non-fiction forms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 171 },
+                new Exam { Id = 86, ExamTitle = "Types of Non-fiction Exam", ExamDescription = "Test your knowledge of different non-fiction forms.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 171, final = false },
                 // Exam for Lesson 173 (Course 35)
-                new Exam { Id = 87, ExamTitle = "Structuring Non-fiction Exam", ExamDescription = "Test your ability to organize factual material effectively.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 173 },
-                // Exam for Lesson 175 (Course 35)
-                new Exam { Id = 88, ExamTitle = "Ethics in Non-fiction Exam", ExamDescription = "Test your understanding of responsibilities in non-fiction writing.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 175 }
+                new Exam { Id = 87, ExamTitle = "Structuring Non-fiction Exam", ExamDescription = "Test your ability to organize factual material effectively.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 173, final = false },
+                // Exam for Lesson 175 (Course 35) - FINAL EXAM FOR ENGLISH & LITERATURE CATEGORY
+                new Exam { Id = 88, ExamTitle = "English & Literature Comprehensive Exam", ExamDescription = "Comprehensive test of literary analysis, creative writing, grammar, composition, and non-fiction.", Grade = "Not Graded", CreatedAt = seedDate, lessonId = 175, final = true }
             );
+
             modelBuilder.Entity<BankOfQuestion>().HasData(
                 // --- Questions for Exam 1 (lessonId = 1, Algebra Basics) ---
                 new BankOfQuestion { Id = 1, QuestionText = "In the expression 3x + 5, what is 'x' called?", OptionA = "Coefficient", OptionB = "Variable", OptionC = "Constant", OptionD = "Term", CorrectAnswer = "B", ExamId = 1 },
@@ -520,7 +527,7 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 7, QuestionText = "Solve the inequality: x + 3 > 7", OptionA = "x > 4", OptionB = "x < 4", OptionC = "x > 10", OptionD = "x < 10", CorrectAnswer = "A", ExamId = 2 },
                 new BankOfQuestion { Id = 8, QuestionText = "When solving -2x < 6, what happens to the inequality sign?", OptionA = "Stays the same", OptionB = "Flips", OptionC = "Becomes equals", OptionD = "Disappears", CorrectAnswer = "B", ExamId = 2 },
                 new BankOfQuestion { Id = 9, QuestionText = "How is 'x is greater than 5' represented on a number line?", OptionA = "Closed circle on 5, shaded left", OptionB = "Open circle on 5, shaded left", OptionC = "Closed circle on 5, shaded right", OptionD = "Open circle on 5, shaded right", CorrectAnswer = "D", ExamId = 2 },
-                new BankOfQuestion { Id = 10, QuestionText = "Solve: 3x - 1 <= 8", OptionA = "x <= 3", OptionB = "x >= 3", OptionC = "x <= 9/3", OptionD = "x <= 7/3", CorrectAnswer = "A", ExamId = 2 }, // Note: C is technically same as A
+                new BankOfQuestion { Id = 10, QuestionText = "Solve: 3x - 1 <= 8", OptionA = "x <= 3", OptionB = "x >= 3", OptionC = "x <= 9/3", OptionD = "x <= 7/3", CorrectAnswer = "A", ExamId = 2 },
 
                 // --- Questions for Exam 3 (lessonId = 5, Polynomial Basics) ---
                 new BankOfQuestion { Id = 11, QuestionText = "What is the degree of the polynomial 3x^2 + 2x - 1?", OptionA = "1", OptionB = "2", OptionC = "3", OptionD = "0", CorrectAnswer = "B", ExamId = 3 },
@@ -606,12 +613,12 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 69, QuestionText = "If P(A) = 0.5, P(B) = 0.4, and P(A and B) = 0.2, are A and B independent?", OptionA = "Yes, because P(A)*P(B) = P(A and B)", OptionB = "No, because P(A)*P(B) != P(A and B)", OptionC = "Yes, because P(A)+P(B) > 1", OptionD = "Cannot be determined", CorrectAnswer = "A", ExamId = 14 },
                 new BankOfQuestion { Id = 70, QuestionText = "The formula P(A|B) = P(A and B) / P(B) defines:", OptionA = "Independence", OptionB = "Mutual exclusivity", OptionC = "Conditional probability", OptionD = "Joint probability", CorrectAnswer = "C", ExamId = 14 },
 
-                // --- Questions for Exam 15 (lessonId = 29, Expected Value and Variance) ---
+                // --- Questions for Exam 15 (lessonId = 29, Statistics & Probability Comprehensive Exam) ---
                 new BankOfQuestion { Id = 71, QuestionText = "Expected Value E(X) of a discrete random variable represents the:", OptionA = "Most likely outcome", OptionB = "Average outcome over many trials", OptionC = "Maximum possible value", OptionD = "Spread of the distribution", CorrectAnswer = "B", ExamId = 15 },
                 new BankOfQuestion { Id = 72, QuestionText = "How is Expected Value E(X) calculated?", OptionA = "Sum of (Outcome * Probability)", OptionB = "Sum of Probabilities", OptionC = "Product of Outcomes", OptionD = "Average of Outcomes", CorrectAnswer = "A", ExamId = 15 },
                 new BankOfQuestion { Id = 73, QuestionText = "Variance Var(X) measures the:", OptionA = "Central tendency", OptionB = "Average value", OptionC = "Spread or dispersion", OptionD = "Skewness", CorrectAnswer = "C", ExamId = 15 },
                 new BankOfQuestion { Id = 74, QuestionText = "Standard Deviation is the ___ of the Variance.", OptionA = "Square", OptionB = "Reciprocal", OptionC = "Square root", OptionD = "Double", CorrectAnswer = "C", ExamId = 15 },
-                new BankOfQuestion { Id = 75, QuestionText = "If E(X) = 5, what is E(3X + 2)?", OptionA = "5", OptionB = "15", OptionC = "17", OptionD = "21", CorrectAnswer = "C", ExamId = 15 }, // E(aX+b) = aE(X)+b
+                new BankOfQuestion { Id = 75, QuestionText = "If E(X) = 5, what is E(3X + 2)?", OptionA = "5", OptionB = "15", OptionC = "17", OptionD = "21", CorrectAnswer = "C", ExamId = 15 },
 
                 // --- Questions for Exam 16 (lessonId = 31, Logic and Proofs) ---
                 new BankOfQuestion { Id = 76, QuestionText = "A statement that is either true or false is called a:", OptionA = "Theorem", OptionB = "Axiom", OptionC = "Proposition", OptionD = "Corollary", CorrectAnswer = "C", ExamId = 16 },
@@ -624,11 +631,11 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 81, QuestionText = "The number of ways to arrange n distinct objects is given by:", OptionA = "n^2", OptionB = "2^n", OptionC = "n!", OptionD = "C(n, 2)", CorrectAnswer = "C", ExamId = 17 },
                 new BankOfQuestion { Id = 82, QuestionText = "Which calculation is used when the order of selection matters?", OptionA = "Combination", OptionB = "Permutation", OptionC = "Factorial", OptionD = "Probability", CorrectAnswer = "B", ExamId = 17 },
                 new BankOfQuestion { Id = 83, QuestionText = "Which calculation is used when the order of selection does NOT matter?", OptionA = "Combination", OptionB = "Permutation", OptionC = "Factorial", OptionD = "Distribution", CorrectAnswer = "A", ExamId = 17 },
-                new BankOfQuestion { Id = 84, QuestionText = "How many ways can you choose 2 letters from {A, B, C} if order doesn't matter?", OptionA = "1", OptionB = "3", OptionC = "6", OptionD = "9", CorrectAnswer = "B", ExamId = 17 }, // AB, AC, BC
+                new BankOfQuestion { Id = 84, QuestionText = "How many ways can you choose 2 letters from {A, B, C} if order doesn't matter?", OptionA = "1", OptionB = "3", OptionC = "6", OptionD = "9", CorrectAnswer = "B", ExamId = 17 },
                 new BankOfQuestion { Id = 85, QuestionText = "The Pigeonhole Principle states that if you have n items put into m containers, with n > m, then:", OptionA = "All containers are empty", OptionB = "All containers have 1 item", OptionC = "At least one container has 0 items", OptionD = "At least one container has more than 1 item", CorrectAnswer = "D", ExamId = 17 },
 
-                // --- Questions for Exam 18 (lessonId = 35, Introduction to Graph Theory) ---
-                new BankOfQuestion { Id = 86, QuestionText = "In graph theory, what are the points called?", OptionA = "Edges", OptionB = "Nodes", OptionC = "Vertices", OptionD = "Lines", CorrectAnswer = "C", ExamId = 18 }, // B is also common, but C is more formal
+                // --- Questions for Exam 18 (lessonId = 35, Core Mathematics Comprehensive Exam) ---
+                new BankOfQuestion { Id = 86, QuestionText = "In graph theory, what are the points called?", OptionA = "Edges", OptionB = "Nodes", OptionC = "Vertices", OptionD = "Lines", CorrectAnswer = "C", ExamId = 18 },
                 new BankOfQuestion { Id = 87, QuestionText = "What connects the vertices in a graph?", OptionA = "Nodes", OptionB = "Paths", OptionC = "Cycles", OptionD = "Edges", CorrectAnswer = "D", ExamId = 18 },
                 new BankOfQuestion { Id = 88, QuestionText = "A graph where edges have direction is called a:", OptionA = "Directed graph (Digraph)", OptionB = "Undirected graph", OptionC = "Weighted graph", OptionD = "Simple graph", CorrectAnswer = "A", ExamId = 18 },
                 new BankOfQuestion { Id = 89, QuestionText = "A sequence of vertices where each adjacent pair is connected by an edge is a:", OptionA = "Cycle", OptionB = "Tree", OptionC = "Walk/Path", OptionD = "Component", CorrectAnswer = "C", ExamId = 18 },
@@ -706,10 +713,10 @@ namespace Estigo.Models
 
                 // --- Questions for Exam 29 (lessonId = 57, First Law of Thermodynamics) ---
                 new BankOfQuestion { Id = 141, QuestionText = "The First Law of Thermodynamics is a statement of the conservation of:", OptionA = "Mass", OptionB = "Momentum", OptionC = "Charge", OptionD = "Energy", CorrectAnswer = "D", ExamId = 29 },
-                new BankOfQuestion { Id = 142, QuestionText = "The change in internal energy (ΔU) of a system equals the heat (Q) added to the system minus the ___ (W) done by the system.", OptionA = "Work", OptionB = "Temperature", OptionC = "Pressure", OptionD = "Volume", CorrectAnswer = "A", ExamId = 29 }, // ΔU = Q - W
+                new BankOfQuestion { Id = 142, QuestionText = "The change in internal energy (ΔU) of a system equals the heat (Q) added to the system minus the ___ (W) done by the system.", OptionA = "Work", OptionB = "Temperature", OptionC = "Pressure", OptionD = "Volume", CorrectAnswer = "A", ExamId = 29 },
                 new BankOfQuestion { Id = 143, QuestionText = "Internal energy (U) refers to the total ___ energy of the molecules within a system.", OptionA = "Potential only", OptionB = "Kinetic only", OptionC = "Kinetic and Potential", OptionD = "External", CorrectAnswer = "C", ExamId = 29 },
                 new BankOfQuestion { Id = 144, QuestionText = "In an adiabatic process, what is equal to zero?", OptionA = "Change in Internal Energy (ΔU)", OptionB = "Work done (W)", OptionC = "Heat transfer (Q)", OptionD = "Change in Temperature (ΔT)", CorrectAnswer = "C", ExamId = 29 },
-                new BankOfQuestion { Id = 145, QuestionText = "In an isothermal process, what remains constant?", OptionA = "Pressure", OptionB = "Volume", OptionC = "Temperature", OptionD = "Internal Energy (for ideal gas)", CorrectAnswer = "C", ExamId = 29 }, // D is also true for ideal gas
+                new BankOfQuestion { Id = 145, QuestionText = "In an isothermal process, what remains constant?", OptionA = "Pressure", OptionB = "Volume", OptionC = "Temperature", OptionD = "Internal Energy (for ideal gas)", CorrectAnswer = "C", ExamId = 29 },
 
                 // --- Questions for Exam 30 (lessonId = 59, Second Law of Thermodynamics) ---
                 new BankOfQuestion { Id = 146, QuestionText = "The Second Law of Thermodynamics deals with the concept of:", OptionA = "Energy conservation", OptionB = "Entropy and the direction of processes", OptionC = "Absolute zero", OptionD = "Pressure-volume relationship", CorrectAnswer = "B", ExamId = 30 },
@@ -722,12 +729,12 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 151, QuestionText = "A perfect blackbody is an idealized object that:", OptionA = "Reflects all incident radiation", OptionB = "Absorbs all incident radiation", OptionC = "Transmits all incident radiation", OptionD = "Emits only visible light", CorrectAnswer = "B", ExamId = 31 },
                 new BankOfQuestion { Id = 152, QuestionText = "Classical physics failed to explain the observed spectrum of blackbody radiation, leading to the:", OptionA = "Photoelectric effect", OptionB = "Compton effect", OptionC = "Ultraviolet catastrophe", OptionD = "Wave-particle duality", CorrectAnswer = "C", ExamId = 31 },
                 new BankOfQuestion { Id = 153, QuestionText = "Max Planck proposed that energy is quantized, meaning it can only be emitted or absorbed in discrete packets called:", OptionA = "Electrons", OptionB = "Protons", OptionC = "Waves", OptionD = "Quanta (photons)", CorrectAnswer = "D", ExamId = 31 },
-                new BankOfQuestion { Id = 154, QuestionText = "The energy of a quantum (photon) is proportional to its:", OptionA = "Wavelength", OptionB = "Frequency", OptionC = "Amplitude", OptionD = "Speed", CorrectAnswer = "B", ExamId = 31 }, // E = hf
+                new BankOfQuestion { Id = 154, QuestionText = "The energy of a quantum (photon) is proportional to its:", OptionA = "Wavelength", OptionB = "Frequency", OptionC = "Amplitude", OptionD = "Speed", CorrectAnswer = "B", ExamId = 31 },
                 new BankOfQuestion { Id = 155, QuestionText = "Planck's constant (h) relates the energy of a photon to its:", OptionA = "Mass", OptionB = "Charge", OptionC = "Frequency", OptionD = "Wavelength", CorrectAnswer = "C", ExamId = 31 },
 
                 // --- Questions for Exam 32 (lessonId = 63, Wave Nature of Matter) ---
                 new BankOfQuestion { Id = 156, QuestionText = "Who proposed that particles, like electrons, could exhibit wave-like properties?", OptionA = "Albert Einstein", OptionB = "Max Planck", OptionC = "Louis de Broglie", OptionD = "Niels Bohr", CorrectAnswer = "C", ExamId = 32 },
-                new BankOfQuestion { Id = 157, QuestionText = "The de Broglie wavelength of a particle is inversely proportional to its:", OptionA = "Mass", OptionB = "Velocity", OptionC = "Momentum", OptionD = "Energy", CorrectAnswer = "C", ExamId = 32 }, // λ = h/p
+                new BankOfQuestion { Id = 157, QuestionText = "The de Broglie wavelength of a particle is inversely proportional to its:", OptionA = "Mass", OptionB = "Velocity", OptionC = "Momentum", OptionD = "Energy", CorrectAnswer = "C", ExamId = 32 },
                 new BankOfQuestion { Id = 158, QuestionText = "The wave nature of electrons was experimentally confirmed by observing:", OptionA = "Photoelectric effect", OptionB = "Electron diffraction", OptionC = "Blackbody radiation", OptionD = "Atomic spectra", CorrectAnswer = "B", ExamId = 32 },
                 new BankOfQuestion { Id = 159, QuestionText = "Wave-particle duality means that entities like light and electrons exhibit:", OptionA = "Only wave properties", OptionB = "Only particle properties", OptionC = "Both wave and particle properties", OptionD = "Neither wave nor particle properties", CorrectAnswer = "C", ExamId = 32 },
                 new BankOfQuestion { Id = 160, QuestionText = "For macroscopic objects (like a baseball), the de Broglie wavelength is:", OptionA = "Very large and easily observable", OptionB = "Comparable to visible light", OptionC = "Extremely small and negligible", OptionD = "Zero", CorrectAnswer = "C", ExamId = 32 },
@@ -736,7 +743,7 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 161, QuestionText = "The fundamental equation of non-relativistic quantum mechanics is the:", OptionA = "Newton's equation (F=ma)", OptionB = "Maxwell's equations", OptionC = "Schrödinger equation", OptionD = "Einstein's field equations", CorrectAnswer = "C", ExamId = 33 },
                 new BankOfQuestion { Id = 162, QuestionText = "In quantum mechanics, the state of a particle is described by its:", OptionA = "Position and momentum", OptionB = "Wave function (Ψ)", OptionC = "Energy level", OptionD = "Spin", CorrectAnswer = "B", ExamId = 33 },
                 new BankOfQuestion { Id = 163, QuestionText = "The square of the magnitude of the wave function (|Ψ|^2) represents:", OptionA = "Energy density", OptionB = "Momentum density", OptionC = "Probability density of finding the particle", OptionD = "Charge density", CorrectAnswer = "C", ExamId = 33 },
-                new BankOfQuestion { Id = 164, QuestionText = "Heisenberg's Uncertainty Principle states that you cannot simultaneously know both the exact ___ and ___ of a particle.", OptionA = "Position, Energy", OptionB = "Position, Momentum", OptionC = "Energy, Time", OptionD = "Spin, Charge", CorrectAnswer = "B", ExamId = 33 }, // Also C is valid
+                new BankOfQuestion { Id = 164, QuestionText = "Heisenberg's Uncertainty Principle states that you cannot simultaneously know both the exact ___ and ___ of a particle.", OptionA = "Position, Energy", OptionB = "Position, Momentum", OptionC = "Energy, Time", OptionD = "Spin, Charge", CorrectAnswer = "B", ExamId = 33 },
                 new BankOfQuestion { Id = 165, QuestionText = "Quantum tunneling refers to a particle's ability to:", OptionA = "Travel faster than light", OptionB = "Pass through a potential barrier it classically shouldn't overcome", OptionC = "Exist in multiple places at once", OptionD = "Split into two particles", CorrectAnswer = "B", ExamId = 33 },
 
                 // --- Questions for Exam 34 (lessonId = 67, Time Dilation and Length Contraction) ---
@@ -746,7 +753,7 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 169, QuestionText = "These relativistic effects become significant only at speeds close to:", OptionA = "The speed of sound", OptionB = "Escape velocity", OptionC = "The speed of light", OptionD = "Orbital velocity", CorrectAnswer = "C", ExamId = 34 },
                 new BankOfQuestion { Id = 170, QuestionText = "The twin paradox involves one twin traveling at relativistic speed. When they reunite, the traveling twin is ___.", OptionA = "Older", OptionB = "Younger", OptionC = "The same age", OptionD = "It's impossible to say", CorrectAnswer = "B", ExamId = 34 },
 
-                // --- Questions for Exam 35 (lessonId = 69, Introduction to General Relativity) ---
+                // --- Questions for Exam 35 (lessonId = 69, Physics Comprehensive Exam) ---
                 new BankOfQuestion { Id = 171, QuestionText = "General Relativity, developed by Einstein, is a theory of:", OptionA = "Electromagnetism", OptionB = "Quantum Mechanics", OptionC = "Gravitation", OptionD = "Thermodynamics", CorrectAnswer = "C", ExamId = 35 },
                 new BankOfQuestion { Id = 172, QuestionText = "The Principle of Equivalence states that ___ is indistinguishable from acceleration.", OptionA = "Velocity", OptionB = "Gravity", OptionC = "Mass", OptionD = "Time", CorrectAnswer = "B", ExamId = 35 },
                 new BankOfQuestion { Id = 173, QuestionText = "General Relativity describes gravity not as a force, but as a curvature of:", OptionA = "Electric fields", OptionB = "Magnetic fields", OptionC = "Spacetime", OptionD = "Energy levels", CorrectAnswer = "C", ExamId = 35 },
@@ -855,7 +862,7 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 246, QuestionText = "Vertebrates belong to the phylum:", OptionA = "Arthropoda", OptionB = "Mollusca", OptionC = "Chordata", OptionD = "Echinodermata", CorrectAnswer = "C", ExamId = 50 },
                 new BankOfQuestion { Id = 247, QuestionText = "Which is NOT a defining characteristic of chordates (at some life stage)?", OptionA = "Notochord", OptionB = "Dorsal hollow nerve cord", OptionC = "Exoskeleton", OptionD = "Pharyngeal slits", CorrectAnswer = "C", ExamId = 50 },
                 new BankOfQuestion { Id = 248, QuestionText = "Fish are aquatic vertebrates characterized by:", OptionA = "Lungs and feathers", OptionB = "Gills and fins", OptionC = "Mammary glands and hair", OptionD = "Scaly skin and amniotic eggs", CorrectAnswer = "B", ExamId = 50 },
-                new BankOfQuestion { Id = 249, QuestionText = "The two major groups of living fish are the cartilaginous fish (e.g., sharks) and the ___ fish.", OptionA = "Jawless", OptionB = "Bony", OptionC = "Lobe-finned", OptionD = "Ray-finned", CorrectAnswer = "B", ExamId = 50 }, // D is part of B
+                new BankOfQuestion { Id = 249, QuestionText = "The two major groups of living fish are the cartilaginous fish (e.g., sharks) and the ___ fish.", OptionA = "Jawless", OptionB = "Bony", OptionC = "Lobe-finned", OptionD = "Ray-finned", CorrectAnswer = "B", ExamId = 50 },
                 new BankOfQuestion { Id = 250, QuestionText = "Most fish utilize ___ for gas exchange.", OptionA = "Lungs", OptionB = "Skin", OptionC = "Gills", OptionD = "Spiracles", CorrectAnswer = "C", ExamId = 50 },
 
                 // --- Questions for Exam 51 (lessonId = 101, Introduction to Microbes) ---
@@ -872,7 +879,7 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 259, QuestionText = "Microbes that require oxygen for growth are called:", OptionA = "Obligate anaerobes", OptionB = "Facultative anaerobes", OptionC = "Aerotolerant anaerobes", OptionD = "Obligate aerobes", CorrectAnswer = "D", ExamId = 52 },
                 new BankOfQuestion { Id = 260, QuestionText = "Metabolism refers to all the ___ reactions occurring within a cell.", OptionA = "Physical", OptionB = "Chemical", OptionC = "Nuclear", OptionD = "Mechanical", CorrectAnswer = "B", ExamId = 52 },
 
-                // --- Questions for Exam 53 (lessonId = 105, Microbial Roles and Applications) ---
+                // --- Questions for Exam 53 (lessonId = 105, Biology Comprehensive Exam) ---
                 new BankOfQuestion { Id = 261, QuestionText = "Microorganisms that cause disease are called:", OptionA = "Decomposers", OptionB = "Producers", OptionC = "Pathogens", OptionD = "Symbionts", CorrectAnswer = "C", ExamId = 53 },
                 new BankOfQuestion { Id = 262, QuestionText = "Microbes like bacteria and fungi play a crucial role in ecosystems as:", OptionA = "Primary producers", OptionB = "Top predators", OptionC = "Decomposers", OptionD = "Herbivores", CorrectAnswer = "C", ExamId = 53 },
                 new BankOfQuestion { Id = 263, QuestionText = "The use of microorganisms to produce foods like yogurt, cheese, and bread is an example of:", OptionA = "Bioremediation", OptionB = "Pathogenesis", OptionC = "Fermentation", OptionD = "Nitrogen fixation", CorrectAnswer = "C", ExamId = 53 },
@@ -912,11 +919,10 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 287, QuestionText = "A central metal ion bonded to surrounding molecules or ions (ligands) forms a:", OptionA = "Salt", OptionB = "Alloy", OptionC = "Coordination complex/Compound", OptionD = "Zwitterion", CorrectAnswer = "C", ExamId = 58 },
                 new BankOfQuestion { Id = 288, QuestionText = "Ligands act as ___ by donating electron pairs to the central metal ion.", OptionA = "Lewis acids", OptionB = "Lewis bases", OptionC = "Bronsted acids", OptionD = "Bronsted bases", CorrectAnswer = "B", ExamId = 58 },
                 new BankOfQuestion { Id = 289, QuestionText = "The number of donor atoms directly attached to the central metal ion is the:", OptionA = "Oxidation state", OptionB = "Coordination number", OptionC = "Atomic number", OptionD = "Ligand field strength", CorrectAnswer = "B", ExamId = 58 },
-                new BankOfQuestion { Id = 290, QuestionText = "Common ligands include H2O, NH3, Cl-, and CN-. Which of these is neutral?", OptionA = "Cl-", OptionB = "CN-", OptionC = "H2O", OptionD = "None are neutral", CorrectAnswer = "C", ExamId = 58 }, // NH3 also neutral
+                new BankOfQuestion { Id = 290, QuestionText = "Common ligands include H2O, NH3, Cl-, and CN-. Which of these is neutral?", OptionA = "Cl-", OptionB = "CN-", OptionC = "H2O", OptionD = "None are neutral", CorrectAnswer = "C", ExamId = 58 },
 
                 // --- Questions for Exam 59 (lessonId = 117, Thermodynamics: First Law - Physical Chem) ---
-                // Note: Similar to Exam 29, but potentially more quantitative focus in Phys Chem
-                new BankOfQuestion { Id = 291, QuestionText = "The First Law of Thermodynamics mathematically is often written as ΔU = Q + W, where W is work done ___ the system.", OptionA = "By", OptionB = "On", OptionC = "Around", OptionD = "Through", CorrectAnswer = "B", ExamId = 59 }, // Common convention in Phys Chem
+                new BankOfQuestion { Id = 291, QuestionText = "The First Law of Thermodynamics mathematically is often written as ΔU = Q + W, where W is work done ___ the system.", OptionA = "By", OptionB = "On", OptionC = "Around", OptionD = "Through", CorrectAnswer = "B", ExamId = 59 },
                 new BankOfQuestion { Id = 292, QuestionText = "A property whose value depends only on the current state of the system, not the path taken, is a:", OptionA = "Path function (e.g., Q, W)", OptionB = "State function (e.g., U, H, T, P, V)", OptionC = "Process variable", OptionD = "Constant", CorrectAnswer = "B", ExamId = 59 },
                 new BankOfQuestion { Id = 293, QuestionText = "Enthalpy (H) is defined as H = U + ___.", OptionA = "PV", OptionB = "TS", OptionC = "Q", OptionD = "W", CorrectAnswer = "A", ExamId = 59 },
                 new BankOfQuestion { Id = 294, QuestionText = "For a reaction at constant pressure, the change in enthalpy (ΔH) is equal to the:", OptionA = "Work done (W)", OptionB = "Heat transferred (Qp)", OptionC = "Change in internal energy (ΔU)", OptionD = "Change in entropy (ΔS)", CorrectAnswer = "B", ExamId = 59 },
@@ -939,7 +945,7 @@ namespace Estigo.Models
                 // --- Questions for Exam 62 (lessonId = 123, Spectroscopic Methods) ---
                 new BankOfQuestion { Id = 306, QuestionText = "Spectroscopy studies the interaction between ___ and matter.", OptionA = "Sound", OptionB = "Heat", OptionC = "Electromagnetic radiation (light)", OptionD = "Magnetic fields", CorrectAnswer = "C", ExamId = 62 },
                 new BankOfQuestion { Id = 307, QuestionText = "UV-Vis spectroscopy measures the absorption of ultraviolet and visible light, which is related to:", OptionA = "Molecular vibrations", OptionB = "Nuclear spin", OptionC = "Electron transitions", OptionD = "Molecular rotation", CorrectAnswer = "C", ExamId = 62 },
-                new BankOfQuestion { Id = 308, QuestionText = "Beer-Lambert Law relates absorbance (A) to concentration (c), path length (b), and:", OptionA = "Molar absorptivity (ε)", OptionB = "Wavelength (λ)", OptionC = "Frequency (ν)", OptionD = "Refractive index (n)", CorrectAnswer = "A", ExamId = 62 }, // A = εbc
+                new BankOfQuestion { Id = 308, QuestionText = "Beer-Lambert Law relates absorbance (A) to concentration (c), path length (b), and:", OptionA = "Molar absorptivity (ε)", OptionB = "Wavelength (λ)", OptionC = "Frequency (ν)", OptionD = "Refractive index (n)", CorrectAnswer = "A", ExamId = 62 },
                 new BankOfQuestion { Id = 309, QuestionText = "Infrared (IR) spectroscopy is primarily used to identify:", OptionA = "Elemental composition", OptionB = "Molecular weight", OptionC = "Functional groups", OptionD = "Electron configuration", CorrectAnswer = "C", ExamId = 62 },
                 new BankOfQuestion { Id = 310, QuestionText = "A spectrophotometer measures the ___ of light passing through a sample.", OptionA = "Intensity (Transmittance/Absorbance)", OptionB = "Wavelength", OptionC = "Frequency", OptionD = "Speed", CorrectAnswer = "A", ExamId = 62 },
 
@@ -959,7 +965,7 @@ namespace Estigo.Models
 
                 // --- Questions for Exam 65 (lessonId = 129, Lipids and Membranes) ---
                 new BankOfQuestion { Id = 321, QuestionText = "Lipids are a diverse group of organic molecules characterized by being largely:", OptionA = "Hydrophilic (water-loving)", OptionB = "Hydrophobic (water-fearing)", OptionC = "Positively charged", OptionD = "Negatively charged", CorrectAnswer = "B", ExamId = 65 },
-                new BankOfQuestion { Id = 322, QuestionText = "Fats and oils are composed of glycerol bonded to three:", OptionA = "Amino acids", OptionB = "Fatty acids", OptionC = "Monosaccharides", OptionD = "Nucleotides", CorrectAnswer = "B", ExamId = 65 }, // Triglycerides
+                new BankOfQuestion { Id = 322, QuestionText = "Fats and oils are composed of glycerol bonded to three:", OptionA = "Amino acids", OptionB = "Fatty acids", OptionC = "Monosaccharides", OptionD = "Nucleotides", CorrectAnswer = "B", ExamId = 65 },
                 new BankOfQuestion { Id = 323, QuestionText = "The primary structural components of cell membranes are:", OptionA = "Triglycerides", OptionB = "Steroids", OptionC = "Phospholipids", OptionD = "Waxes", CorrectAnswer = "C", ExamId = 65 },
                 new BankOfQuestion { Id = 324, QuestionText = "Phospholipids have a hydrophilic head and a ___ tail.", OptionA = "Hydrophilic", OptionB = "Hydrophobic", OptionC = "Charged", OptionD = "Polar", CorrectAnswer = "B", ExamId = 65 },
                 new BankOfQuestion { Id = 325, QuestionText = "The Fluid Mosaic Model describes the cell membrane as proteins embedded or attached to a fluid bilayer of:", OptionA = "Triglycerides", OptionB = "Phospholipids", OptionC = "Carbohydrates", OptionD = "Cholesterol", CorrectAnswer = "B", ExamId = 65 },
@@ -992,7 +998,7 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 344, QuestionText = "The goal of the variational method is to find the parameters in a trial wave function that ___ the calculated energy.", OptionA = "Maximize", OptionB = "Minimize", OptionC = "Keep constant", OptionD = "Make zero", CorrectAnswer = "B", ExamId = 69 },
                 new BankOfQuestion { Id = 345, QuestionText = "These methods allow chemists to approximate solutions for complex:", OptionA = "Social systems", OptionB = "Economic models", OptionC = "Chemical reactions", OptionD = "Atoms and molecules", CorrectAnswer = "D", ExamId = 69 },
 
-                // --- Questions for Exam 70 (lessonId = 139, Computational Chemistry Methods) ---
+                // --- Questions for Exam 70 (lessonId = 139, Chemistry Comprehensive Exam) ---
                 new BankOfQuestion { Id = 346, QuestionText = "Computational chemistry uses computer simulations to:", OptionA = "Synthesize new elements", OptionB = "Solve chemical problems", OptionC = "Perform physical experiments", OptionD = "Analyze historical data", CorrectAnswer = "B", ExamId = 70 },
                 new BankOfQuestion { Id = 347, QuestionText = "Methods based directly on solving the Schrödinger equation (with approximations) are called ___ methods.", OptionA = "Molecular mechanics", OptionB = "Semi-empirical", OptionC = "Ab initio", OptionD = "Density functional theory", CorrectAnswer = "C", ExamId = 70 },
                 new BankOfQuestion { Id = 348, QuestionText = "Hartree-Fock (HF) is a common ___ method that approximates electron interactions.", OptionA = "Molecular mechanics", OptionB = "Ab initio", OptionC = "Density functional theory", OptionD = "Empirical", CorrectAnswer = "B", ExamId = 70 },
@@ -1056,7 +1062,6 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 390, QuestionText = "The concluding paragraph of an essay typically summarizes main points and restates the:", OptionA = "Introduction", OptionB = "First topic sentence", OptionC = "Thesis statement (in different words)", OptionD = "Supporting details", CorrectAnswer = "C", ExamId = 78 },
 
                 // --- Questions for Exam 79 (lessonId = 157, Figurative Language Exam) ---
-                // Note: Some overlap with Exam 72, focus slightly different
                 new BankOfQuestion { Id = 391, QuestionText = "An extreme exaggeration used for emphasis or effect is:", OptionA = "Simile", OptionB = "Metaphor", OptionC = "Hyperbole", OptionD = "Personification", CorrectAnswer = "C", ExamId = 79 },
                 new BankOfQuestion { Id = 392, QuestionText = "'The wind whispered through the trees' is an example of:", OptionA = "Simile", OptionB = "Metaphor", OptionC = "Personification", OptionD = "Hyperbole", CorrectAnswer = "C", ExamId = 79 },
                 new BankOfQuestion { Id = 393, QuestionText = "'Her smile was a ray of sunshine' is an example of:", OptionA = "Simile", OptionB = "Metaphor", OptionC = "Personification", OptionD = "Alliteration", CorrectAnswer = "B", ExamId = 79 },
@@ -1108,7 +1113,7 @@ namespace Estigo.Models
                 // --- Questions for Exam 86 (lessonId = 171, Types of Non-fiction Exam) ---
                 new BankOfQuestion { Id = 426, QuestionText = "Non-fiction writing is based on:", OptionA = "Imagination and fantasy", OptionB = "Facts, real events, and real people", OptionC = "Poetic meter and rhyme", OptionD = "Dialogue only", CorrectAnswer = "B", ExamId = 86 },
                 new BankOfQuestion { Id = 427, QuestionText = "A written account of another person's life is a:", OptionA = "Memoir", OptionB = "Autobiography", OptionC = "Biography", OptionD = "Personal essay", CorrectAnswer = "C", ExamId = 86 },
-                new BankOfQuestion { Id = 428, QuestionText = "A writer's account of their own life is an:", OptionA = "Biography", OptionB = "Autobiography", OptionC = "Instruction manual", OptionD = "News report", CorrectAnswer = "B", ExamId = 86 }, // Memoir focuses on specific part
+                new BankOfQuestion { Id = 428, QuestionText = "A writer's account of their own life is an:", OptionA = "Biography", OptionB = "Autobiography", OptionC = "Instruction manual", OptionD = "News report", CorrectAnswer = "B", ExamId = 86 },
                 new BankOfQuestion { Id = 429, QuestionText = "A short piece of writing on a particular subject, often expressing the author's viewpoint, is an:", OptionA = "Essay", OptionB = "Novel", OptionC = "Play", OptionD = "Biography", CorrectAnswer = "A", ExamId = 86 },
                 new BankOfQuestion { Id = 430, QuestionText = "Writing that reports on current events is:", OptionA = "Memoir", OptionB = "Journalism", OptionC = "Travel writing", OptionD = "Literary criticism", CorrectAnswer = "B", ExamId = 86 },
 
@@ -1119,14 +1124,116 @@ namespace Estigo.Models
                 new BankOfQuestion { Id = 434, QuestionText = "Explaining similarities and differences between subjects uses ___ structure.", OptionA = "Compare and Contrast", OptionB = "Chronological", OptionC = "Narrative", OptionD = "Thematic", CorrectAnswer = "A", ExamId = 87 },
                 new BankOfQuestion { Id = 435, QuestionText = "Using storytelling techniques (plot, character) to present factual information employs ___ structure.", OptionA = "Thematic", OptionB = "Spatial", OptionC = "Narrative", OptionD = "Compare and Contrast", CorrectAnswer = "C", ExamId = 87 },
 
-                // --- Questions for Exam 88 (lessonId = 175, Ethics in Non-fiction Exam) ---
+                // --- Questions for Exam 88 (lessonId = 175, English & Literature Comprehensive Exam) ---
                 new BankOfQuestion { Id = 436, QuestionText = "A primary ethical responsibility in non-fiction is:", OptionA = "Inventing details", OptionB = "Accuracy and truthfulness", OptionC = "Ignoring sources", OptionD = "Using complex vocabulary", CorrectAnswer = "B", ExamId = 88 },
                 new BankOfQuestion { Id = 437, QuestionText = "Verifying information through multiple reliable sources is called:", OptionA = "Plagiarism", OptionB = "Fact-checking", OptionC = "Speculation", OptionD = "Fictionalization", CorrectAnswer = "B", ExamId = 88 },
                 new BankOfQuestion { Id = 438, QuestionText = "Presenting someone else's work or ideas as your own is:", OptionA = "Citation", OptionB = "Paraphrasing", OptionC = "Plagiarism", OptionD = "Quoting", CorrectAnswer = "C", ExamId = 88 },
                 new BankOfQuestion { Id = 439, QuestionText = "When writing about real people, authors must consider issues of:", OptionA = "Plot structure", OptionB = "Privacy and potential harm", OptionC = "Rhyme scheme", OptionD = "Character archetypes", CorrectAnswer = "B", ExamId = 88 },
-                new BankOfQuestion { Id = 440, QuestionText = "Fairly portraying subjects and avoiding bias is crucial for ethical:", OptionA = "Fictionalization", OptionB = "Representation", OptionC = "Speculation", OptionD = "Exaggeration", CorrectAnswer = "B", ExamId = 88 }
+                new BankOfQuestion { Id = 440, QuestionText = "Fairly portraying subjects and avoiding bias is crucial for ethical:", OptionA = "Fictionalization", OptionB = "Representation", OptionC = "Speculation", OptionD = "Exaggeration", CorrectAnswer = "B", ExamId = 88 },
 
+                // --- ADDITIONAL COMPREHENSIVE QUESTIONS FOR FINAL EXAMS ---
+
+                // --- Additional Comprehensive Questions for Exam 18 (Core Mathematics Comprehensive Exam, lessonId = 35) ---
+                // Existing: 441-445. New: 471-485
+                new BankOfQuestion { Id = 471, QuestionText = "What is the value of 'i' raised to the power of 4 (i^4), where 'i' is the imaginary unit?", OptionA = "1", OptionB = "-1", OptionC = "i", OptionD = "-i", CorrectAnswer = "A", ExamId = 18 },
+                new BankOfQuestion { Id = 472, QuestionText = "The process of finding the area under a curve is known as:", OptionA = "Differentiation", OptionB = "Integration", OptionC = "Factorization", OptionD = "Extrapolation", CorrectAnswer = "B", ExamId = 18 },
+                new BankOfQuestion { Id = 473, QuestionText = "A function f(x) is continuous at a point 'a' if which condition is met?", OptionA = "The limit of f(x) as x approaches 'a' exists", OptionB = "f(a) is defined", OptionC = "The limit of f(x) as x approaches 'a' equals f(a)", OptionD = "All of the above", CorrectAnswer = "D", ExamId = 18 },
+                new BankOfQuestion { Id = 474, QuestionText = "Which trigonometric function is the reciprocal of cosine?", OptionA = "Sine", OptionB = "Tangent", OptionC = "Secant", OptionD = "Cosecant", CorrectAnswer = "C", ExamId = 18 },
+                new BankOfQuestion { Id = 475, QuestionText = "A matrix that is its own inverse is called:", OptionA = "An identity matrix", OptionB = "A zero matrix", OptionC = "An involutory matrix", OptionD = "A singular matrix", CorrectAnswer = "C", ExamId = 18 },
+                new BankOfQuestion { Id = 476, QuestionText = "The Fundamental Theorem of Algebra states that every non-constant single-variable polynomial with complex coefficients has at least one:", OptionA = "Real root", OptionB = "Complex root", OptionC = "Rational root", OptionD = "Integer root", CorrectAnswer = "B", ExamId = 18 },
+                new BankOfQuestion { Id = 477, QuestionText = "What is the eccentricity of a circle in conic sections?", OptionA = "0", OptionB = "1", OptionC = "Greater than 1", OptionD = "Between 0 and 1", CorrectAnswer = "A", ExamId = 18 },
+                new BankOfQuestion { Id = 478, QuestionText = "The power rule for derivatives states that d/dx(x^n) =", OptionA = "nx^(n+1)", OptionB = "n*x^(n-1)", OptionC = "x^n / n", OptionD = "(n-1)x^n", CorrectAnswer = "B", ExamId = 18 },
+                new BankOfQuestion { Id = 479, QuestionText = "In set theory, the set of all elements that are in A or in B (or in both) is called the:", OptionA = "Intersection of A and B", OptionB = "Union of A and B", OptionC = "Complement of A", OptionD = "Cartesian product of A and B", CorrectAnswer = "B", ExamId = 18 },
+                new BankOfQuestion { Id = 480, QuestionText = "What does the term 'bijection' refer to in functions?", OptionA = "A function that is only injective (one-to-one)", OptionB = "A function that is only surjective (onto)", OptionC = "A function that is both injective and surjective", OptionD = "A function that is neither injective nor surjective", CorrectAnswer = "C", ExamId = 18 },
+                new BankOfQuestion { Id = 481, QuestionText = "Which geometric transformation involves flipping a figure over a line?", OptionA = "Translation", OptionB = "Rotation", OptionC = "Reflection", OptionD = "Dilation", CorrectAnswer = "C", ExamId = 18 },
+                new BankOfQuestion { Id = 482, QuestionText = "The expression (n!) / (k!(n-k)!) is the formula for:", OptionA = "Permutations P(n,k)", OptionB = "Combinations C(n,k)", OptionC = "Factorial of n+k", OptionD = "Arithmetic series sum", CorrectAnswer = "B", ExamId = 18 },
+                new BankOfQuestion { Id = 483, QuestionText = "A tautology in propositional logic is a statement that is:", OptionA = "Always false", OptionB = "Always true", OptionC = "Sometimes true, sometimes false", OptionD = "Undefined", CorrectAnswer = "B", ExamId = 18 },
+                new BankOfQuestion { Id = 484, QuestionText = "What is the derivative of sin(x)?", OptionA = "cos(x)", OptionB = "-sin(x)", OptionC = "-cos(x)", OptionD = "tan(x)", CorrectAnswer = "A", ExamId = 18 },
+                new BankOfQuestion { Id = 485, QuestionText = "A graph is considered 'complete' if:", OptionA = "It has no cycles", OptionB = "Every vertex is connected to every other vertex", OptionC = "It is a tree", OptionD = "It is planar", CorrectAnswer = "B", ExamId = 18 },
+
+                // --- Additional Comprehensive Questions for Exam 15 (Statistics & Probability Comprehensive Exam, lessonId = 29) ---
+                // Existing: 446-450. New: 486-500
+                new BankOfQuestion { Id = 486, QuestionText = "The range of a dataset is calculated by:", OptionA = "Summing all values", OptionB = "Subtracting the minimum value from the maximum value", OptionC = "Finding the most frequent value", OptionD = "Averaging all values", CorrectAnswer = "B", ExamId = 15 },
+                new BankOfQuestion { Id = 487, QuestionText = "A p-value in hypothesis testing represents the probability of:", OptionA = "The null hypothesis being true", OptionB = "The alternative hypothesis being true", OptionC = "Observing the test statistic (or more extreme) if the null hypothesis is true", OptionD = "Making a Type II error", CorrectAnswer = "C", ExamId = 15 },
+                new BankOfQuestion { Id = 488, QuestionText = "Which of these is NOT a characteristic of a normal distribution?", OptionA = "Symmetric about the mean", OptionB = "Bell-shaped curve", OptionC = "Mean, median, and mode are equal", OptionD = "Skewed to the right", CorrectAnswer = "D", ExamId = 15 },
+                new BankOfQuestion { Id = 489, QuestionText = "If events A and B are mutually exclusive, then P(A or B) is:", OptionA = "P(A) * P(B)", OptionB = "P(A) + P(B)", OptionC = "P(A) + P(B) - P(A and B)", OptionD = "0", CorrectAnswer = "B", ExamId = 15 }, // Since P(A and B) = 0 for mutually exclusive
+                new BankOfQuestion { Id = 490, QuestionText = "What does a correlation coefficient of -1 indicate?", OptionA = "Perfect positive linear relationship", OptionB = "Perfect negative linear relationship", OptionC = "No linear relationship", OptionD = "Weak positive linear relationship", CorrectAnswer = "B", ExamId = 15 },
+
+
+                // --- Additional Comprehensive Questions for Exam 35 (Physics Comprehensive Exam, lessonId = 69) ---
+                // Existing: 451-455. New: 501-515
+                new BankOfQuestion { Id = 501, QuestionText = "The unit of power is the Watt (W), which is equivalent to:", OptionA = "Joule/second (J/s)", OptionB = "Newton-meter (N·m)", OptionC = "Kilogram-meter/second (kg·m/s)", OptionD = "Coulomb/second (C/s)", CorrectAnswer = "A", ExamId = 35 },
+                new BankOfQuestion { Id = 502, QuestionText = "Which law states that for every action, there is an equal and opposite reaction?", OptionA = "Newton's First Law", OptionB = "Newton's Second Law", OptionC = "Newton's Third Law", OptionD = "Law of Conservation of Momentum", CorrectAnswer = "C", ExamId = 35 },
+                new BankOfQuestion { Id = 503, QuestionText = "In a series circuit, the total resistance is the ___ of individual resistances.", OptionA = "Product", OptionB = "Sum", OptionC = "Reciprocal of the sum of reciprocals", OptionD = "Average", CorrectAnswer = "B", ExamId = 35 },
+                new BankOfQuestion { Id = 504, QuestionText = "The photoelectric effect demonstrates the ___ nature of light.", OptionA = "Wave", OptionB = "Particle (photon)", OptionC = "Continuous", OptionD = "Magnetic", CorrectAnswer = "B", ExamId = 35 },
+                new BankOfQuestion { Id = 505, QuestionText = "What is the SI unit of magnetic field strength?", OptionA = "Volt (V)", OptionB = "Ampere (A)", OptionC = "Tesla (T)", OptionD = "Weber (Wb)", CorrectAnswer = "C", ExamId = 35 },
+                new BankOfQuestion { Id = 506, QuestionText = "The principle of superposition in waves states that when two waves meet:", OptionA = "They reflect off each other", OptionB = "They cancel each other out completely", OptionC = "Their displacements add algebraically", OptionD = "Their frequencies double", CorrectAnswer = "C", ExamId = 35 },
+                new BankOfQuestion { Id = 507, QuestionText = "According to the First Law of Thermodynamics, the change in internal energy of a system is equal to:", OptionA = "Heat added minus work done by the system", OptionB = "Work done by the system minus heat added", OptionC = "Heat added plus work done on the system", OptionD = "Always zero", CorrectAnswer = "A", ExamId = 35 }, // or C, depending on W convention
+                new BankOfQuestion { Id = 508, QuestionText = "Which quantity remains constant in an isolated system according to the law of conservation of momentum?", OptionA = "Velocity", OptionB = "Acceleration", OptionC = "Total momentum", OptionD = "Force", CorrectAnswer = "C", ExamId = 35 },
+                new BankOfQuestion { Id = 509, QuestionText = "A concave lens always produces images that are:", OptionA = "Real and inverted", OptionB = "Virtual and upright", OptionC = "Real and upright", OptionD = "Virtual and inverted", CorrectAnswer = "B", ExamId = 35 },
+                new BankOfQuestion { Id = 510, QuestionText = "The resistance of a wire is directly proportional to its length and inversely proportional to its:", OptionA = "Temperature", OptionB = "Cross-sectional area", OptionC = "Voltage", OptionD = "Current", CorrectAnswer = "B", ExamId = 35 },
+                new BankOfQuestion { Id = 511, QuestionText = "Which type of nuclear decay involves the emission of an electron?", OptionA = "Alpha decay", OptionB = "Beta-minus decay", OptionC = "Gamma decay", OptionD = "Positron emission (Beta-plus decay)", CorrectAnswer = "B", ExamId = 35 },
+                new BankOfQuestion { Id = 512, QuestionText = "The frequency of a wave is related to its wavelength (λ) and speed (v) by the equation:", OptionA = "f = vλ", OptionB = "f = v/λ", OptionC = "f = λ/v", OptionD = "f = v + λ", CorrectAnswer = "B", ExamId = 35 },
+                new BankOfQuestion { Id = 513, QuestionText = "In a uniform circular motion, the acceleration vector is always directed:", OptionA = "Tangent to the circle", OptionB = "Away from the center", OptionC = "Towards the center of the circle", OptionD = "In the direction of velocity", CorrectAnswer = "C", ExamId = 35 },
+                new BankOfQuestion { Id = 514, QuestionText = "Special Relativity postulates that the laws of physics are the same in all inertial frames and that the speed of light in a vacuum is:", OptionA = "Relative to the observer", OptionB = "Constant for all observers", OptionC = "Dependent on the source's speed", OptionD = "Variable", CorrectAnswer = "B", ExamId = 35 },
+                new BankOfQuestion { Id = 515, QuestionText = "The tendency of a system to move towards a state of greater disorder is described by the:", OptionA = "First Law of Thermodynamics", OptionB = "Second Law of Thermodynamics", OptionC = "Zeroth Law of Thermodynamics", OptionD = "Third Law of Thermodynamics", CorrectAnswer = "B", ExamId = 35 },
+
+                // --- Additional Comprehensive Questions for Exam 53 (Biology Comprehensive Exam, lessonId = 105) ---
+                // Existing: 456-460. New: 516-530
+                new BankOfQuestion { Id = 516, QuestionText = "What is the primary molecule used by cells for energy currency?", OptionA = "Glucose", OptionB = "ATP (Adenosine Triphosphate)", OptionC = "DNA", OptionD = "RNA", CorrectAnswer = "B", ExamId = 53 },
+                new BankOfQuestion { Id = 517, QuestionText = "The process where a cell divides to produce two genetically identical daughter cells is:", OptionA = "Meiosis", OptionB = "Mitosis", OptionC = "Fertilization", OptionD = "Binary Fission", CorrectAnswer = "B", ExamId = 53 },
+                new BankOfQuestion { Id = 518, QuestionText = "Which of these is a key component of the cell membrane, forming a bilayer?", OptionA = "Cellulose", OptionB = "Phospholipids", OptionC = "Starch", OptionD = "Amino acids", CorrectAnswer = "B", ExamId = 53 },
+                new BankOfQuestion { Id = 519, QuestionText = "The site of protein synthesis in a eukaryotic cell is the:", OptionA = "Nucleus", OptionB = "Mitochondrion", OptionC = "Ribosome", OptionD = "Golgi apparatus", CorrectAnswer = "C", ExamId = 53 },
+                new BankOfQuestion { Id = 520, QuestionText = "Which kingdom do mushrooms and yeasts belong to?", OptionA = "Plantae", OptionB = "Animalia", OptionC = "Fungi", OptionD = "Protista", CorrectAnswer = "C", ExamId = 53 },
+                new BankOfQuestion { Id = 521, QuestionText = "The observable characteristics of an organism, resulting from its genotype and environment, are its:", OptionA = "Genotype", OptionB = "Phenotype", OptionC = "Allele", OptionD = "Genome", CorrectAnswer = "B", ExamId = 53 },
+                new BankOfQuestion { Id = 522, QuestionText = "What is the primary role of chlorophyll in photosynthesis?", OptionA = "To absorb light energy", OptionB = "To produce glucose", OptionC = "To release oxygen", OptionD = "To transport water", CorrectAnswer = "A", ExamId = 53 },
+                new BankOfQuestion { Id = 523, QuestionText = "A group of individuals of the same species living in the same area is called a:", OptionA = "Community", OptionB = "Ecosystem", OptionC = "Population", OptionD = "Biome", CorrectAnswer = "C", ExamId = 53 },
+                new BankOfQuestion { Id = 524, QuestionText = "Which human body system is primarily responsible for transporting oxygen, nutrients, and waste?", OptionA = "Respiratory System", OptionB = "Digestive System", OptionC = "Circulatory System", OptionD = "Nervous System", CorrectAnswer = "C", ExamId = 53 },
+                new BankOfQuestion { Id = 525, QuestionText = "The process by which DNA makes a copy of itself is called:", OptionA = "Transcription", OptionB = "Translation", OptionC = "Replication", OptionD = "Mutation", CorrectAnswer = "C", ExamId = 53 },
+                new BankOfQuestion { Id = 526, QuestionText = "What are enzymes primarily composed of?", OptionA = "Lipids", OptionB = "Carbohydrates", OptionC = "Nucleic Acids", OptionD = "Proteins", CorrectAnswer = "D", ExamId = 53 },
+                new BankOfQuestion { Id = 527, QuestionText = "The interaction between two different species where both benefit is called:", OptionA = "Parasitism", OptionB = "Commensalism", OptionC = "Mutualism", OptionD = "Predation", CorrectAnswer = "C", ExamId = 53 },
+                new BankOfQuestion { Id = 528, QuestionText = "Which of the following is a characteristic of prokaryotic cells but not eukaryotic cells?", OptionA = "Presence of a nucleus", OptionB = "Membrane-bound organelles", OptionC = "Circular DNA not enclosed in a nucleus", OptionD = "Multiple linear chromosomes", CorrectAnswer = "C", ExamId = 53 },
+                new BankOfQuestion { Id = 529, QuestionText = "Homeostasis refers to the ability of an organism to:", OptionA = "Reproduce rapidly", OptionB = "Maintain a stable internal environment", OptionC = "Evolve over time", OptionD = "Respond to external stimuli", CorrectAnswer = "B", ExamId = 53 },
+                new BankOfQuestion { Id = 530, QuestionText = "The first trophic level in an ecosystem is typically occupied by:", OptionA = "Herbivores", OptionB = "Carnivores", OptionC = "Producers (e.g., plants)", OptionD = "Decomposers", CorrectAnswer = "C", ExamId = 53 },
+
+                // --- Additional Comprehensive Questions for Exam 70 (Chemistry Comprehensive Exam, lessonId = 139) ---
+                // Existing: 461-465. New: 531-545
+                new BankOfQuestion { Id = 531, QuestionText = "The number of protons in an atom's nucleus defines its:", OptionA = "Mass number", OptionB = "Atomic number", OptionC = "Isotope", OptionD = "Ion charge", CorrectAnswer = "B", ExamId = 70 },
+                new BankOfQuestion { Id = 532, QuestionText = "Which of the following is an example of a noble gas?", OptionA = "Oxygen (O)", OptionB = "Nitrogen (N)", OptionC = "Helium (He)", OptionD = "Hydrogen (H)", CorrectAnswer = "C", ExamId = 70 },
+                new BankOfQuestion { Id = 533, QuestionText = "A solution with a pH of 3 is considered:", OptionA = "Strongly acidic", OptionB = "Weakly acidic", OptionC = "Neutral", OptionD = "Weakly basic", CorrectAnswer = "A", ExamId = 70 },
+                new BankOfQuestion { Id = 534, QuestionText = "What type of reaction involves the loss of electrons by a chemical species?", OptionA = "Reduction", OptionB = "Oxidation", OptionC = "Neutralization", OptionD = "Hydration", CorrectAnswer = "B", ExamId = 70 },
+                new BankOfQuestion { Id = 535, QuestionText = "Avogadro's number (approximately 6.022 x 10^23) represents the number of entities in one:", OptionA = "Gram", OptionB = "Liter", OptionC = "Mole", OptionD = "Milliliter", CorrectAnswer = "C", ExamId = 70 },
+                new BankOfQuestion { Id = 536, QuestionText = "Which of these is a characteristic property of metals?", OptionA = "Poor conductor of electricity", OptionB = "Brittle solid", OptionC = "Forms anions readily", OptionD = "Good conductor of heat and electricity", CorrectAnswer = "D", ExamId = 70 },
+                new BankOfQuestion { Id = 537, QuestionText = "The law of conservation of mass states that in a chemical reaction:", OptionA = "Energy is conserved", OptionB = "Mass is conserved", OptionC = "Volume is conserved", OptionD = "Moles are conserved", CorrectAnswer = "B", ExamId = 70 },
+                new BankOfQuestion { Id = 538, QuestionText = "Which branch of chemistry deals primarily with carbon-containing compounds?", OptionA = "Inorganic Chemistry", OptionB = "Organic Chemistry", OptionC = "Physical Chemistry", OptionD = "Analytical Chemistry", CorrectAnswer = "B", ExamId = 70 },
+                new BankOfQuestion { Id = 539, QuestionText = "A catalyst increases the rate of a chemical reaction by:", OptionA = "Increasing the activation energy", OptionB = "Decreasing the activation energy", OptionC = "Increasing the temperature", OptionD = "Shifting the equilibrium", CorrectAnswer = "B", ExamId = 70 },
+                new BankOfQuestion { Id = 540, QuestionText = "What is the general formula for alkanes?", OptionA = "CnH2n", OptionB = "CnH2n+2", OptionC = "CnH2n-2", OptionD = "CnHn", CorrectAnswer = "B", ExamId = 70 },
+                new BankOfQuestion { Id = 541, QuestionText = "The process by which a solid changes directly to a gas without passing through the liquid phase is called:", OptionA = "Melting", OptionB = "Evaporation", OptionC = "Sublimation", OptionD = "Condensation", CorrectAnswer = "C", ExamId = 70 },
+                new BankOfQuestion { Id = 542, QuestionText = "Which of the following elements is a halogen?", OptionA = "Sodium (Na)", OptionB = "Calcium (Ca)", OptionC = "Chlorine (Cl)", OptionD = "Sulfur (S)", CorrectAnswer = "C", ExamId = 70 },
+                new BankOfQuestion { Id = 543, QuestionText = "The empirical formula of a compound represents:", OptionA = "The actual number of atoms of each element", OptionB = "The simplest whole-number ratio of atoms", OptionC = "The structural arrangement of atoms", OptionD = "The molecular weight of the compound", CorrectAnswer = "B", ExamId = 70 },
+                new BankOfQuestion { Id = 544, QuestionText = "What is the main component of natural gas?", OptionA = "Ethane", OptionB = "Propane", OptionC = "Methane", OptionD = "Butane", CorrectAnswer = "C", ExamId = 70 },
+                new BankOfQuestion { Id = 545, QuestionText = "In an exothermic reaction, heat is:", OptionA = "Absorbed by the system", OptionB = "Released by the system", OptionC = "Neither absorbed nor released", OptionD = "Converted to work", CorrectAnswer = "B", ExamId = 70 },
+
+                // --- Additional Comprehensive Questions for Exam 88 (English & Literature Comprehensive Exam, lessonId = 175) ---
+                // Existing: 466-470. New: 546-560
+                new BankOfQuestion { Id = 546, QuestionText = "A story told from the 'I' perspective is using which point of view?", OptionA = "Second-person", OptionB = "Third-person limited", OptionC = "First-person", OptionD = "Third-person omniscient", CorrectAnswer = "C", ExamId = 88 },
+                new BankOfQuestion { Id = 547, QuestionText = "The use of 'like' or 'as' to compare two unlike things is a:", OptionA = "Metaphor", OptionB = "Simile", OptionC = "Personification", OptionD = "Hyperbole", CorrectAnswer = "B", ExamId = 88 },
+                new BankOfQuestion { Id = 548, QuestionText = "Which punctuation mark is used to indicate a pause or to separate items in a series?", OptionA = "Period (.)", OptionB = "Comma (,)", OptionC = "Semicolon (;)", OptionD = "Question Mark (?)", CorrectAnswer = "B", ExamId = 88 },
+                new BankOfQuestion { Id = 549, QuestionText = "The underlying meaning or message the author conveys in a literary work is the:", OptionA = "Plot", OptionB = "Setting", OptionC = "Theme", OptionD = "Conflict", CorrectAnswer = "C", ExamId = 88 },
+                new BankOfQuestion { Id = 550, QuestionText = "A character who opposes the main character is the:", OptionA = "Protagonist", OptionB = "Narrator", OptionC = "Antagonist", OptionD = "Foil", CorrectAnswer = "C", ExamId = 88 },
+                new BankOfQuestion { Id = 551, QuestionText = "What part of speech describes a noun or pronoun (e.g., 'beautiful' flower)?", OptionA = "Adverb", OptionB = "Verb", OptionC = "Adjective", OptionD = "Preposition", CorrectAnswer = "C", ExamId = 88 },
+                new BankOfQuestion { Id = 552, QuestionText = "The structure of a sentence, including the arrangement of words and phrases, is known as:", OptionA = "Diction", OptionB = "Syntax", OptionC = "Tone", OptionD = "Imagery", CorrectAnswer = "B", ExamId = 88 },
+                new BankOfQuestion { Id = 553, QuestionText = "Which literary genre typically features a hero on a quest, often involving supernatural elements?", OptionA = "Realism", OptionB = "Historical Fiction", OptionC = "Epic", OptionD = "Satire", CorrectAnswer = "C", ExamId = 88 },
+                new BankOfQuestion { Id = 554, QuestionText = "A writer's attitude toward the subject or audience, conveyed through word choice and style, is the:", OptionA = "Mood", OptionB = "Tone", OptionC = "Theme", OptionD = "Plot", CorrectAnswer = "B", ExamId = 88 },
+                new BankOfQuestion { Id = 555, QuestionText = "In essay writing, the sentence that states the main argument or purpose of the essay is the:", OptionA = "Topic sentence", OptionB = "Supporting detail", OptionC = "Thesis statement", OptionD = "Conclusion", CorrectAnswer = "C", ExamId = 88 },
+                new BankOfQuestion { Id = 556, QuestionText = "Giving human qualities to an inanimate object or animal is called:", OptionA = "Simile", OptionB = "Metaphor", OptionC = "Personification", OptionD = "Allusion", CorrectAnswer = "C", ExamId = 88 },
+                new BankOfQuestion { Id = 557, QuestionText = "A short, amusing or interesting story about a real incident or person is an:", OptionA = "Allegory", OptionB = "Anecdote", OptionC = "Analogy", OptionD = "Aphorism", CorrectAnswer = "B", ExamId = 88 },
+                new BankOfQuestion { Id = 558, QuestionText = "Which of the following is a type of non-fiction that tells the story of a person's life, written by that person?", OptionA = "Biography", OptionB = "Autobiography", OptionC = "Memoir", OptionD = "Journal", CorrectAnswer = "B", ExamId = 88 }, // Memoir is often a part, Autobiography is the whole life.
+                new BankOfQuestion { Id = 559, QuestionText = "The feeling or atmosphere that a writer creates for the reader is the:", OptionA = "Tone", OptionB = "Mood", OptionC = "Style", OptionD = "Voice", CorrectAnswer = "B", ExamId = 88 },
+                new BankOfQuestion { Id = 560, QuestionText = "The literary technique of using humor, irony, exaggeration, or ridicule to expose and criticize people's stupidity or vices is:", OptionA = "Pathos", OptionB = "Logos", OptionC = "Satire", OptionD = "Foreshadowing", CorrectAnswer = "C", ExamId = 88 }
             );
+
+
 
         }
     }

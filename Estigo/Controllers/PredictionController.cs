@@ -23,7 +23,6 @@ namespace Estigo.Controllers
             _httpClient = httpClientFactory.CreateClient();
         }
 
-
         [HttpGet("model-values/{studentId}/{categoryId}")]
         public async Task<ActionResult<object>> GetStudentAverageByCategory(string studentId, int categoryId)
         {
@@ -44,12 +43,12 @@ namespace Estigo.Controllers
                 .CountAsync();
 
             double attendanceRate = 0;
-            if (enrolledCourses.Any() && totalCoursesInCategory > 0)
+            if (totalCoursesInCategory > 0)
             {
                 int totalAttendance = enrolledCourses.Sum(c => c.attendance);
-                attendanceRate = totalAttendance > 0
-                    ? Math.Min(100, (totalAttendance / (double)totalCoursesInCategory) * 100)
-                    : 0;
+
+                // Calculate attendance as percentage of ALL courses in category accessed
+                attendanceRate = (totalAttendance / (double)totalCoursesInCategory) * 100;
             }
 
             // Regular exams = quizzes
@@ -89,13 +88,12 @@ namespace Estigo.Controllers
             {
                 attendance_rate = attendanceRate,
                 average_quiz_score = quizResults.Any() ? quizResults.Average(r => r.Score) : 0,
-                quizzes_completion_rate = quizCompletionRate,   // ≤— new
+                quizzes_completion_rate = quizCompletionRate,
                 final_exam_attempts = finalExam?.Attempts ?? 0,
                 final_exam_score = finalExam?.Score ?? 0,
                 education_system_IGCSE = student.Track.ToLower() == "ig" ? 1 : 0,
             });
         }
-
 
         [HttpGet("model-result/{studentId}/{categoryId}")]
         public async Task<ActionResult<object>> ModelTest(string studentId, int categoryId)
@@ -117,11 +115,12 @@ namespace Estigo.Controllers
                 .CountAsync();
 
             double attendanceRate = 0;
-            if (enrolledCourses.Any() && totalCoursesInCategory > 0)
+            if (totalCoursesInCategory > 0)
             {
                 int totalAttendance = enrolledCourses.Sum(c => c.attendance);
-                attendanceRate = (totalAttendance > 0) ?
-                    Math.Min(100, (totalAttendance / (double)totalCoursesInCategory) * 100) : 0;
+
+                // Calculate attendance as percentage of ALL courses in category accessed
+                attendanceRate = (totalAttendance / (double)totalCoursesInCategory) * 100;
             }
 
             // Regular exams - student
@@ -133,13 +132,16 @@ namespace Estigo.Controllers
                 .Select(g => g.First().Score)
                 .ToListAsync();
 
-            // Regular exams - all students
-            var allStudentsExams = await context.StudentExamResults
-                .Where(r => r.Exam.Lesson.Course.CategoryId == categoryId)
-                .Where(r => r.Exam.final == false)
-                .GroupBy(r => r.ExamId)
-                .Select(g => g.First().Score)
-                .ToListAsync();
+            // Regular exams - all students (for completion rate calculation)
+            var totalQuizzes = await context.Exams
+                .Where(e => e.Lesson.Course.CategoryId == categoryId)
+                .Where(e => e.final == false)
+                .CountAsync();
+
+            int quizzesTaken = regularExamScores.Count;
+            double quizCompletionRate = (totalQuizzes > 0)
+                ? Math.Min(100, (quizzesTaken / (double)totalQuizzes) * 100)
+                : 0;
 
             // Final exam 
             var finalExam = await context.StudentExamResults
@@ -151,17 +153,16 @@ namespace Estigo.Controllers
                     Score = r.Score,
                     Attempts = r.Exam.attempts
                 })
-                .FirstOrDefaultAsync(); // Only take the first final exam
+                .FirstOrDefaultAsync();
 
             double regularExamsAverage = regularExamScores.Any() ? regularExamScores.Average() : 0;
-            double allStudentsAvg = allStudentsExams.Any() ? allStudentsExams.Average() : 0;
 
-            // Prepare the data for the Fast API, using YOUR API's NAMES
+            // Prepare the data for the Fast API
             var fastApiRequest = new
             {
                 attendance_rate = attendanceRate,
                 average_quiz_score = regularExamsAverage,
-                quizzes_completion_rate = allStudentsAvg,
+                quizzes_completion_rate = quizCompletionRate,
                 final_exam_attempts = finalExam?.Attempts ?? 0,
                 final_exam_score = finalExam?.Score ?? 0,
                 education_system_IGCSE = student.Track.ToLower() == "ig" ? 1 : 0
@@ -177,14 +178,14 @@ namespace Estigo.Controllers
                 try
                 {
                     // await Task.Delay(5000); // Uncomment only for testing startup delay
-                    var response = await httpClient.PostAsync("http://127.0.0.1:8000/predict-grade", content); // Corrected URL: predict-grade
-                    response.EnsureSuccessStatusCode(); // Ensure a successful response
+                    var response = await httpClient.PostAsync("http://127.0.0.1:8000/predict-grade", content);
+                    response.EnsureSuccessStatusCode();
 
                     // Read the response from the Fast API
                     var jsonResponse = await response.Content.ReadAsStringAsync();
                     var fastApiResponse = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
 
-                    return Ok(fastApiResponse); // Return the Fast API's response
+                    return Ok(fastApiResponse);
                 }
                 catch (HttpRequestException ex)
                 {
@@ -192,10 +193,11 @@ namespace Estigo.Controllers
                     return StatusCode(500, $"Error calling Fast API: {ex.Message}");
                 }
             }
-
-
-
         }
+
+
+
+
         [HttpPost("model-test")]
         public async Task<IActionResult> GetPredictedGrade([FromBody] PredictionModelDTO input)
         {
