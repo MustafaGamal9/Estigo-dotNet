@@ -71,7 +71,7 @@ namespace Estigo.Controllers
                 StudentId = studentId,
                 courseId = courseId,
                 PurchaseDate = DateTime.UtcNow,
-                PaymentMethod = "Card Kda w Kda"
+                PaymentMethod = "Fawry"
             };
 
             var enrollment = new MyCourse
