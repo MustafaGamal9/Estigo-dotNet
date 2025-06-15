@@ -178,7 +178,7 @@ namespace Estigo.Controllers
                 try
                 {
                     // await Task.Delay(5000); // Uncomment only for testing startup delay
-                    var response = await httpClient.PostAsync("http://127.0.0.1:8000/predict-grade", content);
+                    var response = await httpClient.PostAsync("https://mustafag17-student-grade-predictor.hf.space/predict-grade", content);
                     response.EnsureSuccessStatusCode();
 
                     // Read the response from the Fast API
@@ -201,7 +201,7 @@ namespace Estigo.Controllers
         [HttpPost("model-test")]
         public async Task<IActionResult> GetPredictedGrade([FromBody] PredictionModelDTO input)
         {
-            var fastApiUrl = "http://127.0.0.1:8000/predict-grade";
+            var fastApiUrl = "https://mustafag17-student-grade-predictor.hf.space/predict-grade";
 
             var response = await _httpClient.PostAsJsonAsync(fastApiUrl, input);
 

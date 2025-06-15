@@ -7617,7 +7617,7 @@ namespace Estigo.Migrations
                             courseId = 1,
                             isLive = false,
                             lessonTitle = "Algebra Basics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/intro.mp4"
                         },
                         new
                         {
@@ -7626,7 +7626,7 @@ namespace Estigo.Migrations
                             courseId = 1,
                             isLive = false,
                             lessonTitle = "Solving Linear Equations",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7635,7 +7635,7 @@ namespace Estigo.Migrations
                             courseId = 1,
                             isLive = false,
                             lessonTitle = "Inequalities",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math2.mp4"
                         },
                         new
                         {
@@ -7644,7 +7644,7 @@ namespace Estigo.Migrations
                             courseId = 1,
                             isLive = false,
                             lessonTitle = "Functions Introduction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math3.mp4"
                         },
                         new
                         {
@@ -7653,7 +7653,7 @@ namespace Estigo.Migrations
                             courseId = 1,
                             isLive = false,
                             lessonTitle = "Polynomial Basics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math4.mp4"
                         },
                         new
                         {
@@ -7662,7 +7662,7 @@ namespace Estigo.Migrations
                             courseId = 2,
                             isLive = false,
                             lessonTitle = "Limits and Continuity",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math5.mp4"
                         },
                         new
                         {
@@ -7671,7 +7671,7 @@ namespace Estigo.Migrations
                             courseId = 2,
                             isLive = false,
                             lessonTitle = "Introduction to Derivatives",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7680,7 +7680,7 @@ namespace Estigo.Migrations
                             courseId = 2,
                             isLive = false,
                             lessonTitle = "Differentiation Techniques",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math2.mp4"
                         },
                         new
                         {
@@ -7689,7 +7689,7 @@ namespace Estigo.Migrations
                             courseId = 2,
                             isLive = false,
                             lessonTitle = "Applications of Derivatives",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math3.mp4"
                         },
                         new
                         {
@@ -7698,7 +7698,7 @@ namespace Estigo.Migrations
                             courseId = 2,
                             isLive = false,
                             lessonTitle = "Introduction to Integrals",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math4.mp4"
                         },
                         new
                         {
@@ -7707,7 +7707,7 @@ namespace Estigo.Migrations
                             courseId = 3,
                             isLive = false,
                             lessonTitle = "Points, Lines, and Planes",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math5.mp4"
                         },
                         new
                         {
@@ -7716,7 +7716,7 @@ namespace Estigo.Migrations
                             courseId = 3,
                             isLive = false,
                             lessonTitle = "Angles and Angle Relationships",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7725,7 +7725,7 @@ namespace Estigo.Migrations
                             courseId = 3,
                             isLive = false,
                             lessonTitle = "Parallel Lines and Transversals",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math2.mp4"
                         },
                         new
                         {
@@ -7734,7 +7734,7 @@ namespace Estigo.Migrations
                             courseId = 3,
                             isLive = false,
                             lessonTitle = "Triangles and Congruence",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math3.mp4"
                         },
                         new
                         {
@@ -7743,7 +7743,7 @@ namespace Estigo.Migrations
                             courseId = 3,
                             isLive = false,
                             lessonTitle = "Introduction to Polygons",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math4.mp4"
                         },
                         new
                         {
@@ -7752,7 +7752,7 @@ namespace Estigo.Migrations
                             courseId = 4,
                             isLive = false,
                             lessonTitle = "Right Triangle Trigonometry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math5.mp4"
                         },
                         new
                         {
@@ -7761,7 +7761,7 @@ namespace Estigo.Migrations
                             courseId = 4,
                             isLive = false,
                             lessonTitle = "The Unit Circle",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7770,7 +7770,7 @@ namespace Estigo.Migrations
                             courseId = 4,
                             isLive = false,
                             lessonTitle = "Trigonometric Graphs",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math2.mp4"
                         },
                         new
                         {
@@ -7779,7 +7779,7 @@ namespace Estigo.Migrations
                             courseId = 4,
                             isLive = false,
                             lessonTitle = "Trigonometric Identities",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math3.mp4"
                         },
                         new
                         {
@@ -7788,7 +7788,7 @@ namespace Estigo.Migrations
                             courseId = 4,
                             isLive = false,
                             lessonTitle = "Solving Trigonometric Equations",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math5.mp4"
                         },
                         new
                         {
@@ -7797,7 +7797,7 @@ namespace Estigo.Migrations
                             courseId = 5,
                             isLive = false,
                             lessonTitle = "Introduction to Statistics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7806,7 +7806,7 @@ namespace Estigo.Migrations
                             courseId = 5,
                             isLive = false,
                             lessonTitle = "Descriptive Statistics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7815,7 +7815,7 @@ namespace Estigo.Migrations
                             courseId = 5,
                             isLive = false,
                             lessonTitle = "Data Visualization",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math2.mp4"
                         },
                         new
                         {
@@ -7824,7 +7824,7 @@ namespace Estigo.Migrations
                             courseId = 5,
                             isLive = false,
                             lessonTitle = "Basic Probability Concepts",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math3.mp4"
                         },
                         new
                         {
@@ -7833,7 +7833,7 @@ namespace Estigo.Migrations
                             courseId = 5,
                             isLive = false,
                             lessonTitle = "Introduction to Distributions",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math4.mp4"
                         },
                         new
                         {
@@ -7842,7 +7842,7 @@ namespace Estigo.Migrations
                             courseId = 6,
                             isLive = false,
                             lessonTitle = "Foundations of Probability",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math5.mp4"
                         },
                         new
                         {
@@ -7851,7 +7851,7 @@ namespace Estigo.Migrations
                             courseId = 6,
                             isLive = false,
                             lessonTitle = "Conditional Probability and Independence",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7860,7 +7860,7 @@ namespace Estigo.Migrations
                             courseId = 6,
                             isLive = false,
                             lessonTitle = "Random Variables",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math2.mp4"
                         },
                         new
                         {
@@ -7869,7 +7869,7 @@ namespace Estigo.Migrations
                             courseId = 6,
                             isLive = false,
                             lessonTitle = "Expected Value and Variance",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math3.mp4"
                         },
                         new
                         {
@@ -7878,7 +7878,7 @@ namespace Estigo.Migrations
                             courseId = 6,
                             isLive = false,
                             lessonTitle = "Common Probability Distributions",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math4.mp4"
                         },
                         new
                         {
@@ -7887,7 +7887,7 @@ namespace Estigo.Migrations
                             courseId = 7,
                             isLive = false,
                             lessonTitle = "Logic and Proofs",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math5.mp4"
                         },
                         new
                         {
@@ -7896,7 +7896,7 @@ namespace Estigo.Migrations
                             courseId = 7,
                             isLive = false,
                             lessonTitle = "Set Theory",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math5.mp4"
                         },
                         new
                         {
@@ -7905,7 +7905,7 @@ namespace Estigo.Migrations
                             courseId = 7,
                             isLive = false,
                             lessonTitle = "Counting Principles",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math1.mp4"
                         },
                         new
                         {
@@ -7914,7 +7914,7 @@ namespace Estigo.Migrations
                             courseId = 7,
                             isLive = false,
                             lessonTitle = "Relations and Functions",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math3.mp4"
                         },
                         new
                         {
@@ -7923,7 +7923,7 @@ namespace Estigo.Migrations
                             courseId = 7,
                             isLive = false,
                             lessonTitle = "Introduction to Graph Theory",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/math2.mp4"
                         },
                         new
                         {
@@ -7932,7 +7932,7 @@ namespace Estigo.Migrations
                             courseId = 8,
                             isLive = false,
                             lessonTitle = "Kinematics in One Dimension",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy1.mp4"
                         },
                         new
                         {
@@ -7941,7 +7941,7 @@ namespace Estigo.Migrations
                             courseId = 8,
                             isLive = false,
                             lessonTitle = "Vectors and 2D Kinematics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy2.mp4"
                         },
                         new
                         {
@@ -7950,7 +7950,7 @@ namespace Estigo.Migrations
                             courseId = 8,
                             isLive = false,
                             lessonTitle = "Newton's Laws of Motion",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy3.mp4"
                         },
                         new
                         {
@@ -7959,7 +7959,7 @@ namespace Estigo.Migrations
                             courseId = 8,
                             isLive = false,
                             lessonTitle = "Work, Energy, and Power",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy4.mp4"
                         },
                         new
                         {
@@ -7968,7 +7968,7 @@ namespace Estigo.Migrations
                             courseId = 8,
                             isLive = false,
                             lessonTitle = "Momentum and Collisions",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy5.mp4"
                         },
                         new
                         {
@@ -7977,7 +7977,7 @@ namespace Estigo.Migrations
                             courseId = 9,
                             isLive = false,
                             lessonTitle = "Electric Charge and Coulomb's Law",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy3.mp4"
                         },
                         new
                         {
@@ -7986,7 +7986,7 @@ namespace Estigo.Migrations
                             courseId = 9,
                             isLive = false,
                             lessonTitle = "Electric Fields",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy2.mp4"
                         },
                         new
                         {
@@ -7995,7 +7995,7 @@ namespace Estigo.Migrations
                             courseId = 9,
                             isLive = false,
                             lessonTitle = "Electric Potential",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy1.mp4"
                         },
                         new
                         {
@@ -8004,7 +8004,7 @@ namespace Estigo.Migrations
                             courseId = 9,
                             isLive = false,
                             lessonTitle = "Capacitance",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy14.mp4"
                         },
                         new
                         {
@@ -8013,7 +8013,7 @@ namespace Estigo.Migrations
                             courseId = 9,
                             isLive = false,
                             lessonTitle = "Current, Resistance, and Ohm's Law",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy5.mp4"
                         },
                         new
                         {
@@ -8022,7 +8022,7 @@ namespace Estigo.Migrations
                             courseId = 10,
                             isLive = false,
                             lessonTitle = "Magnetic Fields and Forces",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy1.mp4"
                         },
                         new
                         {
@@ -8031,7 +8031,7 @@ namespace Estigo.Migrations
                             courseId = 10,
                             isLive = false,
                             lessonTitle = "Sources of Magnetic Fields",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy3.mp4"
                         },
                         new
                         {
@@ -8040,7 +8040,7 @@ namespace Estigo.Migrations
                             courseId = 10,
                             isLive = false,
                             lessonTitle = "Ampere's Law",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy2.mp4"
                         },
                         new
                         {
@@ -8049,7 +8049,7 @@ namespace Estigo.Migrations
                             courseId = 10,
                             isLive = false,
                             lessonTitle = "Electromagnetic Induction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy4.mp4"
                         },
                         new
                         {
@@ -8058,7 +8058,7 @@ namespace Estigo.Migrations
                             courseId = 10,
                             isLive = false,
                             lessonTitle = "Inductance",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy5.mp4"
                         },
                         new
                         {
@@ -8067,7 +8067,7 @@ namespace Estigo.Migrations
                             courseId = 11,
                             isLive = false,
                             lessonTitle = "Nature of Light",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy1.mp4"
                         },
                         new
                         {
@@ -8076,7 +8076,7 @@ namespace Estigo.Migrations
                             courseId = 11,
                             isLive = false,
                             lessonTitle = "Reflection and Refraction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy4.mp4"
                         },
                         new
                         {
@@ -8085,7 +8085,7 @@ namespace Estigo.Migrations
                             courseId = 11,
                             isLive = false,
                             lessonTitle = "Lenses and Image Formation",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy2.mp4"
                         },
                         new
                         {
@@ -8094,7 +8094,7 @@ namespace Estigo.Migrations
                             courseId = 11,
                             isLive = false,
                             lessonTitle = "Wave Optics: Interference",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy3.mp4"
                         },
                         new
                         {
@@ -8103,7 +8103,7 @@ namespace Estigo.Migrations
                             courseId = 11,
                             isLive = false,
                             lessonTitle = "Wave Optics: Diffraction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy5.mp4"
                         },
                         new
                         {
@@ -8112,7 +8112,7 @@ namespace Estigo.Migrations
                             courseId = 12,
                             isLive = false,
                             lessonTitle = "Temperature and Heat",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy2.mp4"
                         },
                         new
                         {
@@ -8121,7 +8121,7 @@ namespace Estigo.Migrations
                             courseId = 12,
                             isLive = false,
                             lessonTitle = "First Law of Thermodynamics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy1.mp4"
                         },
                         new
                         {
@@ -8130,7 +8130,7 @@ namespace Estigo.Migrations
                             courseId = 12,
                             isLive = false,
                             lessonTitle = "Ideal Gas Law",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy4.mp4"
                         },
                         new
                         {
@@ -8139,7 +8139,7 @@ namespace Estigo.Migrations
                             courseId = 12,
                             isLive = false,
                             lessonTitle = "Second Law of Thermodynamics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy5.mp4"
                         },
                         new
                         {
@@ -8148,7 +8148,7 @@ namespace Estigo.Migrations
                             courseId = 12,
                             isLive = false,
                             lessonTitle = "Thermodynamic Cycles",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy3.mp4"
                         },
                         new
                         {
@@ -8157,7 +8157,7 @@ namespace Estigo.Migrations
                             courseId = 13,
                             isLive = false,
                             lessonTitle = "Blackbody Radiation & Planck's Hypothesis",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy1.mp4"
                         },
                         new
                         {
@@ -8166,7 +8166,7 @@ namespace Estigo.Migrations
                             courseId = 13,
                             isLive = false,
                             lessonTitle = "Photoelectric Effect",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy2.mp4"
                         },
                         new
                         {
@@ -8175,7 +8175,7 @@ namespace Estigo.Migrations
                             courseId = 13,
                             isLive = false,
                             lessonTitle = "Wave Nature of Matter",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy3.mp4"
                         },
                         new
                         {
@@ -8184,7 +8184,7 @@ namespace Estigo.Migrations
                             courseId = 13,
                             isLive = false,
                             lessonTitle = "The Bohr Model",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy4.mp4"
                         },
                         new
                         {
@@ -8193,7 +8193,7 @@ namespace Estigo.Migrations
                             courseId = 13,
                             isLive = false,
                             lessonTitle = "Introduction to Quantum Mechanics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy5.mp4"
                         },
                         new
                         {
@@ -8202,7 +8202,7 @@ namespace Estigo.Migrations
                             courseId = 14,
                             isLive = false,
                             lessonTitle = "Principles of Special Relativity",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy1.mp4"
                         },
                         new
                         {
@@ -8211,7 +8211,7 @@ namespace Estigo.Migrations
                             courseId = 14,
                             isLive = false,
                             lessonTitle = "Time Dilation and Length Contraction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy4.mp4"
                         },
                         new
                         {
@@ -8220,7 +8220,7 @@ namespace Estigo.Migrations
                             courseId = 14,
                             isLive = false,
                             lessonTitle = "Relativistic Momentum and Energy",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy4.mp4"
                         },
                         new
                         {
@@ -8229,7 +8229,7 @@ namespace Estigo.Migrations
                             courseId = 14,
                             isLive = false,
                             lessonTitle = "Introduction to General Relativity",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy2.mp4"
                         },
                         new
                         {
@@ -8238,7 +8238,7 @@ namespace Estigo.Migrations
                             courseId = 14,
                             isLive = false,
                             lessonTitle = "Consequences of General Relativity",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/phy3.mp4"
                         },
                         new
                         {
@@ -8247,7 +8247,7 @@ namespace Estigo.Migrations
                             courseId = 15,
                             isLive = false,
                             lessonTitle = "Introduction to Cells",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio1.mp4"
                         },
                         new
                         {
@@ -8256,7 +8256,7 @@ namespace Estigo.Migrations
                             courseId = 15,
                             isLive = false,
                             lessonTitle = "Cell Membrane Structure and Function",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio2.mp4"
                         },
                         new
                         {
@@ -8265,7 +8265,7 @@ namespace Estigo.Migrations
                             courseId = 15,
                             isLive = false,
                             lessonTitle = "Eukaryotic Organelles",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio3.mp4"
                         },
                         new
                         {
@@ -8274,7 +8274,7 @@ namespace Estigo.Migrations
                             courseId = 15,
                             isLive = false,
                             lessonTitle = "Cellular Respiration",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio4.mp4"
                         },
                         new
                         {
@@ -8283,7 +8283,7 @@ namespace Estigo.Migrations
                             courseId = 15,
                             isLive = false,
                             lessonTitle = "The Cell Cycle and Mitosis",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8292,7 +8292,7 @@ namespace Estigo.Migrations
                             courseId = 16,
                             isLive = false,
                             lessonTitle = "Mendelian Genetics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio2.mp4"
                         },
                         new
                         {
@@ -8301,7 +8301,7 @@ namespace Estigo.Migrations
                             courseId = 16,
                             isLive = false,
                             lessonTitle = "DNA Structure and Replication",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio1.mp4"
                         },
                         new
                         {
@@ -8310,7 +8310,7 @@ namespace Estigo.Migrations
                             courseId = 16,
                             isLive = false,
                             lessonTitle = "Gene Expression: Transcription",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio3.mp4"
                         },
                         new
                         {
@@ -8319,7 +8319,7 @@ namespace Estigo.Migrations
                             courseId = 16,
                             isLive = false,
                             lessonTitle = "Gene Expression: Translation",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio4.mp4"
                         },
                         new
                         {
@@ -8328,7 +8328,7 @@ namespace Estigo.Migrations
                             courseId = 16,
                             isLive = false,
                             lessonTitle = "Mutations and Genetic Variation",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8337,7 +8337,7 @@ namespace Estigo.Migrations
                             courseId = 17,
                             isLive = false,
                             lessonTitle = "Skeletal Systems",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio3.mp4"
                         },
                         new
                         {
@@ -8346,7 +8346,7 @@ namespace Estigo.Migrations
                             courseId = 17,
                             isLive = false,
                             lessonTitle = "Muscular Systems",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio2.mp4"
                         },
                         new
                         {
@@ -8355,7 +8355,7 @@ namespace Estigo.Migrations
                             courseId = 17,
                             isLive = false,
                             lessonTitle = "Biomechanics Basics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio1.mp4"
                         },
                         new
                         {
@@ -8364,7 +8364,7 @@ namespace Estigo.Migrations
                             courseId = 17,
                             isLive = false,
                             lessonTitle = "Locomotion in Animals",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio4.mp4"
                         },
                         new
                         {
@@ -8373,7 +8373,7 @@ namespace Estigo.Migrations
                             courseId = 17,
                             isLive = false,
                             lessonTitle = "Nervous System Control of Movement",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8382,7 +8382,7 @@ namespace Estigo.Migrations
                             courseId = 18,
                             isLive = false,
                             lessonTitle = "Introduction to Ecology",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8391,7 +8391,7 @@ namespace Estigo.Migrations
                             courseId = 18,
                             isLive = false,
                             lessonTitle = "Population Ecology",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8400,7 +8400,7 @@ namespace Estigo.Migrations
                             courseId = 18,
                             isLive = false,
                             lessonTitle = "Community Ecology",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8409,7 +8409,7 @@ namespace Estigo.Migrations
                             courseId = 18,
                             isLive = false,
                             lessonTitle = "Ecosystem Dynamics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8418,7 +8418,7 @@ namespace Estigo.Migrations
                             courseId = 18,
                             isLive = false,
                             lessonTitle = "Biomes and Conservation",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8427,7 +8427,7 @@ namespace Estigo.Migrations
                             courseId = 19,
                             isLive = false,
                             lessonTitle = "Plant Structure and Growth",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio1.mp4"
                         },
                         new
                         {
@@ -8436,7 +8436,7 @@ namespace Estigo.Migrations
                             courseId = 19,
                             isLive = false,
                             lessonTitle = "Plant Transport Systems",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio2.mp4"
                         },
                         new
                         {
@@ -8445,7 +8445,7 @@ namespace Estigo.Migrations
                             courseId = 19,
                             isLive = false,
                             lessonTitle = "Photosynthesis",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio3.mp4"
                         },
                         new
                         {
@@ -8454,7 +8454,7 @@ namespace Estigo.Migrations
                             courseId = 19,
                             isLive = false,
                             lessonTitle = "Plant Reproduction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio4.mp4"
                         },
                         new
                         {
@@ -8463,7 +8463,7 @@ namespace Estigo.Migrations
                             courseId = 19,
                             isLive = false,
                             lessonTitle = "Plant Hormones and Responses",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8472,7 +8472,7 @@ namespace Estigo.Migrations
                             courseId = 20,
                             isLive = false,
                             lessonTitle = "Introduction to Animal Diversity",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio1.mp4"
                         },
                         new
                         {
@@ -8481,7 +8481,7 @@ namespace Estigo.Migrations
                             courseId = 20,
                             isLive = false,
                             lessonTitle = "Invertebrate Zoology I",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio2.mp4"
                         },
                         new
                         {
@@ -8490,7 +8490,7 @@ namespace Estigo.Migrations
                             courseId = 20,
                             isLive = false,
                             lessonTitle = "Invertebrate Zoology II",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio3.mp4"
                         },
                         new
                         {
@@ -8499,7 +8499,7 @@ namespace Estigo.Migrations
                             courseId = 20,
                             isLive = false,
                             lessonTitle = "Vertebrate Zoology I",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio4.mp4"
                         },
                         new
                         {
@@ -8508,7 +8508,7 @@ namespace Estigo.Migrations
                             courseId = 20,
                             isLive = false,
                             lessonTitle = "Vertebrate Zoology II",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8517,7 +8517,7 @@ namespace Estigo.Migrations
                             courseId = 21,
                             isLive = false,
                             lessonTitle = "Introduction to Microbes",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio1.mp4"
                         },
                         new
                         {
@@ -8526,7 +8526,7 @@ namespace Estigo.Migrations
                             courseId = 21,
                             isLive = false,
                             lessonTitle = "Bacterial Structure and Function",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio2.mp4"
                         },
                         new
                         {
@@ -8535,7 +8535,7 @@ namespace Estigo.Migrations
                             courseId = 21,
                             isLive = false,
                             lessonTitle = "Microbial Growth and Metabolism",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio3.mp4"
                         },
                         new
                         {
@@ -8544,7 +8544,7 @@ namespace Estigo.Migrations
                             courseId = 21,
                             isLive = false,
                             lessonTitle = "Viruses and Prions",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio4.mp4"
                         },
                         new
                         {
@@ -8553,7 +8553,7 @@ namespace Estigo.Migrations
                             courseId = 21,
                             isLive = false,
                             lessonTitle = "Microbial Roles and Applications",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Bio5.mp4"
                         },
                         new
                         {
@@ -8562,7 +8562,7 @@ namespace Estigo.Migrations
                             courseId = 22,
                             isLive = false,
                             lessonTitle = "Introduction & Bonding",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8571,7 +8571,7 @@ namespace Estigo.Migrations
                             courseId = 22,
                             isLive = false,
                             lessonTitle = "Alkanes and Cycloalkanes",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem2.mp4"
                         },
                         new
                         {
@@ -8580,7 +8580,7 @@ namespace Estigo.Migrations
                             courseId = 22,
                             isLive = false,
                             lessonTitle = "Stereochemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem3.mp4"
                         },
                         new
                         {
@@ -8589,7 +8589,7 @@ namespace Estigo.Migrations
                             courseId = 22,
                             isLive = false,
                             lessonTitle = "Introduction to Organic Reactions",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem4.mp4"
                         },
                         new
                         {
@@ -8598,7 +8598,7 @@ namespace Estigo.Migrations
                             courseId = 22,
                             isLive = false,
                             lessonTitle = "Alkenes and Alkynes: Structure & Reactivity",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem5.mp4"
                         },
                         new
                         {
@@ -8607,7 +8607,7 @@ namespace Estigo.Migrations
                             courseId = 23,
                             isLive = false,
                             lessonTitle = "Atomic Structure and Periodicity",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8616,7 +8616,7 @@ namespace Estigo.Migrations
                             courseId = 23,
                             isLive = false,
                             lessonTitle = "Chemical Bonding: Lewis & VSEPR",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem2.mp4"
                         },
                         new
                         {
@@ -8625,7 +8625,7 @@ namespace Estigo.Migrations
                             courseId = 23,
                             isLive = false,
                             lessonTitle = "Valence Bond and Molecular Orbital Theory",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem3.mp4"
                         },
                         new
                         {
@@ -8634,7 +8634,7 @@ namespace Estigo.Migrations
                             courseId = 23,
                             isLive = false,
                             lessonTitle = "Acid-Base Chemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem4.mp4"
                         },
                         new
                         {
@@ -8643,7 +8643,7 @@ namespace Estigo.Migrations
                             courseId = 23,
                             isLive = false,
                             lessonTitle = "Introduction to Coordination Chemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem5.mp4"
                         },
                         new
                         {
@@ -8652,7 +8652,7 @@ namespace Estigo.Migrations
                             courseId = 24,
                             isLive = false,
                             lessonTitle = "Gases and Kinetic Theory",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8661,7 +8661,7 @@ namespace Estigo.Migrations
                             courseId = 24,
                             isLive = false,
                             lessonTitle = "Thermodynamics: First Law",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem2.mp4"
                         },
                         new
                         {
@@ -8670,7 +8670,7 @@ namespace Estigo.Migrations
                             courseId = 24,
                             isLive = false,
                             lessonTitle = "Thermodynamics: Second & Third Laws",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem3.mp4"
                         },
                         new
                         {
@@ -8679,7 +8679,7 @@ namespace Estigo.Migrations
                             courseId = 24,
                             isLive = false,
                             lessonTitle = "Chemical Kinetics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem4.mp4"
                         },
                         new
                         {
@@ -8688,7 +8688,7 @@ namespace Estigo.Migrations
                             courseId = 24,
                             isLive = false,
                             lessonTitle = "Introduction to Quantum Chemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem5.mp4"
                         },
                         new
                         {
@@ -8697,7 +8697,7 @@ namespace Estigo.Migrations
                             courseId = 25,
                             isLive = false,
                             lessonTitle = "Introduction & Statistics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8706,7 +8706,7 @@ namespace Estigo.Migrations
                             courseId = 25,
                             isLive = false,
                             lessonTitle = "Gravimetric and Volumetric Analysis",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8715,7 +8715,7 @@ namespace Estigo.Migrations
                             courseId = 25,
                             isLive = false,
                             lessonTitle = "Spectroscopic Methods",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem2.mp4"
                         },
                         new
                         {
@@ -8724,7 +8724,7 @@ namespace Estigo.Migrations
                             courseId = 25,
                             isLive = false,
                             lessonTitle = "Chromatography Basics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem3.mp4"
                         },
                         new
                         {
@@ -8733,7 +8733,7 @@ namespace Estigo.Migrations
                             courseId = 25,
                             isLive = false,
                             lessonTitle = "Electroanalytical Methods",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8742,7 +8742,7 @@ namespace Estigo.Migrations
                             courseId = 26,
                             isLive = false,
                             lessonTitle = "Amino Acids and Proteins",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8751,7 +8751,7 @@ namespace Estigo.Migrations
                             courseId = 26,
                             isLive = false,
                             lessonTitle = "Enzymes and Enzyme Kinetics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8760,7 +8760,7 @@ namespace Estigo.Migrations
                             courseId = 26,
                             isLive = false,
                             lessonTitle = "Carbohydrates",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8769,7 +8769,7 @@ namespace Estigo.Migrations
                             courseId = 26,
                             isLive = false,
                             lessonTitle = "Lipids and Membranes",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8778,7 +8778,7 @@ namespace Estigo.Migrations
                             courseId = 26,
                             isLive = false,
                             lessonTitle = "Metabolic Pathways Overview",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8787,7 +8787,7 @@ namespace Estigo.Migrations
                             courseId = 27,
                             isLive = false,
                             lessonTitle = "Atmospheric Chemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8796,7 +8796,7 @@ namespace Estigo.Migrations
                             courseId = 27,
                             isLive = false,
                             lessonTitle = "Aquatic Chemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8805,7 +8805,7 @@ namespace Estigo.Migrations
                             courseId = 27,
                             isLive = false,
                             lessonTitle = "Soil Chemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8814,7 +8814,7 @@ namespace Estigo.Migrations
                             courseId = 27,
                             isLive = false,
                             lessonTitle = "Toxicology and Risk Assessment",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8823,7 +8823,7 @@ namespace Estigo.Migrations
                             courseId = 27,
                             isLive = false,
                             lessonTitle = "Green Chemistry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8832,7 +8832,7 @@ namespace Estigo.Migrations
                             courseId = 28,
                             isLive = false,
                             lessonTitle = "Quantum Mechanics Fundamentals",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8841,7 +8841,7 @@ namespace Estigo.Migrations
                             courseId = 28,
                             isLive = false,
                             lessonTitle = "Approximation Methods",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8850,7 +8850,7 @@ namespace Estigo.Migrations
                             courseId = 28,
                             isLive = false,
                             lessonTitle = "Molecular Symmetry and Group Theory",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8859,7 +8859,7 @@ namespace Estigo.Migrations
                             courseId = 28,
                             isLive = false,
                             lessonTitle = "Computational Chemistry Methods",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8868,7 +8868,7 @@ namespace Estigo.Migrations
                             courseId = 28,
                             isLive = false,
                             lessonTitle = "Statistical Thermodynamics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/chem1.mp4"
                         },
                         new
                         {
@@ -8877,7 +8877,7 @@ namespace Estigo.Migrations
                             courseId = 29,
                             isLive = false,
                             lessonTitle = "Introduction to Literary Analysis",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng1.mp4"
                         },
                         new
                         {
@@ -8886,7 +8886,7 @@ namespace Estigo.Migrations
                             courseId = 29,
                             isLive = false,
                             lessonTitle = "Short Story Analysis",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng2.mp4"
                         },
                         new
                         {
@@ -8895,7 +8895,7 @@ namespace Estigo.Migrations
                             courseId = 29,
                             isLive = false,
                             lessonTitle = "Poetry Fundamentals",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng3.mp4"
                         },
                         new
                         {
@@ -8904,7 +8904,7 @@ namespace Estigo.Migrations
                             courseId = 29,
                             isLive = false,
                             lessonTitle = "Novel Study: Introduction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng4.mp4"
                         },
                         new
                         {
@@ -8913,7 +8913,7 @@ namespace Estigo.Migrations
                             courseId = 29,
                             isLive = false,
                             lessonTitle = "Introduction to Drama",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng5.mp4"
                         },
                         new
                         {
@@ -8922,7 +8922,7 @@ namespace Estigo.Migrations
                             courseId = 30,
                             isLive = false,
                             lessonTitle = "Finding Your Voice",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng1.mp4"
                         },
                         new
                         {
@@ -8931,7 +8931,7 @@ namespace Estigo.Migrations
                             courseId = 30,
                             isLive = false,
                             lessonTitle = "Character Development",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng2.mp4"
                         },
                         new
                         {
@@ -8940,7 +8940,7 @@ namespace Estigo.Migrations
                             courseId = 30,
                             isLive = false,
                             lessonTitle = "Plotting and Structure",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng3.mp4"
                         },
                         new
                         {
@@ -8949,7 +8949,7 @@ namespace Estigo.Migrations
                             courseId = 30,
                             isLive = false,
                             lessonTitle = "Setting and Description",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng4.mp4"
                         },
                         new
                         {
@@ -8958,7 +8958,7 @@ namespace Estigo.Migrations
                             courseId = 30,
                             isLive = false,
                             lessonTitle = "Dialogue Writing",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng5.mp4"
                         },
                         new
                         {
@@ -8967,7 +8967,7 @@ namespace Estigo.Migrations
                             courseId = 31,
                             isLive = false,
                             lessonTitle = "Parts of Speech Review",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng1.mp4"
                         },
                         new
                         {
@@ -8976,7 +8976,7 @@ namespace Estigo.Migrations
                             courseId = 31,
                             isLive = false,
                             lessonTitle = "Sentence Structure",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng2.mp4"
                         },
                         new
                         {
@@ -8985,7 +8985,7 @@ namespace Estigo.Migrations
                             courseId = 31,
                             isLive = false,
                             lessonTitle = "Punctuation Rules",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng3.mp4"
                         },
                         new
                         {
@@ -8994,7 +8994,7 @@ namespace Estigo.Migrations
                             courseId = 31,
                             isLive = false,
                             lessonTitle = "Common Grammatical Errors",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng4.mp4"
                         },
                         new
                         {
@@ -9003,7 +9003,7 @@ namespace Estigo.Migrations
                             courseId = 31,
                             isLive = false,
                             lessonTitle = "Paragraph and Essay Structure",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng5.mp4"
                         },
                         new
                         {
@@ -9012,7 +9012,7 @@ namespace Estigo.Migrations
                             courseId = 32,
                             isLive = false,
                             lessonTitle = "Elements of Poetry",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng1.mp4"
                         },
                         new
                         {
@@ -9021,7 +9021,7 @@ namespace Estigo.Migrations
                             courseId = 32,
                             isLive = false,
                             lessonTitle = "Figurative Language",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng2.mp4"
                         },
                         new
                         {
@@ -9030,7 +9030,7 @@ namespace Estigo.Migrations
                             courseId = 32,
                             isLive = false,
                             lessonTitle = "Sound Devices",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng3.mp4"
                         },
                         new
                         {
@@ -9039,7 +9039,7 @@ namespace Estigo.Migrations
                             courseId = 32,
                             isLive = false,
                             lessonTitle = "Poetic Forms",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng4.mp4"
                         },
                         new
                         {
@@ -9048,7 +9048,7 @@ namespace Estigo.Migrations
                             courseId = 32,
                             isLive = false,
                             lessonTitle = "Interpreting Poems",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng5.mp4"
                         },
                         new
                         {
@@ -9057,7 +9057,7 @@ namespace Estigo.Migrations
                             courseId = 33,
                             isLive = false,
                             lessonTitle = "History of Theater",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng1.mp4"
                         },
                         new
                         {
@@ -9066,7 +9066,7 @@ namespace Estigo.Migrations
                             courseId = 33,
                             isLive = false,
                             lessonTitle = "Elements of Drama",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng2.mp4"
                         },
                         new
                         {
@@ -9075,7 +9075,7 @@ namespace Estigo.Migrations
                             courseId = 33,
                             isLive = false,
                             lessonTitle = "Reading a Play",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng3.mp4"
                         },
                         new
                         {
@@ -9084,7 +9084,7 @@ namespace Estigo.Migrations
                             courseId = 33,
                             isLive = false,
                             lessonTitle = "Major Dramatic Genres",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng4.mp4"
                         },
                         new
                         {
@@ -9093,7 +9093,7 @@ namespace Estigo.Migrations
                             courseId = 33,
                             isLive = false,
                             lessonTitle = "Theater Production Basics",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng5.mp4"
                         },
                         new
                         {
@@ -9102,7 +9102,7 @@ namespace Estigo.Migrations
                             courseId = 34,
                             isLive = false,
                             lessonTitle = "Generating Ideas",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng1.mp4"
                         },
                         new
                         {
@@ -9111,7 +9111,7 @@ namespace Estigo.Migrations
                             courseId = 34,
                             isLive = false,
                             lessonTitle = "Point of View and Narrative Voice",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng2.mp4"
                         },
                         new
                         {
@@ -9120,7 +9120,7 @@ namespace Estigo.Migrations
                             courseId = 34,
                             isLive = false,
                             lessonTitle = "Show, Don't Tell",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng3.mp4"
                         },
                         new
                         {
@@ -9129,7 +9129,7 @@ namespace Estigo.Migrations
                             courseId = 34,
                             isLive = false,
                             lessonTitle = "Crafting Scenes",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng4.mp4"
                         },
                         new
                         {
@@ -9138,7 +9138,7 @@ namespace Estigo.Migrations
                             courseId = 34,
                             isLive = false,
                             lessonTitle = "Revision Strategies",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng5.mp4"
                         },
                         new
                         {
@@ -9147,7 +9147,7 @@ namespace Estigo.Migrations
                             courseId = 35,
                             isLive = false,
                             lessonTitle = "Types of Non-fiction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng1.mp4"
                         },
                         new
                         {
@@ -9156,7 +9156,7 @@ namespace Estigo.Migrations
                             courseId = 35,
                             isLive = false,
                             lessonTitle = "Research Techniques",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng2.mp4"
                         },
                         new
                         {
@@ -9165,7 +9165,7 @@ namespace Estigo.Migrations
                             courseId = 35,
                             isLive = false,
                             lessonTitle = "Structuring Non-fiction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng3.mp4"
                         },
                         new
                         {
@@ -9174,7 +9174,7 @@ namespace Estigo.Migrations
                             courseId = 35,
                             isLive = false,
                             lessonTitle = "Writing with Clarity and Style",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng4.mp4"
                         },
                         new
                         {
@@ -9183,7 +9183,7 @@ namespace Estigo.Migrations
                             courseId = 35,
                             isLive = false,
                             lessonTitle = "Ethics in Non-fiction",
-                            lessonVideo = "https://estigo.runasp.net/vv.mp4"
+                            lessonVideo = "https://estigo.runasp.net/Eng5.mp4"
                         });
                 });
 
